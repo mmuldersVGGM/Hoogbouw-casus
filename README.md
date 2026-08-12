@@ -31,3 +31,15 @@ Na ieder keuzemoment toont de app eerst het operationele gevolg. Daarna kan de d
 
 ## Versie 3 – uitgebreide keuzemomenten
 Keuzemomenten 1 t/m 3 zijn inhoudelijk gereviewd en tonen nu dezelfde uitgebreide casusbeschrijving en verdiepende nabespreking als in de inhoudelijke review: rijkere situatie, uitgebreider operationeel gevolg, bronduiding, afweging van alternatieven, beoordeling en de gevolgen die de casus onthoudt. De overige momenten blijven voorlopig op de eerdere v2-uitwerking totdat ze inhoudelijk zijn doorgelopen.
+
+
+## Versie 4
+Keuzemomenten 4 t/m 18 hebben nu dezelfde uitgebreide situatieschets, operationele gevolgen en VRR-gebaseerde verdiepende nabespreking als keuzemomenten 1 t/m 3.
+
+## Nieuw in v5 – beeld en vormgeving
+- Bij alle 18 keuzemomenten staat een relevante afbeelding uit het aangeleverde VGGM-lesmateriaal.
+- Relevante begrippen tonen eveneens bronbeelden uit de PowerPoint.
+- Afbeeldingen zijn aanklikbaar voor vergroting.
+- De interface heeft een vernieuwde hero, scenario-cards, keuzekaarten en verdiepende uitleg.
+- De map `assets/vggm/` moet samen met de vier webbestanden naar GitHub worden geüpload.
+- Zie `AFBEELDINGEN.md` voor de koppeling tussen beelden, keuzemomenten en PowerPoint-slides.

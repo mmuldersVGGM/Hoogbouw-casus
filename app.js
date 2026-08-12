@@ -8,6 +8,45 @@ $('#principles').innerHTML=S.meta.principles.map(x=>`<div class="principle">${x}
 
 function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 const terms=Object.keys(S.glossary).sort((a,b)=>b.length-a.length);
+const MEDIA={
+  nodes:{
+    1:{src:'assets/vggm/verkenning_gevel.jpeg',caption:'Verkenning van rookgedrag aan de gevel',source:'VGGM lesmateriaal – slide 67'},
+    2:{src:'assets/vggm/hoogbouw_object.png',caption:'Hoogbouw vraagt om bewust gebruik van gebouwvoorzieningen en verticale logistiek',source:'VGGM lesmateriaal – slide 31'},
+    3:{src:'assets/vggm/stijgleiding_afnamepunt.jpg',caption:'Afnamepunt / bluswatervoorziening als onderdeel van de routekeuze',source:'VGGM lesmateriaal – slide 73'},
+    4:{src:'assets/vggm/bruggenhoofd_schema.jpg',caption:'Schematische weergave van het bruggenhoofd in hoogbouw',source:'VGGM lesmateriaal – slide 69'},
+    5:{src:'assets/vggm/rook_gang.png',caption:'Rookverspreiding in een verkeersruimte: deurmanagement bepaalt mede het verloop',source:'VGGM lesmateriaal – slide 63'},
+    6:{src:'assets/vggm/wdf_profiel.png',caption:'Wind Driven Fire: ventilatieprofiel bij een door wind beïnvloede brand',source:'VGGM lesmateriaal – slide 51'},
+    7:{src:'assets/vggm/straalpijp.gif',caption:'Koelend vermogen en straalpijptechniek moeten passen bij het brandbeeld',source:'VGGM lesmateriaal – slide 55'},
+    8:{src:'assets/vggm/kwadrantenmodel.png',caption:'Tactische positionering en keuze van inzetstrategie',source:'VGGM lesmateriaal – slide 67'},
+    9:{src:'assets/vggm/toetreding_deur.jpeg',caption:'Toetreding: reddingsdruk moet worden afgewogen tegen veilige interventievoorwaarden',source:'VGGM lesmateriaal – slide 58'},
+    10:{src:'assets/vggm/rook_trappenhuis.png',caption:'Rookverspreiding richting trappenhuis vormt een zelfstandig tactisch probleem',source:'VGGM lesmateriaal – slide 61'},
+    11:{src:'assets/vggm/hoogbouw_gevel.jpeg',caption:'Bij hoogbouw kunnen bewonersstromen en ontruiming over veel bouwlagen tegelijk ontstaan',source:'VGGM lesmateriaal – slide 59'},
+    12:{src:'assets/vggm/stack_reverse.png',caption:'Stack-effect en reverse stack-effect veranderen verticale lucht- en rookstromen',source:'VGGM lesmateriaal – slide 40'},
+    13:{src:'assets/vggm/aandachtskaart_bruggenhoofd.png',caption:'Een vaste informatie- en terugmeldstructuur ondersteunt de inzet op hoogte',source:'VGGM lesmateriaal – slide 23'},
+    14:{src:'assets/vggm/hoogbouw_object.png',caption:'Verticale bereikbaarheid is een kritieke voorziening; uitval verandert de inzet direct',source:'VGGM lesmateriaal – slide 31'},
+    15:{src:'assets/vggm/logistiek_materiaal.jpeg',caption:'Materiaal, fysieke belasting en aflossing worden op hoogte een zelfstandig proces',source:'VGGM lesmateriaal – slide 74'},
+    16:{src:'assets/vggm/rook_deurzone.png',caption:'Rook buiten het oorspronkelijke compartiment is een belangrijk omslagpunt',source:'VGGM lesmateriaal – slide 60'},
+    17:{src:'assets/vggm/gevelbrand.jpeg',caption:'Geveluitbreiding kan meerdere bovenliggende bouwlagen tegelijk bedreigen',source:'VGGM lesmateriaal – slide 38'},
+    18:{src:'assets/vggm/orientatie_object.jpg',caption:'Heroriëntatie: object, omstandigheden, inzetstrategie en resterende veiligheidsmarges opnieuw beoordelen',source:'VGGM lesmateriaal – slide 76'}
+  },
+  terms:{
+    'Coandă-effect':{src:'assets/vggm/coanda_schema.png',caption:'Schematische weergave van het Coandă-effect',source:'VGGM lesmateriaal – slide 34'},
+    'Stack-effect':{src:'assets/vggm/stack_schema.png',caption:'Stack-effect in een hoog gebouw',source:'VGGM lesmateriaal – slide 39'},
+    'Reverse stack':{src:'assets/vggm/reverse_stack.jpg',caption:'Gevolgen van reverse stack-effect bij brand',source:'VGGM lesmateriaal – slide 43'},
+    'Wind Driven Fire':{src:'assets/vggm/wdf_profiel.png',caption:'Ventilatieprofiel bij Wind Driven Fire',source:'VGGM lesmateriaal – slide 51'},
+    'Flowpath':{src:'assets/vggm/flowpath_schema.png',caption:'Wind en openingen kunnen het stromingspad door het compartiment bepalen',source:'VGGM lesmateriaal – slide 53'},
+    'Bruggenhoofd':{src:'assets/vggm/bruggenhoofd_schema.jpg',caption:'Doel en positionering van het bruggenhoofd',source:'VGGM lesmateriaal – slide 69'},
+    'Transitional attack':{src:'assets/vggm/transitional_attack.png',caption:'Transitional attack vanaf een redvoertuig',source:'VGGM lesmateriaal – slide 56'},
+    'Offensief binnen':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als tactisch denkkader',source:'VGGM lesmateriaal – slide 67'},
+    'Defensief binnen':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als tactisch denkkader',source:'VGGM lesmateriaal – slide 67'},
+    'Rookstopper':{src:'assets/vggm/rookstopper_deur.png',caption:'Deuropening en rookbeheersing',source:'VGGM lesmateriaal – slide 63'}
+  }
+};
+function mediaHtml(m, cls='scenarioMedia'){
+  if(!m) return '';
+  return `<figure class="${cls}"><button class="mediaZoom" type="button" data-img="${esc(m.src)}" data-caption="${esc(m.caption)}" aria-label="Afbeelding vergroten"><img src="${esc(m.src)}" alt="${esc(m.caption)}" loading="lazy"></button><figcaption><span>${esc(m.caption)}</span><small>${esc(m.source||'VGGM lesmateriaal')}</small></figcaption></figure>`;
+}
+function bindMedia(root=document){root.querySelectorAll('.mediaZoom').forEach(b=>b.addEventListener('click',()=>openModal(`<div class="imageModal"><img src="${b.dataset.img}" alt="${esc(b.dataset.caption)}"><p>${esc(b.dataset.caption)}</p></div>`)));}
 function linkTerms(text){
  let s=esc(text);
  for(const term of terms){
@@ -28,6 +67,7 @@ function richSituation(n){
  if(d.groups?.length) h+=`<div class="scenarioGroups">${d.groups.map(g=>`<div class="scenarioGroup"><h3>${esc(g.title)}</h3><ul>${(g.items||[]).map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul></div>`).join('')}</div>`;
  (d.after||[]).forEach(x=>h+=`<p>${linkTerms(x)}</p>`);
  if(d.prompt) h+=`<div class="scenarioPrompt">${linkTerms(d.prompt)}</div>`;
+ h+=mediaHtml(MEDIA.nodes[n.id]);
  return h;
 }
 function consequenceHtml(c){
@@ -48,10 +88,10 @@ function detailedDebrief(c){
  return h;
 }
 
-function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.addEventListener('click',()=>showTerm(el.dataset.term)));}
+function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.addEventListener('click',()=>showTerm(el.dataset.term))); bindMedia(root);}
 function openModal(html){$('#modalContent').innerHTML=html; $('#modal').classList.remove('hidden'); bindTerms($('#modalContent'));}
-function showTerm(term){const g=S.glossary[term]; if(!g)return; openModal(`<h2>${esc(term)}</h2><p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>`);}
-function showGlossary(){let h='<h2>Begrippen</h2><p class="small">Klik tijdens de casus op onderstreepte begrippen om deze uitleg direct te openen.</p>'; for(const [t,g] of Object.entries(S.glossary)){h+=`<div class="glossItem"><h3>${esc(t)}</h3><div>${esc(g.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(g.operational)}</div></div>`;} openModal(h);}
+function showTerm(term){const g=S.glossary[term]; if(!g)return; const m=MEDIA.terms[term]; openModal(`<div class="termHeader"><div><div class="small">BEGRIP</div><h2>${esc(term)}</h2></div></div>${mediaHtml(m,'termMedia')}<p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>`);}
+function showGlossary(){let h='<h2>Begrippen</h2><p class="small">Klik tijdens de casus op onderstreepte begrippen om deze uitleg direct te openen.</p>'; for(const [t,g] of Object.entries(S.glossary)){h+=`<div class="glossItem"><h3>${esc(t)}</h3>${mediaHtml(MEDIA.terms[t],'glossMedia')}<div>${esc(g.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(g.operational)}</div></div>`;} openModal(h);}
 $('#glossaryBtn').addEventListener('click',showGlossary); $('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden')); $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
 
 function renderNode(){
@@ -82,7 +122,7 @@ function deepDiveHtml(n,c){
  return `<div class="deepDive">
    <div class="small">VERDIEPENDE NABESPREKING • KEUZEMOMENT ${n.id}</div>
    <h2>${esc(n.title)}</h2>
-   <div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
+   ${mediaHtml(MEDIA.nodes[n.id],'debriefMedia')}<div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
    <h3>Jouw keuze ${c.id}</h3>
    <p><strong>${linkTerms(c.text)}</strong></p>
    <div class="deepText">${detailedDebrief(c)}</div>
