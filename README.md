@@ -25,3 +25,6 @@ Open `index.html` in een moderne browser. Er is geen server of installatie nodig
 6. GitHub toont daarna de Pages-URL.
 
 `scenario.js` bevat de inhoud. Daardoor kunnen later andere casussen of een OvD-module worden toegevoegd zonder de interface volledig opnieuw te bouwen.
+
+## Versie met uitgebreide nabespreking
+Na ieder keuzemoment toont de app eerst het operationele gevolg. Daarna kan de deelnemer een korte duiding openen of direct kiezen voor **Verdiepende uitleg nu bekijken**. Na afloop bevat de nabespreking per gemaakte keuze de volledige VRR-gebaseerde duiding en een vergelijking met de twee alternatieven. VRICOL wordt uitsluitend als didactisch vergelijkingsmodel gebruikt.
