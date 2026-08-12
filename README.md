@@ -5,7 +5,7 @@ Interactieve, statische webapp voor een fictieve hoogbouwcasus. De app is gebouw
 ## Belangrijke ontwerpafspraken
 
 - Het gebouw is fictief.
-- De rookstopper is in deze casus beschikbaar binnen de lage-druksystemen.
+- De smokestopper is in deze casus beschikbaar binnen de lage-druksystemen.
 - VRICOL wordt uitsluitend als **didactisch vergelijkingsmodel** gebruikt, niet als VGGM-inzetprocedure.
 - Beslissingen binnen liggen bij manschappen, mits veilig en verantwoord en gedeeld/getoetst met de bevelvoerder.
 - Nare uitkomsten kunnen optreden als logisch gevolg van keuzes/combinaties.
@@ -43,3 +43,7 @@ Keuzemomenten 4 t/m 18 hebben nu dezelfde uitgebreide situatieschets, operatione
 - De interface heeft een vernieuwde hero, scenario-cards, keuzekaarten en verdiepende uitleg.
 - De map `assets/vggm/` moet samen met de vier webbestanden naar GitHub worden geüpload.
 - Zie `AFBEELDINGEN.md` voor de koppeling tussen beelden, keuzemomenten en PowerPoint-slides.
+
+
+## v6 – VGGM/BPBB-systemen
+Deze versie voegt een tweede didactische laag toe naast de VRR-bronduiding. Per keuzemoment worden relevante VGGM/BPBB-systemen zichtbaar als aanklikbare chips: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM, deurcontrole, anti-ventilatie, rookgaskoeling/straalpijptechniek, laag voortbewegen, snelle toevoer, snelle aanval, O-bundel, smokestopper en hoogtetas. De middelen zijn voor deze fictieve casus als beschikbaar gemodelleerd; dit document stelt geen regionaal beleid vast.

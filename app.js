@@ -39,7 +39,7 @@ const MEDIA={
     'Transitional attack':{src:'assets/vggm/transitional_attack.png',caption:'Transitional attack vanaf een redvoertuig',source:'VGGM lesmateriaal – slide 56'},
     'Offensief binnen':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als tactisch denkkader',source:'VGGM lesmateriaal – slide 67'},
     'Defensief binnen':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als tactisch denkkader',source:'VGGM lesmateriaal – slide 67'},
-    'Rookstopper':{src:'assets/vggm/rookstopper_deur.png',caption:'Deuropening en rookbeheersing',source:'VGGM lesmateriaal – slide 63'}
+    'Smokestopper':{src:'assets/vggm/smokestopper_deur.png',caption:'Deuropening en rookbeheersing',source:'VGGM lesmateriaal – slide 63'}
   }
 };
 function mediaHtml(m, cls='scenarioMedia'){
@@ -89,17 +89,24 @@ function detailedDebrief(c){
 }
 
 function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.addEventListener('click',()=>showTerm(el.dataset.term))); bindMedia(root);}
-function openModal(html){$('#modalContent').innerHTML=html; $('#modal').classList.remove('hidden'); bindTerms($('#modalContent'));}
+function openModal(html){$('#modalContent').innerHTML=html; $('#modal').classList.remove('hidden'); bindTerms($('#modalContent')); bindSystems($('#modalContent'));}
 function showTerm(term){const g=S.glossary[term]; if(!g)return; const m=MEDIA.terms[term]; openModal(`<div class="termHeader"><div><div class="small">BEGRIP</div><h2>${esc(term)}</h2></div></div>${mediaHtml(m,'termMedia')}<p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>`);}
 function showGlossary(){let h='<h2>Begrippen</h2><p class="small">Klik tijdens de casus op onderstreepte begrippen om deze uitleg direct te openen.</p>'; for(const [t,g] of Object.entries(S.glossary)){h+=`<div class="glossItem"><h3>${esc(t)}</h3>${mediaHtml(MEDIA.terms[t],'glossMedia')}<div>${esc(g.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(g.operational)}</div></div>`;} openModal(h);}
 $('#glossaryBtn').addEventListener('click',showGlossary); $('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden')); $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
 
+
+function systemPanelHtml(n){
+ if(!n.systems?.length || !S.systemDefinitions) return '';
+ return `<section class="systemsPanel"><div class="systemsHead"><div><div class="small">VGGM / BPBB-LAAG</div><strong>Systemen die hier meespelen</strong></div><span class="systemsHint">klik voor uitleg</span></div><div class="systemChips">${n.systems.map(k=>`<button type="button" class="systemChip" data-system="${esc(k)}">${esc(k)}</button>`).join('')}</div></section>`;
+}
+function showSystem(key){const d=S.systemDefinitions?.[key];if(!d)return;openModal(`<div class="small">VGGM / BPBB-SYSTEEM</div><h2>${esc(d.title||key)}</h2><p>${linkTerms(d.text||'')}</p><div class="sourceNote"><strong>Positie in deze casus:</strong> dit is de VGGM/BPBB-didactische laag. De uitgebreide hoogbouwduiding in de nabespreking blijft afzonderlijk gebaseerd op het aangeleverde VRR-handboek.</div>`);}
+function bindSystems(root=document){root.querySelectorAll('.systemChip').forEach(b=>b.addEventListener('click',()=>showSystem(b.dataset.system)));}
 function renderNode(){
  const n=S.nodes[state.index];
  $('#progressText').textContent=`Keuzemoment ${n.id} van ${S.nodes.length}`; $('#progressBar').style.width=`${(n.id-1)/S.nodes.length*100}%`;
  $('#roleBadge').textContent=n.role; $('#roleNote').textContent=n.roleNote;
  $('#incidentTime').textContent=`INCIDENT • beslismoment ${n.id}`; $('#nodeTitle').textContent=n.title;
- $('#situation').innerHTML=richSituation(n); bindTerms($('#situation'));
+ $('#situation').innerHTML=richSituation(n)+systemPanelHtml(n); bindTerms($('#situation')); bindSystems($('#situation'));
  choicePanel.innerHTML=''; resultPanel.classList.add('hidden'); resultPanel.innerHTML='';
  n.choices.forEach(c=>{const b=document.createElement('button'); b.className='choiceBtn'; b.innerHTML=`<span class="choiceKey">${c.id}</span><span class="choiceText">${linkTerms(c.text)}</span>`; b.addEventListener('click',()=>choose(n,c)); choicePanel.appendChild(b); bindTerms(b);});
  choicePanel.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});
@@ -122,7 +129,7 @@ function deepDiveHtml(n,c){
  return `<div class="deepDive">
    <div class="small">VERDIEPENDE NABESPREKING • KEUZEMOMENT ${n.id}</div>
    <h2>${esc(n.title)}</h2>
-   ${mediaHtml(MEDIA.nodes[n.id],'debriefMedia')}<div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
+   ${mediaHtml(MEDIA.nodes[n.id],'debriefMedia')}${systemPanelHtml(n)}<div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
    <h3>Jouw keuze ${c.id}</h3>
    <p><strong>${linkTerms(c.text)}</strong></p>
    <div class="deepText">${detailedDebrief(c)}</div>

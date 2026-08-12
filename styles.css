@@ -24,3 +24,10 @@ body{background:linear-gradient(180deg,#e7edf1 0,#f5f7f8 340px,#eef2f5 100%)}
 .modal{backdrop-filter:blur(3px)}.modalCard{border:1px solid rgba(255,255,255,.5)}
 @media(max-width:900px){.heroGrid{grid-template-columns:1fr}.heroVisual{min-height:300px;order:-1}.heroVisual img{height:300px}.choicePanel{grid-template-columns:1fr}.choiceBtn{min-height:auto}.scenarioMedia img,.debriefMedia img{height:auto;min-height:0;max-height:420px}.scenarioMedia .mediaZoom img{object-fit:contain;background:#e7edf0}}
 @media(max-width:620px){.heroCopy{padding:24px 18px}.heroVisual,.heroVisual img{min-height:220px;height:220px}.glossMedia{float:none;width:100%;margin:10px 0}.scenarioMedia figcaption,.debriefMedia figcaption,.termMedia figcaption,.glossMedia figcaption{display:block}.scenarioMedia figcaption small,.debriefMedia figcaption small,.termMedia figcaption small,.glossMedia figcaption small{display:block;margin-top:4px;white-space:normal}}
+
+
+/* v6 – VGGM/BPBB-systemen */
+.systemsPanel{margin:22px 0 4px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(244,247,250,.96));box-shadow:0 8px 24px rgba(23,38,55,.06)}
+.systemsHead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px}.systemsHead strong{font-size:1rem}.systemsHint{font-size:.78rem;color:var(--muted)}
+.systemChips{display:flex;flex-wrap:wrap;gap:8px}.systemChip{border:1px solid rgba(129,29,37,.24);background:rgba(129,29,37,.06);color:var(--text);border-radius:999px;padding:8px 12px;font-weight:700;font-size:.84rem;cursor:pointer;transition:.18s ease}.systemChip:hover{transform:translateY(-1px);background:rgba(129,29,37,.11);border-color:rgba(129,29,37,.42)}
+@media(max-width:700px){.systemsHead{align-items:flex-start;flex-direction:column;gap:4px}.systemChip{font-size:.8rem;padding:7px 10px}}

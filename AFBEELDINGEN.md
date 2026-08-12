@@ -23,6 +23,6 @@ De afbeeldingen in `assets/vggm/` zijn geselecteerd uit de aangeleverde PowerPoi
 18. Oriëntatie / heroverweging – slide 76
 
 ## Begrippen met beeld
-Coandă-effect, Stack-effect, Reverse stack, Wind Driven Fire, Flowpath, Bruggenhoofd, Transitional attack, Offensief binnen, Defensief binnen en Rookstopper hebben een gekoppelde afbeelding in het begrippenvenster.
+Coandă-effect, Stack-effect, Reverse stack, Wind Driven Fire, Flowpath, Bruggenhoofd, Transitional attack, Offensief binnen, Defensief binnen en Smokestopper hebben een gekoppelde afbeelding in het begrippenvenster.
 
 De afbeeldingen zijn didactisch gekoppeld; niet ieder beeld toont letterlijk het fictieve incident in Rivierstaete.
