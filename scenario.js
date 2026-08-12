@@ -880,3 +880,335 @@ window.SCENARIO = {
   });
 })();
 
+
+
+// Uitgebreide casuspresentatie voor de inhoudelijk gereviewde keuzemomenten 1 t/m 3.
+// Deze laag zorgt dat de webapp dezelfde rijkdom toont als de mondelinge/tekstuele nabespreking.
+(() => {
+  const N = window.SCENARIO.nodes;
+  const byId = id => N.find(n => n.id === id);
+
+  Object.assign(byId(1), {
+    situationDetail: {
+      time: "14:32 uur",
+      intro: [
+        "Je bent bevelvoerder van de eerste TS bij woongebouw Rivierstaete, 76 meter hoog en 21 bouwlagen.",
+        "De melding is: woningbrand op de 14e verdieping, mogelijk nog één persoon in de woning."
+      ],
+      observations: [
+        "Bij aankomst zie je lichte grijze rook uit één geopend raam op de 14e verdieping.",
+        "De wind is aan deze zijde van het gebouw duidelijk voelbaar.",
+        "De beheerder meldt dat beide brandweerliften beschikbaar zijn.",
+        "De sprinklerinstallatie is aangesproken, maar het is nog niet bekend of de sprinkler de brand daadwerkelijk onder controle heeft.",
+        "Er zijn twee trappenhuizen en in de commandoruimte is informatie over de installaties beschikbaar.",
+        "Een bewoner die naar buiten komt zegt dat de bewoner van het brandende appartement mogelijk nog binnen is.",
+        "Je hebt je eigen TS; een tweede TS is onderweg en het redvoertuig arriveert vrijwel gelijktijdig."
+      ],
+      prompt: "Wat wordt jouw eerste inzet?"
+    }
+  });
+
+  Object.assign(byId(2), {
+    situationDetail: {
+      time: "14:35 uur",
+      intro: ["De eerste ploeg kan nu naar boven."],
+      observations: [
+        "Brand op verdieping 14.",
+        "Sprinkler geactiveerd; effect nog onbekend.",
+        "Brandweerlift functioneert en er is geen rook- of watermelding in de liftschacht.",
+        "Interne bluswatervoorziening is beschikbaar.",
+        "Er zijn twee trappenhuizen.",
+        "Mogelijke persoon nog in de woning.",
+        "Buiten is nog steeds rook zichtbaar uit het geopende raam."
+      ],
+      prompt: "De brandweerlift staat klaar. Wat laat je de ploeg doen?"
+    }
+  });
+
+  Object.assign(byId(3), {
+    situationDetail: {
+      time: "14:37 uur — verdieping 12",
+      intro: [
+        "De manschappen stappen uit de lift.",
+        "Voor hen zijn twee trappenhuizen zichtbaar. Het betreft een wokkeltrappenhuis: twee afzonderlijke, brandwerend gescheiden trappen die in dezelfde trappenhuisconstructie door het gebouw lopen."
+      ],
+      groups: [
+        { title: "Trappenhuis A", items: [
+          "rookvrij;",
+          "direct in het voorportaal een afnamepunt van de blusleiding;",
+          "de route voelt iets langer richting de vermoedelijke brandwoning."
+        ]},
+        { title: "Trappenhuis B", items: [
+          "eveneens rookvrij;",
+          "geen afnamepunt zichtbaar op verdieping 12;",
+          "ligt volgens de verdiepingstekening iets gunstiger ten opzichte van de brandwoning."
+        ]}
+      ],
+      after: [
+        "De bevelvoerder is beneden/in de commandoruimte nog bezig met aanvullende objectinformatie.",
+        "Dit is nu nadrukkelijk een beslissing die de manschappen op hoogte zelf mogen nemen, mits veilig en verantwoord en de keuze wordt teruggekoppeld/getoetst bij de bevelvoerder."
+      ],
+      prompt: "Wat doet de ploeg?"
+    }
+  });
+
+  const n1=byId(1), n2=byId(2), n3=byId(3);
+  const c=(n,id)=>n.choices.find(x=>x.id===id);
+
+  Object.assign(c(n1,'C'), {
+    consequenceDetail: {
+      time: "14:35 uur — ongeveer 3 minuten na aankomst",
+      paragraphs: [
+        "De chauffeur bevestigt dat de interne bluswatervoorziening beschikbaar is. De gebouwbeheerder toont in de commandoruimte de actuele status van de belangrijkste voorzieningen.",
+        "Je hebt daarmee al vroeg een behoorlijk betrouwbaar beeld van de gebouwvoorzieningen. De eerste ploeg staat echter nog steeds beneden.",
+        "De bewoner die eerder meldde dat mogelijk iemand binnen is, blijft bij zijn verhaal, maar weet het niet zeker. Er is ondertussen nog steeds rook zichtbaar uit het raam op verdieping 14. De tweede TS arriveert."
+      ],
+      bullets: [
+        "sprinkler op verdieping 14 geactiveerd;",
+        "beide brandweerliften functioneren normaal;",
+        "overdrukvoorziening geeft geen storing;",
+        "twee trappenhuizen aanwezig;",
+        "interne bluswaterinstallatie lijkt operationeel."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom is deze keuze verdedigbaar?", paragraphs: [
+          "Vanuit het VRR-handboek is de aandacht voor de gebouwvoorzieningen logisch. Bij hoogbouw hoger dan 70 meter benoemt VRR drie cruciale randvoorwaarden voor effectief brandweeroptreden: een werkende bluswatervoorziening, werkende brandweerliften en goede communicatie.",
+          "Je voorkomt hiermee dat een ploeg eerst twaalf verdiepingen omhoog gaat en daar pas ontdekt dat bijvoorbeeld de stijgleiding niet functioneert of het verkeerde trappenhuis is gekozen.",
+          "Ook het vroeg gebruiken van de commandoruimte past bij de VRR-benadering. Daar kan informatie beschikbaar zijn over BMI, automatische blusinstallatie, ontruimingsalarminstallatie, brandweerliften, overdruk, noodstroom, blusleiding en interne communicatie."
+        ]},
+        { title: "Maar waar zit het nadeel?", paragraphs: [
+          "Tijd. Het VRR-handboek maakt onderscheid tussen een beheersbare brand en een ontwikkelde brand. Bij een beheersbaar scenario kan een snelle redding onder voorwaarden zwaar wegen voordat de volledige inzetorganisatie is opgebouwd.",
+          "Je hebt nu ongeveer drie minuten gebruikt om beneden een vrijwel compleet beeld te krijgen. Dat is organisatorisch sterk, maar als de bewoner werkelijk nog in de brandwoning zit, zijn dat ook drie minuten waarin nog niemand richting de brandverdieping is gegaan."
+        ]}
+      ],
+      assessment: "Verdedigbaar, maar mogelijk te afwachtend.",
+      strengths: ["bluswater vroeg bevestigd", "liftstatus bekend", "commandoruimte benut", "inzettrappenhuis kan bewust worden gekozen", "minder kans op improviseren op hoogte"],
+      risks: ["verticale verkenning komt laat op gang", "mogelijke redding wordt uitgesteld", "informatie beneden vertelt nog niet hoe de situatie op verdieping 14 werkelijk is", "nog onbekend of sprinkler de brand beheerst"],
+      stateEffects: ["tijd +2", "situatiebeeld beneden +2", "situatiebeeld op hoogte 0"]
+    }
+  });
+
+  Object.assign(c(n2,'A'), {
+    consequenceDetail: {
+      time: "14:37 uur",
+      paragraphs: [
+        "De ploeg bereikt verdieping 12 zonder bijzonderheden. Er is geen rook in de lifthal en er is geen water zichtbaar rond de lift.",
+        "De fysieke belasting van de ploeg is beperkt gebleven. Ze hebben hun materiaal nog volledig beschikbaar en zijn nog niet vermoeid door twaalf verdiepingen traplopen.",
+        "De lift blijft onder brandweerbeheer en wordt niet automatisch teruggestuurd."
+      ],
+      bullets: ["lift normaal gefunctioneerd;", "verdieping 12 rookvrij;", "CO-meter: 0 ppm;", "twee trappenhuizen zichtbaar;", "in één van de voorportalen is direct een afnamepunt van de blusleiding te zien."]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom is deze keuze sterk volgens het VRR-handboek?", paragraphs: [
+          "Dit sluit vrijwel één-op-één aan bij de VRR-lijn. Een functionerende brandweerlift is bedoeld om mensen en middelen tijdig op hoogte te krijgen en wordt als belangrijke randvoorwaarde voor een effectieve en veilige inzet beschouwd.",
+          "Voor gebruik wordt gecontroleerd op rook en water, het liftbeheer wordt bij de brandweer geborgd en de lift stopt standaard twee etages onder de vermoedelijke brandetage. Bij brand op verdieping 14 betekent dat verdieping 12.",
+          "De afstand van twee verdiepingen creëert ook ruimte om vóór de brandverdieping zaken te organiseren zoals trappenhuiskeuze, bluswater, bruggenhoofd, communicatie en een eerste beoordeling van rook en CO."
+        ]},
+        { title: "Waarom is verdieping 13 minder sterk?", paragraphs: [
+          "Eén verdieping hoger scheelt weinig looptijd, maar je levert veiligheidsmarge in. Je zit dichter bij mogelijke rookverspreiding, lekkend bluswater en omstandigheden rond het brandcompartiment. De standaard -2 creëert juist herstel- en organisatieruimte."
+        ]},
+        { title: "Waarom niet gewoon de trap?", paragraphs: [
+          "De trap blijft noodzakelijk als de lift niet veilig kan worden gebruikt. Bij een goed functionerende brandweerlift zou volledig traplopen echter een belangrijk voordeel van het gebouw ongebruikt laten. Dat kost tijd en fysieke reserve, wat later doorwerkt in ademlucht, materiaaltransport en aflossing."
+        ]}
+      ],
+      assessment: "Sterke keuze.",
+      stateEffects: ["liftstatus: bruikbaar", "ploegbelasting: laag", "tijd: beperkt opgelopen", "verticale inzetpositie: -2"]
+    }
+  });
+
+  Object.assign(c(n3,'A'), {
+    consequenceDetail: {
+      time: "14:38 uur — verdieping 12",
+      paragraphs: [
+        "De ploeg bevestigt het afnamepunt van de blusleiding in het voorportaal van trappenhuis A. Daardoor kan de slangvoering vanaf de inzetverdieping logisch worden opgebouwd.",
+        "De bevelvoerder bevestigt de keuze over de portofoon.",
+        "Trappenhuis B wordt voorlopig niet gebruikt voor de brandweerinzet. Daarmee ontstaat vanaf dit moment een duidelijke scheiding tussen inzet en ontvluchting/ontruiming.",
+        "De ploeg gaat nog niet direct naar verdieping 14, maar controleert eerst de relatie tussen het afnamepunt en de route richting brandverdieping."
+      ],
+      bullets: ["trappenhuis A: inzet;", "trappenhuis B: zoveel mogelijk behouden voor bewonersstromen en ontruiming."]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom sluit dit sterk aan op het VRR-handboek?", paragraphs: [
+          "Het VRR-handboek legt bij een wokkeltrappenhuis expliciet uit dat de brandweer tijdens de inzet scherp moet afspreken welk trappenhuis wordt gebruikt, zodat de andere trap beschikbaar kan blijven voor ontruiming.",
+          "Bij een wokkeltrappenhuis lopen twee onafhankelijke trappen in één trappenhuisconstructie. Omdat de trappen in elkaar zijn gevlochten, kom je na één verdieping aan de andere zijde van de lift uit.",
+          "VRR schrijft daarom dat je op de inzetverdieping moet kijken in welk trappenhuis het afnamepunt van de blusleiding zit. Als je op -2 een afnamepunt aantreft, kom je via datzelfde trapverloop op de brandverdieping weer uit bij het relevante voorportaal/afnamepunt.",
+          "Dat voorkomt dat je op de brandverdieping nog moet omlopen naar het andere trappenhuis. Zo'n omloop kan betekenen dat je door een onveilig of door rook beïnvloed gebied moet bewegen."
+        ], bullets: [
+          "inzetverdieping standaard brandverdieping -2;",
+          "zoek daar het trappenhuis met het afnamepunt;",
+          "ga via dat trappenhuis omhoog;",
+          "voorkom dat je op de brandverdieping nog moet omlopen naar het andere trappenhuis."
+        ]},
+        { title: "Waarom is keuze B toch niet onzinnig?", paragraphs: [
+          "Trappenhuis B lijkt qua looproute gunstiger richting de woning. Dat is operationeel een begrijpelijke gedachte: een kortere route kan tijd besparen en minder slanglengte vragen.",
+          "Bij hoogbouw wordt die winst minder belangrijk wanneer je daarmee de relatie met de bluswatervoorziening verliest. De routekeuze moet daarom niet alleen worden gebaseerd op de kortste weg naar de woning, maar op de combinatie van veilige route, afnamepunt, brandverdieping, bruikbaarheid als inzetroute en behoud van de andere vluchtweg."
+        ]},
+        { title: "Waarom is keuze C kwetsbaarder?", paragraphs: [
+          "Het splitsen van de ploeg levert sneller informatie op over beide trappenhuizen, maar je gebruikt daarmee direct beide trappenhuizen voor de brandweerinzet.",
+          "Dat is precies wat je bij twee onafhankelijke vluchtwegen zo lang mogelijk wilt vermijden. Het andere trappenhuis moet zo veel mogelijk onbelemmerd beschikbaar blijven voor ontruiming.",
+          "Daarnaast wordt de ploeg tijdelijk uit elkaar gehaald terwijl de daadwerkelijke omstandigheden boven nog niet bekend zijn. Dat hoeft niet per definitie onveilig te zijn, maar levert hier weinig extra op omdat trappenhuis A al rookvrij is, een afnamepunt heeft en een bruikbare inzetroute biedt."
+        ]}
+      ],
+      assessment: "Sterke en goed uitlegbare keuze.",
+      stateEffects: ["bluswater: gunstig georganiseerd", "vluchtweg: rookvrij / beschermd", "situatiebeeld: +1", "logistiek: +1", "trappenhuis A: inzet", "trappenhuis B: beschikbaar voor ontvluchting"],
+      closing: "Didactisch belangrijk: dit is een beslissing van de manschappen op hoogte. De kracht zit niet alleen in de keuze zelf, maar ook in het feit dat deze direct is teruggekoppeld en door de bevelvoerder is bevestigd."
+    }
+  });
+
+  Object.assign(c(n1,'A'), {
+    consequenceDetail: {
+      time: "14:33 uur — verticale verkenning start direct",
+      paragraphs: [
+        "De aanvalsploeg vertrekt vrijwel direct met blus- en toetredingsmateriaal richting verdieping 12. Beneden verzamelt de chauffeur samen met de beheerder de gebouwinformatie.",
+        "De inzet wint tijd richting de mogelijke vermissing, maar de ploeg gaat omhoog terwijl het inzettrappenhuis, de exacte koppeling met de stijgleiding en de invloed van de wind nog niet volledig zijn bevestigd."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom is deze keuze begrijpelijk?", paragraphs: [
+          "De melding bevat een mogelijke persoon in de brandwoning. Vanuit reddingsdruk is het logisch dat je geen minuten wilt verliezen aan een volledig uitgewerkt objectbeeld voordat iemand richting de brand gaat.",
+          "De keuze gebruikt de beschikbare capaciteit parallel: de ploeg beweegt omhoog terwijl beneden informatie wordt verzameld."
+        ]},
+        { title: "Waar zit de kwetsbaarheid?", paragraphs: [
+          "Hoogbouw is sterk afhankelijk van de juiste combinatie van lift, inzettrappenhuis, stijgleiding, communicatie en rookvrije terugtrekroute. Als één van die onderdelen boven anders blijkt dan aangenomen, moet de ploeg corrigeren nadat zij al op hoogte is.",
+          "De wind aan de brandgevel is bovendien nog niet tactisch gekoppeld aan de binneninzet. Bij een later geopende deur kan dat relevant worden voor flowpath en Wind Driven Fire."
+        ]}
+      ],
+      assessment: "Verdedigbaar vanuit reddingsdruk, maar kwetsbaarder georganiseerd.",
+      strengths: ["snelle verticale verkenning", "tijdwinst richting mogelijke redding", "beneden blijft informatie-inwinning doorgaan"],
+      risks: ["inzettrappenhuis nog niet bevestigd", "bluswaterroute nog niet volledig bevestigd", "windinvloed nog onvoldoende gekoppeld aan inzet"],
+      stateEffects: ["situatiebeeld: -1", "tijd: nauwelijks extra vertraging", "latere verkeerde trapkeuze kan extra tijd kosten"]
+    }
+  });
+
+  Object.assign(c(n1,'B'), {
+    consequenceDetail: {
+      time: "14:33 uur — informatie wordt parallel opgebouwd",
+      paragraphs: [
+        "De eerste ploeg gaat naar verdieping 12 voor een gerichte verkenning. Beneden blijft voldoende capaciteit beschikbaar om met de beheerder de stijgleiding, gebouwvoorzieningen en het inzettrappenhuis te bevestigen.",
+        "Daardoor ontstaat vrijwel gelijktijdig een beeld op hoogte en een betrouwbaarder objectbeeld beneden."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom is dit een robuuste start?", paragraphs: [
+          "Deze keuze voorkomt dat voorbereiding en verticale verkenning na elkaar plaatsvinden. Ze lopen parallel. Dat is belangrijk omdat hoogbouw zowel tijdkritisch als informatie-intensief is.",
+          "De ploeg kan op -2 actuele omstandigheden melden, terwijl beneden de kritieke voorzieningen en route worden bevestigd. Daardoor ontstaat snel een gedeeld beeld zonder de inzet volledig stil te zetten."
+        ]},
+        { title: "Wat blijft aandacht vragen?", paragraphs: [
+          "Ook bij deze keuze mag de ploeg op hoogte niet automatisch doorstoten. De informatie uit de commandoruimte moet worden gekoppeld aan wat daadwerkelijk op verdieping 12 en hoger wordt waargenomen."
+        ]}
+      ],
+      assessment: "Sterke, evenwichtige start.",
+      strengths: ["tijd en voorbereiding lopen parallel", "snel situatiebeeld op hoogte", "beneden blijft capaciteit voor water en objectinformatie"],
+      risks: ["vereist strakke terugmelding tussen ploeg en bevelvoerder"],
+      stateEffects: ["situatiebeeld: +1", "tijdverlies: beperkt", "verticale verkenning: vroeg gestart"]
+    }
+  });
+
+  Object.assign(c(n2,'B'), {
+    consequenceDetail: {
+      time: "14:36 uur — uitstappen op verdieping 13",
+      paragraphs: [
+        "De ploeg wint één verdieping loopafstand en staat sneller dichter bij de brand. Tegelijk ligt de uitstapplaats dichter bij mogelijke rookverspreiding, wateroverlast en verstoring rond de brandverdieping.",
+        "De ploeg heeft minder afstand om een veilige inzetbasis en terugtrekroute te organiseren voordat zij de brandverdieping nadert."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom lijkt deze keuze aantrekkelijk?", paragraphs: [
+          "De gedachte is eenvoudig: één verdieping minder lopen betekent iets sneller bij de brand en minder fysieke belasting. Bij een mogelijke vermissing klinkt dat logisch."
+        ]},
+        { title: "Waarom wijkt dit af van de VRR-lijn?", paragraphs: [
+          "VRR hanteert standaard brandverdieping -2 voor het uitstappen met de brandweerlift. Die afstand is niet willekeurig; zij geeft ruimte voor beoordeling, trappenhuiskeuze, bluswateropbouw en organisatie buiten de directe invloed van de brandverdieping.",
+          "Door op -1 uit te stappen, lever je voor geringe tijdwinst een deel van die veiligheids- en herstelmarge in."
+        ]}
+      ],
+      assessment: "Ongunstig in dit scenario.",
+      strengths: ["iets kortere looproute"],
+      risks: ["minder veiligheidsmarge", "dichter bij rook en water", "minder ruimte voor organisatie op hoogte"],
+      stateEffects: ["verticale inzetpositie: -1", "risico liftomgeving: verhoogd"]
+    }
+  });
+
+  Object.assign(c(n2,'C'), {
+    consequenceDetail: {
+      time: "14:35 uur — ploeg kiest de trap",
+      paragraphs: [
+        "De ploeg blijft volledig onafhankelijk van de lift, maar moet twaalf verdiepingen stijgen met de noodzakelijke middelen.",
+        "De inzet loopt daardoor vertraging op en de fysieke belasting ontstaat voordat de feitelijke brandbestrijding begint."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Wanneer is dit wel logisch?", paragraphs: [
+          "De trap is het noodzakelijke alternatief wanneer de brandweerlift door rook, water, vuur of technisch falen niet betrouwbaar is. Dan moet de inzet daarop worden aangepast."
+        ]},
+        { title: "Waarom is het hier minder sterk?", paragraphs: [
+          "In deze situatie is de lift gecontroleerd en bruikbaar. Door hem niet te gebruiken, wordt beschikbare gebouwtechniek niet benut en neemt ploegbelasting vroeg toe.",
+          "VRR benoemt bij liftuitval boven de tiende verdieping expliciet extra traplooptijd en de noodzaak rekening te houden met personele capaciteit en materiaalgewicht."
+        ]}
+      ],
+      assessment: "Veilig mogelijk, maar inefficiënt zolang de lift betrouwbaar is.",
+      strengths: ["onafhankelijk van lifttechniek"],
+      risks: ["tijdverlies", "hogere fysieke belasting", "meer ademlucht- en logistieke druk later in de inzet"],
+      stateEffects: ["ploegbelasting: +2", "tijd: +2"]
+    }
+  });
+
+  Object.assign(c(n3,'B'), {
+    consequenceDetail: {
+      time: "14:38 uur — route via trappenhuis B",
+      paragraphs: [
+        "De ploeg kiest de op het eerste gezicht kortere route richting de woning. Op verdieping 13 blijkt het afnamepunt echter niet logisch aan te sluiten op de gekozen route.",
+        "De ploeg moet extra zoeken en omlopen. De slangvoering wordt lastiger en de eerder veronderstelde tijdwinst verdwijnt."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Waarom is deze keuze niet onlogisch?", paragraphs: [
+          "Een kortere en rustige route naar de brandwoning kan aantrekkelijk zijn. Zeker onder tijdsdruk is het logisch dat een ploeg afstand en bereikbaarheid meeweegt."
+        ]},
+        { title: "Waarom is de keuze toch kwetsbaar?", paragraphs: [
+          "Bij een wokkeltrappenhuis moet de route ook worden gekoppeld aan het afnamepunt van de blusleiding en aan het behouden van een tweede vluchtweg. Alleen de kortste looproute kiezen is daarom onvoldoende.",
+          "Als de wateraansluiting pas hoger of aan de andere zijde logisch wordt, ontstaat omloop en complexere slangvoering op een plek waar rookinvloed kan toenemen."
+        ]}
+      ],
+      assessment: "Verdedigbaar gedacht, maar onvoldoende gekoppeld aan de bluswatervoorziening.",
+      strengths: ["kortere route lijkt aanvankelijk aantrekkelijk"],
+      risks: ["extra omloop", "lastiger slangmanagement", "minder duidelijke scheiding tussen inzetlogica en vluchtweglogica"],
+      stateEffects: ["tijd: +1", "logistiek: -1"]
+    }
+  });
+
+  Object.assign(c(n3,'C'), {
+    consequenceDetail: {
+      time: "14:38 uur — beide trappenhuizen worden verkend",
+      paragraphs: [
+        "De ploeg verdeelt zich kort over beide trappenhuizen. Daardoor komt sneller informatie beschikbaar over beide routes.",
+        "Tegelijk worden vanaf dit moment beide trappenhuizen onderdeel van de brandweerinzet. De scheiding tussen inzetroute en vlucht-/ontruimingsroute wordt minder duidelijk."
+      ]
+    },
+    debrief: {
+      sections: [
+        { title: "Wat levert deze keuze op?", paragraphs: [
+          "Je krijgt snel informatie over beide routes. In een onduidelijk gebouw kan dat op zichzelf waardevol zijn."
+        ]},
+        { title: "Waarom is dit hier kwetsbaarder?", paragraphs: [
+          "VRR benadrukt juist dat bij een wokkeltrappenhuis scherp wordt afgesproken welk trappenhuis voor de brandweerinzet wordt gebruikt, zodat het andere beschikbaar blijft voor ontruiming.",
+          "Spontane ontruiming kan al vóór aankomst van de brandweer zijn begonnen. Door beide trappenhuizen vroeg te belasten, wordt latere scheiding van bewonersstromen, materiaaltransport en brandweerinzet lastiger.",
+          "Bovendien wordt de ploeg tijdelijk gesplitst terwijl één rookvrije route met een zichtbaar afnamepunt al een duidelijke inzetmogelijkheid biedt."
+        ]}
+      ],
+      assessment: "Informatief, maar operationeel kwetsbaarder.",
+      strengths: ["snelle vergelijking van beide routes"],
+      risks: ["beide vluchtwegen worden belast", "ploeg tijdelijk gesplitst", "spontane ontruiming wordt lastiger te organiseren"],
+      stateEffects: ["vluchtwegbescherming: -1", "later spontane ontruiming: complexer"]
+    }
+  });
+
+})();

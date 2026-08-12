@@ -28,3 +28,6 @@ Open `index.html` in een moderne browser. Er is geen server of installatie nodig
 
 ## Versie met uitgebreide nabespreking
 Na ieder keuzemoment toont de app eerst het operationele gevolg. Daarna kan de deelnemer een korte duiding openen of direct kiezen voor **Verdiepende uitleg nu bekijken**. Na afloop bevat de nabespreking per gemaakte keuze de volledige VRR-gebaseerde duiding en een vergelijking met de twee alternatieven. VRICOL wordt uitsluitend als didactisch vergelijkingsmodel gebruikt.
+
+## Versie 3 – uitgebreide keuzemomenten
+Keuzemomenten 1 t/m 3 zijn inhoudelijk gereviewd en tonen nu dezelfde uitgebreide casusbeschrijving en verdiepende nabespreking als in de inhoudelijke review: rijkere situatie, uitgebreider operationeel gevolg, bronduiding, afweging van alternatieven, beoordeling en de gevolgen die de casus onthoudt. De overige momenten blijven voorlopig op de eerdere v2-uitwerking totdat ze inhoudelijk zijn doorgelopen.

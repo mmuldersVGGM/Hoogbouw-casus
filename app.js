@@ -17,6 +17,37 @@ function linkTerms(text){
  return s;
 }
 function paragraphs(text){return String(text||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${linkTerms(p)}</p>`).join('');}
+
+function richSituation(n){
+ if(!n.situationDetail) return linkTerms(n.situation);
+ const d=n.situationDetail;
+ let h='';
+ if(d.time) h+=`<div class="scenarioTime">${linkTerms(d.time)}</div>`;
+ (d.intro||[]).forEach(x=>h+=`<p>${linkTerms(x)}</p>`);
+ if(d.observations?.length) h+=`<ul class="scenarioList">${d.observations.map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul>`;
+ if(d.groups?.length) h+=`<div class="scenarioGroups">${d.groups.map(g=>`<div class="scenarioGroup"><h3>${esc(g.title)}</h3><ul>${(g.items||[]).map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul></div>`).join('')}</div>`;
+ (d.after||[]).forEach(x=>h+=`<p>${linkTerms(x)}</p>`);
+ if(d.prompt) h+=`<div class="scenarioPrompt">${linkTerms(d.prompt)}</div>`;
+ return h;
+}
+function consequenceHtml(c){
+ if(!c.consequenceDetail) return linkTerms(c.consequence);
+ const d=c.consequenceDetail; let h='';
+ if(d.time) h+=`<div class="scenarioTime">${linkTerms(d.time)}</div>`;
+ (d.paragraphs||[]).forEach((x,i)=>{h+=`<p>${linkTerms(x)}</p>`; if(i===0 && d.bullets?.length) h+=`<ul class="scenarioList">${d.bullets.map(v=>`<li>${linkTerms(v)}</li>`).join('')}</ul>`;});
+ if(!(d.paragraphs||[]).length && d.bullets?.length) h+=`<ul class="scenarioList">${d.bullets.map(v=>`<li>${linkTerms(v)}</li>`).join('')}</ul>`;
+ return h;
+}
+function detailedDebrief(c){
+ const d=c.debrief; if(!d) return paragraphs(c.deepDive||c.rationale);
+ let h='';
+ (d.sections||[]).forEach(sec=>{h+=`<section class="debriefSection"><h3>${esc(sec.title)}</h3>`;(sec.paragraphs||[]).forEach(x=>h+=`<p>${linkTerms(x)}</p>`);if(sec.bullets?.length)h+=`<ul>${sec.bullets.map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul>`;h+='</section>';});
+ if(d.assessment){h+=`<section class="assessmentBox"><div class="small">BEOORDELING</div><h3>${esc(d.assessment)}</h3>`;if(d.strengths?.length)h+=`<div class="assessmentCols"><div><strong>Sterk</strong><ul>${d.strengths.map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul></div>${d.risks?.length?`<div><strong>Kwetsbaar / aandachtspunt</strong><ul>${d.risks.map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul></div>`:''}</div>`;h+='</section>';}
+ if(d.stateEffects?.length)h+=`<section class="stateBox"><strong>Gevolgen die de casus onthoudt</strong><div class="stateChips">${d.stateEffects.map(x=>`<span>${linkTerms(x)}</span>`).join('')}</div></section>`;
+ if(d.closing)h+=`<div class="roleBox">${linkTerms(d.closing)}</div>`;
+ return h;
+}
+
 function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.addEventListener('click',()=>showTerm(el.dataset.term)));}
 function openModal(html){$('#modalContent').innerHTML=html; $('#modal').classList.remove('hidden'); bindTerms($('#modalContent'));}
 function showTerm(term){const g=S.glossary[term]; if(!g)return; openModal(`<h2>${esc(term)}</h2><p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>`);}
@@ -28,7 +59,7 @@ function renderNode(){
  $('#progressText').textContent=`Keuzemoment ${n.id} van ${S.nodes.length}`; $('#progressBar').style.width=`${(n.id-1)/S.nodes.length*100}%`;
  $('#roleBadge').textContent=n.role; $('#roleNote').textContent=n.roleNote;
  $('#incidentTime').textContent=`INCIDENT • beslismoment ${n.id}`; $('#nodeTitle').textContent=n.title;
- $('#situation').innerHTML=linkTerms(n.situation); bindTerms($('#situation'));
+ $('#situation').innerHTML=richSituation(n); bindTerms($('#situation'));
  choicePanel.innerHTML=''; resultPanel.classList.add('hidden'); resultPanel.innerHTML='';
  n.choices.forEach(c=>{const b=document.createElement('button'); b.className='choiceBtn'; b.innerHTML=`<span class="choiceKey">${c.id}</span><span class="choiceText">${linkTerms(c.text)}</span>`; b.addEventListener('click',()=>choose(n,c)); choicePanel.appendChild(b); bindTerms(b);});
  choicePanel.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});
@@ -54,10 +85,9 @@ function deepDiveHtml(n,c){
    <div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
    <h3>Jouw keuze ${c.id}</h3>
    <p><strong>${linkTerms(c.text)}</strong></p>
-   <div class="deepText">${paragraphs(c.deepDive||c.rationale)}</div>
+   <div class="deepText">${detailedDebrief(c)}</div>
    <div class="roleBox"><strong>Rol in deze casus</strong><br>${esc(n.roleNote)}</div>
-   <h3>Vergelijking met de andere opties</h3>
-   <div class="compareGrid">${alternatives}</div>
+   ${c.debrief?'':`<h3>Vergelijking met de andere opties</h3><div class="compareGrid">${alternatives}</div>`}
    <div class="sourceNote"><strong>Brongebruik:</strong> de inhoudelijke duiding is geparafraseerd uit het VRR-handboek Brandbestrijding Hoogbouw hoger dan 70 meter (2024). VRICOL wordt hier alleen gebruikt als didactisch vergelijkingsmodel en niet als vastgestelde VGGM-inzetprocedure.</div>
  </div>`;
 }
@@ -70,7 +100,7 @@ function choose(n,c){
  let d=delayed.map(x=>`<div class="delayed"><strong>Later gevolg van eerdere keuzes</strong><br>${linkTerms(x)}</div>`).join('');
  resultPanel.innerHTML=`<div class="resultCard">
    <div class="small">GEVOLG VAN JE KEUZE</div><h3>${esc(n.title)}</h3>
-   <div class="consequence">${linkTerms(c.consequence)}</div>${d}
+   <div class="consequence">${consequenceHtml(c)}</div>${d}
    <div class="feedbackActions">
      <button class="feedbackToggle" id="whyBtn">Korte duiding</button>
      <button class="deepDiveBtn" id="deepBtn">Verdiepende uitleg nu bekijken</button>
@@ -104,7 +134,7 @@ function historyItem(c){
      <p><strong>Jouw besluit:</strong> ${linkTerms(c.text)}</p>
      <p><strong>Operationeel gevolg:</strong> ${linkTerms(c.consequence)}</p>
      <div class="compactDuiding"><strong>Korte duiding:</strong> ${linkTerms(c.rationale)}</div>
-     <div class="fullDebrief"><h4>Uitgebreide VRR-duiding</h4><div class="sourceFrame">${paragraphs(c.sourceFrame||'')}</div>${paragraphs(c.deepDive||c.rationale)}<div class="roleBox"><strong>Rol:</strong> ${esc(c.role)} — ${esc(c.roleNote)}</div></div>
+     <div class="fullDebrief"><h4>Uitgebreide VRR-duiding</h4><div class="sourceFrame">${paragraphs(c.sourceFrame||'')}</div>${detailedDebrief(choice)}<div class="roleBox"><strong>Rol:</strong> ${esc(c.role)} — ${esc(c.roleNote)}</div></div>
      <button class="reviewModalBtn" data-node="${c.node}" data-choice="${c.choice}">Open volledige vergelijking A/B/C</button>
    </div>
  </details>`;
