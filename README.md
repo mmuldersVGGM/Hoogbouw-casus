@@ -47,3 +47,7 @@ Keuzemomenten 4 t/m 18 hebben nu dezelfde uitgebreide situatieschets, operatione
 
 ## v6 – VGGM/BPBB-systemen
 Deze versie voegt een tweede didactische laag toe naast de VRR-bronduiding. Per keuzemoment worden relevante VGGM/BPBB-systemen zichtbaar als aanklikbare chips: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM, deurcontrole, anti-ventilatie, rookgaskoeling/straalpijptechniek, laag voortbewegen, snelle toevoer, snelle aanval, O-bundel, smokestopper en hoogtetas. De middelen zijn voor deze fictieve casus als beschikbaar gemodelleerd; dit document stelt geen regionaal beleid vast.
+
+
+## v8 – BPBB-systemen uit train-de-trainerdocument
+Toegevoegd: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, LD op hoogte, klepel/straalpijp, Do’s & Don’ts LD/O-bundels en O-bundel oprollen. Inclusief afbeeldingen uit het BPBB-document.

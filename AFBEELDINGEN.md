@@ -26,3 +26,13 @@ De afbeeldingen in `assets/vggm/` zijn geselecteerd uit de aangeleverde PowerPoi
 Coandă-effect, Stack-effect, Reverse stack, Wind Driven Fire, Flowpath, Bruggenhoofd, Transitional attack, Offensief binnen, Defensief binnen en Smokestopper hebben een gekoppelde afbeelding in het begrippenvenster.
 
 De afbeeldingen zijn didactisch gekoppeld; niet ieder beeld toont letterlijk het fictieve incident in Rivierstaete.
+
+
+## BPBB train-de-trainer afbeeldingen
+- Snelle lijn – `assets/bpbb/snelle_lijn_systeem1.png`
+- Snelle toevoer – `assets/bpbb/snelle_toevoer_systeem2.png`
+- Transporttas – `assets/bpbb/transporttas_systeem3.png`
+- Droge stijgleiding binnen / hoogtetas – `assets/bpbb/droge_stijgleiding_binnen.png`
+- Verdeelstuk buitenom – `assets/bpbb/verdeelstuk_buitenom_1.png`
+- Do’s & Don’ts – `assets/bpbb/dos_donts.png`
+- O-bundel oprollen / bundlewheel – `assets/bpbb/bundlewheel.jpeg`

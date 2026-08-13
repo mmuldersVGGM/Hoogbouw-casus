@@ -878,6 +878,8 @@ window.SCENARIO = {
       choice.deepDive = d[choice.id] || choice.rationale;
     });
   });
+  n3.situationDetail.after = (n3.situationDetail.after||[]).concat(["De ploeg neemt in de keuze ook systeem 4 binnen mee: werken met de droge stijgleiding, hoogtetas en O-bundel op hoogte. De routekeuze bepaalt dus tegelijk waar de aanvalslijn, het afnamepunt en de vluchtweg elkaar raken."]);
+  n4.situationDetail.after = (n4.situationDetail.after||[]).concat(["Bij het bruggenhoofd wordt de hoogtetas bewust gepositioneerd: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw horen niet willekeurig bij de ploeg, maar op de plek waar ze inzet en logistiek ondersteunen."]);
 })();
 
 
@@ -1427,47 +1429,57 @@ window.SCENARIO = {
     "FABCM": {title:"FABCM", text:"FABCM ondersteunt commandovoering: Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring. In deze casus wordt het vooral zichtbaar bij heroverwegingen: actief afwijkende feiten zoeken, betekenis geven, besluiten, opdrachten helder communiceren en controleren of het effect wordt bereikt."},
     "Deurcontrole": {title:"Deurcontrole", text:"Beoordeel vóór openen wat de deur, druk, warmte en rookstroming vertellen. Open zo beperkt en gecontroleerd mogelijk en koppel de uitkomst aan het inzetplan."},
     "Anti-ventilatie": {title:"Anti-ventilatie", text:"Beperk ongewenste luchttoevoer en rookafvoer door openingen beheerst te houden. Bij winddruk en stack-effect is het voorkomen van een ongecontroleerde flowpath extra belangrijk."},
-    "Rookgaskoeling": {title:"Rookgaskoeling / straalpijptechniek", text:"Stem de straalpijptechniek af op het brand- en rookbeeld. Koeling is geen automatische handeling: doel, bereik, druppelverdeling, positie en beschikbare watercapaciteit moeten passen bij de situatie."},
+    "Rookgaskoeling": {title:"Rookgaskoeling / straalpijptechniek", text:"Stem de straalpijptechniek af op het brand- en rookbeeld. In het BPBB-train-de-trainerdocument wordt bij snelle lijn en snelle toevoer benoemd: tot aan de klepel circa 200 l/min en voorbij de klepel circa 450 l/min. Rookgaskoeling met 200 l/min wordt daarbij als voldoende benoemd. Gebruik 450 l/min dus niet automatisch voor rookgaskoeling als dat overkill is."},
+    "Klepel / straalpijp": {title:"Klepel / straalpijp", text:"Bij de snelle lijn en snelle toevoer wordt het klepelgebruik expliciet uitgelegd: tot aan de klepel circa 200 l/min; voorbij de klepel circa 450 l/min. In deze casus is dat relevant bij rookgaskoeling, koelend vermogen en voorkomen dat een kleine inzet ongemerkt een zware water-/logistieke belasting wordt."},
     "Laag voortbewegen": {title:"Laag voortbewegen", text:"Bij hitte en slecht zicht beweegt de ploeg laag om onder de heetste rooklaag te blijven, het thermisch beeld beter te benutten en de terugweg beheersbaar te houden."},
-    "Snelle toevoer": {title:"Snelle toevoer", text:"In deze fictieve casus is de snelle toevoer beschikbaar om de watervoorziening naar de gebouwinstallatie snel en eenduidig op te bouwen. De gebouwblusleiding blijft daarbij een kritieke schakel die gecontroleerd moet worden."},
+    "Snelle lijn": {title:"Snelle lijn – systeem 1", text:"Systeem uit het train-de-trainerdocument: snelle lijn bij TS binnen circa 20 meter van het brandadres, bijvoorbeeld bij TA, portiekflat of auto’s. Eerst volledig uitlopen, daarna rustig druk opbouwen op de straal. Bij invouwen moet alle lucht eruit, anders past de lijn niet goed terug in de TS."},
+    "Snelle toevoer": {title:"Snelle toevoer – systeem 2", text:"Systeem uit het train-de-trainerdocument: snelle toevoer wanneer de afstand langer is dan circa 40 meter of wanneer mogelijk meerdere O-bundels nodig zijn, bijvoorbeeld bij woningen en portiekflats. Eerst volledig uitlopen, daarna rustig druk opbouwen op het verdeelstuk. Praktische werklijn: eerst vullen met circa 2,5 bar; als water op het verdeelstuk staat ophogen naar 8 bar."},
     "Snelle aanval": {title:"Snelle aanval", text:"In deze fictieve casus is de snelle aanval beschikbaar voor een snelle opbouw van de LD-aanvalslijn vanaf het gekozen afnamepunt. Snelheid is alleen winst als voldoende koelend vermogen, back-up en een veilige route zijn geborgd."},
-    "O-bundel": {title:"O-bundel", text:"De O-bundel ondersteunt een compacte slangopbouw op hoogte. In deze casus wordt hij gebruikt vanaf het gekozen afnamepunt en zo geplaatst dat de inzet- en vluchtroute zo min mogelijk wordt belast."},
+    "O-bundel": {title:"O-bundel", text:"Het BPBB-document benoemt: bundel uitvouwen tot O, rustig laten ontvouwen tot uiteindelijke druk van 8 bar. Binnenzijde is de straalpijpzijde; buitenzijde is de watertoevoer. Bij twee O-bundels: binnenzijde verlengbundel naar buitenzijde aanvalsbundel, zodat een ‘bril’ ontstaat. In deze casus helpt dit om compact op hoogte te werken zonder vluchtwegen onnodig te blokkeren."},
+    "O-bundel oprollen": {title:"O-bundel oprollen / inzetgereed maken", text:"Het document waarschuwt voor verkeerd opruimen: niet met vouwen over de grond trekken, want dat geeft lekkage. Slangen eerst onder druk strekken, daarna pas oprollen; voor O-bundels met plank/oprolsysteem of bundlewheel. Dit is vooral relevant bij logistiek en langdurige inzet: inzetgereed maken is onderdeel van het systeem, niet alleen opruimen achteraf."},
+    "Transporttas": {title:"Transporttas – systeem 3", text:"Systeem uit het document voor grote inzetdiepten, zoals appartementencomplex, verzorgingstehuis, panden met inpandige galerij en ziekenhuizen. Werkprincipe: bepaal waar de O-bundels komen, bouw vanaf de O-bundels op naar de TS, transporttas koppelen en uitlopen. Neem bij grote inzetdiepte voldoende transporttassen mee; het document noemt als aandachtspunt: schat de inzetdiepte in en neem voldoende transporttassen mee (#4)."},
+    "Droge stijgleiding binnen": {title:"Droge stijgleiding – systeem 4 binnen", text:"Systeem uit het document voor hoogbouw tot 70 meter met een betrouwbare stijgleiding. Aandachtspunten: opstelplaats voertuig, taakverdeling nummers 1 t/m 4, werken met inhoud hoogtetas, O-bundels op galerij en beperkte ruimte. Houd vluchtwegen intact. Ontluchten van de stijgleiding kan via de pomp of via aangekoppeld verdeelstuk; via verdeelstuk is snel."},
+    "Verdeelstuk buitenom": {title:"Verdeelstuk buitenom – systeem 4 buiten", text:"Systeem uit het document voor hoogbouw tot ongeveer de 8e etage zonder droge stijgleiding, bijvoorbeeld appartementencomplex met galerij of woonflat met galerij. Hierbij wordt met de hoogtetas en O-bundels gewerkt; bij gebruik van een verlengbundel geldt: buitenzijde naar buitenzijde koppelen. Probeer vluchtwegen intact te houden."},
+    "LD op hoogte": {title:"LD op hoogte", text:"Overkoepelende BPBB-laag uit het document: werken met O-bundels, snelle lijn, snelle toevoer en LD op hoogte. In deze hoogbouwcasus betekent dit dat het blussysteem niet los staat van routekeuze, stijgleiding, beperkte ruimte, vluchtwegbehoud, logistiek en ploegbelasting."},
+    "Do’s & Don’ts LD/O-bundels": {title:"Do’s & Don’ts LD/O-bundels", text:"Het document noemt praktische fouten en juiste werkwijzen: geen water op snelle lijn/sneller toevoer zolang die nog niet uit het voertuig is; niet met 8 bar direct vullen; niet drukloos met water slepen waardoor vouwen over de grond lek raken; snelle lijn/sneller toevoer eerst met circa 2,5 bar vullen en daarna naar 8 bar; rookgaskoeling tot aan de klepel met circa 200 l/min."},
     "Smokestopper": {title:"Smokestopper / Smoke Stopper", text:"De smokestopper is in deze casus beschikbaar. Hij ondersteunt deurmanagement en anti-ventilatie door rookuitstroom via de deuropening te beperken terwijl gecontroleerde inzet mogelijk blijft."},
-    "Hoogtetas": {title:"Hoogtetas", text:"De hoogtetas bundelt materiaal dat op hoogte nodig kan zijn. In deze casus wordt hij onderdeel van de logistieke planning: wat moet direct mee, wat hoort op het bruggenhoofd en wat kan later worden aangevoerd?"}
+    "Hoogtetas": {title:"Hoogtetas", text:"Het train-de-trainerdocument benoemt als inhoud voor werken op hoogte: Y-verdeelstuk, koppelslang van circa 1 meter, slangophouders, blinddekselsleutels en touw. In deze casus wordt de hoogtetas onderdeel van de logistieke planning: wat moet direct mee, wat hoort op het bruggenhoofd en wat kan beneden blijven?"}
   };
   const systemsByNode = {
     1:["Kenmerkenschema","RSTV","CAN"],
     2:["CAN"],
-    3:["Kenmerkenschema","CAN","Snelle aanval","O-bundel"],
-    4:["FABCM","CAN","Hoogtetas"],
-    5:["Deurcontrole","Anti-ventilatie","Smokestopper","RSTV"],
-    6:["RSTV","Anti-ventilatie","Rookgaskoeling","CAN"],
-    7:["Kwadrantenmodel","Snelle toevoer","Snelle aanval","O-bundel","Rookgaskoeling"],
-    8:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM"],
-    9:["Kenmerkenschema","Kwadrantenmodel","CAN"],
-    10:["Anti-ventilatie","RSTV","CAN"],
+    3:["Kenmerkenschema","CAN","Droge stijgleiding binnen","Hoogtetas","O-bundel"],
+    4:["FABCM","CAN","Hoogtetas","Transporttas"],
+    5:["Deurcontrole","Anti-ventilatie","Smokestopper","RSTV","Snelle aanval","O-bundel"],
+    6:["RSTV","Anti-ventilatie","Rookgaskoeling","Klepel / straalpijp","CAN"],
+    7:["Kwadrantenmodel","LD op hoogte","Snelle lijn","Snelle toevoer","O-bundel","Transporttas","Rookgaskoeling","Do’s & Don’ts LD/O-bundels"],
+    8:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","LD op hoogte"],
+    9:["Kenmerkenschema","Kwadrantenmodel","CAN","Snelle aanval"],
+    10:["Anti-ventilatie","RSTV","CAN","Smokestopper"],
     11:["CAN","FABCM"],
     12:["RSTV","Anti-ventilatie","CAN"],
     13:["CAN","FABCM"],
-    14:["CAN","FABCM"],
-    15:["Hoogtetas","FABCM","CAN"],
-    16:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","CAN"],
+    14:["CAN","FABCM","Droge stijgleiding binnen","Transporttas"],
+    15:["Hoogtetas","Transporttas","O-bundel oprollen","Do’s & Don’ts LD/O-bundels","FABCM","CAN"],
+    16:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","CAN","Smokestopper"],
     17:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM"],
-    18:["FABCM","Kenmerkenschema","RSTV","Kwadrantenmodel","CAN"]
+    18:["FABCM","Kenmerkenschema","RSTV","Kwadrantenmodel","CAN","Do’s & Don’ts LD/O-bundels"]
   };
   S.nodes.forEach(n => n.systems = systemsByNode[n.id] || []);
-  S.meta.principles.splice(3,0,"VGGM/BPBB-systemen worden als tweede didactische laag toegepast naast de VRR-bronduiding: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM en de beschikbare aanvalsmiddelen.");
+  S.meta.principles.splice(3,0,"VGGM/BPBB-systemen worden als tweede didactische laag toegepast naast de VRR-bronduiding: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM én de systemen uit Train de trainer BPBB 2026: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, O-bundels en hoogtetas.");
 
   const n5=S.nodes.find(n=>n.id===5);
   n5.situationDetail.after = (n5.situationDetail.after||[]).concat(["De ploeg heeft een smokestopper en de benodigde LD-aanvalsmiddelen bij zich. Deuropening, luchttoevoer en rookstroming worden daarom onderdeel van de inzetbeslissing en niet alleen van de toetreding."]);
   const n6=S.nodes.find(n=>n.id===6);
   n6.situationDetail.after = (n6.situationDetail.after||[]).concat(["De manschappen koppelen hun RSTV-waarnemingen via een korte CAN-terugmelding aan de bevelvoerder: veranderende condities, huidige actie en behoefte aan extra koelend vermogen/back-up."]);
   const n7=S.nodes.find(n=>n.id===7);
+  n7.situationDetail.after = (n7.situationDetail.after||[]).concat(["Het BPBB-document voegt hier praktische systeemkeuzes aan toe: snelle lijn bij korte afstand, snelle toevoer bij langere afstand of meerdere O-bundels, transporttas bij grote inzetdiepte en droge stijgleiding binnen bij betrouwbare hoogbouwvoorziening."]);
   n7.situationDetail.after = (n7.situationDetail.after||[]).concat(["Voor deze fictieve VGGM-casus zijn snelle toevoer, snelle aanval en O-bundels beschikbaar. De keuze gaat daarom niet alleen over 'welke slang', maar over snelheid versus koelend vermogen, back-up en een beheersbare slangvoering op hoogte."]);
   n7.choices[0].text="Snelle toevoer naar de gebouwblusleiding borgen en vanaf het gekozen afnamepunt twee LD-aanvalsmogelijkheden opbouwen, met O-bundel/sneller aanvalssysteem voor de primaire lijn en een volwaardige back-up vóór hernieuwde toetreding.";
   n7.choices[1].text="Snelle toevoer borgen en met één snel opgebouwde LD-aanvalslijn/O-bundel toetreden; de tweede lijn wordt tijdens de inzet opgebouwd.";
   n7.choices[2].text="Kiezen voor de lichtste en snelst hanteerbare aanval, met minder nadruk op tweede lijn/back-up, omdat het om één appartement gaat.";
   const n15=S.nodes.find(n=>n.id===15);
+  n15.situationDetail.after = (n15.situationDetail.after||[]).concat(["Het logistieke moment gaat nu ook over inzetgereed houden van het LD/O-bundelsysteem: niet met vouwen over de grond trekken, slangen onder druk strekken en O-bundels met het oprolsysteem/bundlewheel weer bruikbaar maken."]);
   n15.situationDetail.after = (n15.situationDetail.after||[]).concat(["De hoogtetas en overige materialen worden nu bewust verdeeld tussen wat op het bruggenhoofd direct nodig is en wat beneden in de logistieke hub kan blijven. Daarmee wordt ook het mee te nemen gewicht onderdeel van de aflossingsplanning."]);
   const n18=S.nodes.find(n=>n.id===18);
   n18.situationDetail.after = (n18.situationDetail.after||[]).concat(["Dit moment wordt tevens gebruikt als FABCM-heroverweging: welke afwijkende feiten zijn erbij gekomen, wat betekenen die, welk besluit volgt, wie moet dat weten en welk effect moet daarna worden gemonitord?"]);

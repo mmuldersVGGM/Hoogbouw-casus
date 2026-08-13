@@ -40,6 +40,19 @@ const MEDIA={
     'Offensief binnen':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als tactisch denkkader',source:'VGGM lesmateriaal – slide 67'},
     'Defensief binnen':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als tactisch denkkader',source:'VGGM lesmateriaal – slide 67'},
     'Smokestopper':{src:'assets/vggm/smokestopper_deur.png',caption:'Deuropening en rookbeheersing',source:'VGGM lesmateriaal – slide 63'}
+  },
+  systems:{
+    'Snelle lijn':{src:'assets/bpbb/snelle_lijn_systeem1.png',caption:'Systeem 1: LD afleggen met snelle lijn',source:'Train de trainer BPBB 2026 – slide 6'},
+    'Snelle toevoer':{src:'assets/bpbb/snelle_toevoer_systeem2.png',caption:'Systeem 2: LD afleggen met verdeelstuk / snelle toevoer',source:'Train de trainer BPBB 2026 – slide 7'},
+    'Transporttas':{src:'assets/bpbb/transporttas_systeem3.png',caption:'Systeem 3: LD afleggen met verdeelstuk, verlengen met transporttas',source:'Train de trainer BPBB 2026 – slide 8'},
+    'Droge stijgleiding binnen':{src:'assets/bpbb/droge_stijgleiding_binnen.png',caption:'Systeem 4 binnen: werken met droge stijgleiding',source:'Train de trainer BPBB 2026 – slide 9'},
+    'Verdeelstuk buitenom':{src:'assets/bpbb/verdeelstuk_buitenom_1.png',caption:'Systeem 4 buiten: verdeelstuk buitenom bij galerij/woonflat',source:'Train de trainer BPBB 2026 – slide 10'},
+    'O-bundel':{src:'assets/bpbb/o_bundel_detail.png',caption:'O-bundels en oprolsystematiek als onderdeel van LD op hoogte',source:'Train de trainer BPBB 2026'},
+    'O-bundel oprollen':{src:'assets/bpbb/bundlewheel.jpeg',caption:'Bundlewheel / oprolsysteem voor O-bundels',source:'Train de trainer BPBB 2026 – slide 13'},
+    'Do’s & Don’ts LD/O-bundels':{src:'assets/bpbb/dos_donts.png',caption:'Do’s & Don’ts bij snelle lijn, snelle toevoer en O-bundels',source:'Train de trainer BPBB 2026 – slide 11'},
+    'Hoogtetas':{src:'assets/bpbb/droge_stijgleiding_binnen.png',caption:'Inhoud hoogtetas bij werken op hoogte: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw',source:'Train de trainer BPBB 2026 – slide 9/10'},
+    'LD op hoogte':{src:'assets/bpbb/droge_stijgleiding_binnen.png',caption:'LD op hoogte via gebouwvoorziening, O-bundels en hoogtetas',source:'Train de trainer BPBB 2026'},
+    'Klepel / straalpijp':{src:'assets/bpbb/snelle_lijn_systeem1.png',caption:'Klepelgebruik: tot aan klepel circa 200 l/min, voorbij klepel circa 450 l/min',source:'Train de trainer BPBB 2026 – slide 6/7'}
   }
 };
 function mediaHtml(m, cls='scenarioMedia'){
@@ -99,7 +112,7 @@ function systemPanelHtml(n){
  if(!n.systems?.length || !S.systemDefinitions) return '';
  return `<section class="systemsPanel"><div class="systemsHead"><div><div class="small">VGGM / BPBB-LAAG</div><strong>Systemen die hier meespelen</strong></div><span class="systemsHint">klik voor uitleg</span></div><div class="systemChips">${n.systems.map(k=>`<button type="button" class="systemChip" data-system="${esc(k)}">${esc(k)}</button>`).join('')}</div></section>`;
 }
-function showSystem(key){const d=S.systemDefinitions?.[key];if(!d)return;openModal(`<div class="small">VGGM / BPBB-SYSTEEM</div><h2>${esc(d.title||key)}</h2><p>${linkTerms(d.text||'')}</p><div class="sourceNote"><strong>Positie in deze casus:</strong> dit is de VGGM/BPBB-didactische laag. De uitgebreide hoogbouwduiding in de nabespreking blijft afzonderlijk gebaseerd op het aangeleverde VRR-handboek.</div>`);}
+function showSystem(key){const d=S.systemDefinitions?.[key];if(!d)return;const m=MEDIA.systems?.[key]||MEDIA.terms?.[key];openModal(`<div class="small">VGGM / BPBB-SYSTEEM</div><h2>${esc(d.title||key)}</h2>${mediaHtml(m,'termMedia')}<p>${linkTerms(d.text||'')}</p><div class="sourceNote"><strong>Positie in deze casus:</strong> dit is de VGGM/BPBB-didactische laag. De uitgebreide hoogbouwduiding in de nabespreking blijft afzonderlijk gebaseerd op het aangeleverde VRR-handboek.</div>`);}
 function bindSystems(root=document){root.querySelectorAll('.systemChip').forEach(b=>b.addEventListener('click',()=>showSystem(b.dataset.system)));}
 function renderNode(){
  const n=S.nodes[state.index];
