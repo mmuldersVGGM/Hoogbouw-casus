@@ -52,7 +52,22 @@ const MEDIA={
     'Do’s & Don’ts LD/O-bundels':{src:'assets/bpbb/dos_donts.png',caption:'Do’s & Don’ts bij snelle lijn, snelle toevoer en O-bundels',source:'Train de trainer BPBB 2026 – slide 11'},
     'Hoogtetas':{src:'assets/bpbb/droge_stijgleiding_binnen.png',caption:'Inhoud hoogtetas bij werken op hoogte: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw',source:'Train de trainer BPBB 2026 – slide 9/10'},
     'LD op hoogte':{src:'assets/bpbb/droge_stijgleiding_binnen.png',caption:'LD op hoogte via gebouwvoorziening, O-bundels en hoogtetas',source:'Train de trainer BPBB 2026'},
-    'Klepel / straalpijp':{src:'assets/bpbb/snelle_lijn_systeem1.png',caption:'Klepelgebruik: tot aan klepel circa 200 l/min, voorbij klepel circa 450 l/min',source:'Train de trainer BPBB 2026 – slide 6/7'}
+    'Klepel / straalpijp':{src:'assets/bpbb/snelle_lijn_systeem1.png',caption:'Klepelgebruik: tot aan klepel circa 200 l/min, voorbij klepel circa 450 l/min',source:'Train de trainer BPBB 2026 – slide 6/7'},
+    'BPBB':{src:'assets/vggm/kwadrantenmodel.png',caption:'BPBB: waarnemen, duiden, doel bepalen en tactiek kiezen',source:'VGGM/BPBB didactische laag'},
+    'Branddriehoek':{src:'assets/vggm/rook_deurzone.png',caption:'Brandgedrag wordt beïnvloed door brandstof, warmte en zuurstoftoevoer',source:'VGGM/BPBB didactische laag'},
+    'Kenmerkenschema':{src:'assets/vggm/orientatie_object.jpg',caption:'Object-, brand-, mens- en omgevingskenmerken sturen de inzet',source:'VGGM lesmateriaal'},
+    'Kwadrantenmodel':{src:'assets/vggm/kwadrantenmodel.png',caption:'Kwadrantenmodel als kader voor inzetstrategie',source:'VGGM lesmateriaal – slide 67'},
+    'RSTV':{src:'assets/vggm/rook_gang.png',caption:'RSTV-signalen: rook, stroming, temperatuur en vlammen lezen',source:'VGGM/BPBB didactische laag'},
+    'Deurcontrole':{src:'assets/vggm/toetreding_deur.jpeg',caption:'Deurcontrole vóór gecontroleerde toetreding',source:'VGGM lesmateriaal'},
+    'Anti-ventilatie':{src:'assets/vggm/flowpath_schema.png',caption:'Openingen beheersen om ongewenste flowpath en luchttoevoer te beperken',source:'VGGM lesmateriaal'},
+    'Rookgaskoeling':{src:'assets/vggm/straalpijp.gif',caption:'Straalpijptechniek en rookgaskoeling afgestemd op het brandbeeld',source:'VGGM lesmateriaal – slide 55'},
+    '3D-puls':{src:'assets/vggm/straalpijp.gif',caption:'Korte pulsen gericht op de hete rooklaag',source:'VGGM/BPBB didactische laag'},
+    'Boogmethode':{src:'assets/vggm/straalpijp.gif',caption:'Straalpijptechniek: gecontroleerde beweging voor koeling',source:'VGGM/BPBB didactische laag'},
+    'Massieve Aanval (MA)':{src:'assets/vggm/straalpijp.gif',caption:'Hoog koelend vermogen bij een ontwikkeld brandbeeld',source:'VGGM/BPBB didactische laag'},
+    'Transitional Attack (TA)':{src:'assets/vggm/transitional_attack.png',caption:'Brandbeïnvloeding van buitenaf als overgang naar binneninzet',source:'VGGM lesmateriaal – slide 56'},
+    'Laag voortbewegen':{src:'assets/vggm/rook_gang.png',caption:'Laag voortbewegen bij hitte en beperkt zicht',source:'VGGM/BPBB didactische laag'},
+    'Snelle aanval':{src:'assets/bpbb/snelle_lijn_systeem1.png',caption:'Snelle opbouw van de aanvalslijn',source:'VGGM/BPBB didactische laag'},
+    'Smokestopper':{src:'assets/vggm/smokestopper_deur.png',caption:'Smokestopper voor rookbeheersing bij deuropeningen',source:'VGGM lesmateriaal / term VGGM'}
   }
 };
 function mediaHtml(m, cls='scenarioMedia'){
@@ -104,7 +119,13 @@ function detailedDebrief(c){
 function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.addEventListener('click',()=>showTerm(el.dataset.term))); bindMedia(root);}
 function openModal(html){$('#modalContent').innerHTML=html; $('#modal').classList.remove('hidden'); bindTerms($('#modalContent')); bindSystems($('#modalContent'));}
 function showTerm(term){const g=S.glossary[term]; if(!g)return; const m=MEDIA.terms[term]; openModal(`<div class="termHeader"><div><div class="small">BEGRIP</div><h2>${esc(term)}</h2></div></div>${mediaHtml(m,'termMedia')}<p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>`);}
-function showGlossary(){let h='<h2>Begrippen</h2><p class="small">Klik tijdens de casus op onderstreepte begrippen om deze uitleg direct te openen.</p>'; for(const [t,g] of Object.entries(S.glossary)){h+=`<div class="glossItem"><h3>${esc(t)}</h3>${mediaHtml(MEDIA.terms[t],'glossMedia')}<div>${esc(g.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(g.operational)}</div></div>`;} openModal(h);}
+function showGlossary(){
+ let h='<h2>Begrippen & systemen</h2><p class="small">Eerst de hoogbouwbegrippen, daarna de VGGM/BPBB-systemen. Afbeeldingen zijn afkomstig uit het aangeleverde VGGM-lesmateriaal en Train de trainer BPBB 2026 waar beschikbaar.</p>';
+ h+='<div class="glossSectionTitle">Hoogbouwbegrippen</div>';
+ for(const [t,g] of Object.entries(S.glossary)){h+=`<div class="glossItem"><h3>${esc(t)}</h3>${mediaHtml(MEDIA.terms[t],'glossMedia')}<div>${esc(g.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(g.operational)}</div></div>`;}
+ if(S.systemDefinitions){h+='<div class="glossSectionTitle">VGGM / BPBB-systemen</div>'; for(const [k,d] of Object.entries(S.systemDefinitions)){const m=MEDIA.systems?.[k]||MEDIA.terms?.[k]; h+=`<div class="glossItem systemGloss"><h3>${esc(d.title||k)}</h3>${mediaHtml(m,'glossMedia')}<div>${linkTerms(d.text||'')}</div><button type="button" class="systemChip inlineSystemBtn" data-system="${esc(k)}">Open systeemkaart</button></div>`;}}
+ openModal(h); bindSystems($('#modalContent')); bindMedia($('#modalContent'));
+}
 $('#glossaryBtn').addEventListener('click',showGlossary); $('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden')); $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
 
 

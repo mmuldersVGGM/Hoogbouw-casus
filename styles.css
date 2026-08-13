@@ -31,3 +31,6 @@ body{background:linear-gradient(180deg,#e7edf1 0,#f5f7f8 340px,#eef2f5 100%)}
 .systemsHead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px}.systemsHead strong{font-size:1rem}.systemsHint{font-size:.78rem;color:var(--muted)}
 .systemChips{display:flex;flex-wrap:wrap;gap:8px}.systemChip{border:1px solid rgba(129,29,37,.24);background:rgba(129,29,37,.06);color:var(--text);border-radius:999px;padding:8px 12px;font-weight:700;font-size:.84rem;cursor:pointer;transition:.18s ease}.systemChip:hover{transform:translateY(-1px);background:rgba(129,29,37,.11);border-color:rgba(129,29,37,.42)}
 @media(max-width:700px){.systemsHead{align-items:flex-start;flex-direction:column;gap:4px}.systemChip{font-size:.8rem;padding:7px 10px}}
+
+/* v9 – versieherkenning en gecombineerde begrippen/systemen */
+.versionBadge{display:inline-flex;margin-left:8px;padding:2px 6px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:10px;letter-spacing:.08em;vertical-align:middle}.glossSectionTitle{margin:26px 0 8px;padding:8px 10px;border-radius:9px;background:#e8eff3;color:#23495f;font-weight:850;text-transform:uppercase;letter-spacing:.06em;font-size:12px;clear:both}.systemGloss{min-height:150px}.inlineSystemBtn{margin-top:10px}.systemGloss:after,.glossItem:after{content:"";display:block;clear:both}

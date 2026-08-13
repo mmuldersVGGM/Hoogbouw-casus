@@ -878,8 +878,7 @@ window.SCENARIO = {
       choice.deepDive = d[choice.id] || choice.rationale;
     });
   });
-  n3.situationDetail.after = (n3.situationDetail.after||[]).concat(["De ploeg neemt in de keuze ook systeem 4 binnen mee: werken met de droge stijgleiding, hoogtetas en O-bundel op hoogte. De routekeuze bepaalt dus tegelijk waar de aanvalslijn, het afnamepunt en de vluchtweg elkaar raken."]);
-  n4.situationDetail.after = (n4.situationDetail.after||[]).concat(["Bij het bruggenhoofd wordt de hoogtetas bewust gepositioneerd: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw horen niet willekeurig bij de ploeg, maar op de plek waar ze inzet en logistiek ondersteunen."]);
+  // BPBB-verrijkingen voor keuzemoment 3 en 4 worden later toegevoegd, nadat de uitgebreide situationDetail-laag is opgebouwd.
 })();
 
 
@@ -1418,6 +1417,14 @@ window.SCENARIO = {
 })();
 
 
+// BPBB-verrijking na opbouw van de uitgebreide situaties.
+(() => {
+  const n3=window.SCENARIO.nodes.find(n=>n.id===3);
+  const n4=window.SCENARIO.nodes.find(n=>n.id===4);
+  if(n3?.situationDetail) n3.situationDetail.after=(n3.situationDetail.after||[]).concat(["De ploeg neemt in de keuze ook systeem 4 binnen mee: werken met de droge stijgleiding, hoogtetas en O-bundel op hoogte. De routekeuze bepaalt dus tegelijk waar de aanvalslijn, het afnamepunt en de vluchtweg elkaar raken."]);
+  if(n4?.situationDetail) n4.situationDetail.after=(n4.situationDetail.after||[]).concat(["Bij het bruggenhoofd wordt de hoogtetas bewust gepositioneerd: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw horen niet willekeurig bij de ploeg, maar op de plek waar ze inzet en logistiek ondersteunen."]);
+})();
+
 // VGGM/BPBB-laag toegevoegd in v6. Deze laag staat naast de VRR-bronduiding.
 (() => {
   const S = window.SCENARIO;
@@ -1429,7 +1436,13 @@ window.SCENARIO = {
     "FABCM": {title:"FABCM", text:"FABCM ondersteunt commandovoering: Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring. In deze casus wordt het vooral zichtbaar bij heroverwegingen: actief afwijkende feiten zoeken, betekenis geven, besluiten, opdrachten helder communiceren en controleren of het effect wordt bereikt."},
     "Deurcontrole": {title:"Deurcontrole", text:"Beoordeel vóór openen wat de deur, druk, warmte en rookstroming vertellen. Open zo beperkt en gecontroleerd mogelijk en koppel de uitkomst aan het inzetplan."},
     "Anti-ventilatie": {title:"Anti-ventilatie", text:"Beperk ongewenste luchttoevoer en rookafvoer door openingen beheerst te houden. Bij winddruk en stack-effect is het voorkomen van een ongecontroleerde flowpath extra belangrijk."},
+    "BPBB": {title:"Basisprincipes van Brandbestrijding (BPBB)", text:"Overkoepelende werkwijze waarin waarnemen, duiden, doel bepalen, tactiek kiezen en technisch uitvoeren met elkaar verbonden zijn. In deze casus vormt BPBB de VGGM-didactische laag naast de hoogbouwspecifieke bronduiding uit VRR."},
+    "Branddriehoek": {title:"Branddriehoek", text:"Brand ontstaat en blijft bestaan door de combinatie van brandstof, zuurstof en voldoende energie/warmte. In deze casus helpt de branddriehoek vooral om het effect van deurmanagement, anti-ventilatie en koeling te verklaren."},
     "Rookgaskoeling": {title:"Rookgaskoeling / straalpijptechniek", text:"Stem de straalpijptechniek af op het brand- en rookbeeld. In het BPBB-train-de-trainerdocument wordt bij snelle lijn en snelle toevoer benoemd: tot aan de klepel circa 200 l/min en voorbij de klepel circa 450 l/min. Rookgaskoeling met 200 l/min wordt daarbij als voldoende benoemd. Gebruik 450 l/min dus niet automatisch voor rookgaskoeling als dat overkill is."},
+    "3D-puls": {title:"3D-puls", text:"Korte, gerichte pulsen in de hete rooklaag om rookgassen te koelen en de omstandigheden te beïnvloeden zonder onnodig veel water te gebruiken. De techniek wordt in deze casus alleen toegepast als het rook- en warmtebeeld daar aanleiding toe geeft."},
+    "Boogmethode": {title:"Boogmethode", text:"Straalpijptechniek waarbij de waterstraal in een gecontroleerde boog wordt bewogen om een groter oppervlak of volume te koelen. De keuze voor deze techniek hangt af van doel, bereik, hitte en beschikbare ruimte."},
+    "Massieve Aanval (MA)": {title:"Massieve Aanval (MA)", text:"Een krachtige, doelgerichte waterinzet met hoog koelend vermogen wanneer brandontwikkeling en hitte daar aanleiding toe geven. In de casus is MA geen automatische stap: de ploeg koppelt inzetdoel, brandbeeld en watercapaciteit aan elkaar."},
+    "Transitional Attack (TA)": {title:"Transitional Attack (TA)", text:"Tijdelijke brandbeïnvloeding van buitenaf voordat of terwijl een binneninzet wordt voorbereid. Alleen zinvol als de brand bereikbaar is, het effect voorspelbaar is en de binnenploeg weet wat er gebeurt."},
     "Klepel / straalpijp": {title:"Klepel / straalpijp", text:"Bij de snelle lijn en snelle toevoer wordt het klepelgebruik expliciet uitgelegd: tot aan de klepel circa 200 l/min; voorbij de klepel circa 450 l/min. In deze casus is dat relevant bij rookgaskoeling, koelend vermogen en voorkomen dat een kleine inzet ongemerkt een zware water-/logistieke belasting wordt."},
     "Laag voortbewegen": {title:"Laag voortbewegen", text:"Bij hitte en slecht zicht beweegt de ploeg laag om onder de heetste rooklaag te blijven, het thermisch beeld beter te benutten en de terugweg beheersbaar te houden."},
     "Snelle lijn": {title:"Snelle lijn – systeem 1", text:"Systeem uit het train-de-trainerdocument: snelle lijn bij TS binnen circa 20 meter van het brandadres, bijvoorbeeld bij TA, portiekflat of auto’s. Eerst volledig uitlopen, daarna rustig druk opbouwen op de straal. Bij invouwen moet alle lucht eruit, anders past de lijn niet goed terug in de TS."},
@@ -1446,13 +1459,13 @@ window.SCENARIO = {
     "Hoogtetas": {title:"Hoogtetas", text:"Het train-de-trainerdocument benoemt als inhoud voor werken op hoogte: Y-verdeelstuk, koppelslang van circa 1 meter, slangophouders, blinddekselsleutels en touw. In deze casus wordt de hoogtetas onderdeel van de logistieke planning: wat moet direct mee, wat hoort op het bruggenhoofd en wat kan beneden blijven?"}
   };
   const systemsByNode = {
-    1:["Kenmerkenschema","RSTV","CAN"],
+    1:["BPBB","Branddriehoek","Kenmerkenschema","RSTV","CAN"],
     2:["CAN"],
     3:["Kenmerkenschema","CAN","Droge stijgleiding binnen","Hoogtetas","O-bundel"],
     4:["FABCM","CAN","Hoogtetas","Transporttas"],
-    5:["Deurcontrole","Anti-ventilatie","Smokestopper","RSTV","Snelle aanval","O-bundel"],
-    6:["RSTV","Anti-ventilatie","Rookgaskoeling","Klepel / straalpijp","CAN"],
-    7:["Kwadrantenmodel","LD op hoogte","Snelle lijn","Snelle toevoer","O-bundel","Transporttas","Rookgaskoeling","Do’s & Don’ts LD/O-bundels"],
+    5:["BPBB","Branddriehoek","Deurcontrole","Anti-ventilatie","Smokestopper","RSTV","Snelle aanval","O-bundel","3D-puls"],
+    6:["BPBB","RSTV","Anti-ventilatie","Rookgaskoeling","3D-puls","Boogmethode","Massieve Aanval (MA)","CAN"],
+    7:["BPBB","Kwadrantenmodel","LD op hoogte","Snelle lijn","Snelle toevoer","Snelle aanval","O-bundel","Transporttas","Rookgaskoeling","3D-puls","Boogmethode","Massieve Aanval (MA)","Do’s & Don’ts LD/O-bundels"],
     8:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","LD op hoogte"],
     9:["Kenmerkenschema","Kwadrantenmodel","CAN","Snelle aanval"],
     10:["Anti-ventilatie","RSTV","CAN","Smokestopper"],
@@ -1462,8 +1475,8 @@ window.SCENARIO = {
     14:["CAN","FABCM","Droge stijgleiding binnen","Transporttas"],
     15:["Hoogtetas","Transporttas","O-bundel oprollen","Do’s & Don’ts LD/O-bundels","FABCM","CAN"],
     16:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","CAN","Smokestopper"],
-    17:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM"],
-    18:["FABCM","Kenmerkenschema","RSTV","Kwadrantenmodel","CAN","Do’s & Don’ts LD/O-bundels"]
+    17:["BPBB","Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","Transitional Attack (TA)"],
+    18:["BPBB","FABCM","Kenmerkenschema","RSTV","Kwadrantenmodel","CAN","Do’s & Don’ts LD/O-bundels"]
   };
   S.nodes.forEach(n => n.systems = systemsByNode[n.id] || []);
   S.meta.principles.splice(3,0,"VGGM/BPBB-systemen worden als tweede didactische laag toegepast naast de VRR-bronduiding: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM én de systemen uit Train de trainer BPBB 2026: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, O-bundels en hoogtetas.");
