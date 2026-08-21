@@ -878,7 +878,10 @@ window.SCENARIO = {
       choice.deepDive = d[choice.id] || choice.rationale;
     });
   });
-  // BPBB-verrijkingen voor keuzemoment 3 en 4 worden later toegevoegd, nadat de uitgebreide situationDetail-laag is opgebouwd.
+  const n3bpbb = window.SCENARIO.nodes.find(n=>n.id===3);
+  const n4bpbb = window.SCENARIO.nodes.find(n=>n.id===4);
+  if (n3bpbb?.situationDetail) n3bpbb.situationDetail.after = (n3bpbb.situationDetail.after||[]).concat(["De ploeg neemt in de keuze ook systeem 4 binnen mee: werken met de droge stijgleiding, hoogtetas en O-bundel op hoogte. De routekeuze bepaalt dus tegelijk waar de aanvalslijn, het afnamepunt en de vluchtweg elkaar raken."]);
+  if (n4bpbb?.situationDetail) n4bpbb.situationDetail.after = (n4bpbb.situationDetail.after||[]).concat(["Bij het bruggenhoofd wordt de hoogtetas bewust gepositioneerd: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw horen niet willekeurig bij de ploeg, maar op de plek waar ze inzet en logistiek ondersteunen."]);
 })();
 
 
@@ -1417,14 +1420,6 @@ window.SCENARIO = {
 })();
 
 
-// BPBB-verrijking na opbouw van de uitgebreide situaties.
-(() => {
-  const n3=window.SCENARIO.nodes.find(n=>n.id===3);
-  const n4=window.SCENARIO.nodes.find(n=>n.id===4);
-  if(n3?.situationDetail) n3.situationDetail.after=(n3.situationDetail.after||[]).concat(["De ploeg neemt in de keuze ook systeem 4 binnen mee: werken met de droge stijgleiding, hoogtetas en O-bundel op hoogte. De routekeuze bepaalt dus tegelijk waar de aanvalslijn, het afnamepunt en de vluchtweg elkaar raken."]);
-  if(n4?.situationDetail) n4.situationDetail.after=(n4.situationDetail.after||[]).concat(["Bij het bruggenhoofd wordt de hoogtetas bewust gepositioneerd: Y-verdeelstuk, koppelslang, slangophouders, blinddekselsleutels en touw horen niet willekeurig bij de ploeg, maar op de plek waar ze inzet en logistiek ondersteunen."]);
-})();
-
 // VGGM/BPBB-laag toegevoegd in v6. Deze laag staat naast de VRR-bronduiding.
 (() => {
   const S = window.SCENARIO;
@@ -1436,13 +1431,7 @@ window.SCENARIO = {
     "FABCM": {title:"FABCM", text:"FABCM ondersteunt commandovoering: Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring. In deze casus wordt het vooral zichtbaar bij heroverwegingen: actief afwijkende feiten zoeken, betekenis geven, besluiten, opdrachten helder communiceren en controleren of het effect wordt bereikt."},
     "Deurcontrole": {title:"Deurcontrole", text:"Beoordeel vóór openen wat de deur, druk, warmte en rookstroming vertellen. Open zo beperkt en gecontroleerd mogelijk en koppel de uitkomst aan het inzetplan."},
     "Anti-ventilatie": {title:"Anti-ventilatie", text:"Beperk ongewenste luchttoevoer en rookafvoer door openingen beheerst te houden. Bij winddruk en stack-effect is het voorkomen van een ongecontroleerde flowpath extra belangrijk."},
-    "BPBB": {title:"Basisprincipes van Brandbestrijding (BPBB)", text:"Overkoepelende werkwijze waarin waarnemen, duiden, doel bepalen, tactiek kiezen en technisch uitvoeren met elkaar verbonden zijn. In deze casus vormt BPBB de VGGM-didactische laag naast de hoogbouwspecifieke bronduiding uit VRR."},
-    "Branddriehoek": {title:"Branddriehoek", text:"Brand ontstaat en blijft bestaan door de combinatie van brandstof, zuurstof en voldoende energie/warmte. In deze casus helpt de branddriehoek vooral om het effect van deurmanagement, anti-ventilatie en koeling te verklaren."},
     "Rookgaskoeling": {title:"Rookgaskoeling / straalpijptechniek", text:"Stem de straalpijptechniek af op het brand- en rookbeeld. In het BPBB-train-de-trainerdocument wordt bij snelle lijn en snelle toevoer benoemd: tot aan de klepel circa 200 l/min en voorbij de klepel circa 450 l/min. Rookgaskoeling met 200 l/min wordt daarbij als voldoende benoemd. Gebruik 450 l/min dus niet automatisch voor rookgaskoeling als dat overkill is."},
-    "3D-puls": {title:"3D-puls", text:"Korte, gerichte pulsen in de hete rooklaag om rookgassen te koelen en de omstandigheden te beïnvloeden zonder onnodig veel water te gebruiken. De techniek wordt in deze casus alleen toegepast als het rook- en warmtebeeld daar aanleiding toe geeft."},
-    "Boogmethode": {title:"Boogmethode", text:"Straalpijptechniek waarbij de waterstraal in een gecontroleerde boog wordt bewogen om een groter oppervlak of volume te koelen. De keuze voor deze techniek hangt af van doel, bereik, hitte en beschikbare ruimte."},
-    "Massieve Aanval (MA)": {title:"Massieve Aanval (MA)", text:"Een krachtige, doelgerichte waterinzet met hoog koelend vermogen wanneer brandontwikkeling en hitte daar aanleiding toe geven. In de casus is MA geen automatische stap: de ploeg koppelt inzetdoel, brandbeeld en watercapaciteit aan elkaar."},
-    "Transitional Attack (TA)": {title:"Transitional Attack (TA)", text:"Tijdelijke brandbeïnvloeding van buitenaf voordat of terwijl een binneninzet wordt voorbereid. Alleen zinvol als de brand bereikbaar is, het effect voorspelbaar is en de binnenploeg weet wat er gebeurt."},
     "Klepel / straalpijp": {title:"Klepel / straalpijp", text:"Bij de snelle lijn en snelle toevoer wordt het klepelgebruik expliciet uitgelegd: tot aan de klepel circa 200 l/min; voorbij de klepel circa 450 l/min. In deze casus is dat relevant bij rookgaskoeling, koelend vermogen en voorkomen dat een kleine inzet ongemerkt een zware water-/logistieke belasting wordt."},
     "Laag voortbewegen": {title:"Laag voortbewegen", text:"Bij hitte en slecht zicht beweegt de ploeg laag om onder de heetste rooklaag te blijven, het thermisch beeld beter te benutten en de terugweg beheersbaar te houden."},
     "Snelle lijn": {title:"Snelle lijn – systeem 1", text:"Systeem uit het train-de-trainerdocument: snelle lijn bij TS binnen circa 20 meter van het brandadres, bijvoorbeeld bij TA, portiekflat of auto’s. Eerst volledig uitlopen, daarna rustig druk opbouwen op de straal. Bij invouwen moet alle lucht eruit, anders past de lijn niet goed terug in de TS."},
@@ -1459,13 +1448,13 @@ window.SCENARIO = {
     "Hoogtetas": {title:"Hoogtetas", text:"Het train-de-trainerdocument benoemt als inhoud voor werken op hoogte: Y-verdeelstuk, koppelslang van circa 1 meter, slangophouders, blinddekselsleutels en touw. In deze casus wordt de hoogtetas onderdeel van de logistieke planning: wat moet direct mee, wat hoort op het bruggenhoofd en wat kan beneden blijven?"}
   };
   const systemsByNode = {
-    1:["BPBB","Branddriehoek","Kenmerkenschema","RSTV","CAN"],
+    1:["Kenmerkenschema","RSTV","CAN"],
     2:["CAN"],
     3:["Kenmerkenschema","CAN","Droge stijgleiding binnen","Hoogtetas","O-bundel"],
     4:["FABCM","CAN","Hoogtetas","Transporttas"],
-    5:["BPBB","Branddriehoek","Deurcontrole","Anti-ventilatie","Smokestopper","RSTV","Snelle aanval","O-bundel","3D-puls"],
-    6:["BPBB","RSTV","Anti-ventilatie","Rookgaskoeling","3D-puls","Boogmethode","Massieve Aanval (MA)","CAN"],
-    7:["BPBB","Kwadrantenmodel","LD op hoogte","Snelle lijn","Snelle toevoer","Snelle aanval","O-bundel","Transporttas","Rookgaskoeling","3D-puls","Boogmethode","Massieve Aanval (MA)","Do’s & Don’ts LD/O-bundels"],
+    5:["Deurcontrole","Anti-ventilatie","Smokestopper","RSTV","Snelle aanval","O-bundel"],
+    6:["RSTV","Anti-ventilatie","Rookgaskoeling","Klepel / straalpijp","CAN"],
+    7:["Kwadrantenmodel","LD op hoogte","Snelle lijn","Snelle toevoer","O-bundel","Transporttas","Rookgaskoeling","Do’s & Don’ts LD/O-bundels"],
     8:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","LD op hoogte"],
     9:["Kenmerkenschema","Kwadrantenmodel","CAN","Snelle aanval"],
     10:["Anti-ventilatie","RSTV","CAN","Smokestopper"],
@@ -1475,8 +1464,8 @@ window.SCENARIO = {
     14:["CAN","FABCM","Droge stijgleiding binnen","Transporttas"],
     15:["Hoogtetas","Transporttas","O-bundel oprollen","Do’s & Don’ts LD/O-bundels","FABCM","CAN"],
     16:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","CAN","Smokestopper"],
-    17:["BPBB","Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM","Transitional Attack (TA)"],
-    18:["BPBB","FABCM","Kenmerkenschema","RSTV","Kwadrantenmodel","CAN","Do’s & Don’ts LD/O-bundels"]
+    17:["Kenmerkenschema","RSTV","Kwadrantenmodel","FABCM"],
+    18:["FABCM","Kenmerkenschema","RSTV","Kwadrantenmodel","CAN","Do’s & Don’ts LD/O-bundels"]
   };
   S.nodes.forEach(n => n.systems = systemsByNode[n.id] || []);
   S.meta.principles.splice(3,0,"VGGM/BPBB-systemen worden als tweede didactische laag toegepast naast de VRR-bronduiding: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM én de systemen uit Train de trainer BPBB 2026: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, O-bundels en hoogtetas.");
@@ -1496,4 +1485,122 @@ window.SCENARIO = {
   n15.situationDetail.after = (n15.situationDetail.after||[]).concat(["De hoogtetas en overige materialen worden nu bewust verdeeld tussen wat op het bruggenhoofd direct nodig is en wat beneden in de logistieke hub kan blijven. Daarmee wordt ook het mee te nemen gewicht onderdeel van de aflossingsplanning."]);
   const n18=S.nodes.find(n=>n.id===18);
   n18.situationDetail.after = (n18.situationDetail.after||[]).concat(["Dit moment wordt tevens gebruikt als FABCM-heroverweging: welke afwijkende feiten zijn erbij gekomen, wat betekenen die, welk besluit volgt, wie moet dat weten en welk effect moet daarna worden gemonitord?"]);
+})();
+
+
+// v9 – gefinetunede centrale begrippenlijst.
+// Afbeeldingen die door de gebruiker zijn aangeleverd worden ongewijzigd gebruikt.
+(() => {
+  const S = window.SCENARIO;
+  const add = (key, definition, operational, extra={}) => {
+    S.glossary[key] = {definition, operational, ...extra};
+  };
+
+  // Bestaande hoogbouwbegrippen: tekst/media-keuzes uit inhoudelijke review.
+  S.glossary["Stack-effect"] = {
+    definition:"Door temperatuurverschil tussen binnen- en buitenlucht ontstaat in een hoog gebouw een verticale luchtstroming. Is het binnen warmer dan buiten, dan is doorgaans een opwaartse stroming aanwezig.",
+    operational:"Let op rook en CO boven én onder de brand, openstaande deuren en ramen, seizoen/buitentemperatuur en veranderingen in drukverhoudingen. Openingen kunnen rook en CO over meerdere verdiepingen transporteren.",
+    video:"https://youtu.be/CoTqobi4J40?si=yPRLE63CCivy4dAg"
+  };
+  S.glossary["Reverse stack"] = {
+    definition:"Omgekeerde stack-richting. Wanneer het gebouw binnen koeler is dan buiten, kan de verticale luchtstroming juist neerwaarts gericht zijn.",
+    operational:"Rook en CO kunnen hierdoor ook onder de brandverdieping terechtkomen. Neem dit mee bij verkenning, CO-metingen en het kiezen van veilige vlucht- en inzetwegen.",
+    video:"https://youtu.be/CoTqobi4J40?si=yPRLE63CCivy4dAg"
+  };
+  S.glossary["Coandă-effect"] = {
+    definition:"Rook en hete gassen die uit een opening treden, kunnen door de luchtstroming langs de gevel omhoog worden geleid en als het ware de gevel blijven volgen.",
+    operational:"Controleer niet alleen de brandverdieping, maar ook bovenliggende verdiepingen, ramen, gevelopeningen en luchtinlaten. Rookverspreiding langs de gevel kan hoger gelegen bouwlagen bedreigen.",
+    video:"https://youtu.be/wF3YgP4Ag04?si=14DGjZZjriKNb1zj"
+  };
+  S.glossary["Wind Driven Fire"] = {
+    definition:"Winddruk op een opening in het brandcompartiment kan de brand sterk aanwakkeren en hete rookgassen krachtig door het compartiment richting gang, voorportaal of trappenhuis sturen.",
+    operational:"Beoordeel windrichting vroeg, beheers openingen, voorkom een ongecontroleerde flowpath en zorg voor voldoende koelend vermogen en back-up voordat wordt toegetreden.",
+    video:"https://youtu.be/5gOrR9IoB8Y?si=wDkTGTgQttDiKKJn"
+  };
+  S.glossary["Flowpath"] = {
+    definition:"De route waarlangs lucht, rook en hete gassen zich bewegen tussen een toevoeropening en een afvoeropening, gestuurd door druk- en temperatuurverschillen.",
+    operational:"Iedere geopende deur, raam of andere opening kan de flowpath veranderen. Daardoor kan een veilige positie plotseling onderdeel worden van de uitstroomroute van hete rookgassen.",
+    video:"https://youtu.be/IbMCRldLu5M?si=liYGTdUR6RRFgZ2J"
+  };
+  S.glossary["Bruggenhoofd"] = {
+    definition:"Een veilige operationele uitvalsbasis nabij de brand, van waaruit leiding, logistiek, communicatie, back-up en materiaal worden georganiseerd.",
+    operational:"Richt het bruggenhoofd in een rookvrije en beschermde ruimte in en organiseer van daaruit onder meer coördinatie, ademlucht, materiaal, registratie en logistiek. De aangeleverde VGGM-aandachtskaart is als uitklapbare bron toegevoegd.",
+    pdf:"assets/custom/bruggenhoofd_aandachtskaart.pdf"
+  };
+  S.glossary["VRICOL"] = {
+    definition:"Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek.",
+    operational:"In deze webcasus uitsluitend een didactisch vergelijkingsmodel om te toetsen of de inzet voldoende breed blijft. VRICOL wordt hier niet als VGGM-procedure gepresenteerd."
+  };
+  S.glossary["Compartimentering"] = {
+    definition:"Het opdelen van een gebouw in brand- en/of rookwerend gescheiden delen om verspreiding van brand en rook te beperken.",
+    operational:"Gebruik gebouwinformatie om te herkennen welke scheidingen rookwerend of brandwerend zijn. Houd deuren in deze scheidingen gesloten en bewaak vooral de scheidingen rond vluchtwegen en trappenhuizen."
+  };
+  S.glossary["WBDBO"] = {
+    definition:"Weerstand tegen BrandDoorslag en BrandOverslag. Een maat voor de tijd waarin brand zich niet van het ene naar het andere brandcompartiment mag uitbreiden.",
+    operational:"Gebruik de opgegeven WBDBO als beslisinformatie voor tijd, compartimentering en ontruiming, maar behandel de waarde niet als absolute garantie tijdens een incident."
+  };
+  S.glossary["Brandweerlift"] = {
+    definition:"Lift met aangepaste bediening en voorzieningen voor gebruik door de brandweer tijdens brand.",
+    operational:"Controleer vóór gebruik op rook en water, houd de lift onder brandweerbeheer en gebruik hem alleen zolang de omstandigheden veilig blijven."
+  };
+  S.glossary["Ontruimingslift"] = {
+    definition:"Een lift die specifiek is ontworpen om personen te ondersteunen bij ontvluchting of ontruiming.",
+    operational:"Een brandweerlift is niet automatisch een ontruimingslift. Controleer welk type lift aanwezig is en waarvoor die volgens het gebouwontwerp bedoeld is."
+  };
+  S.glossary["Overdrukinstallatie"] = {
+    definition:"Een installatie die door middel van drukverschil probeert te voorkomen dat rook een trappenhuis of voorportaal binnendringt.",
+    operational:"Openstaande deuren, ventilatie en andere openingen kunnen het drukconcept verstoren. Controleer waar de overdruk daadwerkelijk aanwezig is en of de vluchtweg rookvrij blijft."
+  };
+  S.glossary["Smokestopper"] = {
+    definition:"Middel om rookuitstroom via een deuropening te beperken terwijl gecontroleerde inzet mogelijk blijft.",
+    operational:"Ondersteunt deurmanagement en anti-ventilatie en helpt gang, voorportaal en vluchtweg rookarmer te houden."
+  };
+  S.glossary["Commandoruimte"] = {
+    definition:"De centrale ruimte in het gebouw waar informatie en bediening van brandveiligheidsinstallaties samenkomen.",
+    operational:"Gebruik de commandoruimte voor informatie over BMI/BMC en meldlocaties, sprinklerstatus, brandweer- en ontruimingsliften, overdrukinstallatie, interne bluswatervoorziening/stijgleiding, noodstroom en interne communicatie/intercom. Koppel die informatie altijd aan actuele waarnemingen buiten en op hoogte."
+  };
+  S.glossary["Transitional attack"] = {
+    definition:"Een tactiek waarbij de brand eerst van buitenaf wordt beïnvloed of gekoeld, waarna wordt overgegaan naar een binneninzet.",
+    operational:"Alleen zinvol als bereik, effect en coördinatie duidelijk zijn. Externe koeling mag de daaropvolgende binneninzet niet onnodig vertragen of onduidelijk maken.",
+    video:"https://youtu.be/Qmw2DT4betA?si=vTfjhR5Ga34ASpRZ"
+  };
+  S.glossary["Floor-below nozzle"] = {
+    definition:"Een tactiek waarbij vanaf de onderliggende verdieping water in de brandruimte of brandgevel wordt gebracht, bijvoorbeeld wanneer directe benadering van de brandverdieping lastig of onveilig is.",
+    operational:"Alleen bruikbaar als bouwkundige situatie, bereikbaarheid en coördinatie dit toelaten. Het is een middel om invloed op de brand te krijgen, niet automatisch een vervanging van verdere inzetvoorbereiding.",
+    video:"https://youtu.be/4B5mdCBNdj8?si=KwjRh7W9na3BsK3K"
+  };
+
+  // VGGM/BPBB-kennis die ook in de centrale begrippenlijst zichtbaar moet zijn.
+  add("Basisprincipes","Basisprincipes brandbestrijding verbinden rondomverkenning, brandgedrag, koelend vermogen, openingen/toegangen en bereikbaarheid tot één operationeel beeld.","Gebruik de basisprincipes als samenhangend denkraam: verken rondom, bepaal locatie en omvang, lees RSTV-signalen, beoordeel openingen en bereikbaarheid en stem koelend vermogen daarop af.");
+  add("Branddriehoek","Brand kan alleen blijven bestaan als brandstof, zuurstof en voldoende temperatuur gelijktijdig aanwezig zijn.","Brandbestrijding beïnvloedt één of meer zijden van de driehoek: koelen, zuurstoftoevoer beperken of brandstof wegnemen/scheiden.");
+  add("RSTV",S.systemDefinitions.RSTV.text,"Gebruik veranderingen in rook, stroming, temperatuur en vlammen tijdens de hele inzet als signalen voor brandontwikkeling en veranderende ventilatiecondities.");
+  add("Kenmerkenschema",S.systemDefinitions.Kenmerkenschema.text,"Combineer mens-, gebouw-, brand-, omgevings- en interventiekenmerken om inzetdoel en randvoorwaarden te bepalen.");
+  add("Kwadrantenmodel",S.systemDefinitions.Kwadrantenmodel.text,"Maak bewust onderscheid tussen offensief binnen, defensief binnen, offensief buiten en defensief buiten en heroverweeg de positie wanneer het brandbeeld verandert.");
+  add("CAN",S.systemDefinitions.CAN.text,"Gebruik CAN voor een korte, bruikbare terugmelding vanuit de ploeg zodat de bevelvoerder het actuele beeld kan bijstellen.");
+  add("FABCM",S.systemDefinitions.FABCM.text,"Gebruik Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring om besluiten te onderbouwen en het effect ervan actief te volgen.");
+  add("Deurcontrole",S.systemDefinitions.Deurcontrole.text,"Beheers de opening doelgericht en zo kort mogelijk. Koppel de waargenomen rook-, warmte- en drukstroming aan het inzetplan.");
+  add("Anti-ventilatie",S.systemDefinitions["Anti-ventilatie"].text,"Beperk ongewenste luchttoevoer door openingen beheerst te houden; dit hangt direct samen met deurcontrole, flowpath en Wind Driven Fire.");
+  add("Rookgaskoeling",S.systemDefinitions.Rookgaskoeling.text,"Stem techniek en waterdebiet af op het rook- en brandbeeld; koelen is een doelgerichte handeling en geen automatisme.");
+  add("3D-puls","Straalpijptechniek waarbij korte, gerichte pulsen in de hete rooklaag worden gegeven om rookgassen te koelen met zo min mogelijk onnodige waterbelasting.","Pas alleen toe wanneer de omstandigheden en het doel van rookgaskoeling hierom vragen; observeer voortdurend het effect.");
+  add("Boogmethode","Straalpijptechniek waarbij water in een gecontroleerde boog wordt ingebracht om een groter oppervlak of volume te koelen.","Kies de methode passend bij afstand, brandbeeld, warmtebelasting en beschikbaar koelend vermogen.");
+  add("Massieve Aanval","Straalpijptechniek waarbij met een compacte/massieve straal veel koelend vermogen direct op de brand wordt gebracht.","Gebruik wanneer snelle knockdown en direct koelend vermogen nodig zijn en de positie van de ploeg dit veilig toelaat.");
+  add("Laag voortbewegen",S.systemDefinitions["Laag voortbewegen"].text,"Blijf onder de heetste rooklaag, behoud oriëntatie en bewaak de terugweg.");
+  add("Snelle lijn",S.systemDefinitions["Snelle lijn"].text,"Gebruik het systeem volgens de bestaande BPBB-werkwijze; deze entry blijft inhoudelijk ongewijzigd.");
+  add("Snelle toevoer",S.systemDefinitions["Snelle toevoer"].text,"Gebruik het systeem volgens de bestaande BPBB-werkwijze; deze entry blijft inhoudelijk ongewijzigd.");
+  add("Snelle aanval",S.systemDefinitions["Snelle aanval"].text,"Snelheid is alleen winst als koelend vermogen, back-up en een veilige route zijn geborgd.");
+  add("O-bundel",S.systemDefinitions["O-bundel"].text,"Compact slangmanagement op hoogte, met aandacht voor koppelen, ontvouwen, drukopbouw en behoud van vluchtwegen.");
+  add("Opruimen",S.systemDefinitions["O-bundel oprollen"].text,"Zorg dat slangen na inzet opnieuw inzetgereed worden gemaakt zonder beschadiging; afbeelding, video en systeemkaart worden bij dit begrip niet getoond.");
+  add("Hoogtetas",S.systemDefinitions.Hoogtetas.text,"Deze entry blijft inhoudelijk en visueel ongewijzigd.");
+  add("Transporttas",S.systemDefinitions.Transporttas.text,"Deze entry blijft inhoudelijk en visueel ongewijzigd.");
+  add("Droge stijgleiding",S.systemDefinitions["Droge stijgleiding binnen"].text,"Deze entry blijft inhoudelijk en visueel ongewijzigd.");
+  add("Verdeelstuk buitenom",S.systemDefinitions["Verdeelstuk buitenom"].text,"Deze entry blijft inhoudelijk en visueel ongewijzigd.");
+  add("LD op hoogte",S.systemDefinitions["LD op hoogte"].text,"Deze entry blijft inhoudelijk en visueel ongewijzigd.");
+  add("Do’s & Don’ts",S.systemDefinitions["Do’s & Don’ts LD/O-bundels"].text,"Deze entry blijft inhoudelijk en visueel ongewijzigd.");
+
+  // Titelcorrectie: één keer Smokestopper.
+  if (S.systemDefinitions.Smokestopper) S.systemDefinitions.Smokestopper.title = "Smokestopper";
+
+  // Systeemkaarten die in de review expliciet zijn verwijderd, verdwijnen uit de casusschermen.
+  const noCard = new Set(["RSTV","Kenmerkenschema","Kwadrantenmodel","CAN","FABCM","Deurcontrole","Anti-ventilatie","Rookgaskoeling","3D-puls","Boogmethode","Massieve Aanval","Laag voortbewegen","O-bundel","O-bundel oprollen","Smokestopper","Basisprincipes","Branddriehoek"]);
+  S.nodes.forEach(n => { if (Array.isArray(n.systems)) n.systems = n.systems.filter(x => !noCard.has(x)); });
 })();

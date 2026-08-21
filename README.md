@@ -51,3 +51,7 @@ Deze versie voegt een tweede didactische laag toe naast de VRR-bronduiding. Per 
 
 ## v8 – BPBB-systemen uit train-de-trainerdocument
 Toegevoegd: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, LD op hoogte, klepel/straalpijp, Do’s & Don’ts LD/O-bundels en O-bundel oprollen. Inclusief afbeeldingen uit het BPBB-document.
+
+
+## v9 – gefinetunede begrippenlijst
+De begrippenlijst is aangepast op basis van de inhoudelijke review: nieuwe aangeleverde afbeeldingen, uitsluitend gekozen YouTube-links, uitklapbare Bruggenhoofd-aandachtskaart en verwijderde systeemkaarten waar afgesproken. Aangeleverde afbeeldingen zijn ongewijzigd overgenomen.
