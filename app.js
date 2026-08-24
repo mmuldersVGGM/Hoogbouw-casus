@@ -140,7 +140,7 @@ function richSituation(n){
  if(d.groups?.length) h+=`<div class="scenarioGroups">${d.groups.map(g=>`<div class="scenarioGroup"><h3>${esc(g.title)}</h3><ul>${(g.items||[]).map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul></div>`).join('')}</div>`;
  (d.after||[]).forEach(x=>h+=`<p>${linkTerms(x)}</p>`);
  if(d.prompt) h+=`<div class="scenarioPrompt">${linkTerms(d.prompt)}</div>`;
- h+=mediaHtml(MEDIA.nodes[n.id]);
+ h+=mediaHtml(n.media||MEDIA.nodes[n.id]);
  return h;
 }
 function consequenceHtml(c){
@@ -165,7 +165,20 @@ function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.
 function openModal(html){$('#modalContent').innerHTML=html; $('#modal').classList.remove('hidden'); bindTerms($('#modalContent')); bindSystems($('#modalContent'));}
 function showTerm(term){const g=S.glossary[term]; if(!g)return; const m=MEDIA.terms[term]; openModal(`<div class="termHeader"><div><div class="small">BEGRIP</div><h2>${esc(term)}</h2></div></div>${mediaHtml(m,'termMedia')}<p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>${termExtras(g,term)}`);}
 function showGlossary(){let h='<h2>Begrippen</h2><p class="small">Klik tijdens de casus op onderstreepte begrippen om deze uitleg direct te openen.</p>'; for(const [t,g] of Object.entries(S.glossary)){h+=`<div class="glossItem"><h3>${esc(t)}</h3>${mediaHtml(MEDIA.terms[t],'glossMedia')}<div>${esc(g.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(g.operational)}</div>${termExtras(g,t,true)}</div>`;} openModal(h);}
-$('#glossaryBtn').addEventListener('click',showGlossary); $('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden')); $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
+
+function showSources(){
+ const items=(S.meta.sources||[
+   'VGGM – Brandbestrijding hoogbouw (lesmateriaal 2020/2021)',
+   'Concept Handboek Brandbestrijding Hoogbouw VGGM 2026',
+   'Scenario / Stroomschema Hoogbouw VGGM 2026',
+   'Brandweer Rotterdam-Rijnmond – Handboek Incidentbestrijding Hoogbouw (2024)',
+   'BPBB – Train de trainer 2026: LD en watertransport op hoogte',
+   'Aangeleverde oefenplattegrond Arnhem Building, 7e verdieping'
+ ]);
+ openModal(`<h2>Bronnen en onderleggers</h2><p>Deze webcasus is een didactische toepassing. Regionale procedures, objectdetails en fictieve injects moeten vóór formele inzet worden gevalideerd.</p><ul>${items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="sourceFrame"><strong>Status</strong><p>${esc(S.meta.sourceNote||'Concept – niet vastgesteld beleid.')}</p></div>`);
+}
+
+$('#glossaryBtn').addEventListener('click',showGlossary); if($('#sourcesBtn'))$('#sourcesBtn').addEventListener('click',showSources); $('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden')); $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
 
 
 function systemPanelHtml(n){
@@ -202,13 +215,13 @@ function deepDiveHtml(n,c){
  return `<div class="deepDive">
    <div class="small">VERDIEPENDE NABESPREKING • KEUZEMOMENT ${n.id}</div>
    <h2>${esc(n.title)}</h2>
-   ${mediaHtml(MEDIA.nodes[n.id],'debriefMedia')}${systemPanelHtml(n)}<div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
+   ${mediaHtml(n.media||MEDIA.nodes[n.id],'debriefMedia')}${systemPanelHtml(n)}<div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
    <h3>Jouw keuze ${c.id}</h3>
    <p><strong>${linkTerms(c.text)}</strong></p>
    <div class="deepText">${detailedDebrief(c)}</div>
    <div class="roleBox"><strong>Rol in deze casus</strong><br>${esc(n.roleNote)}</div>
    ${c.debrief?'':`<h3>Vergelijking met de andere opties</h3><div class="compareGrid">${alternatives}</div>`}
-   <div class="sourceNote"><strong>Brongebruik:</strong> de inhoudelijke duiding is geparafraseerd uit het VRR-handboek Brandbestrijding Hoogbouw hoger dan 70 meter (2024). VRICOL wordt hier alleen gebruikt als didactisch vergelijkingsmodel en niet als vastgestelde VGGM-inzetprocedure.</div>
+   <div class="sourceNote"><strong>Brongebruik:</strong> ${esc(S.meta.sourceNote||'De inhoudelijke duiding is gebaseerd op de aangeleverde hoogbouwbronnen. VRICOL wordt alleen gebruikt als didactisch vergelijkingsmodel en niet als vastgestelde VGGM-inzetprocedure.')}</div>
  </div>`;
 }
 function choose(n,c){
@@ -237,6 +250,11 @@ function choose(n,c){
 }
 function next(){if(state.index<S.nodes.length-1){state.index++;renderNode()}else finish()}
 function outcome(){
+ if(S.nodes.length===16){
+   if(state.risk>=10) return {key:'C',title:'Inzet loopt operationeel vast',text:'Een combinatie van keuzes heeft geleid tot onvoldoende water, bedreigde rookvrije routes of onvoldoende capaciteit voor redding en ontruiming.'};
+   if(state.risk>=5) return {key:'B',title:'Beheerst na kwetsbare momenten',text:'De inzet kende duidelijke kwetsbare momenten, maar bleef door heroverweging en aanvullende maatregelen herstelbaar.'};
+   return {key:'A',title:'Beheerst',text:'Water, redding, rookbeheersing en opschaling bleven voldoende in balans. Gebruik de nabespreking om de alternatieve keuzes te vergelijken.'};
+ }
  const severe=has('14B') || ((has('17B')||has('17C'))&&(state.risk>=5||state.cautious>=3)) || state.risk>=13;
  if(severe) return {key:'C',title:'Ernstige operationele verslechtering',text:'Een combinatie van keuzes heeft geleid tot bedreigde vluchtwegen, vastlopende inzet, verlies van voorzieningen of te late ontruiming. In deze simulatie kunnen bewoners en/of een brandweerploeg in de problemen komen.'};
  if(state.cautious>=5 && state.risk<9) return {key:'D',title:'Te conservatief / gemiste kans',text:'Veel keuzes waren op zichzelf veilig, maar de inzet verloor structureel tijd. De brand ontwikkelde door terwijl beschikbare voorzieningen en veilige aanvalskansen onvoldoende werden benut.'};
@@ -244,7 +262,11 @@ function outcome(){
  return {key:'A',title:'Beheerst',text:'De inzet bleef organisatorisch en tactisch voldoende beheerst. Vluchtwegbescherming, inzetvoorwaarden en heroverweging bleven in balans.'};
 }
 function themeReviews(){
- const groups={'Beeldvorming':[1,8,12,18], 'Vluchtwegen':[3,5,10,11,16,17], 'Bluswater & aanval':[7,9], 'Liftgebruik':[2,14], 'Communicatie':[6,13], 'Logistiek':[4,15]};
+ const groups=S.meta.themeGroups||(
+   S.nodes.length===16
+   ? {'Beeldvorming':[1,2,12],'Tactiek & redding':[3,11,13],'Bluswater':[5,6,7,8],'Rookbeheersing':[9,10],'Ontruiming & opschaling':[4,14,15,16]}
+   : {'Beeldvorming':[1,8,12,18], 'Vluchtwegen':[3,5,10,11,16,17], 'Bluswater & aanval':[7,9], 'Liftgebruik':[2,14], 'Communicatie':[6,13], 'Logistiek':[4,15]}
+ );
  return Object.entries(groups).map(([name,ids])=>{const arr=state.choices.filter(c=>ids.includes(c.node)); const q=arr.reduce((a,c)=>a+c.quality,0); const txt=q>=2?'Sterk in deze inzet':q>=0?'Overwegend beheerst':q>=-2?'Aandachtspunt':'Duidelijk verbeterpunt'; return {name,txt};});
 }
 function historyItem(c){

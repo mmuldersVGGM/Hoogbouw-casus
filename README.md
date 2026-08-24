@@ -55,3 +55,13 @@ Toegevoegd: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen
 
 ## v9 – gefinetunede begrippenlijst
 De begrippenlijst is aangepast op basis van de inhoudelijke review: nieuwe aangeleverde afbeeldingen, uitsluitend gekozen YouTube-links, uitklapbare Bruggenhoofd-aandachtskaart en verwijderde systeemkaarten waar afgesproken. Aangeleverde afbeeldingen zijn ongewijzigd overgenomen.
+
+
+## v10 – tweede casus: Arnhem Building
+- `index.html` is nu het casuskeuzescherm.
+- `rivierstaete.html` opent de bestaande v9-casus ongewijzigd qua inhoud.
+- `arnhem-building.html` opent de nieuwe casus voor bevelvoerder en manschappen.
+- `scenario-rivierstaete.js` bevat de bestaande Rivierstaete-casus.
+- `scenario-arnhem.js` bevat de nieuwe Arnhem Building-casus.
+- Beide casussen gebruiken dezelfde `app.js`, `styles.css`, begrippenlijst en VGGM/BPBB-assets.
+- De nieuwe casus gebruikt de aangeleverde plattegrond als oefenonderlegger.
