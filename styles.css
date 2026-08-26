@@ -103,3 +103,42 @@ body{background:linear-gradient(180deg,#e7edf1 0,#f5f7f8 340px,#eef2f5 100%)}
   .splashImage{width:100%;height:auto;min-height:100vh;object-fit:cover;object-position:center}
   .splashStartHitbox{left:4%;bottom:5%;width:38%;min-height:58px}
 }
+
+/* v10.2.6 – PWA + QR */
+.qrInstallCard{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 190px;
+  gap:24px;
+  align-items:center;
+  padding:22px;
+}
+.qrInstallText h3{margin-top:0}
+.qrInstallText p{line-height:1.55}
+.qrUrl{
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+  word-break:break-all;
+  color:#315c78;
+}
+.installHints{
+  display:grid;
+  gap:6px;
+  color:#52616d;
+  font-size:14px;
+}
+.qrLink{
+  display:block;
+  padding:10px;
+  background:#fff;
+  border:1px solid #d6e0e6;
+  border-radius:14px;
+}
+.qrLink img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+@media(max-width:700px){
+  .qrInstallCard{grid-template-columns:1fr}
+  .qrLink{width:min(220px,100%);margin:0 auto}
+}

@@ -4,6 +4,18 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hoogbouwcasus VGGM 2026 – casuskeuze</title>
 <link rel="stylesheet" href="styles.css">
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#111820">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoogbouwcasus">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="shortcut icon" href="assets/icons/Hoogbouwcasus.ico">
+
 </head>
 <body>
 <header class="topbar">
@@ -39,5 +51,32 @@
     <h3>Gemeenschappelijke basis</h3>
     <p>Beide casussen gebruiken dezelfde begrippenlijst en dezelfde VGGM/BPBB-didactische laag. Bronmateriaal wordt als onderlegger en verwijzing gebruikt; de casussen zijn conceptueel en geen vastgesteld VGGM-inzetprotocol.</p>
   </section>
+
+<section class="card qrInstallCard">
+  <div class="qrInstallText">
+    <h3>Open op telefoon of tablet</h3>
+    <p>Scan de QR-code om de Hoogbouwcasus direct te openen op Windows, Android, iPhone of iPad.</p>
+    <p class="qrUrl">https://mmuldersvggm.github.io/Hoogbouw-casus/</p>
+    <div class="installHints">
+      <span><strong>Windows / Android:</strong> installeren via Edge of Chrome.</span>
+      <span><strong>iPhone / iPad:</strong> Safari → Deel → Zet op beginscherm.</span>
+    </div>
+  </div>
+  <a href="https://mmuldersvggm.github.io/Hoogbouw-casus/" class="qrLink" aria-label="Open Hoogbouwcasus">
+    <img src="assets/qr/hoogbouwcasus-vggm-2026-qr.png" alt="QR-code Hoogbouwcasus VGGM 2026">
+  </a>
+</section>
+
 </main>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+      .then(reg => reg.update())
+      .catch(err => console.warn('Service worker kon niet worden geregistreerd:', err));
+  });
+}
+</script>
+
 </body></html>

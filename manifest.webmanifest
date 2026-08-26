@@ -1,0 +1,26 @@
+{
+  "name": "Hoogbouwcasus VGGM 2026",
+  "short_name": "Hoogbouwcasus",
+  "description": "Interactieve hoogbouwcasussen voor brandweeronderwijs en oefening.",
+  "id": "/Hoogbouw-casus/",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#111820",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

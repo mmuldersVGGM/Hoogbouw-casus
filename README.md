@@ -92,3 +92,12 @@ De begrippenlijst is aangepast op basis van de inhoudelijke review: nieuwe aange
 - De visuele knop START CASUS is klikbaar en opent de bestaande casuskeuze.
 - De casuskeuze staat nu in `casussen.html`.
 - De knop `Casussen` binnen beide scenario's verwijst naar `casussen.html`.
+
+## v10.2.6 – PWA, app-icoon en QR-code
+- Publieke URL: https://mmuldersvggm.github.io/Hoogbouw-casus/
+- PWA-manifest toegevoegd voor Windows en Android.
+- Apple touch icon en iOS-meta toegevoegd voor iPhone/iPad.
+- Service worker toegevoegd voor app-installatie en gedeeltelijk offline gebruik.
+- Hoogbouwcasus-appicoon toegevoegd in 16, 32, 180, 192 en 512 px plus Windows `.ico`.
+- QR-code toegevoegd als `QR-Hoogbouwcasus-VGGM-2026.png`.
+- Op het casuskeuzescherm staat een scanbare QR-code en korte installatie-uitleg.
