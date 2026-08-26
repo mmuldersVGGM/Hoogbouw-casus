@@ -65,3 +65,30 @@ De begrippenlijst is aangepast op basis van de inhoudelijke review: nieuwe aange
 - `scenario-arnhem.js` bevat de nieuwe Arnhem Building-casus.
 - Beide casussen gebruiken dezelfde `app.js`, `styles.css`, begrippenlijst en VGGM/BPBB-assets.
 - De nieuwe casus gebruikt de aangeleverde plattegrond als oefenonderlegger.
+
+## v10.1 – harmonisatie casusopbouw
+- Arnhem Building volgt nu dezelfde didactische lijn als Rivierstaete.
+- Startscherm en casuskeuze verklappen geen slachtofferlocatie, waterstoring of hoofdleerdoelen meer.
+- Informatie wordt gefaseerd beschikbaar na uitvraag, waarneming of terugmelding.
+- De 16 inhoudelijk afgesproken injects zijn behouden.
+- Feedback is minder quizmatig: operationele gevolgen staan centraal.
+- De geannoteerde plattegrond verschijnt pas in de casus wanneer objectinformatie beschikbaar komt.
+
+## v10.2.1 – runtimecorrectie
+- ontbrekende galleryHtml-functie hersteld; beslismomenten renderen weer volledig;
+- zichtbaar VRR-bronkader verwijderd uit de verdiepende uitleg;
+- bespreekvragen zichtbaar in verdiepende uitleg en volledige nabespreking;
+- themabeoordeling in nabespreking heeft vijf kleuren van rood t/m groen;
+- media-gallery voor moment 12 werkt nu met twee afbeeldingen.
+
+## v10.2.2 – afbeeldingen Arnhem Building
+- Beslismoment 2 toont nu de volledige plattegrond van de 7e verdieping.
+- Beslismoment 11 gebruikt de aangeleverde foto van de gang onder rook.
+- Beslismoment 12 gebruikt dezelfde volledige plattegrond naast de legenda van de scheidingen.
+
+## v10.2.5 – gezamenlijk voorblad
+- Eén gezamenlijk openingsscherm voor beide hoogbouwcasussen.
+- De gekozen brandfoto en tekst “THE FIRE KEEPS MOVING. SO MUST YOUR THINKING.” zijn beeldvullend opgenomen.
+- De visuele knop START CASUS is klikbaar en opent de bestaande casuskeuze.
+- De casuskeuze staat nu in `casussen.html`.
+- De knop `Casussen` binnen beide scenario's verwijst naar `casussen.html`.

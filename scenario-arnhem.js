@@ -2,34 +2,34 @@ window.SCENARIO = {
   "meta": {
     "title": "Hoogbouwcasus – Arnhem Building",
     "subtitle": "Interactieve oefencasus voor bevelvoerder en manschappen",
-    "status": "Concept • fictieve incidentontwikkeling • bestaand object als visuele basis",
-    "building": "Arnhem Building, Oude Oeverstraat 120 • brand op 7e verdieping • categorie 20–70 m",
+    "status": "Concept • fictieve incidentontwikkeling",
+    "building": "Arnhem Building • Arnhem • categorie 20–70 m",
     "hero": "assets/arnhem/plattegrond_7e_brandwerende_scheidingen.jpeg",
     "principles": [
-      "Hoofddoelen: organiseren van bluswater op hoogte, redding en beheersen van rookverspreiding.",
-      "BHV geeft belangrijke informatie alleen wanneer BV of ploeg daar gericht naar vraagt.",
-      "De droge stijgleiding faalt fictief door lekkage; herstel duurt circa 10 minuten.",
-      "Systeem 3, systeem 4 buitenom en een tijdig gealarmeerd redvoertuig bieden alternatieve wateropbouw.",
-      "Middelbrand/grote brand moet door de bevelvoerder zelf worden gemaakt.",
-      "De plattegrond en brandwerende scheidingen moeten door deelnemers zelf worden geïnterpreteerd."
+      "Keuzes zijn bewust plausibel en geven niet vooraf prijs wat verwacht wordt.",
+      "Na iedere keuze volgt eerst het operationele gevolg; de uitleg is daarna optioneel te openen.",
+      "VRICOL wordt uitsluitend gebruikt als didactisch vergelijkingsmodel.",
+      "VGGM/BPBB-systemen worden als tweede didactische laag toegepast naast de VRR-bronduiding: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM én de systemen uit Train de trainer BPBB 2026: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, O-bundels en hoogtetas.",
+      "Beslissingen binnen liggen bij de manschappen, mits veilig en verantwoord en gedeeld/getoetst met de bevelvoerder.",
+      "Alle nare uitkomsten zijn mogelijk wanneer keuzes en omstandigheden daar logisch toe leiden."
     ],
-    "sourceNote": "Inhoudelijke onderleggers: VGGM-lesmateriaal hoogbouw 2020/2021, Concept Handboek Brandbestrijding Hoogbouw VGGM 2026, Scenario/Stroomschema Hoogbouw VGGM 2026, Handboek Incidentbestrijding Hoogbouw VRR 2024, BPBB Train-de-trainer 2026 en de aangeleverde oefenplattegrond. Objectdetails en scenario-injects zijn deels fictief."
+    "sourceNote": "Deze casus is een didactische toepassing op basis van de aangeleverde hoogbouwonderleggers. Objectdetails en incidentontwikkeling zijn deels fictief. De bron- en leerdoelduiding is bedoeld voor verdieping en nabespreking en vormt geen vastgesteld VGGM-inzetprotocol."
   },
   "nodes": [
     {
       "id": 1,
-      "title": "Aankomst: informatie organiseren",
+      "title": "Aankomst & eerste beeldvorming",
       "role": "Bevelvoerder",
-      "roleNote": "Beeldvorming bij aankomst en actief uitvragen van BHV.",
-      "situation": "Prio 1 hoogbouwbrand, Oude Oeverstraat 120 Arnhem. Rook zichtbaar ter hoogte van de 7e verdieping. De BHV'er meldt uit zichzelf alleen dat de 7e verdieping wordt ontruimd en dat één medewerker wordt vermist.",
+      "roleNote": "Bepaal welke informatie je bij aankomst nodig hebt.",
+      "situation": "Je bent bevelvoerder van de eerste TS en arriveert bij Arnhem Building in Arnhem. Tijdens het aanrijden is gemeld dat er sprake is van brand in het gebouw. Bij aankomst is vanaf buiten rook zichtbaar ter hoogte van de 7e verdieping.\n\nBij de entree word je opgevangen door een BHV'er. Hij vertelt dat de BHV-organisatie bezig is met de ontruiming van de 7e verdieping. Daarbij lijkt één medewerker te ontbreken.\n\nDe exacte locatie van de brand is op dit moment niet bekend. Ook is nog niet duidelijk waar de vermiste medewerker zich bevindt en wat de situatie op de overige verdiepingen is.\n\nDe eerste ploeg en de chauffeur/pompbediende wachten op jouw opdrachten. Je moet op basis van de informatie die nu beschikbaar is de eerste inzet organiseren.",
       "situationDetail": {
-        "time": "T=0 • eerste TS ter plaatse",
+        "time": "T = 0 min",
         "observations": [
-          "De exacte brandruimte is nog onbekend.",
-          "De BHV-organisatie ontruimt alleen de 7e verdieping.",
-          "Over de bezetting van de 8e en 9e verdieping is nog niets bekend."
+          "Rook is zichtbaar ter hoogte van de 7e verdieping.",
+          "De BHV-organisatie is bezig met de 7e verdieping.",
+          "De exacte brandlocatie en de situatie op andere verdiepingen zijn nog niet bekend."
         ],
-        "prompt": "Welke informatie organiseer je voordat de inzet op hoogte vorm krijgt?"
+        "prompt": "Hoe organiseer je je eerste beeldvorming?"
       },
       "choices": [
         {
@@ -37,7 +37,7 @@ window.SCENARIO = {
           "text": "Gericht doorvragen: slachtofferlocatie, plattegrond, wat BHV op de 7e heeft gezien en status 8/9.",
           "consequence": "De BV krijgt de plattegrond en kan de exacte slachtofferlocatie laten aanwijzen. Over 8/9 blijkt BHV geen betrouwbaar beeld te hebben.",
           "rationale": "Sterke beeldvorming: de BHV heeft belangrijke informatie, maar biedt die niet vanzelf aan.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Sterke beeldvorming: de BHV heeft belangrijke informatie, maar biedt die niet vanzelf aan."
         },
@@ -46,7 +46,7 @@ window.SCENARIO = {
           "text": "Alleen vragen waar de brand vermoedelijk zit en de ploeg direct naar boven sturen.",
           "consequence": "Er ontstaat snel een verkenning op hoogte, maar slachtofferlocatie, plattegrond en de onbekende bezetting boven de brand blijven voorlopig buiten beeld.",
           "rationale": "Verdedigbaar vanuit snelheid, maar informatie die direct beschikbaar was wordt niet benut.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Verdedigbaar vanuit snelheid, maar informatie die direct beschikbaar was wordt niet benut."
         },
@@ -55,7 +55,7 @@ window.SCENARIO = {
           "text": "Zonder verdere uitvraag direct inzetten op de 7e verdieping.",
           "consequence": "De ploeg vertrekt met minimale objectinformatie. Belangrijke informatie moet later alsnog worden opgehaald of tijdens de verkenning worden ontdekt.",
           "rationale": "De hoogte en bekende vermissing maken het zinvol eerst beschikbare objectinformatie te benutten.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "De hoogte en bekende vermissing maken het zinvol eerst beschikbare objectinformatie te benutten."
         }
@@ -66,24 +66,25 @@ window.SCENARIO = {
         "RSTV"
       ],
       "media": {
-        "src": "assets/vggm/orientatie_object.jpg",
-        "caption": "Objectoriëntatie en informatievergaring",
-        "source": "VGGM lesmateriaal"
-      }
+        "src": "assets/arnhem/arnhem_aankomst.png",
+        "caption": "Arnhem Building bij aankomst",
+        "source": "Aangeleverde afbeelding"
+      },
+      "discussionQuestion": "Welke informatie heb je bij aankomst minimaal nodig om een veilige en gerichte inzet te kunnen starten?"
     },
     {
       "id": 2,
-      "title": "Plattegrond en slachtofferlocatie",
+      "title": "Beschikbare objectinformatie",
       "role": "Bevelvoerder",
-      "roleNote": "Beschikbare objectinformatie interpreteren; BHV geeft geen preventieve duiding.",
-      "situation": "Na gerichte navraag overhandigt de BHV'er de plattegrond van de 7e verdieping. Alleen bij navraag wijst hij kantoor 7.14 aan als exacte locatie van de vermiste medewerker. De BHV'er kan de brandwerende voorzieningen op de tekening niet interpreteren.",
+      "roleNote": "Gebruik alleen informatie die door gerichte uitvraag beschikbaar is gekomen.",
+      "situation": "Na gerichte navraag blijkt dat de BHV'er aanvullende objectinformatie beschikbaar heeft. Hij kan een plattegrond van de 7e verdieping geven. Als je specifiek doorvraagt naar de vermiste medewerker, kan hij ook aangeven welke ruimte daarbij hoort. De betekenis van de ingetekende bouwkundige voorzieningen kan hij niet toelichten.",
       "choices": [
         {
           "id": "A",
           "text": "Plattegrond gebruiken om trappenhuis, route naar 7.14, droge stijgleiding en brand-/rookwerende scheidingen zelf te interpreteren.",
           "consequence": "De BV bouwt een ruimtelijk beeld op. De exacte brandlocatie blijft nog een vermoeden en moet door uitvraag/verkenning worden bevestigd.",
           "rationale": "De tekening bevat meer operationele informatie dan alleen de slachtofferlocatie.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "De tekening bevat meer operationele informatie dan alleen de slachtofferlocatie."
         },
@@ -92,7 +93,7 @@ window.SCENARIO = {
           "text": "Alleen kantoor 7.14 markeren en de rest van de tekening later bekijken.",
           "consequence": "De reddingslocatie is duidelijk, maar bouwkundige en watertechnische informatie wordt nog niet benut.",
           "rationale": "De slachtofferlocatie is belangrijk, maar de route en voorzieningen bepalen of die redding veilig uitvoerbaar is.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "De slachtofferlocatie is belangrijk, maar de route en voorzieningen bepalen of die redding veilig uitvoerbaar is."
         },
@@ -101,7 +102,7 @@ window.SCENARIO = {
           "text": "De plattegrond niet meenemen; de ploeg vindt de ruimte boven wel.",
           "consequence": "De ploeg moet in dichte rook zelf ruimtenummers en route reconstrueren.",
           "rationale": "Dit vergroot zoektijd en verlaagt het situatiebeeld zonder noodzaak.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Dit vergroot zoektijd en verlaagt het situatiebeeld zonder noodzaak."
         }
@@ -112,24 +113,25 @@ window.SCENARIO = {
         "Compartimentering"
       ],
       "media": {
-        "src": "assets/arnhem/plattegrond_7e_brandwerende_scheidingen.jpeg",
-        "caption": "Oefenplattegrond 7e verdieping met brand- en rookwerende scheidingen",
-        "source": "Aangeleverde plattegrond / didactische intekening"
-      }
+        "src": "assets/arnhem/plattegrond_7e_volledig.png",
+        "caption": "Plattegrond 7e verdieping",
+        "source": "Oefenplattegrond Arnhem Building"
+      },
+      "discussionQuestion": "Welke informatie kun je uit een plattegrond en van de BHV halen, en welke informatie moet je altijd zelf verifiëren?"
     },
     {
       "id": 3,
-      "title": "Tactiek en eerste inzetdoel",
+      "title": "Eerste tactische keuze",
       "role": "Bevelvoerder",
-      "roleNote": "Bewuste keuze tussen offensief binnen en defensief binnen; beide vereisen betrouwbare LD-watervoorziening.",
-      "situation": "De vermoedelijke brand ligt op de 7e verdieping. Het slachtoffer bevindt zich in kantoor 7.14. De exacte brandruimte is nog niet bevestigd. Vanuit het trappenhuis ligt de vermoedelijke brand tussen de aanvalsroute en het slachtoffer.",
+      "roleNote": "Kies een inzetdoel op basis van het beeld dat je tot nu toe hebt opgebouwd.",
+      "situation": "De eerste ploeg bereikt de 7e verdieping. De exacte brandruimte wordt door waarneming en/of nadere uitvraag duidelijker. De route vanaf het trappenhuis richting de bekende locatie van de vermiste medewerker wordt door de brandsituatie bedreigd.",
       "choices": [
         {
           "id": "A",
           "text": "Offensief binnen: doel brandbestrijding met LD, zodat de route naar het slachtoffer beheersbaar wordt.",
           "consequence": "De ploeg richt zich op lokaliseren en beheersen van de brand. Redding volgt zodra de route veilig genoeg is.",
           "rationale": "Een logisch inzetdoel wanneer de brand de route naar het slachtoffer bedreigt. Betrouwbaar water blijft randvoorwaarde.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Een logisch inzetdoel wanneer de brand de route naar het slachtoffer bedreigt. Betrouwbaar water blijft randvoorwaarde."
         },
@@ -138,7 +140,7 @@ window.SCENARIO = {
           "text": "Defensief binnen: doel redding slachtoffer met LD als beschermende slagkracht.",
           "consequence": "De ploeg richt zich primair op het bereiken van 7.14, maar moet de brandbedreiging onderweg kunnen beheersen.",
           "rationale": "Ook redding vereist hier een geborgde watervoorziening; zonder water is deze keuze niet uitvoerbaar.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Ook redding vereist hier een geborgde watervoorziening; zonder water is deze keuze niet uitvoerbaar."
         },
@@ -147,7 +149,7 @@ window.SCENARIO = {
           "text": "Redding zonder eerst betrouwbare LD-watervoorziening te borgen.",
           "consequence": "De ploeg kan de bedreigde route niet verantwoord passeren en moet de inzet heroverwegen.",
           "rationale": "De brand ligt tussen trappenhuis en slachtoffer. Water is zowel voor eigen veiligheid als voor rookgaskoeling en brandbeheersing noodzakelijk.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -2,
           "deepDive": "De brand ligt tussen trappenhuis en slachtoffer. Water is zowel voor eigen veiligheid als voor rookgaskoeling en brandbeheersing noodzakelijk."
         }
@@ -162,21 +164,22 @@ window.SCENARIO = {
         "src": "assets/custom/kwadrantenmodel_user.jpg",
         "caption": "Kwadrantenmodel als tactisch denkkader",
         "source": "Aangeleverde afbeelding"
-      }
+      },
+      "discussionQuestion": "Welke factoren bepalen of je kiest voor offensief binnen of defensief binnen, en wanneer zou je die keuze heroverwegen?"
     },
     {
       "id": 4,
-      "title": "Zelf opschalen",
+      "title": "Benodigde slagkracht",
       "role": "Bevelvoerder",
-      "roleNote": "Capaciteit vooruit organiseren voor brand/redding, rookbeheersing en ontruiming.",
-      "situation": "De eerste TS heeft gelijktijdig te maken met een inzet op de 7e verdieping, één bekende vermiste medewerker en onbekende bezetting op 8 en 9. Middelbrand/grote brand wordt niet automatisch gemaakt.",
+      "roleNote": "Bepaal welke capaciteit je nu en in de komende minuten nodig denkt te hebben.",
+      "situation": "De eerste TS is bezig met een inzet op de 7e verdieping. Er is een vermissing gemeld en nog niet alle verdiepingen boven de brand zijn gecontroleerd. Welke extra capaciteit nodig is, wordt niet automatisch voor je georganiseerd.",
       "choices": [
         {
           "id": "A",
           "text": "Vroeg opschalen en extra TS'en organiseren; bij verdere taakgroei ook grote brand overwegen.",
           "consequence": "Extra capaciteit kan later worden ingezet voor ontruiming/evacuatie van 8/9 en rookvrij houden van het trappenhuis.",
           "rationale": "De casus bevat meerdere zelfstandige taken. Vroeg capaciteit organiseren voorkomt dat alle problemen op één TS landen.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "De casus bevat meerdere zelfstandige taken. Vroeg capaciteit organiseren voorkomt dat alle problemen op één TS landen."
         },
@@ -185,7 +188,7 @@ window.SCENARIO = {
           "text": "Eerst de eerste verkenning afwachten en daarna pas beoordelen of extra TS'en nodig zijn.",
           "consequence": "De eerste minuten blijven overzichtelijk, maar extra eenheden komen later beschikbaar als meerdere taken tegelijk ontstaan.",
           "rationale": "Verdedigbaar, maar minder anticiperend.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Verdedigbaar, maar minder anticiperend."
         },
@@ -194,7 +197,7 @@ window.SCENARIO = {
           "text": "Geen opschaling zolang de brand nog in één ruimte lijkt te zitten.",
           "consequence": "Wanneer water-, rook- en ontruimingsproblemen tegelijk zichtbaar worden ontstaat capaciteitstekort.",
           "rationale": "Omvang van de brand is niet de enige maat voor benodigde slagkracht in hoogbouw.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Omvang van de brand is niet de enige maat voor benodigde slagkracht in hoogbouw."
         }
@@ -208,21 +211,22 @@ window.SCENARIO = {
         "src": "assets/vggm/logistiek_materiaal.jpeg",
         "caption": "Hoogbouw vraagt vroeg om taak- en capaciteitsorganisatie",
         "source": "VGGM lesmateriaal"
-      }
+      },
+      "discussionQuestion": "Welke ontwikkelingen probeer je vóór te zijn wanneer je vroegtijdig opschaalt bij een hoogbouwbrand?"
     },
     {
       "id": 5,
-      "title": "Droge stijgleiding krijgt geen druk",
+      "title": "Terugmelding pompbediende",
       "role": "Bevelvoerder",
-      "roleNote": "Technisch probleem herkennen en meerdere oplossingsrichtingen organiseren.",
-      "situation": "Zodra de chauffeur/pompbediende de droge stijgleiding voedt meldt hij: “Ik krijg de stijgleiding niet goed op druk. Ik blijf veel water leveren, maar de druk bouwt onvoldoende op.” De oorzaak is onbekend.",
+      "roleNote": "Reageer op een onverwacht probleem in de watervoorziening.",
+      "situation": "Tijdens het voeden van de droge stijgleiding meldt de chauffeur/pompbediende: “BV, ik krijg de stijgleiding niet goed op druk. Ik blijf veel water leveren, maar de druk bouwt onvoldoende op.” De oorzaak is op dit moment onbekend.",
       "choices": [
         {
           "id": "A",
           "text": "Storing laten onderzoeken én parallel een alternatieve wateropbouw starten.",
           "consequence": "De casus laat beide sporen doorlopen. De eerste betrouwbare oplossing bepaalt wanneer de inzet met LD verantwoord verder kan.",
           "rationale": "Parallel werken benut tijd en houdt meerdere oplossingsrichtingen open.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Parallel werken benut tijd en houdt meerdere oplossingsrichtingen open."
         },
@@ -231,7 +235,7 @@ window.SCENARIO = {
           "text": "Alleen de storing in de droge stijgleiding laten zoeken.",
           "consequence": "Na circa 10 fictieve minuten kan de storing worden gevonden en opgelost.",
           "rationale": "Een geldige oplossing, maar zonder parallel alternatief is de inzet volledig afhankelijk van één spoor.",
-          "label": "Verdedigbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Een geldige oplossing, maar zonder parallel alternatief is de inzet volledig afhankelijk van één spoor."
         },
@@ -240,7 +244,7 @@ window.SCENARIO = {
           "text": "De ploeg ondanks onvoldoende druk laten doorgaan en later naar water kijken.",
           "consequence": "De ploeg mist de noodzakelijke blus- en beschermingscapaciteit voor de bedreigde route.",
           "rationale": "Onvoldoende water op hoogte is een harde randvoorwaarde voor deze binneninzet.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -2,
           "deepDive": "Onvoldoende water op hoogte is een harde randvoorwaarde voor deze binneninzet."
         }
@@ -255,21 +259,22 @@ window.SCENARIO = {
         "src": "assets/bpbb/droge_stijgleiding_binnen.png",
         "caption": "Werken met de droge stijgleiding en LD op hoogte",
         "source": "Train de trainer BPBB 2026"
-      }
+      },
+      "discussionQuestion": "Wat betekent het wegvallen van de geplande watervoorziening voor je inzetdoel en voor de veiligheid van de ingezette ploeg?"
     },
     {
       "id": 6,
-      "title": "Storing onderzoeken",
+      "title": "Onderzoek aan de stijgleiding",
       "role": "Manschappen",
-      "roleNote": "Systematisch controleren van de stijgleiding in het gebouw.",
-      "situation": "Als opdracht wordt gegeven de droge stijgleiding te controleren, blijkt de oorzaak niet bij de voeding beneden te liggen. De controle moet in het gebouw worden uitgevoerd.",
+      "roleNote": "Bepaal hoe je het drukverlies laat onderzoeken.",
+      "situation": "Wanneer opdracht wordt gegeven de droge stijgleiding te controleren, blijkt het probleem niet direct bij de voeding beneden te zitten. Er is nader onderzoek in het gebouw nodig. Pas na systematische controle kan duidelijk worden waar het drukverlies ontstaat.",
       "choices": [
         {
           "id": "A",
           "text": "Verdiepingsaansluitingen systematisch controleren.",
           "consequence": "Op de 4e verdieping wordt na circa 10 fictieve minuten de oorzaak gevonden: een ontbrekend blinddeksel óf een openstaande afsluiter. Na herstel kan de leiding op druk komen.",
           "rationale": "Systematische controle sluit aan bij het drukverliesbeeld.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Systematische controle sluit aan bij het drukverliesbeeld."
         },
@@ -278,7 +283,7 @@ window.SCENARIO = {
           "text": "Alleen beneden voeding, pomp en koppelingen opnieuw controleren.",
           "consequence": "De pompbediende blijft hetzelfde drukverlies zien; de lekkage op de 4e verdieping blijft bestaan.",
           "rationale": "De klacht wijst erop dat water elders uit het systeem kan wegstromen.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "De klacht wijst erop dat water elders uit het systeem kan wegstromen."
         },
@@ -287,7 +292,7 @@ window.SCENARIO = {
           "text": "De stijgleiding buiten gebruik verklaren zonder controle.",
           "consequence": "Een potentieel snel herstelbare gebouwvoorziening wordt niet meer benut.",
           "rationale": "Kan verdedigbaar zijn wanneer een alternatief sneller en zeker beschikbaar is, maar niet als automatische reflex.",
-          "label": "Aandachtspunt",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Kan verdedigbaar zijn wanneer een alternatief sneller en zeker beschikbaar is, maar niet als automatische reflex."
         }
@@ -301,21 +306,22 @@ window.SCENARIO = {
         "src": "assets/vggm/stijgleiding_afnamepunt.jpg",
         "caption": "Afnamepunt droge stijgleiding",
         "source": "VGGM lesmateriaal"
-      }
+      },
+      "discussionQuestion": "Hoe organiseer je het oplossen van een technisch probleem zonder dat de rest van de inzet daarop stilvalt?"
     },
     {
       "id": 7,
-      "title": "Alternatieve wateropbouw",
+      "title": "Watervoorziening op hoogte",
       "role": "Bevelvoerder",
-      "roleNote": "Kiezen uit systeem 3, systeem 4 of parallelle oplossingssporen.",
-      "situation": "Een alternatieve watervoorziening kan worden opgebouwd. In de fictieve oefentijd zijn zowel systeem 3 (transportslang/transporttas) als systeem 4 buitenom na ongeveer 9 minuten bruikbaar.",
+      "roleNote": "Bepaal hoe je betrouwbare watervoorziening voor de inzet organiseert.",
+      "situation": "De inzetploeg heeft nog geen betrouwbare LD-watervoorziening op de brandverdieping. Je kunt wachten op herstel van de gebouwvoorziening of een alternatieve wateropbouw organiseren. De beschikbare hoogbouwsystemen uit de lesstof kunnen hierbij worden gebruikt.",
       "choices": [
         {
           "id": "A",
           "text": "Systeem 3 met transportslang/transporttas laten opbouwen.",
           "consequence": "Na circa 9 fictieve minuten is een alternatieve LD-watervoorziening beschikbaar.",
           "rationale": "Een passende oplossing wanneer de route en beschikbare middelen dit toelaten.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Een passende oplossing wanneer de route en beschikbare middelen dit toelaten."
         },
@@ -324,7 +330,7 @@ window.SCENARIO = {
           "text": "Systeem 4 buitenom laten opbouwen.",
           "consequence": "Na circa 9 fictieve minuten is buitenom een alternatieve watervoorziening beschikbaar.",
           "rationale": "Ook dit is een gelijkwaardige casusoplossing.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Ook dit is een gelijkwaardige casusoplossing."
         },
@@ -333,7 +339,7 @@ window.SCENARIO = {
           "text": "Geen alternatief opbouwen en volledig wachten op de storing.",
           "consequence": "De inzet blijft ongeveer 10 minuten afhankelijk van herstel van de stijgleiding.",
           "rationale": "Niet per definitie fout, maar minder robuust wanneer redding en rookontwikkeling tijdkritisch zijn.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Niet per definitie fout, maar minder robuust wanneer redding en rookontwikkeling tijdkritisch zijn."
         }
@@ -349,21 +355,22 @@ window.SCENARIO = {
         "src": "assets/bpbb/transporttas_systeem3.png",
         "caption": "Systeem 3 – transporttas / transportslang",
         "source": "Train de trainer BPBB 2026"
-      }
+      },
+      "discussionQuestion": "Welke factoren bepalen welk alternatief voor watertransport op hoogte in deze situatie het meest geschikt is?"
     },
     {
       "id": 8,
-      "title": "Redvoertuig vroeg of laat",
+      "title": "Extra verticale mogelijkheden",
       "role": "Bevelvoerder",
-      "roleNote": "Anticiperen op een alternatieve verticale waterroute.",
-      "situation": "Het redvoertuig wordt in deze casus niet automatisch gealarmeerd. Als het vroeg door de BV is aangevraagd, kan een alternatieve waterroute via het redvoertuig na circa 9 minuten opbouwtijd beschikbaar zijn.",
+      "roleNote": "Bepaal of je aanvullende middelen vroegtijdig wilt organiseren.",
+      "situation": "Naast de gebouwvoorziening en de beschikbare slangsystemen kan aanvullende verticale capaciteit een rol spelen. Een redvoertuig is niet automatisch gealarmeerd en moet, wanneer je dit nodig acht, door de bevelvoerder zelf worden aangevraagd.",
       "choices": [
         {
           "id": "A",
           "text": "Redvoertuig vroeg alarmeren en als mogelijke alternatieve verticale waterroute laten voorbereiden.",
           "consequence": "Bij uitval van de stijgleiding is het redvoertuig tijdig beschikbaar om als alternatief te worden benut.",
           "rationale": "Vroeg anticiperen creëert opties zonder de uiteindelijke tactiek al vast te leggen.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Vroeg anticiperen creëert opties zonder de uiteindelijke tactiek al vast te leggen."
         },
@@ -372,7 +379,7 @@ window.SCENARIO = {
           "text": "Redvoertuig pas alarmeren nadat het drukprobleem bekend is.",
           "consequence": "De circa 9 minuten opbouwtijd begint later; de alternatieve route komt dus later beschikbaar.",
           "rationale": "Nog steeds bruikbaar, maar het tijdvoordeel van anticiperen is verloren.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Nog steeds bruikbaar, maar het tijdvoordeel van anticiperen is verloren."
         },
@@ -381,7 +388,7 @@ window.SCENARIO = {
           "text": "Geen redvoertuig alarmeren.",
           "consequence": "Deze alternatieve route valt weg. De inzet is afhankelijk van systeem 3/4 of herstel van de stijgleiding.",
           "rationale": "Kan als andere oplossingen bewust zijn georganiseerd, maar beperkt de beschikbare opties.",
-          "label": "Aandachtspunt",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Kan als andere oplossingen bewust zijn georganiseerd, maar beperkt de beschikbare opties."
         }
@@ -395,21 +402,22 @@ window.SCENARIO = {
         "src": "assets/vggm/transitional_attack.png",
         "caption": "Redvoertuig als mogelijke externe/verticale inzetroute",
         "source": "VGGM lesmateriaal"
-      }
+      },
+      "discussionQuestion": "Welke middelen moet je vroegtijdig organiseren omdat de opbouwtijd later bepalend kan worden voor je handelingsmogelijkheden?"
     },
     {
       "id": 9,
-      "title": "Rook trekt het trappenhuis in",
+      "title": "Rookontwikkeling bij het trappenhuis",
       "role": "Manschappen",
-      "roleNote": "Rookverspreiding herkennen zodra de deur op verdieping 7 wordt geopend.",
-      "situation": "Het trappenhuis was rookvrij. Na het openen van de toegang naar de 7e verdieping begint rook langzaam het trappenhuis in te trekken. Zonder maatregel is na ongeveer 3–5 minuten duidelijke verslechtering merkbaar.",
+      "roleNote": "Herken wat de veranderende rookverspreiding betekent voor de inzet.",
+      "situation": "Het trappenhuis was bij aankomst op de 7e verdieping rookvrij. Nadat de toegang naar de brandverdieping tijdens de inzet wordt gebruikt, meldt de ploeg dat langzaam rook het trappenhuis in begint te trekken.",
       "choices": [
         {
           "id": "A",
           "text": "Rookinstroom direct melden en een rookbeheersingsmaatregel organiseren.",
           "consequence": "Het probleem wordt een zelfstandige taak en kan worden beheerst voordat het trappenhuis sterk verrookt.",
           "rationale": "Het trappenhuis is zowel aanvalsroute als mogelijke evacuatieroute voor 8 en 9.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Het trappenhuis is zowel aanvalsroute als mogelijke evacuatieroute voor 8 en 9."
         },
@@ -418,7 +426,7 @@ window.SCENARIO = {
           "text": "De deur alleen zoveel mogelijk gesloten houden tijdens het oprukken.",
           "consequence": "De rookinstroom wordt beperkt, maar niet structureel opgelost wanneer veel beweging door de deur nodig blijft.",
           "rationale": "Goed deurmanagement helpt, maar kan aanvullende rookbeheersing nodig hebben.",
-          "label": "Verdedigbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Goed deurmanagement helpt, maar kan aanvullende rookbeheersing nodig hebben."
         },
@@ -427,7 +435,7 @@ window.SCENARIO = {
           "text": "Rookverspreiding accepteren zolang de aanval op de brand doorgaat.",
           "consequence": "Na 3–5 minuten verslechtert het trappenhuis duidelijk en worden route en ontruiming boven de brand bedreigd.",
           "rationale": "Rook in het trappenhuis is een zelfstandig operationeel probleem.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -2,
           "deepDive": "Rook in het trappenhuis is een zelfstandig operationeel probleem."
         }
@@ -442,21 +450,22 @@ window.SCENARIO = {
         "src": "assets/vggm/rookverspreiding_trappenhuis.png",
         "caption": "Rookverspreiding vanuit de brandverdieping naar het trappenhuis",
         "source": "VGGM lesmateriaal"
-      }
+      },
+      "discussionQuestion": "Welke gevolgen heeft rookverspreiding naar het trappenhuis voor zowel de brandweerinzet als de aanwezige personen in het gebouw?"
     },
     {
       "id": 10,
-      "title": "Trappenhuis rookvrij houden",
+      "title": "Rookbeheersing",
       "role": "Bevelvoerder",
-      "roleNote": "Een passende rookbeheersingsoplossing kiezen en effect controleren.",
-      "situation": "Voor het rookvrij houden zijn meerdere oplossingsrichtingen mogelijk. De oefenleiding schrijft geen methode voor.",
+      "roleNote": "Kies een maatregel en beoordeel daarna het effect.",
+      "situation": "De rookinstroom in het trappenhuis neemt toe zolang de verbinding met de 7e verdieping wordt gebruikt. Het trappenhuis is zowel inzetroute als mogelijke route voor personen op hoger gelegen verdiepingen.",
       "choices": [
         {
           "id": "A",
           "text": "Smokestopper bij de toegang naar de 7e verdieping inzetten en effect controleren.",
           "consequence": "De rookinstroom neemt sterk af en het trappenhuis blijft grotendeels bruikbaar.",
           "rationale": "Een passende deurgebonden rookbeheersingsmaatregel.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Een passende deurgebonden rookbeheersingsmaatregel."
         },
@@ -465,7 +474,7 @@ window.SCENARIO = {
           "text": "Trappenhuis gecontroleerd met een ventilator op overdruk brengen en effect controleren.",
           "consequence": "Bij correcte uitvoering wordt rookinstroom tegengegaan en kan een al verrookte situatie verbeteren.",
           "rationale": "Ventilatie is alleen sterk wanneer toevoer/afvoer en effect bewust worden beheerst.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Ventilatie is alleen sterk wanneer toevoer/afvoer en effect bewust worden beheerst."
         },
@@ -474,7 +483,7 @@ window.SCENARIO = {
           "text": "Ventilator plaatsen zonder vooraf de stromingsrichting en afvoer te beoordelen.",
           "consequence": "De rookbeweging kan onvoorspelbaar worden en de casus geeft geen gegarandeerde verbetering.",
           "rationale": "Ventilatie is geen automatische oplossing; effect moet worden gecontroleerd.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Ventilatie is geen automatische oplossing; effect moet worden gecontroleerd."
         }
@@ -488,21 +497,22 @@ window.SCENARIO = {
         "src": "assets/custom/smokestopper_user.png",
         "caption": "Smokestopper als rookbeheersingsmiddel",
         "source": "Aangeleverde afbeelding"
-      }
+      },
+      "discussionQuestion": "Welke maatregel voor rookbeheersing kies je, en hoe controleer je vervolgens of die maatregel daadwerkelijk het gewenste effect heeft?"
     },
     {
       "id": 11,
-      "title": "Slachtoffer in kantoor 7.14",
+      "title": "Nieuwe informatie over de vermiste medewerker",
       "role": "Bevelvoerder",
-      "roleNote": "Nieuwe informatie benutten en redding daadwerkelijk uitvoerbaar organiseren.",
-      "situation": "Nieuwe informatie kan via de ploeg komen of via de BHV'er die telefonisch contact heeft met de medewerker in 7.14: de deur is gesloten en de ruimte is nog rookvrij. Bij openen van de deur kan rook uit de gang de ruimte binnenstromen.",
+      "roleNote": "Gebruik nieuwe informatie zonder de nog gunstige omstandigheden onnodig te verslechteren.",
+      "situation": "Tijdens de inzet komt aanvullende informatie beschikbaar via de ploeg en/of de BHV'er. Er is contact met de vermiste medewerker. De persoon bevindt zich nog in de eerder aangewezen ruimte; de deur is gesloten en de ruimte is op dat moment nog rookvrij.",
       "choices": [
         {
           "id": "A",
           "text": "Redding voorbereiden inclusief bescherming van het slachtoffer (vluchtmasker) en de deur pas openen wanneer de route daadwerkelijk gereed is.",
           "consequence": "De rookvrije situatie wordt zo lang mogelijk behouden en de ploeg heeft een plan voor transport door de verrookte gang.",
           "rationale": "Slachtoffer gevonden is niet hetzelfde als redding georganiseerd.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Slachtoffer gevonden is niet hetzelfde als redding georganiseerd."
         },
@@ -511,16 +521,16 @@ window.SCENARIO = {
           "text": "Zo snel mogelijk de deur openen en het slachtoffer naar buiten begeleiden.",
           "consequence": "De ruimte begint door de open verbinding met de gang te verroken. Zonder voorbereid vluchtmasker/route wordt de redding lastiger.",
           "rationale": "De reddingsdruk is begrijpelijk, maar deurmanagement en bescherming van het slachtoffer bepalen de uitvoerbaarheid.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "De reddingsdruk is begrijpelijk, maar deurmanagement en bescherming van het slachtoffer bepalen de uitvoerbaarheid."
         },
         {
           "id": "C",
-          "text": "De redding uitstellen totdat de gehele brand is geblust, ondanks de bekende rookvrije ruimte.",
+          "text": "De redding uitstellen totdat de gehele brand is geblust.",
           "consequence": "De brandbestrijding krijgt alle prioriteit; de slachtofferstatus blijft langer onzeker.",
           "rationale": "Kan tijd kopen voor een veilige route, maar mist de mogelijkheid om parallel gericht redding voor te bereiden.",
-          "label": "Aandachtspunt",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Kan tijd kopen voor een veilige route, maar mist de mogelijkheid om parallel gericht redding voor te bereiden."
         }
@@ -531,24 +541,25 @@ window.SCENARIO = {
         "Smokestopper"
       ],
       "media": {
-        "src": "assets/vggm/rook_deurzone.png",
-        "caption": "Deurzone en rookverspreiding bij openen van een rookvrije ruimte",
-        "source": "VGGM lesmateriaal"
-      }
+        "src": "assets/arnhem/moment11_gang_rook.jpeg",
+        "caption": "Gang op de brandverdieping onder rook",
+        "source": "Aangeleverde afbeelding"
+      },
+      "discussionQuestion": "Hoe verandert betrouwbare informatie over de locatie en omstandigheden van een slachtoffer je afweging tussen redding en brandbestrijding?"
     },
     {
       "id": 12,
-      "title": "Brandwerende scheidingen herkennen",
+      "title": "Plattegrond opnieuw beoordelen",
       "role": "Bevelvoerder",
-      "roleNote": "Preventieve informatie uit de tekening zelf interpreteren.",
-      "situation": "Op de plattegrond zijn brand- en rookwerende scheidingen aangegeven. De BHV'er weet niet wat deze voorzieningen operationeel betekenen. De brand is nog beperkt tot één kantoorruimte.",
+      "roleNote": "Koppel de feitelijke brandontwikkeling aan de objectinformatie die je eerder hebt gekregen.",
+      "situation": "De brand is nog beperkt tot één ruimte. Op de eerder verkregen plattegrond zijn verschillende soorten scheidingen ingetekend. De BHV'er kan de betekenis daarvan niet uitleggen; de inzetorganisatie moet de tekening zelf interpreteren en de werking blijven toetsen aan het actuele beeld.",
       "choices": [
         {
           "id": "A",
           "text": "De scheidingen meenemen als indicatie dat compartimentering tijd kan kopen, maar de werking blijven toetsen aan het feitelijke brand- en rookbeeld.",
           "consequence": "De tactiek wordt gevoed door zowel objectinformatie als waarnemingen.",
           "rationale": "Compartimentering is waardevolle informatie, maar geen garantie dat de scheiding intact blijft.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Compartimentering is waardevolle informatie, maar geen garantie dat de scheiding intact blijft."
         },
@@ -557,7 +568,7 @@ window.SCENARIO = {
           "text": "Er volledig op vertrouwen dat de brand binnen het aangegeven compartiment blijft.",
           "consequence": "De inzet neemt meer tijd, terwijl de feitelijke werking van scheidingen niet wordt geverifieerd.",
           "rationale": "Preventieve voorzieningen ondersteunen beeldvorming maar vervangen geen verkenning.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Preventieve voorzieningen ondersteunen beeldvorming maar vervangen geen verkenning."
         },
@@ -566,7 +577,7 @@ window.SCENARIO = {
           "text": "De aangegeven scheidingen negeren omdat BHV ze niet kan uitleggen.",
           "consequence": "Een belangrijke bron van objectinformatie wordt niet benut.",
           "rationale": "Deelnemers moeten de tekening zelf kunnen interpreteren.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Deelnemers moeten de tekening zelf kunnen interpreteren."
         }
@@ -579,21 +590,29 @@ window.SCENARIO = {
         "src": "assets/arnhem/plattegrond_7e_brandwerende_scheidingen.jpeg",
         "caption": "Brand- en rookwerende scheidingen op de oefenplattegrond",
         "source": "Aangeleverde plattegrond / didactische intekening"
-      }
+      },
+      "discussionQuestion": "Hoe kun je bouwkundige brand- en rookwerende voorzieningen tactisch benutten zonder er blind op te vertrouwen?",
+      "mediaGallery": [
+        {
+          "src": "assets/arnhem/plattegrond_7e_volledig.png",
+          "caption": "Plattegrond 7e verdieping",
+          "source": "VGGM lesmateriaal"
+        }
+      ]
     },
     {
       "id": 13,
-      "title": "Oprukken in warme rook",
+      "title": "Oprukken op de brandverdieping",
       "role": "Manschappen",
-      "roleNote": "Rook lezen, rookgaskoeling toepassen en het effect controleren.",
-      "situation": "Op de 7e verdieping is de gang gevuld met dichte warme rook. De brandhaard is vanuit het trappenhuis nog niet direct zichtbaar. Richting de brand nemen de thermische omstandigheden toe.",
+      "roleNote": "Pas je techniek aan op de rook- en warmtecondities die de ploeg aantreft.",
+      "situation": "De gang op de 7e verdieping is gevuld met dichte, warme rook. De brandhaard is vanuit het trappenhuis niet direct zichtbaar. Richting de brand nemen de thermische omstandigheden toe.",
       "choices": [
         {
           "id": "A",
           "text": "Rookcondities lezen, passende rookgaskoeling uitvoeren en na iedere toepassing het effect beoordelen.",
           "consequence": "Temperatuur en rookgascondities worden beter beheersbaar en de ploeg kan gecontroleerd verder oprukken.",
           "rationale": "Rookgaskoeling is hier onderdeel van veilig oprukken, niet alleen een techniek op zichzelf.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Rookgaskoeling is hier onderdeel van veilig oprukken, niet alleen een techniek op zichzelf."
         },
@@ -602,7 +621,7 @@ window.SCENARIO = {
           "text": "Zo laag mogelijk snel doorlopen en pas water gebruiken wanneer vlammen zichtbaar worden.",
           "consequence": "De ploeg wint aanvankelijk tijd maar laat warme rookgassen boven zich onbeheerst.",
           "rationale": "Zichtbare vlammen zijn niet de enige indicatie voor thermische dreiging.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Zichtbare vlammen zijn niet de enige indicatie voor thermische dreiging."
         },
@@ -611,7 +630,7 @@ window.SCENARIO = {
           "text": "Continu veel water in de rooklaag geven zonder effectcontrole.",
           "consequence": "Zicht, stoomvorming en watergebruik kunnen verslechteren zonder dat de ploeg weet of de toepassing effectief is.",
           "rationale": "Techniek moet passen bij het rookbeeld en steeds worden geëvalueerd.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Techniek moet passen bij het rookbeeld en steeds worden geëvalueerd."
         }
@@ -626,21 +645,22 @@ window.SCENARIO = {
         "src": "assets/vggm/straalpijp.gif",
         "caption": "Straalpijptechniek en rookgaskoeling",
         "source": "VGGM lesmateriaal"
-      }
+      },
+      "discussionQuestion": "Waarop baseert een ploeg tijdens het oprukken de keuze wanneer en hoe rookgaskoeling wordt toegepast?"
     },
     {
       "id": 14,
-      "title": "8e en 9e verdieping",
+      "title": "Verdiepingen boven de brand",
       "role": "Bevelvoerder",
-      "roleNote": "Onbekende populatie boven de brand als zelfstandige taak herkennen.",
-      "situation": "De BHV-organisatie heeft alleen de 7e verdieping ontruimd. Bij navraag blijkt dat BHV niet weet of 8 en 9 leeg zijn. Als een ploeg deze verdiepingen controleert blijken op beide nog mensen aanwezig; aantallen zijn niet direct duidelijk.",
+      "roleNote": "Bepaal hoe je omgaat met nog onbekende bezetting boven de brand.",
+      "situation": "Wanneer gericht wordt nagevraagd of de 8e en 9e verdieping zijn ontruimd, antwoordt de BHV'er dat hij dat niet weet: zijn organisatie is alleen bezig met de 7e verdieping. Pas wanneer deze verdiepingen worden gecontroleerd, ontstaat een betrouwbaar beeld.",
       "choices": [
         {
           "id": "A",
           "text": "Extra ploeg(en) opdracht geven 8 en 9 te controleren en te ontruimen/evacueren, met terugmelding per verdieping.",
           "consequence": "De onbekende populatie wordt actief in beeld gebracht en kan via het bruikbare trappenhuis worden begeleid.",
           "rationale": "Personen boven de brand zijn een zelfstandige taak, zeker wanneer het trappenhuis dreigt te verroken.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Personen boven de brand zijn een zelfstandige taak, zeker wanneer het trappenhuis dreigt te verroken."
         },
@@ -649,7 +669,7 @@ window.SCENARIO = {
           "text": "Alleen de 8e controleren en 9 later meenemen.",
           "consequence": "Er ontstaat gedeeltelijk beeld, maar de 9e blijft voorlopig onbekend.",
           "rationale": "Kan bij beperkte capaciteit tijdelijk verdedigbaar zijn, mits expliciet geprioriteerd en later opgepakt.",
-          "label": "Verdedigbaar",
+          "label": "Operationeel gevolg",
           "quality": 0,
           "deepDive": "Kan bij beperkte capaciteit tijdelijk verdedigbaar zijn, mits expliciet geprioriteerd en later opgepakt."
         },
@@ -658,7 +678,7 @@ window.SCENARIO = {
           "text": "Aannemen dat hogere verdiepingen vanzelf ontruimen.",
           "consequence": "De aanwezigheid van meerdere personen op 8 en 9 blijft onbekend totdat de situatie verslechtert.",
           "rationale": "De BHV heeft deze verdiepingen niet ontruimd; zelfredzaamheid mag niet zonder controle worden aangenomen.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -2,
           "deepDive": "De BHV heeft deze verdiepingen niet ontruimd; zelfredzaamheid mag niet zonder controle worden aangenomen."
         }
@@ -669,24 +689,25 @@ window.SCENARIO = {
         "FABCM"
       ],
       "media": {
-        "src": "assets/vggm/hoogbouw_overzicht.jpeg",
-        "caption": "Bovenliggende verdiepingen vragen afzonderlijke aandacht voor ontruiming",
-        "source": "VGGM lesmateriaal"
-      }
+        "src": "assets/arnhem/moment14.png",
+        "caption": "Lift- en trapomgeving",
+        "source": "Aangeleverde afbeelding"
+      },
+      "discussionQuestion": "Wanneer is voor jou voldoende zeker dat de verdiepingen boven de brand veilig zijn, en wie organiseert die controle?"
     },
     {
       "id": 15,
-      "title": "Capaciteitstekort voelbaar",
+      "title": "Meerdere taken tegelijk",
       "role": "Bevelvoerder",
-      "roleNote": "Prioriteiten stellen wanneer niet alle taken tegelijk uitgevoerd kunnen worden.",
-      "situation": "Als onvoldoende of laat is opgeschaald, liggen nu meerdere taken tegelijk: inzet/redding op 7, rookvrij houden van het trappenhuis en controle/ontruiming van 8 en 9. Er volgt geen kunstmatige extra melding; bestaande problemen ontwikkelen door.",
+      "roleNote": "Stel prioriteiten wanneer de beschikbare capaciteit niet alle processen tegelijk kan afdekken.",
+      "situation": "Afhankelijk van je eerdere keuzes lopen nu meerdere processen naast elkaar. Niet iedere taak is vanzelf van capaciteit voorzien. Problemen die niet worden belegd, blijven bestaan of ontwikkelen verder.",
       "choices": [
         {
           "id": "A",
           "text": "Prioriteiten expliciet maken en direct extra capaciteit organiseren voor de nog onbelegde taken.",
           "consequence": "De inzet blijft bestuurbaar en taken krijgen eigen verantwoordelijke capaciteit.",
           "rationale": "Opschaling is geen doel op zich; het gaat om voldoende slagkracht voor zelfstandige processen.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Opschaling is geen doel op zich; het gaat om voldoende slagkracht voor zelfstandige processen."
         },
@@ -695,7 +716,7 @@ window.SCENARIO = {
           "text": "De beschikbare ploegen meerdere taken tegelijk laten combineren.",
           "consequence": "Taken worden gestart maar terugmelding, voortgang en veiligheid worden minder voorspelbaar.",
           "rationale": "Kan kortstondig nodig zijn, maar is kwetsbaar bij een dynamisch hoogbouwincident.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Kan kortstondig nodig zijn, maar is kwetsbaar bij een dynamisch hoogbouwincident."
         },
@@ -704,7 +725,7 @@ window.SCENARIO = {
           "text": "Alle capaciteit op de brandverdieping houden totdat de brand uit is.",
           "consequence": "Rookbeheersing en ontruiming boven de brand blijven liggen en ontwikkelen verder.",
           "rationale": "De brand is niet het enige operationele probleem.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -2,
           "deepDive": "De brand is niet het enige operationele probleem."
         }
@@ -715,24 +736,25 @@ window.SCENARIO = {
         "FABCM"
       ],
       "media": {
-        "src": "assets/vggm/logistiek_materiaal.jpeg",
-        "caption": "Capaciteit en taakverdeling worden bij hoogbouw een zelfstandig proces",
-        "source": "VGGM lesmateriaal"
-      }
+        "src": "assets/arnhem/moment15.png",
+        "caption": "Coördinatie en taakverdeling",
+        "source": "Aangeleverde afbeelding"
+      },
+      "discussionQuestion": "Hoe bepaal je welke processen prioriteit krijgen wanneer je niet voldoende capaciteit hebt om alles tegelijk uit te voeren?"
     },
     {
       "id": 16,
-      "title": "2e en 3e TS doelgericht inzetten",
+      "title": "Extra eenheden inzetten",
       "role": "Bevelvoerder",
-      "roleNote": "Extra eenheden krijgen geen automatische taak; de BV verdeelt capaciteit bewust.",
-      "situation": "Door eigen opschaling zijn extra TS'en beschikbaar. De twee belangrijkste nog openstaande hoofdtaken zijn ontruimen/evacueren van 8 en 9 en rookvrij houden van het trappenhuis.",
+      "roleNote": "Geef beschikbare extra eenheden bewust een taak op basis van het actuele beeld.",
+      "situation": "Door eigen opschaling komen extra TS'en beschikbaar. Zij krijgen geen automatische opdracht van de oefenleiding. Je moet zelf bepalen welke nog openstaande processen prioriteit krijgen en hoe je de capaciteit verdeelt.",
       "choices": [
         {
           "id": "A",
           "text": "2e/3e TS verdelen over ontruiming 8/9 en rookbeheersing trappenhuis, passend bij het actuele beeld.",
           "consequence": "De ondersteunende processen krijgen eigen capaciteit en de eerste ploeg kan zich richten op brand/redding.",
           "rationale": "Een logische taakverdeling die de drie hoofdleerdoelen bij elkaar brengt.",
-          "label": "Sterk",
+          "label": "Operationeel gevolg",
           "quality": 1,
           "deepDive": "Een logische taakverdeling die de drie hoofdleerdoelen bij elkaar brengt."
         },
@@ -741,7 +763,7 @@ window.SCENARIO = {
           "text": "Beide extra TS'en naar de 7e verdieping sturen voor extra aanvalskracht.",
           "consequence": "De brandinzet wordt sterker, maar ontruiming boven de brand en rookbeheersing blijven onderbezet.",
           "rationale": "Extra brandbestrijdingscapaciteit kan nuttig zijn, maar moet worden afgewogen tegen de zelfstandige neventaken.",
-          "label": "Kwetsbaar",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "Extra brandbestrijdingscapaciteit kan nuttig zijn, maar moet worden afgewogen tegen de zelfstandige neventaken."
         },
@@ -750,7 +772,7 @@ window.SCENARIO = {
           "text": "Eén extra TS zonder concrete opdracht stand-by houden.",
           "consequence": "Capaciteit is aanwezig maar wordt niet benut terwijl andere taken aantoonbaar openstaan.",
           "rationale": "In een grote inzet is duidelijke taaktoedeling essentieel.",
-          "label": "Ongunstig",
+          "label": "Operationeel gevolg",
           "quality": -1,
           "deepDive": "In een grote inzet is duidelijke taaktoedeling essentieel."
         }
@@ -762,10 +784,11 @@ window.SCENARIO = {
         "Smokestopper"
       ],
       "media": {
-        "src": "assets/vggm/hoogbouw_object.png",
-        "caption": "Georganiseerde inzet over meerdere bouwlagen",
-        "source": "VGGM lesmateriaal"
-      }
+        "src": "assets/arnhem/moment16.png",
+        "caption": "Extra eenheden bij de inzet",
+        "source": "Aangeleverde afbeelding"
+      },
+      "discussionQuestion": "Hoe vertaal je het actuele incidentbeeld naar concrete opdrachten voor nieuw aangekomen eenheden?"
     }
   ],
   "glossary": {

@@ -107,6 +107,11 @@ function mediaHtml(m, cls='scenarioMedia'){
   if(!m) return '';
   return `<figure class="${cls}"><button class="mediaZoom" type="button" data-img="${esc(m.src)}" data-caption="${esc(m.caption)}" aria-label="Afbeelding vergroten"><img src="${esc(m.src)}" alt="${esc(m.caption)}" loading="lazy"></button><figcaption><span>${esc(m.caption)}</span><small>${esc(m.source||'VGGM lesmateriaal')}</small></figcaption></figure>`;
 }
+function galleryHtml(arr, extra=''){
+  if(!Array.isArray(arr) || !arr.length) return '';
+  return `<div class="mediaGallery ${extra}">${arr.map(m=>mediaHtml(m,'scenarioMedia')).join('')}</div>`;
+}
+
 function bindMedia(root=document){root.querySelectorAll('.mediaZoom').forEach(b=>b.addEventListener('click',()=>openModal(`<div class="imageModal"><img src="${b.dataset.img}" alt="${esc(b.dataset.caption)}"><p>${esc(b.dataset.caption)}</p></div>`)));}
 function termExtras(g, term, compact=false){
   let h='';
@@ -140,7 +145,7 @@ function richSituation(n){
  if(d.groups?.length) h+=`<div class="scenarioGroups">${d.groups.map(g=>`<div class="scenarioGroup"><h3>${esc(g.title)}</h3><ul>${(g.items||[]).map(x=>`<li>${linkTerms(x)}</li>`).join('')}</ul></div>`).join('')}</div>`;
  (d.after||[]).forEach(x=>h+=`<p>${linkTerms(x)}</p>`);
  if(d.prompt) h+=`<div class="scenarioPrompt">${linkTerms(d.prompt)}</div>`;
- h+=mediaHtml(n.media||MEDIA.nodes[n.id]);
+ h+=mediaHtml(n.media||MEDIA.nodes[n.id]);h+=galleryHtml(n.mediaGallery);
  return h;
 }
 function consequenceHtml(c){
@@ -215,17 +220,18 @@ function deepDiveHtml(n,c){
  return `<div class="deepDive">
    <div class="small">VERDIEPENDE NABESPREKING • KEUZEMOMENT ${n.id}</div>
    <h2>${esc(n.title)}</h2>
-   ${mediaHtml(n.media||MEDIA.nodes[n.id],'debriefMedia')}${systemPanelHtml(n)}<div class="sourceFrame"><strong>VRR-bronkader</strong>${paragraphs(n.sourceFrame||'')}</div>
+   ${mediaHtml(n.media||MEDIA.nodes[n.id],'debriefMedia')}${galleryHtml(n.mediaGallery)}${systemPanelHtml(n)}
    <h3>Jouw keuze ${c.id}</h3>
    <p><strong>${linkTerms(c.text)}</strong></p>
    <div class="deepText">${detailedDebrief(c)}</div>
+   ${n.discussionQuestion?`<div class="discussionQuestion"><strong>Bespreekvraag</strong><p>${linkTerms(n.discussionQuestion)}</p></div>`:''}
    <div class="roleBox"><strong>Rol in deze casus</strong><br>${esc(n.roleNote)}</div>
    ${c.debrief?'':`<h3>Vergelijking met de andere opties</h3><div class="compareGrid">${alternatives}</div>`}
    <div class="sourceNote"><strong>Brongebruik:</strong> ${esc(S.meta.sourceNote||'De inhoudelijke duiding is gebaseerd op de aangeleverde hoogbouwbronnen. VRICOL wordt alleen gebruikt als didactisch vergelijkingsmodel en niet als vastgestelde VGGM-inzetprocedure.')}</div>
  </div>`;
 }
 function choose(n,c){
- const code=choiceCode(n,c); state.choices.push({node:n.id,title:n.title,choice:c.id,text:c.text,consequence:c.consequence,rationale:c.rationale,deepDive:c.deepDive,sourceFrame:n.sourceFrame,label:c.label,quality:c.quality,role:n.role,roleNote:n.roleNote,code});
+ const code=choiceCode(n,c); state.choices.push({node:n.id,title:n.title,choice:c.id,text:c.text,consequence:c.consequence,rationale:c.rationale,deepDive:c.deepDive,sourceFrame:n.sourceFrame,label:c.label,quality:c.quality,role:n.role,roleNote:n.roleNote,discussionQuestion:n.discussionQuestion,code});
  if(c.quality>0)state.strong+=1; if(c.quality<0)state.risk+=Math.abs(c.quality);
  const low=(c.rationale+' '+c.text).toLowerCase(); if(low.includes('te traag')||low.includes('tijd +2')||low.includes('voorzichtig')||low.includes('uitgesteld'))state.cautious+=1;
  const delayed=delayedRules();
@@ -239,7 +245,7 @@ function choose(n,c){
      <button class="deepDiveBtn" id="deepBtn">Verdiepende uitleg nu bekijken</button>
    </div>
    <div id="feedback" class="feedback hidden"><div class="label">${esc(c.label)}</div><p>${linkTerms(c.rationale)}</p>${n.role==='Manschappen'?'<p class="small"><strong>Rolafspraak:</strong> binnen mag je zelf beslissen zolang het veilig en verantwoord is; deel en toets relevante afwijkingen/waarnemingen met de bevelvoerder.</p>':''}</div>
-   <p class="small afterHint">De volledige brongebaseerde uitwerking van dit keuzemoment komt ook terug in de nabespreking na afloop.</p>
+   <p class="small afterHint">De volledige verdiepende uitleg en bespreekvraag komen ook terug in de nabespreking na afloop.</p>
    <div class="nextRow"><button class="secondary" id="nextBtn">${state.index===S.nodes.length-1?'Naar nabespreking':'Verder met de inzet'}</button></div>
  </div>`;
  bindTerms(resultPanel);
@@ -262,12 +268,8 @@ function outcome(){
  return {key:'A',title:'Beheerst',text:'De inzet bleef organisatorisch en tactisch voldoende beheerst. Vluchtwegbescherming, inzetvoorwaarden en heroverweging bleven in balans.'};
 }
 function themeReviews(){
- const groups=S.meta.themeGroups||(
-   S.nodes.length===16
-   ? {'Beeldvorming':[1,2,12],'Tactiek & redding':[3,11,13],'Bluswater':[5,6,7,8],'Rookbeheersing':[9,10],'Ontruiming & opschaling':[4,14,15,16]}
-   : {'Beeldvorming':[1,8,12,18], 'Vluchtwegen':[3,5,10,11,16,17], 'Bluswater & aanval':[7,9], 'Liftgebruik':[2,14], 'Communicatie':[6,13], 'Logistiek':[4,15]}
- );
- return Object.entries(groups).map(([name,ids])=>{const arr=state.choices.filter(c=>ids.includes(c.node)); const q=arr.reduce((a,c)=>a+c.quality,0); const txt=q>=2?'Sterk in deze inzet':q>=0?'Overwegend beheerst':q>=-2?'Aandachtspunt':'Duidelijk verbeterpunt'; return {name,txt};});
+ const groups=S.meta.themeGroups||(S.nodes.length===16?{'Beeldvorming':[1,2,12],'Tactiek & redding':[3,11,13],'Bluswater':[5,6,7,8],'Rookbeheersing':[9,10],'Ontruiming & opschaling':[4,14,15,16]}:{'Beeldvorming':[1,8,12,18],'Vluchtwegen':[3,5,10,11,16,17],'Bluswater & aanval':[7,9],'Liftgebruik':[2,14],'Communicatie':[6,13],'Logistiek':[4,15]});
+ return Object.entries(groups).map(([name,ids])=>{const arr=state.choices.filter(c=>ids.includes(c.node));const q=arr.reduce((a,c)=>a+c.quality,0);const avg=q/Math.max(1,arr.length);let level,txt;if(avg>=.75){level='green';txt='Sterk'}else if(avg>=.25){level='lightgreen';txt='Overwegend sterk'}else if(avg>=-.25){level='yellow';txt='Wisselend / aandachtspunten'}else if(avg>=-.75){level='orange';txt='Meerdere kwetsbare keuzes'}else{level='red';txt='Duidelijke aandacht nodig'}return{name,txt,level};});
 }
 function historyItem(c){
  const n=S.nodes.find(x=>x.id===c.node); const choice=n.choices.find(x=>x.id===c.choice);
@@ -276,20 +278,20 @@ function historyItem(c){
      <p><strong>Jouw besluit:</strong> ${linkTerms(c.text)}</p>
      <p><strong>Operationeel gevolg:</strong> ${linkTerms(c.consequence)}</p>
      <div class="compactDuiding"><strong>Korte duiding:</strong> ${linkTerms(c.rationale)}</div>
-     <div class="fullDebrief"><h4>Uitgebreide VRR-duiding</h4><div class="sourceFrame">${paragraphs(c.sourceFrame||'')}</div>${detailedDebrief(choice)}<div class="roleBox"><strong>Rol:</strong> ${esc(c.role)} — ${esc(c.roleNote)}</div></div>
+     <div class="fullDebrief"><h4>Verdiepende uitleg</h4>${detailedDebrief(choice)}${c.discussionQuestion?`<div class="discussionQuestion"><strong>Bespreekvraag</strong><p>${linkTerms(c.discussionQuestion)}</p></div>`:''}<div class="roleBox"><strong>Rol:</strong> ${esc(c.role)} — ${esc(c.roleNote)}</div></div>
      <button class="reviewModalBtn" data-node="${c.node}" data-choice="${c.choice}">Open volledige vergelijking A/B/C</button>
    </div>
  </details>`;
 }
 function finish(){
  game.classList.add('hidden'); end.classList.remove('hidden'); const o=outcome();
- const reviews=themeReviews().map(r=>`<div class="reviewItem"><strong>${esc(r.name)}</strong><div>${esc(r.txt)}</div></div>`).join('');
+ const reviews=themeReviews().map(r=>`<div class="reviewItem theme-${esc(r.level||'yellow')}"><strong>${esc(r.name)}</strong><div>${esc(r.txt)}</div></div>`).join('');
  const hist=state.choices.map(historyItem).join('');
  const triggers=state.triggered.size?`<div class="outcome"><strong>Vertraagde/combinatiegevolgen:</strong> ${state.triggered.size}. Deze ontstonden pas door combinaties van keuzes en worden hieronder bij de gemaakte beslissingen zichtbaar.</div>`:'';
  end.innerHTML=`<div class="card endCard"><span class="status">UITKOMST ${o.key}</span><h2>${esc(o.title)}</h2><p class="lead">${esc(o.text)}</p>${triggers}
  <h3>Nabespreking per thema</h3><div class="reviewGrid">${reviews}</div>
  <div class="note"><strong>Didactische vergelijking:</strong> VRICOL helpt hier terugkijken of Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek voldoende aandacht kregen. Het is in deze casus geen VGGM-inzetprocedure.</div>
- <h3>Volledige nabespreking van je beslissingen</h3><p>Open een keuzemoment om de uitgebreide brongebaseerde uitleg terug te lezen. Via de knop onder ieder moment kun je jouw keuze ook rechtstreeks vergelijken met de twee alternatieven.</p>
+ <h3>Volledige nabespreking van je beslissingen</h3><p>Open een keuzemoment om de verdiepende uitleg en bespreekvraag terug te lezen. Via de knop onder ieder moment kun je jouw keuze ook rechtstreeks vergelijken met de twee alternatieven.</p>
  <div class="history">${hist}</div><div class="nextRow"><button class="primary" id="restartBtn">Casus opnieuw spelen</button></div></div>`;
  bindTerms(end);
  end.querySelectorAll('.reviewModalBtn').forEach(btn=>btn.addEventListener('click',()=>{const n=S.nodes.find(x=>x.id===Number(btn.dataset.node)); const c=n.choices.find(x=>x.id===btn.dataset.choice); openModal(deepDiveHtml(n,c));}));
