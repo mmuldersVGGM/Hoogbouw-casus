@@ -101,3 +101,6 @@ De begrippenlijst is aangepast op basis van de inhoudelijke review: nieuwe aange
 - Hoogbouwcasus-appicoon toegevoegd in 16, 32, 180, 192 en 512 px plus Windows `.ico`.
 - QR-code toegevoegd als `QR-Hoogbouwcasus-VGGM-2026.png`.
 - Op het casuskeuzescherm staat een scanbare QR-code en korte installatie-uitleg.
+
+## v10.3 – complete upload package
+Deze map bevat de volledige webapp inclusief alle bestaande assets. De v10.3-redactiebestanden zijn over de v10.2.6 PWA-basis geplaatst. Je kunt de inhoud van deze map als complete set naar de root van de GitHub-repository uploaden.
