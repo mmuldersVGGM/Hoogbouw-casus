@@ -777,23 +777,28 @@ window.SCENARIO = {
     },
     "Stack-effect": {
       "definition": "Door temperatuur- en dichtheidsverschillen kan in een hoog gebouw een verticale luchtstroming ontstaan.",
-      "operational": "Gebruik onverwachte rook- of CO-metingen, openingen en temperatuurverschillen als aanwijzingen; toets de hypothese met vervolgwaarnemingen."
+      "operational": "Gebruik onverwachte rook- of CO-metingen, openingen en temperatuurverschillen als aanwijzingen; toets de hypothese met vervolgwaarnemingen.",
+      "video": "https://youtu.be/CoTqobi4J40?si=yPRLE63CCivy4dAg"
     },
     "Reverse stack": {
       "definition": "Omgekeerde verticale luchtstroming, bijvoorbeeld wanneer de binnenlucht koeler is dan buiten.",
-      "operational": "Rook en CO kunnen ook onder de brandverdieping terechtkomen."
+      "operational": "Rook en CO kunnen ook onder de brandverdieping terechtkomen.",
+      "video": "https://youtu.be/CoTqobi4J40?si=yPRLE63CCivy4dAg"
     },
     "Wind Driven Fire": {
       "definition": "Winddruk op een opening kan brand en hete rookgassen krachtig door een compartiment sturen.",
-      "operational": "Beoordeel windrichting, openingen, stroming en beschikbare koelende slagkracht voordat wordt toegetreden."
+      "operational": "Beoordeel windrichting, openingen, stroming en beschikbare koelende slagkracht voordat wordt toegetreden.",
+      "video": "https://youtu.be/5gOrR9IoB8Y?si=wDkTGTgQttDiKKJn"
     },
     "Flowpath": {
       "definition": "De route waarlangs lucht, rook en hete gassen zich bewegen tussen toevoer- en afvoeropeningen.",
-      "operational": "Iedere geopende deur of raam kan het stromingspad veranderen."
+      "operational": "Iedere geopende deur of raam kan het stromingspad veranderen.",
+      "video": "https://youtu.be/IbMCRldLu5M?si=liYGTdUR6RRFgZ2J"
     },
     "Bruggenhoofd": {
       "definition": "Een operationele uitvalsbasis nabij de brand voor leiding, logistiek, communicatie, back-up en materiaal.",
-      "operational": "Kies een locatie die rookvrij en bereikbaar blijft en bewaak de omstandigheden tijdens de inzet."
+      "operational": "Kies een locatie die rookvrij en bereikbaar blijft en bewaak de omstandigheden tijdens de inzet.",
+      "pdf": "assets/custom/bruggenhoofd_aandachtskaart.pdf"
     },
     "Compartimentering": {
       "definition": "Brand- en rookwerende scheidingen die verspreiding van brand en rook moeten vertragen.",
