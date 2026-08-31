@@ -1,3862 +1,1038 @@
 window.SCENARIO = {
   "meta": {
-    "title": "Hoogbouwcasus – woningbrand op hoogte",
+    "title": "Hoogbouwcasus – Rivierstaete",
     "subtitle": "Interactieve oefencasus voor bevelvoerder en manschappen",
-    "status": "Concept • fictief gebouw • niet vastgesteld beleid",
+    "status": "Concept • didactische oefentoepassing • geen vastgesteld VGGM-inzetprotocol",
     "building": "Fictief woongebouw van circa 76 meter / 21 bouwlagen",
     "principles": [
       "Keuzes zijn bewust plausibel en geven niet vooraf prijs wat verwacht wordt.",
       "Na iedere keuze volgt eerst het operationele gevolg; de uitleg is daarna optioneel te openen.",
-      "VRICOL wordt uitsluitend gebruikt als didactisch vergelijkingsmodel.",
-      "VGGM/BPBB-systemen worden als tweede didactische laag toegepast naast de VRR-bronduiding: RSTV, kenmerkenschema, kwadrantenmodel, CAN, FABCM én de systemen uit Train de trainer BPBB 2026: snelle lijn, snelle toevoer, transporttas, droge stijgleiding binnen, verdeelstuk buitenom, O-bundels en hoogtetas.",
-      "Beslissingen binnen liggen bij de manschappen, mits veilig en verantwoord en gedeeld/getoetst met de bevelvoerder.",
-      "Alle nare uitkomsten zijn mogelijk wanneer keuzes en omstandigheden daar logisch toe leiden."
-    ]
+      "VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek) wordt uitsluitend gebruikt als didactisch vergelijkingsmodel.",
+      "Object- en broninformatie ondersteunt de beeldvorming, maar actuele waarnemingen bepalen of aannames nog kloppen.",
+      "Een maatregel is pas geslaagd wanneer het waargenomen effect overeenkomt met het beoogde effect."
+    ],
+    "sourceNote": "Bronmateriaal wordt gebruikt als inhoudelijke onderlegger en verwijzing. De webcasus is een didactische oefentoepassing en geen vastgesteld VGGM-inzetprotocol.",
+    "hero": "assets/vggm/hoogbouw_overzicht.jpeg",
+    "scenarioGuide": {
+      "title": "Uitleg scenario’s bij hoogbouwbrand",
+      "intro": "De scenario’s zijn een denkkader. Het incident kan tijdens de inzet veranderen; een ander scenario moet zichtbaar leiden tot een nieuwe beoordeling van prioriteiten, opdrachten en capaciteit.",
+      "items": [
+        {
+          "title": "Scenario 1 – Brand beheersbaar binnen het compartiment",
+          "text": "Brand en rook blijven in hoofdzaak beperkt en de aanwezige voorzieningen functioneren voldoende. Vluchtwegen zijn bruikbaar. Focus op gericht redden en brandbestrijden."
+        },
+        {
+          "title": "Scenario 2 – Brand niet beheerst, maar nog binnen het compartiment",
+          "text": "De brand is onvoldoende beheerst, maar brand en rook zijn nog grotendeels compartimentsgebonden. Organiseer eerst voldoende interventievoorwaarden, zoals watervoorziening, blusvermogen, back-up en bruikbare vluchtwegen, en voer van daaruit redding en brandbestrijding uit."
+        },
+        {
+          "title": "Scenario 3 – Brand of rook buiten het compartiment",
+          "text": "Rook of brand verspreidt zich buiten het oorspronkelijke compartiment en bedreigt andere delen van het gebouw of vluchtwegen. Bescherming van vluchtwegen, compartimentering, rookbeheersing en ontruiming krijgen nadrukkelijker gewicht. De brandbestrijding wordt hierop aangepast."
+        },
+        {
+          "title": "Scenario 4 – Uitbreidende gevelbrand / meerdere verdiepingen bedreigd",
+          "text": "De brand breidt via of langs de gevel uit en kan meerdere verdiepingen tegelijkertijd bedreigen. De inzet krijgt een gebouwbrede dimensie: veilige vluchtwegen behouden, grootschaliger ontruiming organiseren en branduitbreiding waar mogelijk beperken."
+        }
+      ]
+    }
   },
   "nodes": [
     {
       "id": 1,
       "title": "Aankomst en eerste verdeling",
-      "situation": "14:32. Lichte grijze rook uit een raam op verdieping 14. Beheerder meldt dat de brandweerliften beschikbaar zijn. Een bewoner zegt dat mogelijk nog iemand in de brandwoning aanwezig is. Wind is voelbaar aan de brandgevel.",
+      "role": "Bevelvoerder",
+      "roleNote": "Bepaal het eerste inzetkader en verdeel taken.",
+      "situation": "Bij aankomst bij Rivierstaete zie je lichte grijze rook uit een geopend raam op de 14e verdieping. De wind is aan deze gevel duidelijk voelbaar. De beheerder meldt dat beide brandweerliften beschikbaar zijn. Een bewoner zegt dat mogelijk nog iemand in de brandwoning aanwezig is.",
       "choices": [
         {
           "id": "A",
-          "text": "Aanvalsploeg direct met blus- en toetredingsmateriaal naar verdieping 12; chauffeur verzamelt beneden objectinformatie.",
-          "consequence": "Ploeg wint tijd richting mogelijke redding, maar gaat omhoog voordat het inzettrappenhuis, de stijgleiding en windinvloed voldoende zijn bevestigd.",
-          "rationale": "Verdedigbaar vanuit reddingsdruk, maar kwetsbaar. Laat situatiebeeld -1 en tijd +0; bij latere verkeerde trapkeuze ontstaat extra tijdverlies.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "Deze keuze geeft prioriteit aan snelheid richting een mogelijk slachtoffer. Dat is begrijpelijk, maar de ploeg beweegt omhoog voordat inzettrappenhuis, stijgleiding en windinvloed voldoende zijn bevestigd. In hoogbouw kan een verkeerde keuze beneden later veel tijd kosten op hoogte. Sterk aan deze optie is dat de verkenning direct begint; kwetsbaar is dat de ploeg mogelijk materiaal of route moet corrigeren nadat zij al boven is.",
-          "consequenceDetail": {
-            "time": "14:33 uur — verticale verkenning start direct",
-            "paragraphs": [
-              "De aanvalsploeg vertrekt vrijwel direct met blus- en toetredingsmateriaal richting verdieping 12. Beneden verzamelt de chauffeur samen met de beheerder de gebouwinformatie.",
-              "De inzet wint tijd richting de mogelijke vermissing, maar de ploeg gaat omhoog terwijl het inzettrappenhuis, de exacte koppeling met de stijgleiding en de invloed van de wind nog niet volledig zijn bevestigd."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom is deze keuze begrijpelijk?",
-                "paragraphs": [
-                  "De melding bevat een mogelijke persoon in de brandwoning. Vanuit reddingsdruk is het logisch dat je geen minuten wilt verliezen aan een volledig uitgewerkt objectbeeld voordat iemand richting de brand gaat.",
-                  "De keuze gebruikt de beschikbare capaciteit parallel: de ploeg beweegt omhoog terwijl beneden informatie wordt verzameld."
-                ]
-              },
-              {
-                "title": "Waar zit de kwetsbaarheid?",
-                "paragraphs": [
-                  "Hoogbouw is sterk afhankelijk van de juiste combinatie van lift, inzettrappenhuis, stijgleiding, communicatie en rookvrije terugtrekroute. Als één van die onderdelen boven anders blijkt dan aangenomen, moet de ploeg corrigeren nadat zij al op hoogte is.",
-                  "De wind aan de brandgevel is bovendien nog niet tactisch gekoppeld aan de binneninzet. Bij een later geopende deur kan dat relevant worden voor flowpath en Wind Driven Fire."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbaar vanuit reddingsdruk, maar kwetsbaarder georganiseerd.",
-            "strengths": [
-              "snelle verticale verkenning",
-              "tijdwinst richting mogelijke redding",
-              "beneden blijft informatie-inwinning doorgaan"
-            ],
-            "risks": [
-              "inzettrappenhuis nog niet bevestigd",
-              "bluswaterroute nog niet volledig bevestigd",
-              "windinvloed nog onvoldoende gekoppeld aan inzet"
-            ],
-            "stateEffects": [
-              "situatiebeeld: -1",
-              "tijd: nauwelijks extra vertraging",
-              "latere verkeerde trapkeuze kan extra tijd kosten"
-            ]
-          }
+          "text": "De aanvalsploeg direct met blus- en toetredingsmateriaal naar de 12e verdieping sturen; beneden objectinformatie blijven verzamelen.",
+          "consequence": "De ploeg wint tijd richting mogelijke redding, maar gaat omhoog voordat inzettrappenhuis, stijgleiding en windinvloed volledig zijn bevestigd.",
+          "rationale": "Verdedigbaar vanuit reddingsdruk, maar kwetsbaarder omdat belangrijke inzetvoorwaarden nog niet volledig zijn bevestigd.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Verdedigbaar vanuit reddingsdruk, maar kwetsbaarder omdat belangrijke inzetvoorwaarden nog niet volledig zijn bevestigd."
         },
         {
           "id": "B",
-          "text": "Eerste ploeg naar verdieping 12 voor verkenning; tweede ploeg blijft beneden totdat stijgleiding en inzettrappenhuis zijn bevestigd.",
-          "consequence": "Er ontstaat snel beeld op hoogte én beneden blijft capaciteit beschikbaar voor objectinformatie en water.",
-          "rationale": "Meest robuuste start. Situatiebeeld +1 zonder veel tijdverlies.",
-          "label": "Sterk",
+          "text": "Een eerste ploeg naar de 12e verdieping voor verkenning sturen en beneden parallel stijgleiding, inzettrappenhuis en objectinformatie bevestigen.",
+          "consequence": "Er ontstaat snel een beeld op hoogte en beneden blijft capaciteit beschikbaar om kritieke voorzieningen te bevestigen.",
+          "rationale": "Tijd en voorbereiding worden parallel georganiseerd.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Dit verdeelt de informatie-inwinning over twee niveaus. De eerste ploeg bouwt snel een beeld op hoogte op, terwijl beneden capaciteit overblijft om water, trappenhuis en objectinformatie te bevestigen. Daarmee worden tijd en voorbereiding parallel georganiseerd. Dat past goed bij de gedachte dat de inzetvoorwaarden belangrijk zijn, zonder de verticale verkenning onnodig stil te zetten.",
-          "consequenceDetail": {
-            "time": "14:33 uur — informatie wordt parallel opgebouwd",
-            "paragraphs": [
-              "De eerste ploeg gaat naar verdieping 12 voor een gerichte verkenning. Beneden blijft voldoende capaciteit beschikbaar om met de beheerder de stijgleiding, gebouwvoorzieningen en het inzettrappenhuis te bevestigen.",
-              "Daardoor ontstaat vrijwel gelijktijdig een beeld op hoogte en een betrouwbaarder objectbeeld beneden."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom is dit een robuuste start?",
-                "paragraphs": [
-                  "Deze keuze voorkomt dat voorbereiding en verticale verkenning na elkaar plaatsvinden. Ze lopen parallel. Dat is belangrijk omdat hoogbouw zowel tijdkritisch als informatie-intensief is.",
-                  "De ploeg kan op -2 actuele omstandigheden melden, terwijl beneden de kritieke voorzieningen en route worden bevestigd. Daardoor ontstaat snel een gedeeld beeld zonder de inzet volledig stil te zetten."
-                ]
-              },
-              {
-                "title": "Wat blijft aandacht vragen?",
-                "paragraphs": [
-                  "Ook bij deze keuze mag de ploeg op hoogte niet automatisch doorstoten. De informatie uit de commandoruimte moet worden gekoppeld aan wat daadwerkelijk op verdieping 12 en hoger wordt waargenomen."
-                ]
-              }
-            ],
-            "assessment": "Sterke, evenwichtige start.",
-            "strengths": [
-              "tijd en voorbereiding lopen parallel",
-              "snel situatiebeeld op hoogte",
-              "beneden blijft capaciteit voor water en objectinformatie"
-            ],
-            "risks": [
-              "vereist strakke terugmelding tussen ploeg en bevelvoerder"
-            ],
-            "stateEffects": [
-              "situatiebeeld: +1",
-              "tijdverlies: beperkt",
-              "verticale verkenning: vroeg gestart"
-            ]
-          }
+          "deepDive": "Tijd en voorbereiding worden parallel georganiseerd."
         },
         {
           "id": "C",
-          "text": "Eerst bluswatervoorziening en objectinformatie volledig organiseren; daarna pas verticaal verplaatsen.",
-          "consequence": "Water en objectkennis worden sterk georganiseerd, maar de mogelijke redding en snelle verkenning worden uitgesteld.",
-          "rationale": "Veilig maar mogelijk te traag. Tijd +2; bij werkelijk slachtoffer kan dit later negatief wegen.",
-          "label": "Verdedigbaar, met aandachtspunten",
+          "text": "Eerst bluswatervoorziening en objectinformatie volledig organiseren en daarna pas verticaal verplaatsen.",
+          "consequence": "De voorbereiding beneden wordt sterk, maar de feitelijke verkenning op hoogte en een mogelijke redding starten later.",
+          "rationale": "Verdedigbaar wanneer de voorbereiding kort en doelgericht blijft, maar tijdverlies kan bij een slachtoffer zwaar wegen.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "Deze keuze levert vroeg een sterk objectbeeld op. Je bevestigt water, liften, gebouwsystemen en route voordat de ploeg vertrekt. Dat verkleint de kans op improviseren op hoogte. Het nadeel is tijd: zolang niemand omhoog is, blijft de feitelijke situatie rond brand en mogelijke vermissing onbekend. Bij een werkelijk slachtoffer kan die vertraging zwaar wegen. Het is dus verdedigbaar, maar alleen zolang de voorbereiding doelgericht en kort blijft.",
-          "consequenceDetail": {
-            "time": "14:35 uur — ongeveer 3 minuten na aankomst",
-            "paragraphs": [
-              "De chauffeur bevestigt dat de interne bluswatervoorziening beschikbaar is. De gebouwbeheerder toont in de commandoruimte de actuele status van de belangrijkste voorzieningen.",
-              "Je hebt daarmee al vroeg een behoorlijk betrouwbaar beeld van de gebouwvoorzieningen. De eerste ploeg staat echter nog steeds beneden.",
-              "De bewoner die eerder meldde dat mogelijk iemand binnen is, blijft bij zijn verhaal, maar weet het niet zeker. Er is ondertussen nog steeds rook zichtbaar uit het raam op verdieping 14. De tweede TS arriveert."
-            ],
-            "bullets": [
-              "sprinkler op verdieping 14 geactiveerd;",
-              "beide brandweerliften functioneren normaal;",
-              "overdrukvoorziening geeft geen storing;",
-              "twee trappenhuizen aanwezig;",
-              "interne bluswaterinstallatie lijkt operationeel."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom is deze keuze verdedigbaar?",
-                "paragraphs": [
-                  "Vanuit het VRR-handboek is de aandacht voor de gebouwvoorzieningen logisch. Bij hoogbouw hoger dan 70 meter benoemt VRR drie cruciale randvoorwaarden voor effectief brandweeroptreden: een werkende bluswatervoorziening, werkende brandweerliften en goede communicatie.",
-                  "Je voorkomt hiermee dat een ploeg eerst twaalf verdiepingen omhoog gaat en daar pas ontdekt dat bijvoorbeeld de stijgleiding niet functioneert of het verkeerde trappenhuis is gekozen.",
-                  "Ook het vroeg gebruiken van de commandoruimte past bij de VRR-benadering. Daar kan informatie beschikbaar zijn over BMI, automatische blusinstallatie, ontruimingsalarminstallatie, brandweerliften, overdruk, noodstroom, blusleiding en interne communicatie."
-                ]
-              },
-              {
-                "title": "Maar waar zit het nadeel?",
-                "paragraphs": [
-                  "Tijd. Het VRR-handboek maakt onderscheid tussen een beheersbare brand en een ontwikkelde brand. Bij een beheersbaar scenario kan een snelle redding onder voorwaarden zwaar wegen voordat de volledige inzetorganisatie is opgebouwd.",
-                  "Je hebt nu ongeveer drie minuten gebruikt om beneden een vrijwel compleet beeld te krijgen. Dat is organisatorisch sterk, maar als de bewoner werkelijk nog in de brandwoning zit, zijn dat ook drie minuten waarin nog niemand richting de brandverdieping is gegaan."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbaar, maar mogelijk te afwachtend.",
-            "strengths": [
-              "bluswater vroeg bevestigd",
-              "liftstatus bekend",
-              "commandoruimte benut",
-              "inzettrappenhuis kan bewust worden gekozen",
-              "minder kans op improviseren op hoogte"
-            ],
-            "risks": [
-              "verticale verkenning komt laat op gang",
-              "mogelijke redding wordt uitgesteld",
-              "informatie beneden vertelt nog niet hoe de situatie op verdieping 14 werkelijk is",
-              "nog onbekend of sprinkler de brand beheerst"
-            ],
-            "stateEffects": [
-              "tijd +2",
-              "situatiebeeld beneden +2",
-              "situatiebeeld op hoogte 0"
-            ]
-          }
+          "deepDive": "Verdedigbaar wanneer de voorbereiding kort en doelgericht blijft, maar tijdverlies kan bij een slachtoffer zwaar wegen."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Eerste inzetkader en taakverdeling.",
-      "sourceFrame": "Bij hoogbouw hoger dan 70 meter benoemt het VRR-handboek drie kritieke randvoorwaarden voor effectief optreden: bluswater, brandweerliften en communicatie. Daarnaast is de commandoruimte een belangrijke bron voor de status van onder meer BMI, sprinkler, liften, overdruk, noodstroom, blusleiding en interne communicatie. Tegelijk maakt het handboek onderscheid tussen een beheersbare brand en een verder ontwikkelde brand. Bij een beheersbaar scenario kan tijdwinst voor een mogelijke redding zwaar wegen. De afweging is daarom niet “eerst alles weten” versus “blind naar boven”, maar hoeveel informatie je beneden nodig hebt voordat verticale verkenning verantwoord kan starten.",
-      "situationDetail": {
-        "time": "14:32 uur",
-        "intro": [
-          "Je bent bevelvoerder van de eerste TS bij woongebouw Rivierstaete, 76 meter hoog en 21 bouwlagen.",
-          "De melding is: woningbrand op de 14e verdieping, mogelijk nog één persoon in de woning."
-        ],
-        "observations": [
-          "Bij aankomst zie je lichte grijze rook uit één geopend raam op de 14e verdieping.",
-          "De wind is aan deze zijde van het gebouw duidelijk voelbaar.",
-          "De beheerder meldt dat beide brandweerliften beschikbaar zijn.",
-          "De sprinklerinstallatie is aangesproken, maar het is nog niet bekend of de sprinkler de brand daadwerkelijk onder controle heeft.",
-          "Er zijn twee trappenhuizen en in de commandoruimte is informatie over de installaties beschikbaar.",
-          "Een bewoner die naar buiten komt zegt dat de bewoner van het brandende appartement mogelijk nog binnen is.",
-          "Je hebt je eigen TS; een tweede TS is onderweg en het redvoertuig arriveert vrijwel gelijktijdig."
-        ],
-        "prompt": "Wat wordt jouw eerste inzet?"
+      "discussionQuestion": "Welke informatie bepaalt bij aankomst je eerste prioriteiten en welke informatie moet je nog actief organiseren?",
+      "media": {
+        "src": "assets/vggm/verkenning_gevel.jpeg",
+        "caption": "Verkenning van rookgedrag aan de gevel",
+        "source": "VGGM lesmateriaal – slide 67"
       },
-      "systems": [],
-      "discussionQuestion": "Welke informatie bepaalt bij aankomst je eerste prioriteiten en welke informatie moet je nog actief organiseren?"
+      "systems": [
+        "Kenmerkenschema",
+        "RSTV"
+      ]
     },
     {
       "id": 2,
       "title": "Gebruik van de brandweerlift",
-      "situation": "De lift is beschikbaar. Op het paneel is geen storing zichtbaar. De melding blijft “woningbrand, mogelijk persoon binnen”.",
+      "role": "Bevelvoerder",
+      "roleNote": "Bepaal hoe je de brandweerlift verantwoord inzet.",
+      "situation": "De brandweerlift is beschikbaar en er is geen rook, water of technische storing gemeld. De brand bevindt zich op de 14e verdieping.",
       "choices": [
         {
           "id": "A",
-          "text": "Lift gebruiken tot verdieping 12 en de lift onder brandweerbeheer houden.",
-          "consequence": "Ploeg bereikt de inzetverdieping met beperkte fysieke belasting.",
-          "rationale": "Past bij de bronlijn: lift gebruiken, onder beheer van de brandweer en stoppen op -2.",
-          "label": "Sterk",
+          "text": "De brandweerlift gebruiken tot de 12e verdieping en de lift onder brandweerbeheer houden.",
+          "consequence": "De ploeg bereikt de inzetverdieping met beperkte fysieke belasting en houdt ruimte voor beoordeling en organisatie vóór de brandverdieping.",
+          "rationale": "Gebruik van een betrouwbare brandweerlift beperkt tijd en fysieke belasting; de -2-positie biedt ruimte voor verdere organisatie.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Dit sluit rechtstreeks aan op de VRR-lijn: brand op 14 betekent uitstappen op 12. De ploeg houdt fysieke reserve over, kan op -2 de inzet organiseren en blijft buiten de meest waarschijnlijke rook- en waterinvloed. Het vasthouden van de lift onder brandweerbeheer voorkomt bovendien dat de lift zelfstandig een ongunstige positie inneemt.",
-          "consequenceDetail": {
-            "time": "14:37 uur",
-            "paragraphs": [
-              "De ploeg bereikt verdieping 12 zonder bijzonderheden. Er is geen rook in de lifthal en er is geen water zichtbaar rond de lift.",
-              "De fysieke belasting van de ploeg is beperkt gebleven. Ze hebben hun materiaal nog volledig beschikbaar en zijn nog niet vermoeid door twaalf verdiepingen traplopen.",
-              "De lift blijft onder brandweerbeheer en wordt niet automatisch teruggestuurd."
-            ],
-            "bullets": [
-              "lift normaal gefunctioneerd;",
-              "verdieping 12 rookvrij;",
-              "CO-meter: 0 ppm;",
-              "twee trappenhuizen zichtbaar;",
-              "in één van de voorportalen is direct een afnamepunt van de blusleiding te zien."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom is deze keuze sterk volgens het VRR-handboek?",
-                "paragraphs": [
-                  "Dit sluit vrijwel één-op-één aan bij de VRR-lijn. Een functionerende brandweerlift is bedoeld om mensen en middelen tijdig op hoogte te krijgen en wordt als belangrijke randvoorwaarde voor een effectieve en veilige inzet beschouwd.",
-                  "Voor gebruik wordt gecontroleerd op rook en water, het liftbeheer wordt bij de brandweer geborgd en de lift stopt standaard twee etages onder de vermoedelijke brandetage. Bij brand op verdieping 14 betekent dat verdieping 12.",
-                  "De afstand van twee verdiepingen creëert ook ruimte om vóór de brandverdieping zaken te organiseren zoals trappenhuiskeuze, bluswater, bruggenhoofd, communicatie en een eerste beoordeling van rook en CO."
-                ]
-              },
-              {
-                "title": "Waarom is verdieping 13 minder sterk?",
-                "paragraphs": [
-                  "Eén verdieping hoger scheelt weinig looptijd, maar je levert veiligheidsmarge in. Je zit dichter bij mogelijke rookverspreiding, lekkend bluswater en omstandigheden rond het brandcompartiment. De standaard -2 creëert juist herstel- en organisatieruimte."
-                ]
-              },
-              {
-                "title": "Waarom niet gewoon de trap?",
-                "paragraphs": [
-                  "De trap blijft noodzakelijk als de lift niet veilig kan worden gebruikt. Bij een goed functionerende brandweerlift zou volledig traplopen echter een belangrijk voordeel van het gebouw ongebruikt laten. Dat kost tijd en fysieke reserve, wat later doorwerkt in ademlucht, materiaaltransport en aflossing."
-                ]
-              }
-            ],
-            "assessment": "Sterke keuze.",
-            "stateEffects": [
-              "liftstatus: bruikbaar",
-              "ploegbelasting: laag",
-              "tijd: beperkt opgelopen",
-              "verticale inzetpositie: -2"
-            ]
-          }
+          "deepDive": "Gebruik van een betrouwbare brandweerlift beperkt tijd en fysieke belasting; de -2-positie biedt ruimte voor verdere organisatie."
         },
         {
           "id": "B",
-          "text": "Lift gebruiken tot verdieping 13 om één verdieping loopafstand te besparen.",
-          "consequence": "Ploeg komt dichter bij de brand, maar ook dichter bij rook, water en mogelijke bedreiging van de lift.",
-          "rationale": "Ongunstig. Liftgebruik te dicht op de brand verhoogt risico en verkleint herstelruimte.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "De winst is één verdieping minder lopen, maar daarvoor lever je veiligheidsmarge in. Je komt dichter bij mogelijke rookverspreiding, wateroverlast en verstoring van de liftomgeving. De standaard -2 is juist bedoeld om ruimte te houden voor beoordeling en organisatie voordat de ploeg de brandverdieping nadert.",
-          "consequenceDetail": {
-            "time": "14:36 uur — uitstappen op verdieping 13",
-            "paragraphs": [
-              "De ploeg wint één verdieping loopafstand en staat sneller dichter bij de brand. Tegelijk ligt de uitstapplaats dichter bij mogelijke rookverspreiding, wateroverlast en verstoring rond de brandverdieping.",
-              "De ploeg heeft minder afstand om een veilige inzetbasis en terugtrekroute te organiseren voordat zij de brandverdieping nadert."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom lijkt deze keuze aantrekkelijk?",
-                "paragraphs": [
-                  "De gedachte is eenvoudig: één verdieping minder lopen betekent iets sneller bij de brand en minder fysieke belasting. Bij een mogelijke vermissing klinkt dat logisch."
-                ]
-              },
-              {
-                "title": "Waarom wijkt dit af van de VRR-lijn?",
-                "paragraphs": [
-                  "VRR hanteert standaard brandverdieping -2 voor het uitstappen met de brandweerlift. Die afstand is niet willekeurig; zij geeft ruimte voor beoordeling, trappenhuiskeuze, bluswateropbouw en organisatie buiten de directe invloed van de brandverdieping.",
-                  "Door op -1 uit te stappen, lever je voor geringe tijdwinst een deel van die veiligheids- en herstelmarge in."
-                ]
-              }
-            ],
-            "assessment": "Ongunstig in dit scenario.",
-            "strengths": [
-              "iets kortere looproute"
-            ],
-            "risks": [
-              "minder veiligheidsmarge",
-              "dichter bij rook en water",
-              "minder ruimte voor organisatie op hoogte"
-            ],
-            "stateEffects": [
-              "verticale inzetpositie: -1",
-              "risico liftomgeving: verhoogd"
-            ]
-          }
+          "text": "De brandweerlift gebruiken tot de 13e verdieping om één verdieping loopafstand te besparen.",
+          "consequence": "De ploeg komt iets dichter bij de brand, maar levert afstand en organisatieruimte in.",
+          "rationale": "De beperkte tijdwinst moet worden afgewogen tegen de kleinere marge tot rook, water en brandinvloed.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "De beperkte tijdwinst moet worden afgewogen tegen de kleinere marge tot rook, water en brandinvloed."
         },
         {
           "id": "C",
-          "text": "Lift niet gebruiken; hele ploeg gaat met materiaal via het trappenhuis.",
-          "consequence": "De ploeg blijft onafhankelijk van lifttechniek, maar verliest veel tijd en energie vóór de inzet.",
-          "rationale": "Kan bij liftuitval nodig zijn, maar bij een betrouwbare brandweerlift is dit inefficiënt; ploegbelasting +2, tijd +2.",
-          "label": "Verdedigbaar, met aandachtspunten",
+          "text": "De lift niet gebruiken en met materiaal via het trappenhuis naar boven gaan.",
+          "consequence": "De ploeg blijft onafhankelijk van lifttechniek, maar gebruikt veel tijd en fysieke reserve voordat de inzet begint.",
+          "rationale": "Logisch bij een onbetrouwbare lift; inefficiënt wanneer de lift aantoonbaar bruikbaar is.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "De trap is het noodzakelijke alternatief als de lift onveilig of onbetrouwbaar is. Als de lift echter aantoonbaar bruikbaar is, kost volledig traplopen onnodig tijd en energie. Die fysieke belasting werkt later door in ademluchtverbruik, inzetduur, materiaaltransport en aflossing. De keuze kan dus veilig lijken, maar vermindert de beschikbare slagkracht wanneer die boven nodig is.",
-          "consequenceDetail": {
-            "time": "14:35 uur — ploeg kiest de trap",
-            "paragraphs": [
-              "De ploeg blijft volledig onafhankelijk van de lift, maar moet twaalf verdiepingen stijgen met de noodzakelijke middelen.",
-              "De inzet loopt daardoor vertraging op en de fysieke belasting ontstaat voordat de feitelijke brandbestrijding begint."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Wanneer is dit wel logisch?",
-                "paragraphs": [
-                  "De trap is het noodzakelijke alternatief wanneer de brandweerlift door rook, water, vuur of technisch falen niet betrouwbaar is. Dan moet de inzet daarop worden aangepast."
-                ]
-              },
-              {
-                "title": "Waarom is het hier minder sterk?",
-                "paragraphs": [
-                  "In deze situatie is de lift gecontroleerd en bruikbaar. Door hem niet te gebruiken, wordt beschikbare gebouwtechniek niet benut en neemt ploegbelasting vroeg toe.",
-                  "VRR benoemt bij liftuitval boven de tiende verdieping expliciet extra traplooptijd en de noodzaak rekening te houden met personele capaciteit en materiaalgewicht."
-                ]
-              }
-            ],
-            "assessment": "Veilig mogelijk, maar inefficiënt zolang de lift betrouwbaar is.",
-            "strengths": [
-              "onafhankelijk van lifttechniek"
-            ],
-            "risks": [
-              "tijdverlies",
-              "hogere fysieke belasting",
-              "meer ademlucht- en logistieke druk later in de inzet"
-            ],
-            "stateEffects": [
-              "ploegbelasting: +2",
-              "tijd: +2"
-            ]
-          }
+          "deepDive": "Logisch bij een onbetrouwbare lift; inefficiënt wanneer de lift aantoonbaar bruikbaar is."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Toegangsstrategie. Manschappen blijven verantwoordelijk voor veilige uitvoering en terugmelding.",
-      "sourceFrame": "Het VRR-handboek noemt een functionerende brandweerlift randvoorwaardelijk voor effectieve en veilige brandweerinzet in hoge gebouwen. Voor gebruik wordt de liftschacht gecontroleerd op rook en water, het liftbeheer wordt bij de brandweer geborgd en de lift stopt standaard twee etages onder de vermoedelijke brandverdieping. Als water zichtbaar de schacht instroomt of de lift door rook, vuur of water wordt bedreigd, geldt: niet gebruiken. Bij liftuitval neemt de traplooptijd en fysieke belasting sterk toe; het handboek gebruikt als praktisch aandachtspunt boven de tiende verdieping circa 30 seconden per te overbruggen verdieping.",
-      "situationDetail": {
-        "time": "14:35 uur",
-        "intro": [
-          "De eerste ploeg kan nu naar boven."
-        ],
-        "observations": [
-          "Brand op verdieping 14.",
-          "Sprinkler geactiveerd; effect nog onbekend.",
-          "Brandweerlift functioneert en er is geen rook- of watermelding in de liftschacht.",
-          "Interne bluswatervoorziening is beschikbaar.",
-          "Er zijn twee trappenhuizen.",
-          "Mogelijke persoon nog in de woning.",
-          "Buiten is nog steeds rook zichtbaar uit het geopende raam."
-        ],
-        "prompt": "De brandweerlift staat klaar. Wat laat je de ploeg doen?"
+      "discussionQuestion": "Welke voorwaarden moeten zijn ingevuld voordat je een lift operationeel inzet bij hoogbouwbrand?",
+      "media": {
+        "src": "assets/vggm/hoogbouw_object.png",
+        "caption": "Hoogbouwobject en verticale bereikbaarheid",
+        "source": "VGGM lesmateriaal – slide 31"
       },
-      "systems": [],
-      "discussionQuestion": "Welke voorwaarden moeten zijn ingevuld voordat je een lift operationeel inzet bij hoogbouwbrand?"
+      "systems": [
+        "Kenmerkenschema"
+      ]
     },
     {
       "id": 3,
       "title": "Keuze van het inzettrappenhuis op -2",
-      "situation": "Op verdieping 12 zijn twee trappenhuizen. In trappenhuis A zie je direct een afnamepunt. In trappenhuis B niet. Beide lijken rookvrij.",
+      "role": "Manschappen",
+      "roleNote": "Kies een inzetroute en koppel die direct terug aan de bevelvoerder.",
+      "situation": "Op de 12e verdieping zijn twee rookvrije trappenhuizen. In trappenhuis A is direct een afnamepunt zichtbaar. In trappenhuis B niet. Beide routes lijken bruikbaar.",
       "choices": [
         {
           "id": "A",
-          "text": "Trappenhuis A als inzettrappenhuis kiezen; B zo veel mogelijk beschikbaar houden voor ontvluchting.",
-          "consequence": "Afnamepunt en route naar de brand zijn logisch gekoppeld; vluchtfunctie kan van inzet worden gescheiden.",
-          "rationale": "Sterke keuze. Past bij wokkeltrappenhuis-/afnamepuntlogica uit VRR.",
-          "label": "Sterk",
+          "text": "Trappenhuis A als inzettrappenhuis kiezen en trappenhuis B zo veel mogelijk beschikbaar houden voor ontvluchting/ontruiming.",
+          "consequence": "Waterafname en inzetroute worden logisch gekoppeld en de tweede vluchtweg blijft zo veel mogelijk vrij van de brandweerinzet.",
+          "rationale": "De routekeuze combineert bluswater, inzetlogistiek en vluchtwegbescherming.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Deze keuze koppelt de inzetroute direct aan de bluswatervoorziening én houdt de tweede vluchtweg beschikbaar. Dat is precies de combinatie die het VRR-handboek bij wokkeltrappenhuizen wil borgen. Door de keuze terug te melden aan de bevelvoerder ontstaat bovendien een gedeeld beeld van inzettrap en vluchttrap.",
-          "consequenceDetail": {
-            "time": "14:38 uur — verdieping 12",
-            "paragraphs": [
-              "De ploeg bevestigt het afnamepunt van de blusleiding in het voorportaal van trappenhuis A. Daardoor kan de slangvoering vanaf de inzetverdieping logisch worden opgebouwd.",
-              "De bevelvoerder bevestigt de keuze over de portofoon.",
-              "Trappenhuis B wordt voorlopig niet gebruikt voor de brandweerinzet. Daarmee ontstaat vanaf dit moment een duidelijke scheiding tussen inzet en ontvluchting/ontruiming.",
-              "De ploeg gaat nog niet direct naar verdieping 14, maar controleert eerst de relatie tussen het afnamepunt en de route richting brandverdieping."
-            ],
-            "bullets": [
-              "trappenhuis A: inzet;",
-              "trappenhuis B: zoveel mogelijk behouden voor bewonersstromen en ontruiming."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom sluit dit sterk aan op het VRR-handboek?",
-                "paragraphs": [
-                  "Het VRR-handboek legt bij een wokkeltrappenhuis expliciet uit dat de brandweer tijdens de inzet scherp moet afspreken welk trappenhuis wordt gebruikt, zodat de andere trap beschikbaar kan blijven voor ontruiming.",
-                  "Bij een wokkeltrappenhuis lopen twee onafhankelijke trappen in één trappenhuisconstructie. Omdat de trappen in elkaar zijn gevlochten, kom je na één verdieping aan de andere zijde van de lift uit.",
-                  "VRR schrijft daarom dat je op de inzetverdieping moet kijken in welk trappenhuis het afnamepunt van de blusleiding zit. Als je op -2 een afnamepunt aantreft, kom je via datzelfde trapverloop op de brandverdieping weer uit bij het relevante voorportaal/afnamepunt.",
-                  "Dat voorkomt dat je op de brandverdieping nog moet omlopen naar het andere trappenhuis. Zo'n omloop kan betekenen dat je door een onveilig of door rook beïnvloed gebied moet bewegen."
-                ],
-                "bullets": [
-                  "inzetverdieping standaard brandverdieping -2;",
-                  "zoek daar het trappenhuis met het afnamepunt;",
-                  "ga via dat trappenhuis omhoog;",
-                  "voorkom dat je op de brandverdieping nog moet omlopen naar het andere trappenhuis."
-                ]
-              },
-              {
-                "title": "Waarom is keuze B toch niet onzinnig?",
-                "paragraphs": [
-                  "Trappenhuis B lijkt qua looproute gunstiger richting de woning. Dat is operationeel een begrijpelijke gedachte: een kortere route kan tijd besparen en minder slanglengte vragen.",
-                  "Bij hoogbouw wordt die winst minder belangrijk wanneer je daarmee de relatie met de bluswatervoorziening verliest. De routekeuze moet daarom niet alleen worden gebaseerd op de kortste weg naar de woning, maar op de combinatie van veilige route, afnamepunt, brandverdieping, bruikbaarheid als inzetroute en behoud van de andere vluchtweg."
-                ]
-              },
-              {
-                "title": "Waarom is keuze C kwetsbaarder?",
-                "paragraphs": [
-                  "Het splitsen van de ploeg levert sneller informatie op over beide trappenhuizen, maar je gebruikt daarmee direct beide trappenhuizen voor de brandweerinzet.",
-                  "Dat is precies wat je bij twee onafhankelijke vluchtwegen zo lang mogelijk wilt vermijden. Het andere trappenhuis moet zo veel mogelijk onbelemmerd beschikbaar blijven voor ontruiming.",
-                  "Daarnaast wordt de ploeg tijdelijk uit elkaar gehaald terwijl de daadwerkelijke omstandigheden boven nog niet bekend zijn. Dat hoeft niet per definitie onveilig te zijn, maar levert hier weinig extra op omdat trappenhuis A al rookvrij is, een afnamepunt heeft en een bruikbare inzetroute biedt."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "bluswater: gunstig georganiseerd",
-              "vluchtweg: rookvrij / beschermd",
-              "situatiebeeld: +1",
-              "logistiek: +1",
-              "trappenhuis A: inzet",
-              "trappenhuis B: beschikbaar voor ontvluchting"
-            ],
-            "closing": "Didactisch belangrijk: dit is een beslissing van de manschappen op hoogte. De kracht zit niet alleen in de keuze zelf, maar ook in het feit dat deze direct is teruggekoppeld en door de bevelvoerder is bevestigd."
-          }
+          "deepDive": "De routekeuze combineert bluswater, inzetlogistiek en vluchtwegbescherming."
         },
         {
           "id": "B",
-          "text": "Trappenhuis B kiezen omdat dit aan de rustige zijde van het gebouw ligt.",
-          "consequence": "Op verdieping 13 blijkt pas het afnamepunt te zitten; omloop en slangvoering worden lastiger.",
-          "rationale": "Plausibel vanuit rook/wind, maar onvoldoende gekoppeld aan bluswater. Tijd +1; logistiek -1.",
-          "label": "Verdedigbaar, met aandachtspunten",
+          "text": "Trappenhuis B kiezen omdat de route richting de woning korter lijkt.",
+          "consequence": "Op een hogere verdieping blijkt de koppeling met de bluswatervoorziening minder logisch en ontstaat extra omloop.",
+          "rationale": "Een kortere looproute is niet automatisch de beste inzetroute wanneer water en vluchtwegfunctie onvoldoende zijn meegewogen.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "Een kortere route naar de woning is aantrekkelijk, maar als het afnamepunt pas hoger of aan de andere zijde wordt gevonden, ontstaat extra omloop en lastiger slangmanagement. De routekeuze wordt dan vooral door afstand bepaald en te weinig door bluswater en vluchtwegbescherming.",
-          "consequenceDetail": {
-            "time": "14:38 uur — route via trappenhuis B",
-            "paragraphs": [
-              "De ploeg kiest de op het eerste gezicht kortere route richting de woning. Op verdieping 13 blijkt het afnamepunt echter niet logisch aan te sluiten op de gekozen route.",
-              "De ploeg moet extra zoeken en omlopen. De slangvoering wordt lastiger en de eerder veronderstelde tijdwinst verdwijnt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom is deze keuze niet onlogisch?",
-                "paragraphs": [
-                  "Een kortere en rustige route naar de brandwoning kan aantrekkelijk zijn. Zeker onder tijdsdruk is het logisch dat een ploeg afstand en bereikbaarheid meeweegt."
-                ]
-              },
-              {
-                "title": "Waarom is de keuze toch kwetsbaar?",
-                "paragraphs": [
-                  "Bij een wokkeltrappenhuis moet de route ook worden gekoppeld aan het afnamepunt van de blusleiding en aan het behouden van een tweede vluchtweg. Alleen de kortste looproute kiezen is daarom onvoldoende.",
-                  "Als de wateraansluiting pas hoger of aan de andere zijde logisch wordt, ontstaat omloop en complexere slangvoering op een plek waar rookinvloed kan toenemen."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbaar gedacht, maar onvoldoende gekoppeld aan de bluswatervoorziening.",
-            "strengths": [
-              "kortere route lijkt aanvankelijk aantrekkelijk"
-            ],
-            "risks": [
-              "extra omloop",
-              "lastiger slangmanagement",
-              "minder duidelijke scheiding tussen inzetlogica en vluchtweglogica"
-            ],
-            "stateEffects": [
-              "tijd: +1",
-              "logistiek: -1"
-            ]
-          }
+          "deepDive": "Een kortere looproute is niet automatisch de beste inzetroute wanneer water en vluchtwegfunctie onvoldoende zijn meegewogen."
         },
         {
           "id": "C",
-          "text": "Beide trappenhuizen tegelijk gebruiken: één ploeg per trap.",
-          "consequence": "Verkenning gaat sneller, maar de scheiding tussen inzet- en vluchttrappenhuis verdwijnt en beide trappen worden belast.",
-          "rationale": "Kwetsbaar. Vluchtwegbescherming -1; later spontane ontruiming wordt lastiger.",
-          "label": "Verdedigbaar maar kwetsbaar",
+          "text": "Beide trappenhuizen tegelijk gebruiken, één ploeg per trap.",
+          "consequence": "Je krijgt sneller informatie over beide routes, maar beide trappenhuizen worden onderdeel van de brandweerinzet.",
+          "rationale": "Dat maakt de scheiding tussen inzet- en vluchtstromen kwetsbaarder wanneer bewoners gaan ontruimen.",
+          "label": "Operationele duiding",
           "quality": -1,
-          "deepDive": "Tijdelijk beide trappen gebruiken kan informatie opleveren, maar belast meteen beide vluchtwegen en maakt de scheiding tussen inzet en ontvluchting minder duidelijk. Dat wordt vooral kwetsbaar zodra bewoners spontaan gaan vluchten. Het VRR-handboek benadrukt juist dat spontane ontruiming al vóór aankomst van de brandweer op gang kan zijn.",
-          "consequenceDetail": {
-            "time": "14:38 uur — beide trappenhuizen worden verkend",
-            "paragraphs": [
-              "De ploeg verdeelt zich kort over beide trappenhuizen. Daardoor komt sneller informatie beschikbaar over beide routes.",
-              "Tegelijk worden vanaf dit moment beide trappenhuizen onderdeel van de brandweerinzet. De scheiding tussen inzetroute en vlucht-/ontruimingsroute wordt minder duidelijk."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Wat levert deze keuze op?",
-                "paragraphs": [
-                  "Je krijgt snel informatie over beide routes. In een onduidelijk gebouw kan dat op zichzelf waardevol zijn."
-                ]
-              },
-              {
-                "title": "Waarom is dit hier kwetsbaarder?",
-                "paragraphs": [
-                  "VRR benadrukt juist dat bij een wokkeltrappenhuis scherp wordt afgesproken welk trappenhuis voor de brandweerinzet wordt gebruikt, zodat het andere beschikbaar blijft voor ontruiming.",
-                  "Spontane ontruiming kan al vóór aankomst van de brandweer zijn begonnen. Door beide trappenhuizen vroeg te belasten, wordt latere scheiding van bewonersstromen, materiaaltransport en brandweerinzet lastiger.",
-                  "Bovendien wordt de ploeg tijdelijk gesplitst terwijl één rookvrije route met een zichtbaar afnamepunt al een duidelijke inzetmogelijkheid biedt."
-                ]
-              }
-            ],
-            "assessment": "Informatief, maar operationeel kwetsbaarder.",
-            "strengths": [
-              "snelle vergelijking van beide routes"
-            ],
-            "risks": [
-              "beide vluchtwegen worden belast",
-              "ploeg tijdelijk gesplitst",
-              "spontane ontruiming wordt lastiger te organiseren"
-            ],
-            "stateEffects": [
-              "vluchtwegbescherming: -1",
-              "later spontane ontruiming: complexer"
-            ]
-          }
+          "deepDive": "Dat maakt de scheiding tussen inzet- en vluchtstromen kwetsbaarder wanneer bewoners gaan ontruimen."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Beslissing binnen: veilig en verantwoord handelen, keuze direct delen/toetsen met bevelvoerder.",
-      "sourceFrame": "Een wokkeltrappenhuis bestaat uit twee brandwerend gescheiden trappen die in één constructie zijn vervlochten. Het VRR-handboek benadrukt dat de brandweer scherp afspreekt welke trap voor de inzet wordt gebruikt, zodat de andere trap beschikbaar kan blijven voor ontruiming. Niet bij ieder trappenhuis zit op iedere positie een afnamepunt van de blusleiding. Daarom wordt twee verdiepingen onder de brand expliciet bepaald vanuit welk trappenhuis wordt gewerkt. Het andere trappenhuis moet op de brandverdieping zo veel mogelijk dicht en rookvrij blijven.",
-      "situationDetail": {
-        "time": "14:37 uur — verdieping 12",
-        "intro": [
-          "De manschappen stappen uit de lift.",
-          "Voor hen zijn twee trappenhuizen zichtbaar. Het betreft een wokkeltrappenhuis: twee afzonderlijke, brandwerend gescheiden trappen die in dezelfde trappenhuisconstructie door het gebouw lopen."
-        ],
-        "groups": [
-          {
-            "title": "Trappenhuis A",
-            "items": [
-              "rookvrij;",
-              "direct in het voorportaal een afnamepunt van de blusleiding;",
-              "de route voelt iets langer richting de vermoedelijke brandwoning."
-            ]
-          },
-          {
-            "title": "Trappenhuis B",
-            "items": [
-              "eveneens rookvrij;",
-              "geen afnamepunt zichtbaar op verdieping 12;",
-              "ligt volgens de verdiepingstekening iets gunstiger ten opzichte van de brandwoning."
-            ]
-          }
-        ],
-        "after": [
-          "De bevelvoerder is beneden/in de commandoruimte nog bezig met aanvullende objectinformatie.",
-          "Dit is nu nadrukkelijk een beslissing die de manschappen op hoogte zelf mogen nemen, mits veilig en verantwoord en de keuze wordt teruggekoppeld/getoetst bij de bevelvoerder."
-        ],
-        "prompt": "Wat doet de ploeg?"
+      "discussionQuestion": "Hoe borg je dat een vluchtweg bruikbaar blijft terwijl de brandweerinzet wordt opgebouwd?",
+      "media": {
+        "src": "assets/vggm/stijgleiding_afnamepunt.jpg",
+        "caption": "Afnamepunt / stijgleiding als onderdeel van de routekeuze",
+        "source": "VGGM lesmateriaal – slide 73"
       },
       "systems": [
         "Droge stijgleiding binnen",
         "Hoogtetas"
-      ],
-      "discussionQuestion": "Hoe borg je dat een vluchtweg bruikbaar blijft terwijl de brandweerinzet wordt opgebouwd?"
+      ]
     },
     {
       "id": 4,
       "title": "Positie van het bruggenhoofd",
-      "situation": "Op verdieping 12 is een ruim voorportaal bij de lift. CO-meter geeft 0 ppm. Op verdieping 13 ruik je lichte rook bij de deur naar de gang.",
+      "role": "Bevelvoerder",
+      "roleNote": "Bepaal waar leiding, logistiek en back-up op hoogte stabiel kunnen worden georganiseerd.",
+      "situation": "Op de 12e verdieping bevindt zich bij de lift een ruim voorportaal. De CO-meter geeft 0 ppm aan. Op de 13e verdieping is bij de deur naar de gang lichte rooklucht waarneembaar.",
       "choices": [
         {
           "id": "A",
-          "text": "Bruggenhoofd op 12 inrichten en daar CO continu bewaken.",
-          "consequence": "Veilige, bereikbare basis op -2 met koppeling naar lift, logistiek en aanval.",
-          "rationale": "Sterke keuze; bruggenhoofd operationeel +1.",
-          "label": "Sterk",
+          "text": "Het bruggenhoofd op de 12e verdieping inrichten en daar continu CO bewaken.",
+          "consequence": "Een goed bereikbare basis op -2, gekoppeld aan lift, logistiek en inzetroute.",
+          "rationale": "De locatie ligt buiten de huidige rookinvloed en biedt ruimte om leiding, logistiek en back-up te organiseren.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Verdieping 12 is rookvrij, CO is 0 ppm en de locatie ligt bij lift en inzettrappenhuis. Daarmee is dit een logische plek om leiding, logistiek en back-up te organiseren zonder direct in de rookinvloed te zitten. Continu CO monitoren blijft nodig, omdat stack-effect of rookverspreiding de toestand later kan veranderen.",
-          "consequenceDetail": {
-            "time": "14:39 uur — verdieping 12 — gevolg van keuze A",
-            "paragraphs": [
-              "Je kiest voor de rookvrije verdieping -2. Daarmee blijven lift, logistiek en leiding op één veilige basis gekoppeld terwijl CO continu kan worden bewaakt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Sluit het sterkst aan bij het VRR-basismodel: -2, CO-bewaking, veilige koppeling met lift en logistiek.",
-                  "In VRR is het bruggenhoofd geen losse verzamelplek maar een georganiseerde operationele basis. Het handboek noemt een operationeel leidinggevende, een logistieke functionaris en een intercombedienaar als functies rond het bruggenhoofd. De scenario-uitwerkingen plaatsen het bruggenhoofd standaard op -2 of op een andere aantoonbaar logische en veilige locatie.",
-                  "Bij scenario 1 wordt het bruggenhoofd als back-up ingericht; bij scenario 2 en 3 wordt het onderdeel van de noodzakelijke interventievoorbereiding. In scenario 2 wordt expliciet twee keer genoemd: bruggenhoofd op -2 en twee LD-stralen gereed voordat de offensieve binneninzet wordt opgebouwd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR koppelt ook materiaal aan het bruggenhoofd: aanvullende blusmaterialen, ademlucht (vuistregel één schone fles per ingezette functionaris), wervelplank/bergingsbrancard, drinkwater/isotone drank, objecttekeningen, smokestoppers, vluchtmaskers, accuventilatoren en CO-meters. De plek moet dus niet alleen dichter bij de brand zijn, maar vooral bruikbaar blijven als veilige commandovoerings- en logistieke basis.",
-                  "In scenario 2 en 3 wordt CO continu gemeten op de plaats van het bruggenhoofd.",
-                  "Het bruggenhoofd is ook een schakel in de communicatie tussen binnen, commandoruimte en buitenorganisatie."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Je kiest voor de rookvrije verdieping -2. Daarmee blijven lift, logistiek en leiding op één veilige basis gekoppeld terwijl CO continu kan worden bewaakt."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Dichterbij is niet automatisch beter. De rooklucht op -1 is juist een signaal dat het bruggenhoofd daar sneller bedreigd kan raken.",
-                  "Keuze C: Kan vanuit reddingsdruk aantrekkelijk lijken, maar bij scenario 2/3 maakt VRR het bruggenhoofd juist voorwaardelijk voor een beheersbare inzet."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "bruggenhoofd: operationeel",
-              "CO-bewaking: actief",
-              "logistieke basis: stabiel"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "De locatie ligt buiten de huidige rookinvloed en biedt ruimte om leiding, logistiek en back-up te organiseren."
         },
         {
           "id": "B",
-          "text": "Bruggenhoofd op 13 inrichten om dichter bij de ploeg te zitten.",
-          "consequence": "Kortere aanvoerroute, maar de locatie ligt dichter bij rook en mogelijke brand-/rookverspreiding.",
-          "rationale": "Risicovol. Bij verslechtering kan het bruggenhoofd snel bedreigd raken.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "Dichter bij de brand lijkt logistiek sneller, maar op verdieping 13 is al lichte rook waarneembaar. Daarmee wordt de basis zelf gevoeliger voor verslechtering. Een bruggenhoofd moet juist stabiel genoeg zijn om te blijven functioneren als de situatie op de brandverdieping slechter wordt.",
-          "consequenceDetail": {
-            "time": "14:39 uur — verdieping 12 — gevolg van keuze B",
-            "paragraphs": [
-              "Het bruggenhoofd komt dichter bij de brand. De logistieke looproute wordt korter, maar de lichte rooklucht op -1 betekent dat de basis al dichter tegen de beïnvloede zone ligt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Dichterbij is niet automatisch beter. De rooklucht op -1 is juist een signaal dat het bruggenhoofd daar sneller bedreigd kan raken.",
-                  "In VRR is het bruggenhoofd geen losse verzamelplek maar een georganiseerde operationele basis. Het handboek noemt een operationeel leidinggevende, een logistieke functionaris en een intercombedienaar als functies rond het bruggenhoofd. De scenario-uitwerkingen plaatsen het bruggenhoofd standaard op -2 of op een andere aantoonbaar logische en veilige locatie.",
-                  "Bij scenario 1 wordt het bruggenhoofd als back-up ingericht; bij scenario 2 en 3 wordt het onderdeel van de noodzakelijke interventievoorbereiding. In scenario 2 wordt expliciet twee keer genoemd: bruggenhoofd op -2 en twee LD-stralen gereed voordat de offensieve binneninzet wordt opgebouwd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR koppelt ook materiaal aan het bruggenhoofd: aanvullende blusmaterialen, ademlucht (vuistregel één schone fles per ingezette functionaris), wervelplank/bergingsbrancard, drinkwater/isotone drank, objecttekeningen, smokestoppers, vluchtmaskers, accuventilatoren en CO-meters. De plek moet dus niet alleen dichter bij de brand zijn, maar vooral bruikbaar blijven als veilige commandovoerings- en logistieke basis.",
-                  "In scenario 2 en 3 wordt CO continu gemeten op de plaats van het bruggenhoofd.",
-                  "Het bruggenhoofd is ook een schakel in de communicatie tussen binnen, commandoruimte en buitenorganisatie."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Het bruggenhoofd komt dichter bij de brand. De logistieke looproute wordt korter, maar de lichte rooklucht op -1 betekent dat de basis al dichter tegen de beïnvloede zone ligt."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit het sterkst aan bij het VRR-basismodel: -2, CO-bewaking, veilige koppeling met lift en logistiek.",
-                  "Keuze C: Kan vanuit reddingsdruk aantrekkelijk lijken, maar bij scenario 2/3 maakt VRR het bruggenhoofd juist voorwaardelijk voor een beheersbare inzet."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "bruggenhoofd: dichter bij rookzone",
-              "herstelruimte: kleiner"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Het bruggenhoofd op de 13e verdieping inrichten om dichter bij de ingezette ploeg te blijven.",
+          "consequence": "De aanvoerroute wordt korter, maar het bruggenhoofd ligt dichter bij de rookinvloed en kan bij verslechtering eerder worden bedreigd.",
+          "rationale": "Dichter bij de brand is niet automatisch een betere basis wanneer de omstandigheden daar minder stabiel zijn.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Dichter bij de brand is niet automatisch een betere basis wanneer de omstandigheden daar minder stabiel zijn."
         },
         {
           "id": "C",
-          "text": "Nog geen bruggenhoofd; eerst contact met brandwoning en slachtofferinformatie bevestigen.",
-          "consequence": "Meer directe focus op brand/slachtoffer, maar commandovoering en back-up op hoogte blijven achter.",
-          "rationale": "Kwetsbaar bij scenario 2/3. Bruggenhoofd blijft 0 en logistiek loopt later achter.",
-          "label": "Verdedigbaar maar kwetsbaar",
+          "text": "Nog geen bruggenhoofd inrichten en eerst de brand- en slachtofferinformatie verder uitzoeken.",
+          "consequence": "De focus ligt direct op brand en slachtoffer, maar leiding, back-up en logistiek op hoogte blijven voorlopig minder georganiseerd.",
+          "rationale": "Een zeer klein incident kan dit tijdelijk verdragen; bij groeiende complexiteit wordt een vaste operationele basis steeds belangrijker.",
+          "label": "Operationele duiding",
           "quality": -1,
-          "deepDive": "De focus op slachtoffer en brand is begrijpelijk, maar zonder vaste uitvalsbasis blijft de organisatie op hoogte achter. Dat hoeft in een zeer klein beheersbaar incident niet direct fout te gaan, maar bij scenario 2 of 3 worden communicatie, back-up en materiaalstromen snel complexer. Dan wordt een ontbrekend bruggenhoofd een operationele zwakte.",
-          "consequenceDetail": {
-            "time": "14:39 uur — verdieping 12 — gevolg van keuze C",
-            "paragraphs": [
-              "De ploeg beweegt door zonder vaste operationele basis op hoogte. Daardoor blijven leiding, back-up en materiaalaanvoer voorlopig verspreid georganiseerd."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan vanuit reddingsdruk aantrekkelijk lijken, maar bij scenario 2/3 maakt VRR het bruggenhoofd juist voorwaardelijk voor een beheersbare inzet.",
-                  "In VRR is het bruggenhoofd geen losse verzamelplek maar een georganiseerde operationele basis. Het handboek noemt een operationeel leidinggevende, een logistieke functionaris en een intercombedienaar als functies rond het bruggenhoofd. De scenario-uitwerkingen plaatsen het bruggenhoofd standaard op -2 of op een andere aantoonbaar logische en veilige locatie.",
-                  "Bij scenario 1 wordt het bruggenhoofd als back-up ingericht; bij scenario 2 en 3 wordt het onderdeel van de noodzakelijke interventievoorbereiding. In scenario 2 wordt expliciet twee keer genoemd: bruggenhoofd op -2 en twee LD-stralen gereed voordat de offensieve binneninzet wordt opgebouwd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR koppelt ook materiaal aan het bruggenhoofd: aanvullende blusmaterialen, ademlucht (vuistregel één schone fles per ingezette functionaris), wervelplank/bergingsbrancard, drinkwater/isotone drank, objecttekeningen, smokestoppers, vluchtmaskers, accuventilatoren en CO-meters. De plek moet dus niet alleen dichter bij de brand zijn, maar vooral bruikbaar blijven als veilige commandovoerings- en logistieke basis.",
-                  "In scenario 2 en 3 wordt CO continu gemeten op de plaats van het bruggenhoofd.",
-                  "Het bruggenhoofd is ook een schakel in de communicatie tussen binnen, commandoruimte en buitenorganisatie."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De ploeg beweegt door zonder vaste operationele basis op hoogte. Daardoor blijven leiding, back-up en materiaalaanvoer voorlopig verspreid georganiseerd."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit het sterkst aan bij het VRR-basismodel: -2, CO-bewaking, veilige koppeling met lift en logistiek.",
-                  "Keuze B: Dichterbij is niet automatisch beter. De rooklucht op -1 is juist een signaal dat het bruggenhoofd daar sneller bedreigd kan raken."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "bruggenhoofd: niet ingericht",
-              "logistiek: kwetsbaarder",
-              "leiding op hoogte: minder geborgd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Een zeer klein incident kan dit tijdelijk verdragen; bij groeiende complexiteit wordt een vaste operationele basis steeds belangrijker."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Organisatie van leiding en back-up op hoogte.",
-      "sourceFrame": "In VRR is het bruggenhoofd geen losse verzamelplek maar een georganiseerde operationele basis. Het handboek noemt een operationeel leidinggevende, een logistieke functionaris en een intercombedienaar als functies rond het bruggenhoofd. De scenario-uitwerkingen plaatsen het bruggenhoofd standaard op -2 of op een andere aantoonbaar logische en veilige locatie.\n\nBij scenario 1 wordt het bruggenhoofd als back-up ingericht; bij scenario 2 en 3 wordt het onderdeel van de noodzakelijke interventievoorbereiding. In scenario 2 wordt expliciet twee keer genoemd: bruggenhoofd op -2 en twee LD-stralen gereed voordat de offensieve binneninzet wordt opgebouwd.\n\nVRR koppelt ook materiaal aan het bruggenhoofd: aanvullende blusmaterialen, ademlucht (vuistregel één schone fles per ingezette functionaris), wervelplank/bergingsbrancard, drinkwater/isotone drank, objecttekeningen, smokestoppers, vluchtmaskers, accuventilatoren en CO-meters. De plek moet dus niet alleen dichter bij de brand zijn, maar vooral bruikbaar blijven als veilige commandovoerings- en logistieke basis.\n\nIn scenario 2 en 3 wordt CO continu gemeten op de plaats van het bruggenhoofd.\n\nHet bruggenhoofd is ook een schakel in de communicatie tussen binnen, commandoruimte en buitenorganisatie.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 13 en scenario-uitwerking p. 19-23.",
-      "situationDetail": {
-        "time": "14:39 uur — verdieping 12",
-        "intro": [
-          "Op verdieping 12 is direct bij de brandweerlift en het gekozen inzettrappenhuis een ruim voorportaal. De ploeg heeft hier nog geen rook of warmtebelasting waargenomen."
-        ],
-        "observations": [
-          "CO-meter: 0 ppm;",
-          "brandweerlift functioneert normaal;",
-          "afnamepunt van de blusleiding ligt in de directe nabijheid;",
-          "op verdieping 13 is lichte rooklucht merkbaar bij de deur naar de gang;",
-          "de mogelijke vermissing is nog niet opgehelderd."
-        ],
-        "after": [
-          "De tweede TS heeft beneden aanvullend materiaal gereed. De vraag is nu niet alleen hoe dicht je bij de brand wilt zitten, maar waar leiding, back-up, communicatie en logistiek veilig georganiseerd kunnen blijven."
-        ],
-        "prompt": "Waar richt je het bruggenhoofd in?"
+      "discussionQuestion": "Wanneer wordt logistiek in hoogbouw een zelfstandig inzetproces en hoe organiseer je dat?",
+      "media": {
+        "src": "assets/vggm/bruggenhoofd_schema.jpg",
+        "caption": "Schematische weergave van het bruggenhoofd",
+        "source": "VGGM lesmateriaal – slide 69"
       },
       "systems": [
         "Hoogtetas",
         "Transporttas"
       ],
-      "discussionQuestion": "Wanneer wordt logistiek in hoogbouw een zelfstandig inzetproces en hoe organiseer je dat?"
+      "deepDive": "Een bruggenhoofd is een basis voor leiding, logistiek, communicatie, materiaal en ondersteuning. De locatie moet niet alleen dichtbij zijn, maar vooral stabiel en bruikbaar blijven. Een rookvrije -2-positie met CO-monitoring biedt ruimte om de inzet te ondersteunen wanneer de omstandigheden op de brandverdieping verslechteren."
     },
     {
       "id": 5,
       "title": "Deurmanagement en smokestopper",
-      "situation": "De ploeg bereikt de gang op verdieping 14. Er is rook in de gang maar nog zicht. De voordeur van de brandwoning is dicht; achter de deur is warmte voelbaar.",
+      "role": "Manschappen",
+      "roleNote": "Beheers de deuropening en beperk onnodige rook- en luchtstroming.",
+      "situation": "De ploeg bereikt de gang op de 14e verdieping. In de gang hangt rook, maar er is nog bruikbaar zicht. De voordeur van de brandwoning is gesloten en achter de deur is duidelijke warmte voelbaar.",
       "choices": [
         {
           "id": "A",
-          "text": "Smokestopper plaatsen en deur gecontroleerd openen zodra blusmiddel inzetgereed is.",
-          "consequence": "Rookuitstroom naar de gang wordt beperkt; ploeg behoudt controle over de opening.",
-          "rationale": "Sterke keuze; deurmanagement +1, vluchtweg beschermd.",
-          "label": "Sterk",
+          "text": "De smokestopper plaatsen en de deur gecontroleerd openen zodra het blusmiddel inzetgereed is.",
+          "consequence": "De rookuitstroom naar de gang blijft beperkt en de ploeg houdt controle over de deuropening.",
+          "rationale": "Door de opening te beperken en pas te openen wanneer de inzet gereed is, worden rookverspreiding en ongewenste luchtstroming zo veel mogelijk beperkt.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De smokestopper wordt geplaatst voordat de deuropening structureel wordt gebruikt en het blusmiddel staat inzetgereed. Daarmee blijft de opening beheersbaar en wordt rookuitstroom naar gang en voorportaal beperkt. Dit beschermt zowel de terugtrekroute van de ploeg als de vluchtweg voor bewoners.",
-          "consequenceDetail": {
-            "time": "14:42 uur — verdieping 14 — gevolg van keuze A",
-            "paragraphs": [
-              "De smokestopper wordt geplaatst voordat de deur gecontroleerd wordt geopend. De straal is inzetgereed en de ploeg houdt de opening zo klein en kort mogelijk."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Past rechtstreeks bij de VRR-scenario’s: opening gecontroleerd houden, smokestopper gebruiken en pas openen wanneer de inzet daadwerkelijk gereed is.",
-                  "Rookvrije vluchtwegen zijn een van de centrale thema’s van het VRR-handboek. Bij zowel scenario 1 als scenario 2 wordt beschreven dat het doorbreken van de compartimentsgrens door een deur te openen altijd tot enige rookverspreiding buiten de ontstaansruimte kan leiden. Daarom moet het voorportaal rookvrij blijven en wordt een smokestopper geplaatst bij de toegang tot het brandcompartiment en bij het voorportaal richting lift.",
-                  "De CAN-bijlage geeft een belangrijk praktisch voorbeeld: een deur die voor toegang wordt geforceerd kan er helemaal uit komen te liggen. Die nieuwe ventilatieopening kan vervolgens voor een zeer grote branduitbreiding zorgen. De acties van de ploeg veranderen dus zelf de condities en moeten in de terugmelding worden meegenomen."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het VRR-materiaaloverzicht koppelt de smokestopper expliciet aan verkenning/compartimentering. Bij trappenhuisbescherming wordt bovendien beschreven dat moet worden onderzocht waar de overdruk zich bevindt; afhankelijk van het drukconcept kan de smokestopper zelfs tegengesteld bollen. Dit onderstreept dat een smokestopper geen los “doek in de deur” is, maar onderdeel is van deur- en drukmanagement.",
-                  "Voorbeeld VRR scenario 1: smokestopper bij brandcompartiment én voorportaal richting lift.",
-                  "Voorbeeld VRR CAN: geforceerde deur valt eruit en wordt een ventilatieopening die forse branduitbreiding kan veroorzaken."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De smokestopper wordt geplaatst voordat de deur gecontroleerd wordt geopend. De straal is inzetgereed en de ploeg houdt de opening zo klein en kort mogelijk."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Kan bruikbare informatie geven, maar de bron maakt duidelijk dat zelfs kort openen de stroming en rookverspreiding kan veranderen.",
-                  "Keuze C: Is in deze omstandigheden ongunstig: het maakt van de deur bewust een grote stromingsopening en brengt gang/voorportaal en daarmee de vluchtweg in gevaar."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "deurmanagement: beheerst",
-              "vluchtweg: beter beschermd",
-              "flowpath-risico: beperkt"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Door de opening te beperken en pas te openen wanneer de inzet gereed is, worden rookverspreiding en ongewenste luchtstroming zo veel mogelijk beperkt."
         },
         {
           "id": "B",
-          "text": "Deur kort openen voor snelle observatie en direct weer sluiten; smokestopper pas daarna plaatsen.",
-          "consequence": "Snelle informatie, maar een korte opening kan bij wind/druk al een duidelijke flowpath veroorzaken.",
-          "rationale": "Verdedigbaar als verkenningsactie, maar kwetsbaar; wind_flowpath +1.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "Een korte observatieopening kan waardevolle informatie opleveren, maar ook een druk- of windgedreven stroming starten. Vooral bij een geopende gevel aan de brandzijde kan zelfs een korte deuropening het stromingspad veranderen. De keuze is dus verdedigbaar als de ploeg echt controle houdt en direct weer sluit, maar kent meer risico dan eerst afschermen en voorbereiden.",
-          "consequenceDetail": {
-            "time": "14:42 uur — verdieping 14 — gevolg van keuze B",
-            "paragraphs": [
-              "De deur wordt kort geopend om informatie te winnen. Er komt direct een rookpuls de gang in voordat de deur weer dichtgaat en de smokestopper wordt aangebracht."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan bruikbare informatie geven, maar de bron maakt duidelijk dat zelfs kort openen de stroming en rookverspreiding kan veranderen.",
-                  "Rookvrije vluchtwegen zijn een van de centrale thema’s van het VRR-handboek. Bij zowel scenario 1 als scenario 2 wordt beschreven dat het doorbreken van de compartimentsgrens door een deur te openen altijd tot enige rookverspreiding buiten de ontstaansruimte kan leiden. Daarom moet het voorportaal rookvrij blijven en wordt een smokestopper geplaatst bij de toegang tot het brandcompartiment en bij het voorportaal richting lift.",
-                  "De CAN-bijlage geeft een belangrijk praktisch voorbeeld: een deur die voor toegang wordt geforceerd kan er helemaal uit komen te liggen. Die nieuwe ventilatieopening kan vervolgens voor een zeer grote branduitbreiding zorgen. De acties van de ploeg veranderen dus zelf de condities en moeten in de terugmelding worden meegenomen."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het VRR-materiaaloverzicht koppelt de smokestopper expliciet aan verkenning/compartimentering. Bij trappenhuisbescherming wordt bovendien beschreven dat moet worden onderzocht waar de overdruk zich bevindt; afhankelijk van het drukconcept kan de smokestopper zelfs tegengesteld bollen. Dit onderstreept dat een smokestopper geen los “doek in de deur” is, maar onderdeel is van deur- en drukmanagement.",
-                  "Voorbeeld VRR scenario 1: smokestopper bij brandcompartiment én voorportaal richting lift.",
-                  "Voorbeeld VRR CAN: geforceerde deur valt eruit en wordt een ventilatieopening die forse branduitbreiding kan veroorzaken."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De deur wordt kort geopend om informatie te winnen. Er komt direct een rookpuls de gang in voordat de deur weer dichtgaat en de smokestopper wordt aangebracht."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past rechtstreeks bij de VRR-scenario’s: opening gecontroleerd houden, smokestopper gebruiken en pas openen wanneer de inzet daadwerkelijk gereed is.",
-                  "Keuze C: Is in deze omstandigheden ongunstig: het maakt van de deur bewust een grote stromingsopening en brengt gang/voorportaal en daarmee de vluchtweg in gevaar."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "deurmanagement: tijdelijk open",
-              "wind/flowpath: verhoogd",
-              "rookbelasting gang: +1"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "De deur kort openen voor een snelle observatie, direct weer sluiten en daarna de smokestopper plaatsen.",
+          "consequence": "De ploeg krijgt snel informatie, maar zelfs een korte opening kan de lucht- en rookstroming merkbaar veranderen.",
+          "rationale": "Verdedigbaar als verkenningsactie, maar kwetsbaarder omdat de opening wordt gemaakt voordat rookverspreiding wordt beperkt.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Verdedigbaar als verkenningsactie, maar kwetsbaarder omdat de opening wordt gemaakt voordat rookverspreiding wordt beperkt."
         },
         {
           "id": "C",
-          "text": "Deur volledig openen voor zicht en snelle toetreding.",
-          "consequence": "Rook en hete gassen stromen de gang in; het voorportaal wordt merkbaar rokeriger.",
-          "rationale": "Ongunstig; deurmanagement -2, rook_co +2. Dit gevolg werkt later door.",
-          "label": "Ongunstig in dit scenario",
+          "text": "De deur volledig openen om snel zicht en toegang te krijgen.",
+          "consequence": "Rook en hete gassen stromen de gang in en het voorportaal raakt merkbaar meer met rook belast.",
+          "rationale": "Een grotere opening versterkt de verbinding tussen brandruimte en gang en kan daarmee zowel rookverspreiding als luchttoevoer beïnvloeden.",
+          "label": "Operationele duiding",
           "quality": -2,
-          "deepDive": "Een volledig geopende deur vergroot de verbinding tussen brandruimte en gang. Daardoor kunnen rook en hete gassen naar het voorportaal en trappenhuis bewegen. Dit kan de vluchtweg aantasten en de latere inzet veel ingewikkelder maken. De schade van deze keuze hoeft niet direct volledig zichtbaar te zijn; bij wind of stack-effect kan het gevolg later sterk toenemen.",
-          "consequenceDetail": {
-            "time": "14:42 uur — verdieping 14 — gevolg van keuze C",
-            "paragraphs": [
-              "De deur wordt volledig geopend. De gang vult merkbaar sneller met rook en hete gassen en het voorportaal begint mee te worden belast."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is in deze omstandigheden ongunstig: het maakt van de deur bewust een grote stromingsopening en brengt gang/voorportaal en daarmee de vluchtweg in gevaar.",
-                  "Rookvrije vluchtwegen zijn een van de centrale thema’s van het VRR-handboek. Bij zowel scenario 1 als scenario 2 wordt beschreven dat het doorbreken van de compartimentsgrens door een deur te openen altijd tot enige rookverspreiding buiten de ontstaansruimte kan leiden. Daarom moet het voorportaal rookvrij blijven en wordt een smokestopper geplaatst bij de toegang tot het brandcompartiment en bij het voorportaal richting lift.",
-                  "De CAN-bijlage geeft een belangrijk praktisch voorbeeld: een deur die voor toegang wordt geforceerd kan er helemaal uit komen te liggen. Die nieuwe ventilatieopening kan vervolgens voor een zeer grote branduitbreiding zorgen. De acties van de ploeg veranderen dus zelf de condities en moeten in de terugmelding worden meegenomen."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het VRR-materiaaloverzicht koppelt de smokestopper expliciet aan verkenning/compartimentering. Bij trappenhuisbescherming wordt bovendien beschreven dat moet worden onderzocht waar de overdruk zich bevindt; afhankelijk van het drukconcept kan de smokestopper zelfs tegengesteld bollen. Dit onderstreept dat een smokestopper geen los “doek in de deur” is, maar onderdeel is van deur- en drukmanagement.",
-                  "Voorbeeld VRR scenario 1: smokestopper bij brandcompartiment én voorportaal richting lift.",
-                  "Voorbeeld VRR CAN: geforceerde deur valt eruit en wordt een ventilatieopening die forse branduitbreiding kan veroorzaken."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De deur wordt volledig geopend. De gang vult merkbaar sneller met rook en hete gassen en het voorportaal begint mee te worden belast."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past rechtstreeks bij de VRR-scenario’s: opening gecontroleerd houden, smokestopper gebruiken en pas openen wanneer de inzet daadwerkelijk gereed is.",
-                  "Keuze B: Kan bruikbare informatie geven, maar de bron maakt duidelijk dat zelfs kort openen de stroming en rookverspreiding kan veranderen."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "deurmanagement: ongunstig",
-              "rook/CO: +2",
-              "vluchtweg: bedreigd"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Een grotere opening versterkt de verbinding tussen brandruimte en gang en kan daarmee zowel rookverspreiding als luchttoevoer beïnvloeden."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Beslissing binnen: deurmanagement op basis van actuele omstandigheden; delen/toetsen met bevelvoerder.",
-      "sourceFrame": "Rookvrije vluchtwegen zijn een van de centrale thema’s van het VRR-handboek. Bij zowel scenario 1 als scenario 2 wordt beschreven dat het doorbreken van de compartimentsgrens door een deur te openen altijd tot enige rookverspreiding buiten de ontstaansruimte kan leiden. Daarom moet het voorportaal rookvrij blijven en wordt een smokestopper geplaatst bij de toegang tot het brandcompartiment en bij het voorportaal richting lift.\n\nDe CAN-bijlage geeft een belangrijk praktisch voorbeeld: een deur die voor toegang wordt geforceerd kan er helemaal uit komen te liggen. Die nieuwe ventilatieopening kan vervolgens voor een zeer grote branduitbreiding zorgen. De acties van de ploeg veranderen dus zelf de condities en moeten in de terugmelding worden meegenomen.\n\nHet VRR-materiaaloverzicht koppelt de smokestopper expliciet aan verkenning/compartimentering. Bij trappenhuisbescherming wordt bovendien beschreven dat moet worden onderzocht waar de overdruk zich bevindt; afhankelijk van het drukconcept kan de smokestopper zelfs tegengesteld bollen. Dit onderstreept dat een smokestopper geen los “doek in de deur” is, maar onderdeel is van deur- en drukmanagement.\n\nVoorbeeld VRR scenario 1: smokestopper bij brandcompartiment én voorportaal richting lift.\n\nVoorbeeld VRR CAN: geforceerde deur valt eruit en wordt een ventilatieopening die forse branduitbreiding kan veroorzaken.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 18-21, p. 38-39 en bijlage CAN p. 42.",
-      "situationDetail": {
-        "time": "14:42 uur — verdieping 14",
-        "intro": [
-          "De ploeg bereikt via het inzettrappenhuis de brandverdieping. In de gang hangt rook, maar er is nog bruikbaar zicht. De voordeur van de brandwoning is gesloten en achter de deur is duidelijke warmte voelbaar."
-        ],
-        "observations": [
-          "brandwoning nog niet betreden;",
-          "rook in de gang, maar gang is nog begaanbaar;",
-          "smokestopper beschikbaar;",
-          "blusmiddel wordt opgebouwd;",
-          "wind staat op de brandgevel."
-        ],
-        "after": [
-          "Wat de ploeg nu met de deur doet, verandert zelf de lucht- en rookstroming. Dit is een beslissing van de manschappen op basis van de actuele omstandigheden, met terugmelding naar de bevelvoerder.",
-          "De ploeg heeft een smokestopper en de benodigde LD-aanvalsmiddelen bij zich. Deuropening, luchttoevoer en rookstroming worden daarom onderdeel van de inzetbeslissing en niet alleen van de toetreding."
-        ],
-        "prompt": "Hoe benadert de ploeg de deur van de brandwoning?"
+      "discussionQuestion": "Welke signalen gebruik je om te bepalen hoe en wanneer je een deur naar een brandruimte opent?",
+      "media": {
+        "src": "assets/vggm/rook_gang.png",
+        "caption": "Rookverspreiding in een verkeersruimte",
+        "source": "VGGM lesmateriaal – slide 63"
       },
       "systems": [
-        "Snelle aanval"
+        "Deurcontrole",
+        "Smokestopper",
+        "Anti-ventilatie"
       ],
-      "discussionQuestion": "Welke signalen gebruik je om te beoordelen of een trappenhuis als veilige route bruikbaar blijft?"
+      "deepDive": "Een deuropening verandert de stromingscondities. Deurmanagement gaat over wanneer, hoe ver en hoe lang een opening wordt gemaakt. Een smokestopper kan rookuitstroom beperken, maar vervangt niet de beoordeling van wind, druk en brandgedrag."
     },
     {
       "id": 6,
       "title": "Wind Driven Fire herkennen",
-      "situation": "Buiten meldt de chauffeur: wind staat rechtstreeks op het geopende raam van de brandwoning. Binnen ziet de ploeg weinig rook uit de raamzijde wegtrekken; bij de deuropening neemt hitte sterk toe.",
+      "role": "Manschappen",
+      "roleNote": "Herken veranderende omstandigheden, handel veilig en koppel de tactische betekenis terug aan de bevelvoerder.",
+      "situation": "Buiten meldt de chauffeur dat de wind rechtstreeks op het geopende raam van de brandwoning staat. Binnen merkt de ploeg dat weinig rook via het raam wegtrekt en dat de hitte bij de deuropening sterk toeneemt.",
       "choices": [
         {
           "id": "A",
-          "text": "Ploeg terug achter de deur, extra koelend vermogen/back-up gereed en toetreding opnieuw beoordelen.",
-          "consequence": "De flowpath wordt beperkt en de ploeg herpositioneert vóór een mogelijke windgedreven aanval.",
-          "rationale": "Sterke keuze bij aanwijzingen voor Wind Driven Fire.",
-          "label": "Sterk",
+          "text": "De ploeg trekt zich terug achter de deur, laat extra koelend vermogen en back-up gereedmaken en beoordeelt de toetreding opnieuw.",
+          "consequence": "De directe blootstelling aan de stroming wordt beperkt en de ploeg creëert tijd en ruimte om de inzet opnieuw te beoordelen.",
+          "rationale": "Een verdedigbare keuze bij duidelijke aanwijzingen voor windgedreven brandgedrag.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Terug achter de deur creëert opnieuw een begrenzing en geeft tijd om koelend vermogen en back-up te organiseren. De ploeg gebruikt de verandering in hitte en de melding over wind als nieuwe informatie en heroverweegt de toetreding. Dit is precies het soort dynamische risicobeoordeling dat bij windgedreven brand nodig is.",
-          "consequenceDetail": {
-            "time": "14:44 uur — bij de brandwoning — gevolg van keuze A",
-            "paragraphs": [
-              "De ploeg verbreekt de directe blootstelling aan de stroming, gaat terug achter de scheiding en laat extra koelend vermogen en back-up gereedmaken voordat opnieuw wordt beoordeeld."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Sluit het beste aan bij de bron: flowpath beperken, maximale slagkracht/back-up gereedmaken en daarna opnieuw toetreden.",
-                  "VRR benoemt winddruk, ventilatie en stack-effect als factoren die onverwachte complicaties kunnen veroorzaken. Wind op de gevel kan de brand aanwakkeren of de brand en hete gassen versneld inpandig verplaatsen. Het kritieke moment is het creëren van een flowpath, bijvoorbeeld door het openen van een deur.",
-                  "De bron geeft daarom een duidelijke handelingsrichting: zorg eerst dat maximale slagkracht gereed is en overweeg middelen zoals fognails, Cobra of floor-below nozzles. Dit zijn voorbeelden uit het VRR-handboek van mogelijkheden om de brand te beïnvloeden zonder de ploeg direct in de gevaarlijkste stroming te plaatsen. Welke middelen regionaal beschikbaar zijn, is een aparte VGGM-keuze.",
-                  "Ook het Coandă-effect is relevant voor de buitenverkenning: rook kan langs de gevel omhoog “plakken” en bovenliggende verdiepingen of luchtinlaten bedreigen. Het buitenbeeld moet daarom niet uitsluitend naar het brandraam kijken, maar ook naar rookgedrag boven de brand."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR waarschuwt expliciet voor een flowpath die ontstaat door een deur te openen terwijl winddruk op de gevel staat.",
-                  "De voorbeelden fognail, Cobra en floor-below nozzle worden in de bron genoemd als te overwegen opties bij deze complicatie.",
-                  "Coandă: blijf boven de brand kijken naar rook langs de gevel en bedreigde openingen/luchtinlaten."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De ploeg verbreekt de directe blootstelling aan de stroming, gaat terug achter de scheiding en laat extra koelend vermogen en back-up gereedmaken voordat opnieuw wordt beoordeeld."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Negeert de combinatie van winddruk en deuropening die VRR juist als specifieke hoogbouwcomplicatie benoemt.",
-                  "Keuze C: Kan als brandbeïnvloeding denkbaar zijn, maar is alleen sterk als bereik en effect aantoonbaar zijn en de binnenploeg niet tijdens de poging blootgesteld blijft."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "WDF-risico: herkend",
-              "flowpath: beperkt",
-              "back-up: versterkt"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Een verdedigbare keuze bij duidelijke aanwijzingen voor windgedreven brandgedrag."
         },
         {
           "id": "B",
-          "text": "Binnenaanval voortzetten omdat het brandcompartiment nog bereikbaar is.",
-          "consequence": "Bij het verder openen van de deur neemt de hete stroming richting gang sterk toe; ploeg moet terugtrekken.",
-          "rationale": "Ongunstig. Kans op nare uitkomst stijgt sterk, zeker als deurmanagement eerder slecht was.",
-          "label": "Ongunstig in dit scenario",
+          "text": "De deur verder openen om beter zicht te krijgen en snel door te stoten.",
+          "consequence": "Bij het verder openen van de deur neemt de hete stroming richting de gang sterk toe en wordt de ploeg gedwongen terug te trekken.",
+          "rationale": "De bereikbaarheid van het compartiment zegt niets over de veiligheid van de stromingscondities. Door verder te openen kan de blootstelling snel toenemen.",
+          "label": "Operationele duiding",
           "quality": -2,
-          "deepDive": "Dat de ruimte bereikbaar is, zegt niet dat de stromingscondities veilig zijn. Door de deur verder te openen kan wind de hete gassen juist richting gang en ploeg drukken. Als eerder deurmanagement al ongunstig was, stapelen de effecten zich op en kan een gedwongen terugtrekking volgen.",
-          "consequenceDetail": {
-            "time": "14:44 uur — bij de brandwoning — gevolg van keuze B",
-            "paragraphs": [
-              "De ploeg probeert door te zetten. Bij verder openen van de deur neemt de hete stroming richting gang snel toe en de ploeg wordt gedwongen positie prijs te geven."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Negeert de combinatie van winddruk en deuropening die VRR juist als specifieke hoogbouwcomplicatie benoemt.",
-                  "VRR benoemt winddruk, ventilatie en stack-effect als factoren die onverwachte complicaties kunnen veroorzaken. Wind op de gevel kan de brand aanwakkeren of de brand en hete gassen versneld inpandig verplaatsen. Het kritieke moment is het creëren van een flowpath, bijvoorbeeld door het openen van een deur.",
-                  "De bron geeft daarom een duidelijke handelingsrichting: zorg eerst dat maximale slagkracht gereed is en overweeg middelen zoals fognails, Cobra of floor-below nozzles. Dit zijn voorbeelden uit het VRR-handboek van mogelijkheden om de brand te beïnvloeden zonder de ploeg direct in de gevaarlijkste stroming te plaatsen. Welke middelen regionaal beschikbaar zijn, is een aparte VGGM-keuze.",
-                  "Ook het Coandă-effect is relevant voor de buitenverkenning: rook kan langs de gevel omhoog “plakken” en bovenliggende verdiepingen of luchtinlaten bedreigen. Het buitenbeeld moet daarom niet uitsluitend naar het brandraam kijken, maar ook naar rookgedrag boven de brand."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR waarschuwt expliciet voor een flowpath die ontstaat door een deur te openen terwijl winddruk op de gevel staat.",
-                  "De voorbeelden fognail, Cobra en floor-below nozzle worden in de bron genoemd als te overwegen opties bij deze complicatie.",
-                  "Coandă: blijf boven de brand kijken naar rook langs de gevel en bedreigde openingen/luchtinlaten."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De ploeg probeert door te zetten. Bij verder openen van de deur neemt de hete stroming richting gang snel toe en de ploeg wordt gedwongen positie prijs te geven."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit het beste aan bij de bron: flowpath beperken, maximale slagkracht/back-up gereedmaken en daarna opnieuw toetreden.",
-                  "Keuze C: Kan als brandbeïnvloeding denkbaar zijn, maar is alleen sterk als bereik en effect aantoonbaar zijn en de binnenploeg niet tijdens de poging blootgesteld blijft."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "ploegbelasting: sterk verhoogd",
-              "vluchtweg: verslechtert",
-              "gedwongen terugtrekking: mogelijk"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "De bereikbaarheid van het compartiment zegt niets over de veiligheid van de stromingscondities. Door verder te openen kan de blootstelling snel toenemen."
         },
         {
           "id": "C",
-          "text": "Van buiten proberen de brand vanaf een redvoertuig te bereiken terwijl binnenploeg positie houdt.",
-          "consequence": "Externe koeling kan relevant zijn, maar hoogte/bereik en coördinatie zijn onzeker; binnenploeg blijft ondertussen aan risico blootgesteld.",
-          "rationale": "Plausibel, maar niet vanzelfsprekend haalbaar. Alleen gunstig als bereik en communicatie bevestigd zijn.",
-          "label": "Verdedigbaar, met aandachtspunten",
+          "text": "Van buiten proberen de brand met het redvoertuig te beïnvloeden terwijl de binnenploeg positie houdt.",
+          "consequence": "Externe brandbeïnvloeding kan effect hebben, maar bereik, effect en coördinatie zijn nog onzeker. De binnenploeg blijft in de tussentijd blootgesteld aan de veranderende omstandigheden.",
+          "rationale": "Een mogelijke tactische optie, maar alleen wanneer effect en afstemming voldoende duidelijk zijn.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "Een externe koelactie kan in specifieke omstandigheden relevant zijn, maar alleen als bereik, effect en communicatie helder zijn. Zonder die bevestiging blijft de binnenploeg in een risicovolle positie wachten op een maatregel waarvan de werking onzeker is. De keuze kan dus passend worden, maar is geen automatische oplossing.",
-          "consequenceDetail": {
-            "time": "14:44 uur — bij de brandwoning — gevolg van keuze C",
-            "paragraphs": [
-              "Er wordt tijd gebruikt om externe brandbeïnvloeding te organiseren. Zolang bereik en effect niet zeker zijn, blijft de binnenploeg echter wachten in een nog steeds potentieel bedreigde positie."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan als brandbeïnvloeding denkbaar zijn, maar is alleen sterk als bereik en effect aantoonbaar zijn en de binnenploeg niet tijdens de poging blootgesteld blijft.",
-                  "VRR benoemt winddruk, ventilatie en stack-effect als factoren die onverwachte complicaties kunnen veroorzaken. Wind op de gevel kan de brand aanwakkeren of de brand en hete gassen versneld inpandig verplaatsen. Het kritieke moment is het creëren van een flowpath, bijvoorbeeld door het openen van een deur.",
-                  "De bron geeft daarom een duidelijke handelingsrichting: zorg eerst dat maximale slagkracht gereed is en overweeg middelen zoals fognails, Cobra of floor-below nozzles. Dit zijn voorbeelden uit het VRR-handboek van mogelijkheden om de brand te beïnvloeden zonder de ploeg direct in de gevaarlijkste stroming te plaatsen. Welke middelen regionaal beschikbaar zijn, is een aparte VGGM-keuze.",
-                  "Ook het Coandă-effect is relevant voor de buitenverkenning: rook kan langs de gevel omhoog “plakken” en bovenliggende verdiepingen of luchtinlaten bedreigen. Het buitenbeeld moet daarom niet uitsluitend naar het brandraam kijken, maar ook naar rookgedrag boven de brand."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR waarschuwt expliciet voor een flowpath die ontstaat door een deur te openen terwijl winddruk op de gevel staat.",
-                  "De voorbeelden fognail, Cobra en floor-below nozzle worden in de bron genoemd als te overwegen opties bij deze complicatie.",
-                  "Coandă: blijf boven de brand kijken naar rook langs de gevel en bedreigde openingen/luchtinlaten."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Er wordt tijd gebruikt om externe brandbeïnvloeding te organiseren. Zolang bereik en effect niet zeker zijn, blijft de binnenploeg echter wachten in een nog steeds potentieel bedreigde positie."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit het beste aan bij de bron: flowpath beperken, maximale slagkracht/back-up gereedmaken en daarna opnieuw toetreden.",
-                  "Keuze B: Negeert de combinatie van winddruk en deuropening die VRR juist als specifieke hoogbouwcomplicatie benoemt."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "tijd: +1",
-              "externe optie: onzeker",
-              "binnenploeg: blootstelling blijft"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Een mogelijke tactische optie, maar alleen wanneer effect en afstemming voldoende duidelijk zijn."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Herkenning en directe veilige reactie binnen; terugmelden en tactische betekenis toetsen met bevelvoerder.",
-      "sourceFrame": "VRR benoemt winddruk, ventilatie en stack-effect als factoren die onverwachte complicaties kunnen veroorzaken. Wind op de gevel kan de brand aanwakkeren of de brand en hete gassen versneld inpandig verplaatsen. Het kritieke moment is het creëren van een flowpath, bijvoorbeeld door het openen van een deur.\n\nDe bron geeft daarom een duidelijke handelingsrichting: zorg eerst dat maximale slagkracht gereed is en overweeg middelen zoals fognails, Cobra of floor-below nozzles. Dit zijn voorbeelden uit het VRR-handboek van mogelijkheden om de brand te beïnvloeden zonder de ploeg direct in de gevaarlijkste stroming te plaatsen. Welke middelen regionaal beschikbaar zijn, is een aparte VGGM-keuze.\n\nOok het Coandă-effect is relevant voor de buitenverkenning: rook kan langs de gevel omhoog “plakken” en bovenliggende verdiepingen of luchtinlaten bedreigen. Het buitenbeeld moet daarom niet uitsluitend naar het brandraam kijken, maar ook naar rookgedrag boven de brand.\n\nVRR waarschuwt expliciet voor een flowpath die ontstaat door een deur te openen terwijl winddruk op de gevel staat.\n\nDe voorbeelden fognail, Cobra en floor-below nozzle worden in de bron genoemd als te overwegen opties bij deze complicatie.\n\nCoandă: blijf boven de brand kijken naar rook langs de gevel en bedreigde openingen/luchtinlaten.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 9.",
-      "situationDetail": {
-        "time": "14:44 uur — bij de brandwoning",
-        "intro": [
-          "Buiten komt een aanvullende melding: de wind staat rechtstreeks op het geopende raam van de brandwoning. Binnen merkt de ploeg dat de hitte bij de deuropening sterk toeneemt."
-        ],
-        "observations": [
-          "winddruk op de brandgevel;",
-          "geopend raam in de brandwoning;",
-          "weinig zichtbare uitstroom van rook aan de raamzijde;",
-          "toenemende hitte bij de deuropening;",
-          "mogelijke flowpath tussen raam en gang."
-        ],
-        "after": [
-          "De ploeg moet nu bepalen of het binnenbeeld past bij een windgedreven brand en welke directe veilige reactie nodig is.",
-          "De manschappen koppelen hun RSTV-waarnemingen via een korte CAN-terugmelding aan de bevelvoerder: veranderende condities, huidige actie en behoefte aan extra koelend vermogen/back-up."
-        ],
-        "prompt": "Wat doet de ploeg?"
+      "discussionQuestion": "Welke signalen doen je vermoeden dat wind het brandgedrag beïnvloedt, en wanneer is dat voor jou reden om de inzet te heroverwegen?",
+      "media": {
+        "src": "assets/vggm/wdf_profiel.png",
+        "caption": "Wind Driven Fire: ventilatieprofiel",
+        "source": "VGGM lesmateriaal – slide 51"
       },
       "systems": [
-        "Klepel / straalpijp"
-      ],
-      "discussionQuestion": "Hoe organiseer je betrouwbare communicatie wanneer bouwconstructie en hoogte de verbinding beïnvloeden?"
+        "RSTV",
+        "Rookgaskoeling"
+      ]
     },
     {
       "id": 7,
-      "title": "Blusstrategie en water",
-      "situation": "De brand lijkt ontwikkeld. De stijgleiding is beschikbaar; de tweede TS is gereed. De oude VGGM-lesstof bespreekt HD/LD; de VRR-lijn benadrukt voldoende koelend vermogen en back-up.",
+      "title": "Blusstrategie en benodigde slagkracht",
+      "role": "Bevelvoerder",
+      "roleNote": "Bepaal welk blusvermogen en welke back-up nodig zijn voor de verdere inzet.",
+      "situation": "De brand blijkt verder ontwikkeld dan bij aankomst werd ingeschat. De stijgleiding is beschikbaar en de tweede TS kan aanvullende capaciteit leveren. De sprinkler heeft de brand niet onder controle gebracht en de windinvloed blijft relevant. De eerste ploeg vraagt om voldoende koelend vermogen en back-up.",
       "choices": [
         {
           "id": "A",
-          "text": "Snelle toevoer naar de gebouwblusleiding borgen en vanaf het gekozen afnamepunt twee LD-aanvalsmogelijkheden opbouwen, met O-bundel/sneller aanvalssysteem voor de primaire lijn en een volwaardige back-up vóór hernieuwde toetreding.",
-          "consequence": "Meer slagkracht en back-up, maar kost extra minuten.",
-          "rationale": "Robuuste keuze bij ontwikkelde brand; bluswater +2, tijd +1.",
-          "label": "Afweging",
-          "quality": 0,
-          "deepDive": "Twee inzetmogelijkheden geven slagkracht en redundantie. Dat kost opbouwtijd, maar verkleint de kans dat de eerste ploeg tijdens een ontwikkelde brand zonder voldoende koelend vermogen of back-up komt te staan. De keuze past vooral wanneer het beeld niet meer bij een klein beheersbaar incident past.",
-          "consequenceDetail": {
-            "time": "14:46 uur — inzetvoorbereiding op hoogte — gevolg van keuze A",
-            "paragraphs": [
-              "Twee LD-aanvalsmogelijkheden worden via de stijgleiding opgebouwd. Dat kost extra tijd, maar de eerste ploeg krijgt aantoonbaar meer koelend vermogen en een echte back-upmogelijkheid."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Sluit rechtstreeks aan bij de uitgewerkte VRR-interventie voor scenario 2: twee LD-stralen en back-up vóór offensief binnen.",
-                  "VRR behandelt de interne bluswatervoorziening als één van de drie kritieke randvoorwaarden. Voor gebouwen boven 70 meter gaat de bron uit van een blusleiding met eigen pomp en eigen watervoorraad, genoemd met een capaciteit van 1200 l/min. Bij uitval van de interne pomp kan de brandweer volgens het handboek geen voldoende hoeveelheid water met voldoende werkdruk op hoogte krijgen. Bij een ontwikkelde brand resteert dan feitelijk alleen klein blusmaterieel en zal minimaal het betrokken compartiment kunnen uitbranden.",
-                  "In scenario 2 is de sprinkler afwezig, niet geactiveerd of gefaald en kan de brand binnen korte tijd ontwikkeld raken. De interventietaak bestaat dan niet alleen uit water leveren, maar expliciet uit het opbouwen van twee LD-stralen en het inrichten van het bruggenhoofd op -2. Pas daarna wordt van defensief binnen naar offensief binnen gewerkt.",
-                  "De CAN-bijlage gebruikt precies het verschil in benodigde slagkracht als voorbeeld: misschien is een hogedrukstraal voldoende, maar een grotere ruimte kan een lagedrukstraal noodzakelijk maken. Een manschap kan op basis van de condities terugmelden dat hoge druk onvoldoende is; een bevelvoerder kan vervolgens opdracht geven om terug te trekken en lage druk af te leggen. Dit sluit aan bij het uitgangspunt dat beslissingen binnen door de manschappen op actuele condities kunnen worden genomen en gedeeld/getoetst met de bevelvoerder."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Voorbeeld VRR: sprinkler geactiveerd betekent niet automatisch dat de brand volledig beheerst is; continuïteit kan uitvallen.",
-                  "Voorbeeld CAN: grootte van het compartiment bepaalt mede of het beschikbare koelend vermogen passend is.",
-                  "Voorbeeld CAN: manschap meldt onvoldoende hoge druk; bevelvoerder kan laten terugtrekken om LD op te bouwen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Twee LD-aanvalsmogelijkheden worden via de stijgleiding opgebouwd. Dat kost extra tijd, maar de eerste ploeg krijgt aantoonbaar meer koelend vermogen en een echte back-upmogelijkheid."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Kan bij een aantoonbaar beheersbare brand tijd winnen, maar is kwetsbaar als het incident feitelijk scenario 2, WDF of groter compartiment betreft.",
-                  "Keuze C: Baseert de waterkeuze vooral op woninggrootte en niet op brandcondities, wind, ontwikkeling en benodigde flow. Dat is strijdig met de bronredenering."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "bluswater: +2",
-              "back-up: gereed",
-              "tijd: +1"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Twee LD-aanvalsmogelijkheden opbouwen via de stijgleiding, met een primaire aanvalslijn en een volwaardige back-up voordat opnieuw wordt toegetreden.",
+          "consequence": "Er is meer koelend vermogen en een volwaardige back-up beschikbaar, maar de opbouw kost extra tijd.",
+          "rationale": "Deze keuze biedt meer reserve wanneer het brandbeeld ontwikkeld is of verder kan verslechteren.",
+          "label": "Operationele duiding",
+          "quality": 1,
+          "deepDive": "Deze keuze biedt meer reserve wanneer het brandbeeld ontwikkeld is of verder kan verslechteren."
         },
         {
           "id": "B",
-          "text": "Snelle toevoer borgen en met één snel opgebouwde LD-aanvalslijn/O-bundel toetreden; de tweede lijn wordt tijdens de inzet opgebouwd.",
-          "consequence": "Sneller aan de brand, maar eerste ploeg start met minder reserve.",
-          "rationale": "Verdedigbaar bij beheersbaar beeld; riskanter bij scenario 2/3 of WDF.",
-          "label": "Verdedigbaar, met aandachtspunten",
+          "text": "Met één snel opgebouwde LD-aanvalslijn toetreden en de tweede lijn tijdens de inzet laten opbouwen.",
+          "consequence": "De eerste ploeg kan eerder inzetten, maar heeft aanvankelijk minder reserve en back-up beschikbaar.",
+          "rationale": "Verdedigbaar bij een aantoonbaar beheersbaar brandbeeld, maar kwetsbaarder wanneer de omstandigheden verder verslechteren.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "Eén lijn levert sneller effect op. Als het brandbeeld werkelijk beheersbaar is, kan dat verdedigbaar zijn. Maar bij scenario 2, een mislukte sprinklerwerking of windgedreven brand is de veiligheidsmarge kleiner en moet de tweede lijn daadwerkelijk snel volgen.",
-          "consequenceDetail": {
-            "time": "14:46 uur — inzetvoorbereiding op hoogte — gevolg van keuze B",
-            "paragraphs": [
-              "De eerste lijn gaat eerder naar voren. De tweede lijn wordt tijdens de aanval opgebouwd, waardoor de ploeg sneller aan de brand kan zijn maar tijdelijk minder reserve heeft."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan bij een aantoonbaar beheersbare brand tijd winnen, maar is kwetsbaar als het incident feitelijk scenario 2, WDF of groter compartiment betreft.",
-                  "VRR behandelt de interne bluswatervoorziening als één van de drie kritieke randvoorwaarden. Voor gebouwen boven 70 meter gaat de bron uit van een blusleiding met eigen pomp en eigen watervoorraad, genoemd met een capaciteit van 1200 l/min. Bij uitval van de interne pomp kan de brandweer volgens het handboek geen voldoende hoeveelheid water met voldoende werkdruk op hoogte krijgen. Bij een ontwikkelde brand resteert dan feitelijk alleen klein blusmaterieel en zal minimaal het betrokken compartiment kunnen uitbranden.",
-                  "In scenario 2 is de sprinkler afwezig, niet geactiveerd of gefaald en kan de brand binnen korte tijd ontwikkeld raken. De interventietaak bestaat dan niet alleen uit water leveren, maar expliciet uit het opbouwen van twee LD-stralen en het inrichten van het bruggenhoofd op -2. Pas daarna wordt van defensief binnen naar offensief binnen gewerkt.",
-                  "De CAN-bijlage gebruikt precies het verschil in benodigde slagkracht als voorbeeld: misschien is een hogedrukstraal voldoende, maar een grotere ruimte kan een lagedrukstraal noodzakelijk maken. Een manschap kan op basis van de condities terugmelden dat hoge druk onvoldoende is; een bevelvoerder kan vervolgens opdracht geven om terug te trekken en lage druk af te leggen. Dit sluit aan bij het uitgangspunt dat beslissingen binnen door de manschappen op actuele condities kunnen worden genomen en gedeeld/getoetst met de bevelvoerder."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Voorbeeld VRR: sprinkler geactiveerd betekent niet automatisch dat de brand volledig beheerst is; continuïteit kan uitvallen.",
-                  "Voorbeeld CAN: grootte van het compartiment bepaalt mede of het beschikbare koelend vermogen passend is.",
-                  "Voorbeeld CAN: manschap meldt onvoldoende hoge druk; bevelvoerder kan laten terugtrekken om LD op te bouwen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De eerste lijn gaat eerder naar voren. De tweede lijn wordt tijdens de aanval opgebouwd, waardoor de ploeg sneller aan de brand kan zijn maar tijdelijk minder reserve heeft."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit rechtstreeks aan bij de uitgewerkte VRR-interventie voor scenario 2: twee LD-stralen en back-up vóór offensief binnen.",
-                  "Keuze C: Baseert de waterkeuze vooral op woninggrootte en niet op brandcondities, wind, ontwikkeling en benodigde flow. Dat is strijdig met de bronredenering."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "tijd: gunstiger",
-              "back-up: later beschikbaar",
-              "kwetsbaar bij WDF/ontwikkelde brand"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Verdedigbaar bij een aantoonbaar beheersbaar brandbeeld, maar kwetsbaarder wanneer de omstandigheden verder verslechteren."
         },
         {
           "id": "C",
-          "text": "Kiezen voor de lichtste en snelst hanteerbare aanval, met minder nadruk op tweede lijn/back-up, omdat het om één appartement gaat.",
-          "consequence": "Ploeg is snel inzetbaar, maar koelend vermogen kan onvoldoende zijn voor een ontwikkelde/windgedreven brand.",
-          "rationale": "Ongunstig als brandontwikkeling hoger is dan gedacht; bluswater -1.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "De omvang van de woning zegt weinig over het benodigde koelend vermogen als de brand ontwikkeld of windgedreven is. Een lichte oplossing kan snel hanteerbaar zijn, maar onvoldoende capaciteit hebben om de warmtestroom te beheersen. Dan verandert tijdwinst in een tactisch nadeel.",
-          "consequenceDetail": {
-            "time": "14:46 uur — inzetvoorbereiding op hoogte — gevolg van keuze C",
-            "paragraphs": [
-              "De lichtere oplossing is snel inzetbaar, maar bij de ontwikkelde en mogelijk windgedreven brand blijkt het beschikbare koelend vermogen krapper dan het brandbeeld vraagt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Baseert de waterkeuze vooral op woninggrootte en niet op brandcondities, wind, ontwikkeling en benodigde flow. Dat is strijdig met de bronredenering.",
-                  "VRR behandelt de interne bluswatervoorziening als één van de drie kritieke randvoorwaarden. Voor gebouwen boven 70 meter gaat de bron uit van een blusleiding met eigen pomp en eigen watervoorraad, genoemd met een capaciteit van 1200 l/min. Bij uitval van de interne pomp kan de brandweer volgens het handboek geen voldoende hoeveelheid water met voldoende werkdruk op hoogte krijgen. Bij een ontwikkelde brand resteert dan feitelijk alleen klein blusmaterieel en zal minimaal het betrokken compartiment kunnen uitbranden.",
-                  "In scenario 2 is de sprinkler afwezig, niet geactiveerd of gefaald en kan de brand binnen korte tijd ontwikkeld raken. De interventietaak bestaat dan niet alleen uit water leveren, maar expliciet uit het opbouwen van twee LD-stralen en het inrichten van het bruggenhoofd op -2. Pas daarna wordt van defensief binnen naar offensief binnen gewerkt.",
-                  "De CAN-bijlage gebruikt precies het verschil in benodigde slagkracht als voorbeeld: misschien is een hogedrukstraal voldoende, maar een grotere ruimte kan een lagedrukstraal noodzakelijk maken. Een manschap kan op basis van de condities terugmelden dat hoge druk onvoldoende is; een bevelvoerder kan vervolgens opdracht geven om terug te trekken en lage druk af te leggen. Dit sluit aan bij het uitgangspunt dat beslissingen binnen door de manschappen op actuele condities kunnen worden genomen en gedeeld/getoetst met de bevelvoerder."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Voorbeeld VRR: sprinkler geactiveerd betekent niet automatisch dat de brand volledig beheerst is; continuïteit kan uitvallen.",
-                  "Voorbeeld CAN: grootte van het compartiment bepaalt mede of het beschikbare koelend vermogen passend is.",
-                  "Voorbeeld CAN: manschap meldt onvoldoende hoge druk; bevelvoerder kan laten terugtrekken om LD op te bouwen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De lichtere oplossing is snel inzetbaar, maar bij de ontwikkelde en mogelijk windgedreven brand blijkt het beschikbare koelend vermogen krapper dan het brandbeeld vraagt."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit rechtstreeks aan bij de uitgewerkte VRR-interventie voor scenario 2: twee LD-stralen en back-up vóór offensief binnen.",
-                  "Keuze B: Kan bij een aantoonbaar beheersbare brand tijd winnen, maar is kwetsbaar als het incident feitelijk scenario 2, WDF of groter compartiment betreft."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "bluswater/koelend vermogen: -1",
-              "tijd: snel",
-              "risico op onvoldoende slagkracht: verhoogd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Kiezen voor de lichtste en snelst inzetbare aanval, zonder vooraf een volwaardige tweede lijn of back-up op te bouwen.",
+          "consequence": "De ploeg kan snel inzetten, maar het beschikbare koelend vermogen en de reserve kunnen onvoldoende blijken bij verdere brandontwikkeling of sterke windinvloed.",
+          "rationale": "De omvang van het appartement zegt onvoldoende over het benodigde blusvermogen; brandontwikkeling, wind en stromingscondities zijn minstens zo bepalend.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "De omvang van het appartement zegt onvoldoende over het benodigde blusvermogen; brandontwikkeling, wind en stromingscondities zijn minstens zo bepalend."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Tactische randvoorwaarden en blusvermogen.",
-      "sourceFrame": "VRR behandelt de interne bluswatervoorziening als één van de drie kritieke randvoorwaarden. Voor gebouwen boven 70 meter gaat de bron uit van een blusleiding met eigen pomp en eigen watervoorraad, genoemd met een capaciteit van 1200 l/min. Bij uitval van de interne pomp kan de brandweer volgens het handboek geen voldoende hoeveelheid water met voldoende werkdruk op hoogte krijgen. Bij een ontwikkelde brand resteert dan feitelijk alleen klein blusmaterieel en zal minimaal het betrokken compartiment kunnen uitbranden.\n\nIn scenario 2 is de sprinkler afwezig, niet geactiveerd of gefaald en kan de brand binnen korte tijd ontwikkeld raken. De interventietaak bestaat dan niet alleen uit water leveren, maar expliciet uit het opbouwen van twee LD-stralen en het inrichten van het bruggenhoofd op -2. Pas daarna wordt van defensief binnen naar offensief binnen gewerkt.\n\nDe CAN-bijlage gebruikt precies het verschil in benodigde slagkracht als voorbeeld: misschien is een hogedrukstraal voldoende, maar een grotere ruimte kan een lagedrukstraal noodzakelijk maken. Een manschap kan op basis van de condities terugmelden dat hoge druk onvoldoende is; een bevelvoerder kan vervolgens opdracht geven om terug te trekken en lage druk af te leggen. Dit sluit aan bij het uitgangspunt dat beslissingen binnen door de manschappen op actuele condities kunnen worden genomen en gedeeld/getoetst met de bevelvoerder.\n\nVoorbeeld VRR: sprinkler geactiveerd betekent niet automatisch dat de brand volledig beheerst is; continuïteit kan uitvallen.\n\nVoorbeeld CAN: grootte van het compartiment bepaalt mede of het beschikbare koelend vermogen passend is.\n\nVoorbeeld CAN: manschap meldt onvoldoende hoge druk; bevelvoerder kan laten terugtrekken om LD op te bouwen.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 7-8, scenario 2 p. 20-21 en bijlage CAN p. 42.",
-      "situationDetail": {
-        "time": "14:46 uur — inzetvoorbereiding op hoogte",
-        "intro": [
-          "De brand blijkt verder ontwikkeld dan bij aankomst werd gehoopt. De interne bluswatervoorziening functioneert en de tweede TS kan aanvullende capaciteit leveren."
-        ],
-        "observations": [
-          "stijgleiding beschikbaar;",
-          "sprinkler heeft de brand niet onder controle gebracht;",
-          "windinvloed blijft relevant;",
-          "eerste ploeg vraagt om voldoende koelend vermogen en back-up;",
-          "tijd richting een eventuele redding blijft meewegen."
-        ],
-        "after": [
-          "De keuze gaat niet alleen over HD of LD, maar over de vraag hoeveel slagkracht en reserve nodig is voordat opnieuw wordt toegetreden.",
-          "Het BPBB-document voegt hier praktische systeemkeuzes aan toe: snelle lijn bij korte afstand, snelle toevoer bij langere afstand of meerdere O-bundels, transporttas bij grote inzetdiepte en droge stijgleiding binnen bij betrouwbare hoogbouwvoorziening.",
-          "Voor deze fictieve VGGM-casus zijn snelle toevoer, snelle aanval en O-bundels beschikbaar. De keuze gaat daarom niet alleen over 'welke slang', maar over snelheid versus koelend vermogen, back-up en een beheersbare slangvoering op hoogte."
-        ],
-        "prompt": "Welke blusstrategie bouw je op?"
+      "discussionQuestion": "Welke factoren bepalen hoeveel blusvermogen en back-up je op hoogte nodig hebt, en welk aanvalssysteem daarbij past?",
+      "media": {
+        "src": "assets/vggm/straalpijp.gif",
+        "caption": "Koelend vermogen en straalpijptechniek",
+        "source": "VGGM lesmateriaal – slide 55"
       },
       "systems": [
         "LD op hoogte",
-        "Snelle lijn",
-        "Snelle toevoer",
-        "Transporttas",
-        "Do’s & Don’ts LD/O-bundels"
-      ],
-      "discussionQuestion": "Welke factoren bepalen je keuze voor watertransport en aanvalssysteem op hoogte?"
+        "Klepel / straalpijp"
+      ]
     },
     {
       "id": 8,
       "title": "Scenarioherkenning",
-      "situation": "Sprinkler is geactiveerd maar de brand is niet onder controle. Rook blijft grotendeels binnen woning en gang; trappenhuizen zijn nog rookarm.",
+      "role": "Bevelvoerder",
+      "roleNote": "Bepaal welk scenario het beste past bij het actuele brand- en rookbeeld. VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek) wordt alleen als didactisch vergelijkingsmodel gebruikt.",
+      "situation": "De sprinkler is geactiveerd, maar de brand is niet onder controle. Rook blijft grotendeels beperkt tot de woning en de gang. De trappenhuizen zijn nog rookarm.",
       "choices": [
         {
           "id": "A",
-          "text": "Beeld behandelen als scenario 1: snelle offensieve binneninzet.",
-          "consequence": "De inzet gaat snel, maar onderschat dat sprinkler de brand niet beheerst.",
-          "rationale": "Te optimistisch: scenario feitelijk richting 2.",
-          "label": "Afweging",
-          "quality": 0,
-          "deepDive": "Sprinkleractivatie alleen is onvoldoende om scenario 1 aan te nemen. In de casus is de brand niet onder controle en is al rook in de gang. Daarmee ontbreekt een belangrijk criterium voor een beheersbare brand. Een te optimistische classificatie kan ertoe leiden dat interventie begint voordat bescherming en back-up voldoende zijn georganiseerd.",
-          "consequenceDetail": {
-            "time": "14:48 uur — herbeoordeling brandbeeld — gevolg van keuze A",
-            "paragraphs": [
-              "De inzet wordt als een relatief beheersbare compartimentsbrand behandeld. Daardoor wordt sneller offensief gewerkt terwijl de sprinkler de brand aantoonbaar niet heeft beheerst."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Past niet meer goed: de sprinkler beheerst de brand aantoonbaar niet, terwijl scenario 1 juist op werkende/beheersende voorzieningen rust.",
-                  "VRR gebruikt vier scenario’s als richtingaanwijzer. De algemene commanders intent voor hoogbouwbrand is eerst de vluchtmogelijkheden voor bewoners én brandweer beschermen door rookverspreiding tegen te gaan en het trappenhuis te beschermen; daarna, indien mogelijk, de brand bestrijden.",
-                  "Scenario 1 veronderstelt dat de brandveiligheidsvoorzieningen inclusief sprinkler werken en dat brand en rook zich tot de ontstaansruimte beperken. VRR noemt als voorbeeld ook een kleine, zeker beheersbare brand die met een klein blusmiddel kan worden bestreden, bijvoorbeeld wanneer de melder/bewoner dat aangeeft en directe snelle verkenning mogelijk is doordat men de sleutel van de voordeur heeft. Alleen in scenario 1 is snelle redding vóór opbouw van het bruggenhoofd toegestaan."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Scenario 2 geldt wanneer geen sprinkler aanwezig is, deze niet is geactiveerd of faalt. De brand blijft nog binnen het compartiment maar kan zich snel ontwikkelen. Het kwadrant is defensief binnen ter voorbereiding op offensief binnen: rook beperken, interventiemaatregelen opbouwen, daarna brandbestrijding/redding en controle van -1 tot +2 op rook en CO.",
-                  "Scenario 3 begint wanneer brand en/of rook buiten het compartiment komt en vluchtwegen worden bedreigd. Dan verschuift de primaire inzet naar rookverspreiding voorkomen en vluchtwegen veiligstellen. Scenario 4 is de gevelbrand met uitbreiding: de bron geeft dan prioriteit aan zo snel mogelijk volledig ontruimen, te beginnen op en boven de brand."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De inzet wordt als een relatief beheersbare compartimentsbrand behandeld. Daardoor wordt sneller offensief gewerkt terwijl de sprinkler de brand aantoonbaar niet heeft beheerst."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Is de beste match met het actuele bronbeeld: compartimentsbrand, sprinkler onvoldoende, vluchtwegen nog bruikbaar.",
-                  "Keuze C: Kan later nodig worden, maar scenario 3 veronderstelt een duidelijkere uitbreiding van brand/rook buiten het compartiment en bedreiging van vluchtwegen."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "scenario-inschatting: te licht",
-              "tijd richting aanval: snel",
-              "rookverspreidingsrisico: onderschat"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Het beeld behandelen als scenario 1 en kiezen voor een snelle offensieve binneninzet.",
+          "consequence": "De inzet wordt snel voortgezet, maar de betekenis van het falen van de sprinkler wordt onderschat.",
+          "rationale": "Dit beeld past onvoldoende bij scenario 1, omdat de sprinkler de brand aantoonbaar niet beheerst.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Dit beeld past onvoldoende bij scenario 1, omdat de sprinkler de brand aantoonbaar niet beheerst."
         },
         {
           "id": "B",
-          "text": "Beeld behandelen als scenario 2: defensief binnen organiseren, daarna offensief binnen.",
-          "consequence": "Bruggenhoofd, twee stralen en trappenhuisbescherming worden leidend.",
-          "rationale": "Beste aansluiting op het actuele beeld.",
-          "label": "Afweging",
-          "quality": 0,
-          "deepDive": "Dit past het best bij het actuele beeld: voorzieningen werken, maar de brand is niet door de sprinkler beheerst en rook blijft nog grotendeels binnen woning/gang. In de VRR-logica verschuift de aanpak dan naar defensief binnen organiseren, rookverspreiding beperken en pas daarna offensief optreden.",
-          "consequenceDetail": {
-            "time": "14:48 uur — herbeoordeling brandbeeld — gevolg van keuze B",
-            "paragraphs": [
-              "De inzet wordt georganiseerd alsof de brand zich binnen het compartiment heeft ontwikkeld zonder effectieve sprinklerbeheersing. Bruggenhoofd, twee stralen en bescherming van voorportaal/trappenhuis worden leidend voordat offensief wordt doorgestoten."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is de beste match met het actuele bronbeeld: compartimentsbrand, sprinkler onvoldoende, vluchtwegen nog bruikbaar.",
-                  "VRR gebruikt vier scenario’s als richtingaanwijzer. De algemene commanders intent voor hoogbouwbrand is eerst de vluchtmogelijkheden voor bewoners én brandweer beschermen door rookverspreiding tegen te gaan en het trappenhuis te beschermen; daarna, indien mogelijk, de brand bestrijden.",
-                  "Scenario 1 veronderstelt dat de brandveiligheidsvoorzieningen inclusief sprinkler werken en dat brand en rook zich tot de ontstaansruimte beperken. VRR noemt als voorbeeld ook een kleine, zeker beheersbare brand die met een klein blusmiddel kan worden bestreden, bijvoorbeeld wanneer de melder/bewoner dat aangeeft en directe snelle verkenning mogelijk is doordat men de sleutel van de voordeur heeft. Alleen in scenario 1 is snelle redding vóór opbouw van het bruggenhoofd toegestaan."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Scenario 2 geldt wanneer geen sprinkler aanwezig is, deze niet is geactiveerd of faalt. De brand blijft nog binnen het compartiment maar kan zich snel ontwikkelen. Het kwadrant is defensief binnen ter voorbereiding op offensief binnen: rook beperken, interventiemaatregelen opbouwen, daarna brandbestrijding/redding en controle van -1 tot +2 op rook en CO.",
-                  "Scenario 3 begint wanneer brand en/of rook buiten het compartiment komt en vluchtwegen worden bedreigd. Dan verschuift de primaire inzet naar rookverspreiding voorkomen en vluchtwegen veiligstellen. Scenario 4 is de gevelbrand met uitbreiding: de bron geeft dan prioriteit aan zo snel mogelijk volledig ontruimen, te beginnen op en boven de brand."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De inzet wordt georganiseerd alsof de brand zich binnen het compartiment heeft ontwikkeld zonder effectieve sprinklerbeheersing. Bruggenhoofd, twee stralen en bescherming van voorportaal/trappenhuis worden leidend voordat offensief wordt doorgestoten."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past niet meer goed: de sprinkler beheerst de brand aantoonbaar niet, terwijl scenario 1 juist op werkende/beheersende voorzieningen rust.",
-                  "Keuze C: Kan later nodig worden, maar scenario 3 veronderstelt een duidelijkere uitbreiding van brand/rook buiten het compartiment en bedreiging van vluchtwegen."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "scenario: 2",
-              "interventievoorwaarden: opgebouwd",
-              "vluchtwegbeveiliging: actief"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Het beeld behandelen als scenario 2: eerst defensief binnen organiseren en daarna offensief binnen optreden.",
+          "consequence": "Bruggenhoofd, voldoende blusvermogen en bescherming van de vluchtweg worden eerst georganiseerd voordat verder offensief wordt opgetreden.",
+          "rationale": "Dit sluit het beste aan bij het actuele beeld: de brand is niet beheerst, maar brand en rook zijn nog grotendeels compartimentsgebonden en de trappenhuizen zijn bruikbaar.",
+          "label": "Operationele duiding",
+          "quality": 1,
+          "deepDive": "Dit sluit het beste aan bij het actuele beeld: de brand is niet beheerst, maar brand en rook zijn nog grotendeels compartimentsgebonden en de trappenhuizen zijn bruikbaar."
         },
         {
           "id": "C",
-          "text": "Direct uitgaan van scenario 3 en prioriteit volledig naar ontruiming verschuiven.",
-          "consequence": "Veel capaciteit gaat naar ontruiming terwijl vluchtwegen nog bruikbaar zijn en brand nog compartimentsgebonden lijkt.",
-          "rationale": "Voorzichtig, maar mogelijk disproportioneel; brandbestrijding kan vertragen.",
-          "label": "Verdedigbaar, met aandachtspunten",
+          "text": "Het beeld behandelen als scenario 3 en de inzet direct vooral op ontruiming en vluchtwegbescherming richten.",
+          "consequence": "Veel capaciteit verschuift naar ontruiming terwijl de vluchtwegen nog bruikbaar zijn en de brand nog grotendeels compartimentsgebonden lijkt.",
+          "rationale": "Voorzichtig, maar mogelijk disproportioneel; de brandbestrijding kan hierdoor vertragen.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "Scenario 3 kan later nodig worden, maar op dit moment zijn de trappenhuizen nog rookarm en lijkt de brand nog compartimentsgebonden. Volledige prioriteitsverschuiving naar ontruiming kan daardoor de aanval onnodig vertragen. Het is een veilige reflex, maar mogelijk niet proportioneel aan het actuele beeld.",
-          "consequenceDetail": {
-            "time": "14:48 uur — herbeoordeling brandbeeld — gevolg van keuze C",
-            "paragraphs": [
-              "Veel capaciteit verschuift vroeg naar ontruiming, terwijl trappenhuizen nog bruikbaar zijn en de brand nog hoofdzakelijk compartimentsgebonden is. De brandbestrijding vertraagt daardoor."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan later nodig worden, maar scenario 3 veronderstelt een duidelijkere uitbreiding van brand/rook buiten het compartiment en bedreiging van vluchtwegen.",
-                  "VRR gebruikt vier scenario’s als richtingaanwijzer. De algemene commanders intent voor hoogbouwbrand is eerst de vluchtmogelijkheden voor bewoners én brandweer beschermen door rookverspreiding tegen te gaan en het trappenhuis te beschermen; daarna, indien mogelijk, de brand bestrijden.",
-                  "Scenario 1 veronderstelt dat de brandveiligheidsvoorzieningen inclusief sprinkler werken en dat brand en rook zich tot de ontstaansruimte beperken. VRR noemt als voorbeeld ook een kleine, zeker beheersbare brand die met een klein blusmiddel kan worden bestreden, bijvoorbeeld wanneer de melder/bewoner dat aangeeft en directe snelle verkenning mogelijk is doordat men de sleutel van de voordeur heeft. Alleen in scenario 1 is snelle redding vóór opbouw van het bruggenhoofd toegestaan."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Scenario 2 geldt wanneer geen sprinkler aanwezig is, deze niet is geactiveerd of faalt. De brand blijft nog binnen het compartiment maar kan zich snel ontwikkelen. Het kwadrant is defensief binnen ter voorbereiding op offensief binnen: rook beperken, interventiemaatregelen opbouwen, daarna brandbestrijding/redding en controle van -1 tot +2 op rook en CO.",
-                  "Scenario 3 begint wanneer brand en/of rook buiten het compartiment komt en vluchtwegen worden bedreigd. Dan verschuift de primaire inzet naar rookverspreiding voorkomen en vluchtwegen veiligstellen. Scenario 4 is de gevelbrand met uitbreiding: de bron geeft dan prioriteit aan zo snel mogelijk volledig ontruimen, te beginnen op en boven de brand."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Veel capaciteit verschuift vroeg naar ontruiming, terwijl trappenhuizen nog bruikbaar zijn en de brand nog hoofdzakelijk compartimentsgebonden is. De brandbestrijding vertraagt daardoor."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past niet meer goed: de sprinkler beheerst de brand aantoonbaar niet, terwijl scenario 1 juist op werkende/beheersende voorzieningen rust.",
-                  "Keuze B: Is de beste match met het actuele bronbeeld: compartimentsbrand, sprinkler onvoldoende, vluchtwegen nog bruikbaar."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "scenario-inschatting: zwaar",
-              "ontruiming: vroeg opgeschaald",
-              "tijd richting brandbestrijding: +2"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Voorzichtig, maar mogelijk disproportioneel; de brandbestrijding kan hierdoor vertragen."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Scenarioherkenning. VRICOL wordt uitsluitend als didactisch vergelijkingsmodel gebruikt.",
-      "sourceFrame": "VRR gebruikt vier scenario’s als richtingaanwijzer. De algemene commanders intent voor hoogbouwbrand is eerst de vluchtmogelijkheden voor bewoners én brandweer beschermen door rookverspreiding tegen te gaan en het trappenhuis te beschermen; daarna, indien mogelijk, de brand bestrijden.\n\nScenario 1 veronderstelt dat de brandveiligheidsvoorzieningen inclusief sprinkler werken en dat brand en rook zich tot de ontstaansruimte beperken. VRR noemt als voorbeeld ook een kleine, zeker beheersbare brand die met een klein blusmiddel kan worden bestreden, bijvoorbeeld wanneer de melder/bewoner dat aangeeft en directe snelle verkenning mogelijk is doordat men de sleutel van de voordeur heeft. Alleen in scenario 1 is snelle redding vóór opbouw van het bruggenhoofd toegestaan.\n\nScenario 2 geldt wanneer geen sprinkler aanwezig is, deze niet is geactiveerd of faalt. De brand blijft nog binnen het compartiment maar kan zich snel ontwikkelen. Het kwadrant is defensief binnen ter voorbereiding op offensief binnen: rook beperken, interventiemaatregelen opbouwen, daarna brandbestrijding/redding en controle van -1 tot +2 op rook en CO.\n\nScenario 3 begint wanneer brand en/of rook buiten het compartiment komt en vluchtwegen worden bedreigd. Dan verschuift de primaire inzet naar rookverspreiding voorkomen en vluchtwegen veiligstellen. Scenario 4 is de gevelbrand met uitbreiding: de bron geeft dan prioriteit aan zo snel mogelijk volledig ontruimen, te beginnen op en boven de brand.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 17-26.",
-      "situationDetail": {
-        "time": "14:48 uur — herbeoordeling brandbeeld",
-        "intro": [
-          "De sprinkler is geactiveerd, maar de brand is niet onder controle. Rook blijft hoofdzakelijk beperkt tot de woning en de gang. De trappenhuizen zijn op dit moment nog rookarm."
-        ],
-        "observations": [
-          "brand niet beheerst door sprinkler;",
-          "brand en rook nog grotendeels compartimentsgebonden;",
-          "vluchttrappenhuizen nog bruikbaar;",
-          "bruggenhoofd en bluswater kunnen worden georganiseerd;",
-          "mogelijke bewoner nog niet met zekerheid gelokaliseerd."
-        ],
-        "after": [
-          "De bevelvoerder moet het actuele beeld vertalen naar een scenario en daarmee naar een volgorde van aandacht. VRICOL wordt in deze casus alleen gebruikt als didactisch vergelijkingsmodel."
-        ],
-        "prompt": "Welk scenario past nu het beste bij het actuele beeld?"
+      "discussionQuestion": "Welke waarnemingen maken voor jou het verschil tussen scenario 1, 2 en 3?",
+      "media": {
+        "src": "assets/vggm/kwadrantenmodel.png",
+        "caption": "Tactische positionering en keuze van inzetstrategie",
+        "source": "VGGM lesmateriaal – slide 67"
       },
       "systems": [
-        "LD op hoogte"
+        "Kwadrantenmodel"
       ],
-      "discussionQuestion": "Hoe gebruik je objectinformatie zonder waarnemingen en terugmeldingen uit de inzet te overschrijven?"
+      "deepDive": "Scenario 1: brand beheersbaar binnen het compartiment en vluchtwegen bruikbaar. Scenario 2: brand niet beheerst, maar nog grotendeels compartimentsgebonden; organiseer eerst de benodigde interventievoorwaarden. Scenario 3: brand of rook buiten het compartiment en vluchtwegen bedreigd; rook- en vluchtwegbeheersing en ontruiming krijgen nadrukkelijker gewicht. Het scenario is een denkkader en moet worden herbeoordeeld wanneer het incident verandert."
     },
     {
       "id": 9,
       "title": "Mogelijk slachtoffer in de brandwoning",
-      "situation": "Een buurvrouw meldt nu dat de bewoner mogelijk al vóór de brand naar buiten is gegaan. Zekerheid ontbreekt. Brand is nog niet onder controle.",
+      "role": "Bevelvoerder",
+      "roleNote": "Weeg de urgentie van een mogelijke redding af tegen de voorwaarden voor een verantwoorde binneninzet.",
+      "situation": "Een buurvrouw meldt dat de bewoner mogelijk al vóór de brand naar buiten is gegaan. Ze kan dit niet bevestigen. De brand is nog niet onder controle.",
       "choices": [
         {
           "id": "A",
-          "text": "Redding direct laten voorgaan op verdere opbouw van interventiemaatregelen.",
-          "consequence": "Ploeg gaat eerder de bedreigde ruimte in met onvolledig ingerichte back-up.",
-          "rationale": "Menselijk begrijpelijk, maar bij scenario 2/3 volgens VRR pas nadat interventiemaatregelen zijn getroffen.",
-          "label": "Afweging",
+          "text": "De reddingsactie direct laten voorgaan op het verder opbouwen van de interventievoorwaarden.",
+          "consequence": "De ploeg gaat eerder richting de mogelijke slachtofferlocatie, terwijl blusvermogen en back-up nog niet volledig zijn georganiseerd.",
+          "rationale": "De mogelijke tijdwinst voor het slachtoffer gaat ten koste van de veiligheidsmarge van de ploeg. Bij een ontwikkelde brand moet worden afgewogen of die extra blootstelling verantwoord is.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "De reddingsdruk is menselijk en operationeel begrijpelijk. Maar als het incident al richting scenario 2 gaat, wordt de ploeg blootgesteld aan een ontwikkelde brand zonder volledig ingerichte interventievoorwaarden. Het risico is dat de redding zelf vastloopt en extra capaciteit nodig heeft.",
-          "consequenceDetail": {
-            "time": "14:50 uur — nieuwe slachtofferinformatie — gevolg van keuze A",
-            "paragraphs": [
-              "De ploeg gaat eerder richting mogelijke redding voordat alle interventiemaatregelen gereed zijn. Daarmee wordt tijd gewonnen voor het slachtoffer, maar neemt de marge voor de ploeg af."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Past alleen bij een overtuigend scenario-1-beeld. In deze casus is de brand niet beheerst, waardoor de bron eerst interventievoorwaarden verlangt.",
-                  "De VRR-scenario’s maken een duidelijk onderscheid in het moment waarop een redding kan worden uitgevoerd. Alleen in scenario 1 kan de eerste eenheid een snelle redding uitvoeren vóór het bruggenhoofd is opgebouwd. Daarvoor noemt de bron voorwaarden: de redding mag niet leiden tot verdere rookverspreiding, de interventie moet in principe met een klein blusmiddel mogelijk zijn en de liftboy houdt de lift op de inzetverdieping -2.",
-                  "Bij scenario 2, 3 en 4 komt redding pas aan de orde nadat het bruggenhoofd en de andere noodzakelijke taken zijn ingevuld. In scenario 2 staat expliciet dat redding plaatsvindt nadat de interventiemaatregelen zijn getroffen. In scenario 3 geldt bovendien dat redding nooit extra rookverspreiding in het trappenhuis mag veroorzaken.",
-                  "Dit betekent niet dat slachtofferinformatie onbelangrijk wordt. De bron koppelt de snelle reddingsmogelijkheid juist aan de zekerheid dat het om een kleine beheersbare brand gaat. Onzekere informatie (“mogelijk al buiten”) is daarom geen bronbasis om de reddingstaak volledig te schrappen; zij moet worden meegewogen in het scenario en de risico’s van toetreding."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR-voorbeeld scenario 1: kleine beheersbare brand, melder/bewoner bevestigt dit, sleutel beschikbaar en snelle verkenning mogelijk.",
-                  "Scenario 2: redding pas nadat interventiemaatregelen zijn getroffen.",
-                  "Scenario 3: redding binnen mogelijkheden, maar niet als daardoor rook in het trappenhuis wordt verspreid."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De ploeg gaat eerder richting mogelijke redding voordat alle interventiemaatregelen gereed zijn. Daarmee wordt tijd gewonnen voor het slachtoffer, maar neemt de marge voor de ploeg af."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Sluit bij scenario 2 aan op de VRR-volgorde: veilige interventievoorwaarden, daarna redding/aanval.",
-                  "Keuze C: Is te absoluut. De bron gebruikt onzekerheid niet als bewijs dat er niemand meer binnen is; verkenning en scenario blijven leidend."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "reddingsdruk: voorrang",
-              "back-up: onvolledig",
-              "ploegrisico: verhoogd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "De mogelijke tijdwinst voor het slachtoffer gaat ten koste van de veiligheidsmarge van de ploeg. Bij een ontwikkelde brand moet worden afgewogen of die extra blootstelling verantwoord is."
         },
         {
           "id": "B",
-          "text": "Eerst interventievoorwaarden afronden; daarna gerichte zoek-/reddingsactie combineren met aanval.",
-          "consequence": "Enkele minuten later toetreding, maar met meer controle en slagkracht.",
-          "rationale": "Sterke keuze bij scenario 2.",
-          "label": "Sterk",
+          "text": "Eerst de noodzakelijke interventievoorwaarden organiseren en daarna de gerichte zoek-/reddingsactie combineren met de brandbestrijding.",
+          "consequence": "De ploeg treedt iets later toe, maar beschikt over meer blusvermogen, back-up en een betere terugtrekmogelijkheid.",
+          "rationale": "Deze keuze past bij een situatie waarin de brand niet beheerst is en een reddingsactie niet los kan worden gezien van de brandbestrijding.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De toetreding start iets later, maar gebeurt met beter georganiseerde slagkracht en terugtrekmogelijkheid. Daarmee wordt redding gekoppeld aan de brandbestrijding in plaats van daarvan losgemaakt. Dit past bij de bronlijn voor scenario 2.",
-          "consequenceDetail": {
-            "time": "14:50 uur — nieuwe slachtofferinformatie — gevolg van keuze B",
-            "paragraphs": [
-              "De interventievoorwaarden worden eerst afgerond. Daarna wordt de zoek-/reddingsactie gecombineerd met de aanval, waardoor de ploeg enkele minuten later maar met meer slagkracht naar binnen gaat."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Sluit bij scenario 2 aan op de VRR-volgorde: veilige interventievoorwaarden, daarna redding/aanval.",
-                  "De VRR-scenario’s maken een duidelijk onderscheid in het moment waarop een redding kan worden uitgevoerd. Alleen in scenario 1 kan de eerste eenheid een snelle redding uitvoeren vóór het bruggenhoofd is opgebouwd. Daarvoor noemt de bron voorwaarden: de redding mag niet leiden tot verdere rookverspreiding, de interventie moet in principe met een klein blusmiddel mogelijk zijn en de liftboy houdt de lift op de inzetverdieping -2.",
-                  "Bij scenario 2, 3 en 4 komt redding pas aan de orde nadat het bruggenhoofd en de andere noodzakelijke taken zijn ingevuld. In scenario 2 staat expliciet dat redding plaatsvindt nadat de interventiemaatregelen zijn getroffen. In scenario 3 geldt bovendien dat redding nooit extra rookverspreiding in het trappenhuis mag veroorzaken.",
-                  "Dit betekent niet dat slachtofferinformatie onbelangrijk wordt. De bron koppelt de snelle reddingsmogelijkheid juist aan de zekerheid dat het om een kleine beheersbare brand gaat. Onzekere informatie (“mogelijk al buiten”) is daarom geen bronbasis om de reddingstaak volledig te schrappen; zij moet worden meegewogen in het scenario en de risico’s van toetreding."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR-voorbeeld scenario 1: kleine beheersbare brand, melder/bewoner bevestigt dit, sleutel beschikbaar en snelle verkenning mogelijk.",
-                  "Scenario 2: redding pas nadat interventiemaatregelen zijn getroffen.",
-                  "Scenario 3: redding binnen mogelijkheden, maar niet als daardoor rook in het trappenhuis wordt verspreid."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De interventievoorwaarden worden eerst afgerond. Daarna wordt de zoek-/reddingsactie gecombineerd met de aanval, waardoor de ploeg enkele minuten later maar met meer slagkracht naar binnen gaat."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past alleen bij een overtuigend scenario-1-beeld. In deze casus is de brand niet beheerst, waardoor de bron eerst interventievoorwaarden verlangt.",
-                  "Keuze C: Is te absoluut. De bron gebruikt onzekerheid niet als bewijs dat er niemand meer binnen is; verkenning en scenario blijven leidend."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "back-up: gereed",
-              "redding: gericht",
-              "slagkracht: beter geborgd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Deze keuze past bij een situatie waarin de brand niet beheerst is en een reddingsactie niet los kan worden gezien van de brandbestrijding."
         },
         {
           "id": "C",
-          "text": "Geen reddingsactie meer plannen omdat slachtofferinformatie onzeker is.",
-          "consequence": "Capaciteit blijft op brandbestrijding, maar er blijft een reële kans op een gemiste persoon.",
-          "rationale": "Te stellig. Onzekerheid is geen bevestiging van afwezigheid.",
-          "label": "Afweging",
-          "quality": 0,
-          "deepDive": "Onzekere slachtofferinformatie betekent niet dat er geen slachtoffer is. De keuze verwijdert de reddingsopgave terwijl de onzekerheid feitelijk blijft bestaan. Een betere aanpak is onzekerheid actief blijven onderzoeken en de zoekactie koppelen aan de veilig opgebouwde interventie.",
-          "consequenceDetail": {
-            "time": "14:50 uur — nieuwe slachtofferinformatie — gevolg van keuze C",
-            "paragraphs": [
-              "De onzekerheid over de bewoner wordt geïnterpreteerd als reden om niet meer gericht te zoeken. De brandbestrijding houdt capaciteit, maar de mogelijkheid van een achtergebleven persoon blijft bestaan."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is te absoluut. De bron gebruikt onzekerheid niet als bewijs dat er niemand meer binnen is; verkenning en scenario blijven leidend.",
-                  "De VRR-scenario’s maken een duidelijk onderscheid in het moment waarop een redding kan worden uitgevoerd. Alleen in scenario 1 kan de eerste eenheid een snelle redding uitvoeren vóór het bruggenhoofd is opgebouwd. Daarvoor noemt de bron voorwaarden: de redding mag niet leiden tot verdere rookverspreiding, de interventie moet in principe met een klein blusmiddel mogelijk zijn en de liftboy houdt de lift op de inzetverdieping -2.",
-                  "Bij scenario 2, 3 en 4 komt redding pas aan de orde nadat het bruggenhoofd en de andere noodzakelijke taken zijn ingevuld. In scenario 2 staat expliciet dat redding plaatsvindt nadat de interventiemaatregelen zijn getroffen. In scenario 3 geldt bovendien dat redding nooit extra rookverspreiding in het trappenhuis mag veroorzaken.",
-                  "Dit betekent niet dat slachtofferinformatie onbelangrijk wordt. De bron koppelt de snelle reddingsmogelijkheid juist aan de zekerheid dat het om een kleine beheersbare brand gaat. Onzekere informatie (“mogelijk al buiten”) is daarom geen bronbasis om de reddingstaak volledig te schrappen; zij moet worden meegewogen in het scenario en de risico’s van toetreding."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR-voorbeeld scenario 1: kleine beheersbare brand, melder/bewoner bevestigt dit, sleutel beschikbaar en snelle verkenning mogelijk.",
-                  "Scenario 2: redding pas nadat interventiemaatregelen zijn getroffen.",
-                  "Scenario 3: redding binnen mogelijkheden, maar niet als daardoor rook in het trappenhuis wordt verspreid."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De onzekerheid over de bewoner wordt geïnterpreteerd als reden om niet meer gericht te zoeken. De brandbestrijding houdt capaciteit, maar de mogelijkheid van een achtergebleven persoon blijft bestaan."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past alleen bij een overtuigend scenario-1-beeld. In deze casus is de brand niet beheerst, waardoor de bron eerst interventievoorwaarden verlangt.",
-                  "Keuze B: Sluit bij scenario 2 aan op de VRR-volgorde: veilige interventievoorwaarden, daarna redding/aanval."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "reddingsactie: niet gepland",
-              "onzeker slachtoffer: blijft open",
-              "risico gemiste persoon: verhoogd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Geen gerichte reddingsactie meer plannen omdat niet zeker is dat de bewoner nog binnen is.",
+          "consequence": "De beschikbare capaciteit blijft gericht op de brandbestrijding, maar de mogelijkheid dat zich nog iemand in de woning bevindt blijft bestaan.",
+          "rationale": "Onzekerheid is geen bevestiging van afwezigheid.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Onzekerheid is geen bevestiging van afwezigheid."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Afweging reddingsdruk versus inzetvoorwaarden, gevoed door terugmeldingen van binnen.",
-      "sourceFrame": "De VRR-scenario’s maken een duidelijk onderscheid in het moment waarop een redding kan worden uitgevoerd. Alleen in scenario 1 kan de eerste eenheid een snelle redding uitvoeren vóór het bruggenhoofd is opgebouwd. Daarvoor noemt de bron voorwaarden: de redding mag niet leiden tot verdere rookverspreiding, de interventie moet in principe met een klein blusmiddel mogelijk zijn en de liftboy houdt de lift op de inzetverdieping -2.\n\nBij scenario 2, 3 en 4 komt redding pas aan de orde nadat het bruggenhoofd en de andere noodzakelijke taken zijn ingevuld. In scenario 2 staat expliciet dat redding plaatsvindt nadat de interventiemaatregelen zijn getroffen. In scenario 3 geldt bovendien dat redding nooit extra rookverspreiding in het trappenhuis mag veroorzaken.\n\nDit betekent niet dat slachtofferinformatie onbelangrijk wordt. De bron koppelt de snelle reddingsmogelijkheid juist aan de zekerheid dat het om een kleine beheersbare brand gaat. Onzekere informatie (“mogelijk al buiten”) is daarom geen bronbasis om de reddingstaak volledig te schrappen; zij moet worden meegewogen in het scenario en de risico’s van toetreding.\n\nVRR-voorbeeld scenario 1: kleine beheersbare brand, melder/bewoner bevestigt dit, sleutel beschikbaar en snelle verkenning mogelijk.\n\nScenario 2: redding pas nadat interventiemaatregelen zijn getroffen.\n\nScenario 3: redding binnen mogelijkheden, maar niet als daardoor rook in het trappenhuis wordt verspreid.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 18-23 en p. 26.",
-      "situationDetail": {
-        "time": "14:50 uur — nieuwe slachtofferinformatie",
-        "intro": [
-          "Een buurvrouw meldt dat de bewoner mogelijk al vóór de brand naar buiten is gegaan. Ze kan dit niet bevestigen. De brand is nog niet onder controle."
-        ],
-        "observations": [
-          "mogelijke vermissing blijft onzeker;",
-          "geen bevestiging dat de bewoner buiten is;",
-          "interventiemaatregelen zijn nog in opbouw;",
-          "brandcondities vragen om voldoende koelend vermogen en back-up."
-        ],
-        "after": [
-          "De druk om snel naar binnen te gaan blijft groot, maar onzekerheid over een slachtoffer verandert niets aan de actuele brandcondities."
-        ],
-        "prompt": "Hoe weeg je redding en interventievoorwaarden tegen elkaar af?"
+      "discussionQuestion": "Hoe weeg je tijdwinst voor een mogelijk slachtoffer af tegen de veiligheidsmarge van de ingezette ploeg?",
+      "media": {
+        "src": "assets/vggm/toetreding_deur.jpeg",
+        "caption": "Toetreding en reddingsdruk",
+        "source": "VGGM lesmateriaal – slide 58"
       },
       "systems": [
-        "Snelle aanval"
-      ],
-      "discussionQuestion": "Welke voorwaarden moeten zijn geborgd voordat een binnenaanval op hoogte verantwoord kan worden voortgezet?"
+        "Deurcontrole",
+        "LD op hoogte"
+      ]
     },
     {
       "id": 10,
       "title": "Rookmelding in het trappenhuis",
-      "situation": "Een ploeg meldt lichte rook/CO op verdieping 15 in het trappenhuis dat voor de brandweerinzet wordt gebruikt. Het andere trappenhuis is nog rookvrij.",
+      "role": "Bevelvoerder",
+      "roleNote": "Beoordeel rookverspreiding als mogelijk zelfstandig tactisch probleem.",
+      "situation": "Een ploeg meldt lichte rook en een verhoogde CO-waarde op de 15e verdieping in het trappenhuis dat voor de brandweerinzet wordt gebruikt. Het andere trappenhuis is nog rookvrij.",
       "choices": [
         {
           "id": "A",
-          "text": "Trappenhuisbescherming expliciet organiseren; deuren/portalen controleren en CO boven en onder brand monitoren.",
-          "consequence": "Rookverspreiding wordt als zelfstandig probleem aangepakt.",
-          "rationale": "Sterke VRICOL-keuze: Compartimentering krijgt prioriteit.",
-          "label": "Sterk",
+          "text": "Trappenhuisbescherming als zelfstandige taak organiseren, deuren en portalen controleren en de CO-waarden boven en onder de brand monitoren.",
+          "consequence": "De rookverspreiding wordt als zelfstandig tactisch probleem aangepakt en de bruikbaarheid van het trappenhuis wordt actief bewaakt.",
+          "rationale": "Past binnen VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek): compartimentering en bescherming van de vlucht- en inzetroute krijgen expliciet aandacht.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De rookmelding wordt niet alleen als gevolg van de brand gezien, maar als tactisch probleem dat de vluchtweg kan aantasten. Door deuren, portalen, overdruk en CO boven én onder de brand te controleren, wordt gezocht naar de oorzaak en de verspreidingsroute. Dat past goed bij de VRR-taak Compartimentering.",
-          "consequenceDetail": {
-            "time": "14:53 uur — melding uit het inzettrappenhuis — gevolg van keuze A",
-            "paragraphs": [
-              "De rook/CO-melding wordt als zelfstandig tactisch probleem behandeld. Deuren en portalen worden gecontroleerd en CO wordt boven en onder de brand gevolgd."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Volgt de VRR-bron het meest direct: rook in het trappenhuis wordt als zelfstandige inzettaak behandeld en niet “meegenomen als de brand uit is”.",
-                  "Bescherming van het trappenhuis staat centraal in de VRR-inzetprocedure omdat hoogbouwslachtoffers vaak door rookinhalatie in trappenhuizen vallen. Compartimentering wordt daarom een eigen taak en niet slechts een gevolg van brandbestrijding.",
-                  "Het trappenhuisbeschermingsteam bestaat in de bron standaard uit twee ploegen van twee personen onder dezelfde bevelvoerder. Bij een wokkeltrappenhuis neemt ieder team een ander trappenhuis. Taken zijn onder andere: CO over het hele trappenhuis monitoren, obstakels verwijderen, zo nodig smokestoppers plaatsen, trappenhuizen/doorgangen/liften doorzoeken op ingesloten bewoners, per etage terugrapporteren en vluchtende bewoners vanuit het inzettrappenhuis naar het veilige trappenhuis geleiden."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Per team noemt VRR een maximaal werkgebied van vijf etages beneden en vijf etages boven de brandetage. Dat maakt de taak begrensd en organiseert de terugmelding structureel.",
-                  "Ventilatie wordt niet als snelle standaardoplossing gezien. VRR waarschuwt dat repressieve ventilatie ongewenste rookverspreiding kan veroorzaken als het gebouwsysteem niet volledig wordt begrepen. Eigen ventilatie alleen wanneer rechtstreeks naar buiten kan worden afgevoerd en de toevoer eveneens eenvoudig via buitenlucht is te organiseren."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De rook/CO-melding wordt als zelfstandig tactisch probleem behandeld. Deuren en portalen worden gecontroleerd en CO wordt boven en onder de brand gevolgd."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Kan de bron van rook uiteindelijk wegnemen, maar laat gedurende de aanval een cruciale vluchtweg verder verslechteren.",
-                  "Keuze C: Botst met de ventilatiewaarschuwing: zonder gecontroleerde aan- en afvoer kunnen stack en flowpath juist sterker worden."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "compartimentering: actief",
-              "CO-monitoring: uitgebreid",
-              "vluchtweg: beschermd"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Past binnen VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek): compartimentering en bescherming van de vlucht- en inzetroute krijgen expliciet aandacht."
         },
         {
           "id": "B",
-          "text": "Brandaanval versnellen; bron wegnemen zal het rookprobleem vanzelf oplossen.",
-          "consequence": "Mogelijk sneller brandmeester, maar rookverspreiding kan ondertussen vluchtwegen aantasten.",
-          "rationale": "Te eenzijdig; rook is een zelfstandig tactisch probleem.",
-          "label": "Afweging",
+          "text": "De brandaanval versnellen vanuit de verwachting dat het wegnemen van de brandhaard ook het rookprobleem oplost.",
+          "consequence": "De brandbestrijding houdt prioriteit, maar ondertussen kan de rook zich verder door het trappenhuis verspreiden.",
+          "rationale": "Het bestrijden van de brand kan verdere rookproductie beperken, maar reeds aanwezige rookverspreiding blijft een zelfstandig probleem.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "De bron wegnemen kan uiteindelijk rookproductie stoppen, maar bestaande rookverspreiding kan intussen doorgaan of zelfs toenemen. Bewoners bevinden zich mogelijk al in het trappenhuis. Daardoor is alleen sneller aanvallen onvoldoende als bescherming van de vluchtweg ondertussen verslechtert.",
-          "consequenceDetail": {
-            "time": "14:53 uur — melding uit het inzettrappenhuis — gevolg van keuze B",
-            "paragraphs": [
-              "De nadruk blijft op de brandhaard. Zolang de aanval niet direct effect heeft, kan rook ondertussen verder in het trappenhuis migreren."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan de bron van rook uiteindelijk wegnemen, maar laat gedurende de aanval een cruciale vluchtweg verder verslechteren.",
-                  "Bescherming van het trappenhuis staat centraal in de VRR-inzetprocedure omdat hoogbouwslachtoffers vaak door rookinhalatie in trappenhuizen vallen. Compartimentering wordt daarom een eigen taak en niet slechts een gevolg van brandbestrijding.",
-                  "Het trappenhuisbeschermingsteam bestaat in de bron standaard uit twee ploegen van twee personen onder dezelfde bevelvoerder. Bij een wokkeltrappenhuis neemt ieder team een ander trappenhuis. Taken zijn onder andere: CO over het hele trappenhuis monitoren, obstakels verwijderen, zo nodig smokestoppers plaatsen, trappenhuizen/doorgangen/liften doorzoeken op ingesloten bewoners, per etage terugrapporteren en vluchtende bewoners vanuit het inzettrappenhuis naar het veilige trappenhuis geleiden."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Per team noemt VRR een maximaal werkgebied van vijf etages beneden en vijf etages boven de brandetage. Dat maakt de taak begrensd en organiseert de terugmelding structureel.",
-                  "Ventilatie wordt niet als snelle standaardoplossing gezien. VRR waarschuwt dat repressieve ventilatie ongewenste rookverspreiding kan veroorzaken als het gebouwsysteem niet volledig wordt begrepen. Eigen ventilatie alleen wanneer rechtstreeks naar buiten kan worden afgevoerd en de toevoer eveneens eenvoudig via buitenlucht is te organiseren."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De nadruk blijft op de brandhaard. Zolang de aanval niet direct effect heeft, kan rook ondertussen verder in het trappenhuis migreren."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Volgt de VRR-bron het meest direct: rook in het trappenhuis wordt als zelfstandige inzettaak behandeld en niet “meegenomen als de brand uit is”.",
-                  "Keuze C: Botst met de ventilatiewaarschuwing: zonder gecontroleerde aan- en afvoer kunnen stack en flowpath juist sterker worden."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "interventie: versneld",
-              "rookprobleem: onvoldoende zelfstandig beheerst",
-              "vluchtweg: kwetsbaarder"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Het bestrijden van de brand kan verdere rookproductie beperken, maar reeds aanwezige rookverspreiding blijft een zelfstandig probleem."
         },
         {
           "id": "C",
-          "text": "Beide trappenhuizen openen om rook sneller kwijt te raken.",
-          "consequence": "Luchtstromen worden onvoorspelbaarder en mogelijk wordt stack/flowpath versterkt.",
-          "rationale": "Ongunstig; ventilatie zonder gecontroleerde aan- en afvoer is riskant.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "Beide trappenhuizen openen maakt de drukverhoudingen moeilijker voorspelbaar. Bij stack-effect kan een opening juist onderdeel worden van een verticale flowpath. Ongecontroleerd ventileren kan daarom de rook naar nieuwe verdiepingen of vluchtwegen verplaatsen.",
-          "consequenceDetail": {
-            "time": "14:53 uur — melding uit het inzettrappenhuis — gevolg van keuze C",
-            "paragraphs": [
-              "Door beide trappenhuizen te openen worden drukverhoudingen en luchtstromen minder voorspelbaar. Een rookvrij trappenhuis kan daardoor juist worden beïnvloed."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Botst met de ventilatiewaarschuwing: zonder gecontroleerde aan- en afvoer kunnen stack en flowpath juist sterker worden.",
-                  "Bescherming van het trappenhuis staat centraal in de VRR-inzetprocedure omdat hoogbouwslachtoffers vaak door rookinhalatie in trappenhuizen vallen. Compartimentering wordt daarom een eigen taak en niet slechts een gevolg van brandbestrijding.",
-                  "Het trappenhuisbeschermingsteam bestaat in de bron standaard uit twee ploegen van twee personen onder dezelfde bevelvoerder. Bij een wokkeltrappenhuis neemt ieder team een ander trappenhuis. Taken zijn onder andere: CO over het hele trappenhuis monitoren, obstakels verwijderen, zo nodig smokestoppers plaatsen, trappenhuizen/doorgangen/liften doorzoeken op ingesloten bewoners, per etage terugrapporteren en vluchtende bewoners vanuit het inzettrappenhuis naar het veilige trappenhuis geleiden."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Per team noemt VRR een maximaal werkgebied van vijf etages beneden en vijf etages boven de brandetage. Dat maakt de taak begrensd en organiseert de terugmelding structureel.",
-                  "Ventilatie wordt niet als snelle standaardoplossing gezien. VRR waarschuwt dat repressieve ventilatie ongewenste rookverspreiding kan veroorzaken als het gebouwsysteem niet volledig wordt begrepen. Eigen ventilatie alleen wanneer rechtstreeks naar buiten kan worden afgevoerd en de toevoer eveneens eenvoudig via buitenlucht is te organiseren."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Door beide trappenhuizen te openen worden drukverhoudingen en luchtstromen minder voorspelbaar. Een rookvrij trappenhuis kan daardoor juist worden beïnvloed."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Volgt de VRR-bron het meest direct: rook in het trappenhuis wordt als zelfstandige inzettaak behandeld en niet “meegenomen als de brand uit is”.",
-                  "Keuze B: Kan de bron van rook uiteindelijk wegnemen, maar laat gedurende de aanval een cruciale vluchtweg verder verslechteren."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "flowpath/stack: verhoogd",
-              "tweede vluchtweg: bedreigd",
-              "rookverspreiding: +2"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "Het trappenhuis direct ventileren om de rook af te voeren.",
+          "consequence": "Zonder inzicht in toevoer, afvoer en stromingsrichting kan de rookverspreiding veranderen of juist toenemen.",
+          "rationale": "Ventilatie is geen automatische oplossing. Eerst moet duidelijk zijn welke lucht- en rookstroming ermee wordt veroorzaakt.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Ventilatie is geen automatische oplossing. Eerst moet duidelijk zijn welke lucht- en rookstroming ermee wordt veroorzaakt."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Waarneming binnen en directe veilige maatregelen; terugmelden zodat bevelvoerder inzet kan organiseren.",
-      "sourceFrame": "Bescherming van het trappenhuis staat centraal in de VRR-inzetprocedure omdat hoogbouwslachtoffers vaak door rookinhalatie in trappenhuizen vallen. Compartimentering wordt daarom een eigen taak en niet slechts een gevolg van brandbestrijding.\n\nHet trappenhuisbeschermingsteam bestaat in de bron standaard uit twee ploegen van twee personen onder dezelfde bevelvoerder. Bij een wokkeltrappenhuis neemt ieder team een ander trappenhuis. Taken zijn onder andere: CO over het hele trappenhuis monitoren, obstakels verwijderen, zo nodig smokestoppers plaatsen, trappenhuizen/doorgangen/liften doorzoeken op ingesloten bewoners, per etage terugrapporteren en vluchtende bewoners vanuit het inzettrappenhuis naar het veilige trappenhuis geleiden.\n\nPer team noemt VRR een maximaal werkgebied van vijf etages beneden en vijf etages boven de brandetage. Dat maakt de taak begrensd en organiseert de terugmelding structureel.\n\nVentilatie wordt niet als snelle standaardoplossing gezien. VRR waarschuwt dat repressieve ventilatie ongewenste rookverspreiding kan veroorzaken als het gebouwsysteem niet volledig wordt begrepen. Eigen ventilatie alleen wanneer rechtstreeks naar buiten kan worden afgevoerd en de toevoer eveneens eenvoudig via buitenlucht is te organiseren.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 9, p. 23-27 en p. 12-13.",
-      "situationDetail": {
-        "time": "14:53 uur — melding uit het inzettrappenhuis",
-        "intro": [
-          "Een ploeg meldt lichte rook en meetbare CO op verdieping 15 in het trappenhuis dat voor de brandweerinzet wordt gebruikt. Het tweede trappenhuis is nog rookvrij."
-        ],
-        "observations": [
-          "rook/CO boven de brandverdieping;",
-          "inzettrappenhuis begint te worden beïnvloed;",
-          "tweede trappenhuis nog rookvrij;",
-          "deuren en voorportalen zijn bepalend voor verdere verspreiding;",
-          "bewoners kunnen zich al spontaan in de trappenhuizen bevinden."
-        ],
-        "after": [
-          "Rookverspreiding is daarmee een zelfstandig probleem geworden. De ploeg binnen kan direct veilige maatregelen nemen en moet de verandering terugmelden zodat de bevelvoerder de inzet kan organiseren."
-        ],
-        "prompt": "Wat krijgt nu prioriteit?"
+      "discussionQuestion": "Hoe bewaak je de bruikbaarheid van een trappenhuis wanneer er aanwijzingen zijn voor rook- of CO-verspreiding?",
+      "media": {
+        "src": "assets/vggm/rook_trappenhuis.png",
+        "caption": "Rookverspreiding richting trappenhuis",
+        "source": "VGGM lesmateriaal – slide 61"
       },
-      "systems": [],
-      "discussionQuestion": "Hoe herken je dat rookverspreiding een vluchtweg bedreigt en welke interventie heeft dan prioriteit?"
+      "systems": [
+        "Smokestopper",
+        "Anti-ventilatie"
+      ]
     },
     {
       "id": 11,
       "title": "Spontane ontruiming",
-      "situation": "Bewoners van verdieping 16 en 17 komen zelfstandig naar beneden. Zij gebruiken deels het inzettrappenhuis omdat dit voor hen het dichtstbij is.",
+      "role": "Bevelvoerder",
+      "roleNote": "Coördineer de spontane ontruiming en bewaak de scheiding tussen inzetroute en vluchtroute.",
+      "situation": "Bewoners van de 16e en 17e verdieping komen zelfstandig naar beneden. Een deel gebruikt het inzettrappenhuis omdat dit voor hen de meest voor de hand liggende route is. Het andere trappenhuis is nog rookvrij.",
       "choices": [
         {
           "id": "A",
-          "text": "Bewoners via inzettrappenhuis laten doorlopen; brandweer past bewegingen hierop aan.",
-          "consequence": "Directe doorstroming, maar inzet en vlucht mengen en het trappenhuis wordt drukker.",
-          "rationale": "Kwetsbaar. Kan bij laag rookniveau tijdelijk, maar belemmert inzet en bescherming.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "De bewoners blijven in beweging, maar brandweerlogistiek en vluchtstromen worden gemengd. Dat kan tijdelijk werkbaar zijn bij een rookvrij trappenhuis, maar maakt slangvoering, materiaaltransport en bescherming lastiger. Het risico groeit zodra rook of drukcondities veranderen.",
-          "consequenceDetail": {
-            "time": "14:56 uur — bewoners komen in beweging — gevolg van keuze A",
-            "paragraphs": [
-              "Bewoners blijven het inzettrappenhuis gebruiken. De brandweer maakt ruimte, maar materiaaltransport, ploegen en bewonersstromen lopen door elkaar."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan tijdelijk werkbaar zijn als het inzettrappenhuis aantoonbaar rookveilig is, maar mengt inzet en ontruiming en vergroot deurbewegingen/drukverstoring.",
-                  "VRR benoemt spontane ontruiming al vóór de scenario’s als specifiek aandachtspunt. Mensen kunnen vóór aankomst van de brandweer al via het ontruimingsalarm of op eigen initiatief in beweging zijn. Daardoor kan het trappenhuis al druk zijn en wordt zowel het repressieve optreden als de werking van overdruk beïnvloed.",
-                  "In de compartimenteringstaak wordt deze realiteit concreet gemaakt. Het trappenhuisbeschermingsteam vangt vluchtende bewoners op in het trappenhuis dat voor de brandweerinzet wordt gebruikt en leidt hen naar het veilige trappenhuis. Daarmee wordt niet verondersteld dat bewoners zich netjes aan de inzetstructuur houden; de brandweer organiseert een veilige overgang.",
-                  "Voor scenario 2 noemt VRR ontruiming van het gebied -1 tot +2 ten opzichte van de brandverdieping. Niet-zelfredzame bewoners kunnen, als de situatie het toelaat, eerst naar de inzetverdieping -2 worden gebracht en daarna onder beheer met de brandweerlift naar beneden. Bij scenario 3 kan een extra peloton nodig zijn voor totaalontruiming. Bij scenario 4 volgt direct totale ontruiming, startend op en boven de brand."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het handboek maakt dus verschil tussen spontaan vluchtende bewoners, gefaseerde ontruiming en totale ontruiming. Een generieke opdracht “iedereen terug naar de woning” past niet bij die gedifferentieerde benadering.",
-                  "Spontane beweging kan de overdruk in het trappenhuis beïnvloeden doordat deuren vaker/open langer gebruikt worden.",
-                  "Bij compartimentering worden vluchtenden actief van inzettrappenhuis naar veilig trappenhuis geleid.",
-                  "Niet-zelfredzamen vragen aparte capaciteit; hun verplaatsing moet de primaire inzet niet ongecontroleerd ontregelen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Bewoners blijven het inzettrappenhuis gebruiken. De brandweer maakt ruimte, maar materiaaltransport, ploegen en bewonersstromen lopen door elkaar."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Sluit direct aan bij de VRR-taak van trappenhuisbescherming: bewoners opvangen en naar het veilige trappenhuis geleiden.",
-                  "Keuze C: Is te absoluut en kan mensen terugsturen naar een gebied waarvan de toekomstige rook-/brandontwikkeling niet zeker is."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "inzet/vlucht: gemengd",
-              "doorstroming: kwetsbaar",
-              "trappenhuisbelasting: hoger"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "De bewoners via het inzettrappenhuis laten doorlopen en de brandweerinzet hierop aanpassen.",
+          "consequence": "Bewoners blijven direct in beweging, maar vluchtstromen, ploegen en materiaaltransport gaan dezelfde route gebruiken.",
+          "rationale": "Dit kan tijdelijk werkbaar zijn zolang het trappenhuis aantoonbaar bruikbaar blijft, maar maakt de inzet kwetsbaarder door de vermenging van vlucht- en inzetstromen.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Dit kan tijdelijk werkbaar zijn zolang het trappenhuis aantoonbaar bruikbaar blijft, maar maakt de inzet kwetsbaarder door de vermenging van vlucht- en inzetstromen."
         },
         {
           "id": "B",
-          "text": "Trappenhuisbescherming laat bewoners gecontroleerd oversteken naar het rookvrije trappenhuis.",
-          "consequence": "Vlucht en inzet worden gescheiden; vraagt extra personeel en goede communicatie.",
-          "rationale": "Sterke keuze als route aantoonbaar veilig is.",
-          "label": "Sterk",
+          "text": "De bewoners gecontroleerd naar het rookvrije trappenhuis laten oversteken en daarvoor personeel organiseren.",
+          "consequence": "Vlucht- en inzetstromen worden weer gescheiden, maar hiervoor zijn personeel, communicatie en een aantoonbaar bruikbare route nodig.",
+          "rationale": "Een sterke oplossing wanneer het tweede trappenhuis daadwerkelijk rookvrij en bruikbaar is.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Deze optie gebruikt de scheiding tussen inzet- en vluchttrappenhuis zoals bedoeld. De bewoners worden niet teruggestuurd, maar naar een aantoonbaar veilige route geleid. Daarvoor zijn wel personeel en communicatie nodig; de route moet werkelijk rookvrij en bruikbaar zijn.",
-          "consequenceDetail": {
-            "time": "14:56 uur — bewoners komen in beweging — gevolg van keuze B",
-            "paragraphs": [
-              "Bewoners worden op een gecontroleerd punt naar het rookvrije trappenhuis geleid. Dat kost personeel en communicatie, maar inzet en vlucht worden weer gescheiden."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Sluit direct aan bij de VRR-taak van trappenhuisbescherming: bewoners opvangen en naar het veilige trappenhuis geleiden.",
-                  "VRR benoemt spontane ontruiming al vóór de scenario’s als specifiek aandachtspunt. Mensen kunnen vóór aankomst van de brandweer al via het ontruimingsalarm of op eigen initiatief in beweging zijn. Daardoor kan het trappenhuis al druk zijn en wordt zowel het repressieve optreden als de werking van overdruk beïnvloed.",
-                  "In de compartimenteringstaak wordt deze realiteit concreet gemaakt. Het trappenhuisbeschermingsteam vangt vluchtende bewoners op in het trappenhuis dat voor de brandweerinzet wordt gebruikt en leidt hen naar het veilige trappenhuis. Daarmee wordt niet verondersteld dat bewoners zich netjes aan de inzetstructuur houden; de brandweer organiseert een veilige overgang.",
-                  "Voor scenario 2 noemt VRR ontruiming van het gebied -1 tot +2 ten opzichte van de brandverdieping. Niet-zelfredzame bewoners kunnen, als de situatie het toelaat, eerst naar de inzetverdieping -2 worden gebracht en daarna onder beheer met de brandweerlift naar beneden. Bij scenario 3 kan een extra peloton nodig zijn voor totaalontruiming. Bij scenario 4 volgt direct totale ontruiming, startend op en boven de brand."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het handboek maakt dus verschil tussen spontaan vluchtende bewoners, gefaseerde ontruiming en totale ontruiming. Een generieke opdracht “iedereen terug naar de woning” past niet bij die gedifferentieerde benadering.",
-                  "Spontane beweging kan de overdruk in het trappenhuis beïnvloeden doordat deuren vaker/open langer gebruikt worden.",
-                  "Bij compartimentering worden vluchtenden actief van inzettrappenhuis naar veilig trappenhuis geleid.",
-                  "Niet-zelfredzamen vragen aparte capaciteit; hun verplaatsing moet de primaire inzet niet ongecontroleerd ontregelen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Bewoners worden op een gecontroleerd punt naar het rookvrije trappenhuis geleid. Dat kost personeel en communicatie, maar inzet en vlucht worden weer gescheiden."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Kan tijdelijk werkbaar zijn als het inzettrappenhuis aantoonbaar rookveilig is, maar mengt inzet en ontruiming en vergroot deurbewegingen/drukverstoring.",
-                  "Keuze C: Is te absoluut en kan mensen terugsturen naar een gebied waarvan de toekomstige rook-/brandontwikkeling niet zeker is."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "vluchtweg: gescheiden",
-              "trappenhuisbescherming: actief",
-              "personeelsvraag: +1"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Een sterke oplossing wanneer het tweede trappenhuis daadwerkelijk rookvrij en bruikbaar is."
         },
         {
           "id": "C",
-          "text": "Bewoners terug naar hun woningen sturen totdat brand onder controle is.",
-          "consequence": "Beweging stopt, maar je stuurt mensen terug zonder volledige zekerheid over rook-/brandontwikkeling.",
-          "rationale": "Risicovol en te absoluut; bronmateriaal benadrukt juist dat spontane ontruiming moet worden meegenomen.",
-          "label": "Te absoluut",
-          "quality": -2,
-          "deepDive": "Bewoners terugsturen lijkt de trap snel leeg te maken, maar veronderstelt dat hun woning of verdieping veiliger is dan de route naar beneden. Die zekerheid is er niet. De bron benadrukt juist dat spontane vlucht een realiteit is waarmee de inzet rekening moet houden.",
-          "consequenceDetail": {
-            "time": "14:56 uur — bewoners komen in beweging — gevolg van keuze C",
-            "paragraphs": [
-              "De bewonersstroom stopt tijdelijk doordat mensen terug naar hun woning worden gestuurd. Daarmee wordt echter aangenomen dat hun woning en route later veilig blijven."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is te absoluut en kan mensen terugsturen naar een gebied waarvan de toekomstige rook-/brandontwikkeling niet zeker is.",
-                  "VRR benoemt spontane ontruiming al vóór de scenario’s als specifiek aandachtspunt. Mensen kunnen vóór aankomst van de brandweer al via het ontruimingsalarm of op eigen initiatief in beweging zijn. Daardoor kan het trappenhuis al druk zijn en wordt zowel het repressieve optreden als de werking van overdruk beïnvloed.",
-                  "In de compartimenteringstaak wordt deze realiteit concreet gemaakt. Het trappenhuisbeschermingsteam vangt vluchtende bewoners op in het trappenhuis dat voor de brandweerinzet wordt gebruikt en leidt hen naar het veilige trappenhuis. Daarmee wordt niet verondersteld dat bewoners zich netjes aan de inzetstructuur houden; de brandweer organiseert een veilige overgang.",
-                  "Voor scenario 2 noemt VRR ontruiming van het gebied -1 tot +2 ten opzichte van de brandverdieping. Niet-zelfredzame bewoners kunnen, als de situatie het toelaat, eerst naar de inzetverdieping -2 worden gebracht en daarna onder beheer met de brandweerlift naar beneden. Bij scenario 3 kan een extra peloton nodig zijn voor totaalontruiming. Bij scenario 4 volgt direct totale ontruiming, startend op en boven de brand."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het handboek maakt dus verschil tussen spontaan vluchtende bewoners, gefaseerde ontruiming en totale ontruiming. Een generieke opdracht “iedereen terug naar de woning” past niet bij die gedifferentieerde benadering.",
-                  "Spontane beweging kan de overdruk in het trappenhuis beïnvloeden doordat deuren vaker/open langer gebruikt worden.",
-                  "Bij compartimentering worden vluchtenden actief van inzettrappenhuis naar veilig trappenhuis geleid.",
-                  "Niet-zelfredzamen vragen aparte capaciteit; hun verplaatsing moet de primaire inzet niet ongecontroleerd ontregelen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De bewonersstroom stopt tijdelijk doordat mensen terug naar hun woning worden gestuurd. Daarmee wordt echter aangenomen dat hun woning en route later veilig blijven."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Kan tijdelijk werkbaar zijn als het inzettrappenhuis aantoonbaar rookveilig is, maar mengt inzet en ontruiming en vergroot deurbewegingen/drukverstoring.",
-                  "Keuze B: Sluit direct aan bij de VRR-taak van trappenhuisbescherming: bewoners opvangen en naar het veilige trappenhuis geleiden."
-                ]
-              }
-            ],
-            "assessment": "Te absolute keuze voor het beschikbare beeld.",
-            "stateEffects": [
-              "bewonersbeweging: gestopt",
-              "blootstelling bewoners: onzeker",
-              "besluit: te absoluut"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "Bewoners terugsturen naar hun woning om de trappenhuizen vrij te houden.",
+          "consequence": "De bewonersstroom stopt, maar bewoners worden teruggestuurd naar een situatie waarvan niet zeker is hoe brand en rook zich verder ontwikkelen.",
+          "rationale": "Te absoluut. Spontane ontruiming is een gegeven waarmee de inzet moet omgaan; terugsturen is alleen verdedigbaar wanneer aantoonbaar duidelijk is dat verblijf in de woning veiliger is.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Te absoluut. Spontane ontruiming is een gegeven waarmee de inzet moet omgaan; terugsturen is alleen verdedigbaar wanneer aantoonbaar duidelijk is dat verblijf in de woning veiliger is."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Coördinatie van spontane ontruiming en scheiding van inzet-/vluchtfunctie.",
-      "sourceFrame": "VRR benoemt spontane ontruiming al vóór de scenario’s als specifiek aandachtspunt. Mensen kunnen vóór aankomst van de brandweer al via het ontruimingsalarm of op eigen initiatief in beweging zijn. Daardoor kan het trappenhuis al druk zijn en wordt zowel het repressieve optreden als de werking van overdruk beïnvloed.\n\nIn de compartimenteringstaak wordt deze realiteit concreet gemaakt. Het trappenhuisbeschermingsteam vangt vluchtende bewoners op in het trappenhuis dat voor de brandweerinzet wordt gebruikt en leidt hen naar het veilige trappenhuis. Daarmee wordt niet verondersteld dat bewoners zich netjes aan de inzetstructuur houden; de brandweer organiseert een veilige overgang.\n\nVoor scenario 2 noemt VRR ontruiming van het gebied -1 tot +2 ten opzichte van de brandverdieping. Niet-zelfredzame bewoners kunnen, als de situatie het toelaat, eerst naar de inzetverdieping -2 worden gebracht en daarna onder beheer met de brandweerlift naar beneden. Bij scenario 3 kan een extra peloton nodig zijn voor totaalontruiming. Bij scenario 4 volgt direct totale ontruiming, startend op en boven de brand.\n\nHet handboek maakt dus verschil tussen spontaan vluchtende bewoners, gefaseerde ontruiming en totale ontruiming. Een generieke opdracht “iedereen terug naar de woning” past niet bij die gedifferentieerde benadering.\n\nSpontane beweging kan de overdruk in het trappenhuis beïnvloeden doordat deuren vaker/open langer gebruikt worden.\n\nBij compartimentering worden vluchtenden actief van inzettrappenhuis naar veilig trappenhuis geleid.\n\nNiet-zelfredzamen vragen aparte capaciteit; hun verplaatsing moet de primaire inzet niet ongecontroleerd ontregelen.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 9, p. 21-27.",
-      "situationDetail": {
-        "time": "14:56 uur — bewoners komen in beweging",
-        "intro": [
-          "Bewoners van verdieping 16 en 17 komen zelfstandig naar beneden. Een deel gebruikt het inzettrappenhuis omdat dit voor hen de meest voor de hand liggende route is."
-        ],
-        "observations": [
-          "spontane ontruiming is al gaande;",
-          "brandweer en bewoners gebruiken deels dezelfde verticale route;",
-          "het tweede trappenhuis is nog rookvrij;",
-          "meer personen in het trappenhuis beïnvloeden doorstroming en mogelijk het drukconcept."
-        ],
-        "after": [
-          "De brandweer moet de bestaande bewonersstroom nu meenemen in de inzet in plaats van uit te gaan van een leeg trappenhuis."
-        ],
-        "prompt": "Hoe organiseer je deze spontane ontruiming?"
+      "discussionQuestion": "Hoe organiseer je spontane ontruiming zonder dat bewonersstromen de brandweerinzet of de bruikbaarheid van het inzettrappenhuis onnodig verstoren?",
+      "media": {
+        "src": "assets/vggm/hoogbouw_gevel.jpeg",
+        "caption": "Bewonersstromen en ontruiming bij hoogbouw",
+        "source": "VGGM lesmateriaal – slide 59"
       },
-      "systems": [],
-      "discussionQuestion": "Welke invloed heeft deurmanagement op flowpath, rookverspreiding en de veiligheid van bewoners en ploegen?"
+      "systems": [
+        "CAN",
+        "FABCM"
+      ]
     },
     {
       "id": 12,
       "title": "Stack-effect: onverwachte CO",
-      "situation": "CO wordt nu gemeten op verdieping 18, terwijl daar geen zichtbare rook is. Buiten is het duidelijk koeler dan binnen. Beneden staat een reguliere toegangsdeur langdurig open voor materiaaltransport.",
+      "role": "Bevelvoerder",
+      "roleNote": "Onderzoek onverwachte verticale rook- en CO-verspreiding zonder te snel één verklaring vast te zetten.",
+      "situation": "Op de 18e verdieping wordt CO gemeten, terwijl daar geen zichtbare rook aanwezig is. Buiten is het duidelijk koeler dan binnen. Op de begane grond staat een toegangsdeur langdurig open voor materiaaltransport.",
       "choices": [
         {
           "id": "A",
-          "text": "Toegangsdeur sluiten/gebruik beperken, transport via gecontroleerde toegang organiseren en CO-trend blijven monitoren.",
-          "consequence": "Verticale luchtstroom wordt minder gevoed; rook/CO-verspreiding kan afnemen.",
-          "rationale": "Sterke keuze bij aanwijzingen voor positief stack-effect.",
-          "label": "Sterk",
+          "text": "Het gebruik van de open toegangsdeur beperken, materiaaltransport via een gecontroleerde toegang organiseren en de CO-waarden blijven monitoren.",
+          "consequence": "Een mogelijke voeding van de verticale luchtstroming wordt beperkt. Uit vervolgmetingen moet blijken of de CO-verspreiding daadwerkelijk afneemt.",
+          "rationale": "De combinatie van temperatuurverschil, een open toegang beneden en onverwachte CO hoger in het gebouw geeft aanleiding om stack-effect als mogelijke verklaring te onderzoeken.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De open toegangsdeur beneden kan de verticale luchtstroming voeden. Door die opening te beheersen en de CO-trend te blijven volgen, pakt de ploeg een mogelijke oorzaak van de verspreiding aan zonder blind te ventileren. Dit is een sterke reactie op een meetwaarde die niet bij het zichtbeeld lijkt te passen.",
-          "consequenceDetail": {
-            "time": "15:00 uur — onverwachte CO op verdieping 18 — gevolg van keuze A",
-            "paragraphs": [
-              "De open buitendeur wordt niet langer als neutrale logistieke opening gezien. Toegang wordt gecontroleerd en de CO-trend wordt verder gevolgd om te zien of de verticale stroming afneemt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Past rechtstreeks bij de bron: beperk de open entree, gebruik gecontroleerde toegang en blijf CO als indicator volgen.",
-                  "VRR legt stack-effect uit met de vergelijking van een hete luchtballon. In de winter is de binnenlucht doorgaans warmer dan buiten en ontstaat een opwaartse luchtstroom; in de zomer kan een gekoeld gebouw juist een neerwaartse stroming hebben. De neutrale lijn ligt niet per definitie halverwege het gebouw en is afhankelijk van meerdere bouwfysische factoren.",
-                  "Het handboek koppelt dit direct aan handelingsgedrag: toegangsdeuren op de begane grond zoveel mogelijk dicht houden, bij voorkeur de tourniquet gebruiken en deuren voor materiaaltransport zo kort mogelijk openhouden. Als beneden een deur openstaat en boven bijvoorbeeld een raam of balkondeur, kan een flowpath door meerdere verdiepingen ontstaan."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR noemt expliciet dat rook en CO daardoor op onverwachte plekken kunnen verschijnen. Juist CO zonder zichtbare rook boven of onder de brand wordt in scenario-uitwerkingen gebruikt als aanwijzing voor mogelijk stack-effect. Dat maakt een CO-meting op verdieping 18 operationeel relevant en niet gemakkelijk weg te zetten als meetfout.",
-                  "Ook hier waarschuwt de bron voor eigen ventilatie zonder volledig systeeminzicht. Alleen ventileren wanneer rechtstreeks naar buiten wordt afgevoerd en de toevoer via de buitenlucht eenvoudig en beheersbaar is."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De open buitendeur wordt niet langer als neutrale logistieke opening gezien. Toegang wordt gecontroleerd en de CO-trend wordt verder gevolgd om te zien of de verticale stroming afneemt."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Voegt druk toe zonder gecontroleerde afvoer en kan het probleem vergroten; dit is precies het type ventilatie-ingreep waarvoor VRR waarschuwt.",
-                  "Keuze C: Negeert een bronindicator: CO boven of onder de brand is volgens de scenario’s juist aanleiding om stack-effect te onderzoeken."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "stack-voeding: beperkt",
-              "CO-monitoring: actief",
-              "toegang: gecontroleerd"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "De combinatie van temperatuurverschil, een open toegang beneden en onverwachte CO hoger in het gebouw geeft aanleiding om stack-effect als mogelijke verklaring te onderzoeken."
         },
         {
           "id": "B",
-          "text": "Extra ventilator beneden plaatsen om de rook naar boven te drukken.",
-          "consequence": "Drukverhoudingen worden verder beïnvloed zonder volledig inzicht in afvoerroute.",
-          "rationale": "Ongunstig; eigen ventilatie alleen gecontroleerd toepassen.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "Een extra ventilator verandert de drukverhoudingen terwijl de afvoerroute niet volledig bekend is. Daarmee kan de brandweer zelf een sterkere flowpath creëren. Ventilatie is pas zinvol wanneer toevoer, afvoer en effect beheerst zijn.",
-          "consequenceDetail": {
-            "time": "15:00 uur — onverwachte CO op verdieping 18 — gevolg van keuze B",
-            "paragraphs": [
-              "Een extra ventilator verandert de drukverhoudingen zonder dat de afvoerroute volledig bekend is. De verticale stroming kan daardoor juist worden versterkt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Voegt druk toe zonder gecontroleerde afvoer en kan het probleem vergroten; dit is precies het type ventilatie-ingreep waarvoor VRR waarschuwt.",
-                  "VRR legt stack-effect uit met de vergelijking van een hete luchtballon. In de winter is de binnenlucht doorgaans warmer dan buiten en ontstaat een opwaartse luchtstroom; in de zomer kan een gekoeld gebouw juist een neerwaartse stroming hebben. De neutrale lijn ligt niet per definitie halverwege het gebouw en is afhankelijk van meerdere bouwfysische factoren.",
-                  "Het handboek koppelt dit direct aan handelingsgedrag: toegangsdeuren op de begane grond zoveel mogelijk dicht houden, bij voorkeur de tourniquet gebruiken en deuren voor materiaaltransport zo kort mogelijk openhouden. Als beneden een deur openstaat en boven bijvoorbeeld een raam of balkondeur, kan een flowpath door meerdere verdiepingen ontstaan."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR noemt expliciet dat rook en CO daardoor op onverwachte plekken kunnen verschijnen. Juist CO zonder zichtbare rook boven of onder de brand wordt in scenario-uitwerkingen gebruikt als aanwijzing voor mogelijk stack-effect. Dat maakt een CO-meting op verdieping 18 operationeel relevant en niet gemakkelijk weg te zetten als meetfout.",
-                  "Ook hier waarschuwt de bron voor eigen ventilatie zonder volledig systeeminzicht. Alleen ventileren wanneer rechtstreeks naar buiten wordt afgevoerd en de toevoer via de buitenlucht eenvoudig en beheersbaar is."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Een extra ventilator verandert de drukverhoudingen zonder dat de afvoerroute volledig bekend is. De verticale stroming kan daardoor juist worden versterkt."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past rechtstreeks bij de bron: beperk de open entree, gebruik gecontroleerde toegang en blijf CO als indicator volgen.",
-                  "Keuze C: Negeert een bronindicator: CO boven of onder de brand is volgens de scenario’s juist aanleiding om stack-effect te onderzoeken."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "drukregime: extra beïnvloed",
-              "flowpath: onzeker",
-              "CO-verspreiding: risico +2"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "Beneden een extra ventilator plaatsen om de rook naar boven af te voeren.",
+          "consequence": "De drukverhoudingen in het gebouw worden beïnvloed zonder dat duidelijk is waar de lucht en rook uiteindelijk naartoe worden verplaatst.",
+          "rationale": "Ventileren zonder inzicht in toevoer en afvoer kan de verticale stroming juist versterken.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Ventileren zonder inzicht in toevoer en afvoer kan de verticale stroming juist versterken."
         },
         {
           "id": "C",
-          "text": "CO-melding als meetafwijking behandelen omdat er geen zichtbare rook is.",
-          "consequence": "De oorzaak blijft onbenoemd; vluchtweg kan ongemerkt verslechteren.",
-          "rationale": "Ongunstig; CO boven/onder brand is juist een signaal om stack-effect mee te nemen.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "Afwezigheid van zichtbare rook sluit CO-verspreiding niet uit. Juist onverwachte CO boven of onder de brand wordt in het handboek genoemd als aanwijzing voor stack-effect. De meting negeren kan ertoe leiden dat een vluchtweg ongemerkt verslechtert.",
-          "consequenceDetail": {
-            "time": "15:00 uur — onverwachte CO op verdieping 18 — gevolg van keuze C",
-            "paragraphs": [
-              "De CO-meting wordt niet vertaald naar een tactische hypothese. Daardoor blijft een mogelijke verticale verspreidingsroute open en kan de vluchtweg ongemerkt verder verslechteren."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Negeert een bronindicator: CO boven of onder de brand is volgens de scenario’s juist aanleiding om stack-effect te onderzoeken.",
-                  "VRR legt stack-effect uit met de vergelijking van een hete luchtballon. In de winter is de binnenlucht doorgaans warmer dan buiten en ontstaat een opwaartse luchtstroom; in de zomer kan een gekoeld gebouw juist een neerwaartse stroming hebben. De neutrale lijn ligt niet per definitie halverwege het gebouw en is afhankelijk van meerdere bouwfysische factoren.",
-                  "Het handboek koppelt dit direct aan handelingsgedrag: toegangsdeuren op de begane grond zoveel mogelijk dicht houden, bij voorkeur de tourniquet gebruiken en deuren voor materiaaltransport zo kort mogelijk openhouden. Als beneden een deur openstaat en boven bijvoorbeeld een raam of balkondeur, kan een flowpath door meerdere verdiepingen ontstaan."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR noemt expliciet dat rook en CO daardoor op onverwachte plekken kunnen verschijnen. Juist CO zonder zichtbare rook boven of onder de brand wordt in scenario-uitwerkingen gebruikt als aanwijzing voor mogelijk stack-effect. Dat maakt een CO-meting op verdieping 18 operationeel relevant en niet gemakkelijk weg te zetten als meetfout.",
-                  "Ook hier waarschuwt de bron voor eigen ventilatie zonder volledig systeeminzicht. Alleen ventileren wanneer rechtstreeks naar buiten wordt afgevoerd en de toevoer via de buitenlucht eenvoudig en beheersbaar is."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De CO-meting wordt niet vertaald naar een tactische hypothese. Daardoor blijft een mogelijke verticale verspreidingsroute open en kan de vluchtweg ongemerkt verder verslechteren."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Past rechtstreeks bij de bron: beperk de open entree, gebruik gecontroleerde toegang en blijf CO als indicator volgen.",
-                  "Keuze B: Voegt druk toe zonder gecontroleerde afvoer en kan het probleem vergroten; dit is precies het type ventilatie-ingreep waarvoor VRR waarschuwt."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "stack-effect: niet herkend",
-              "CO-signaal: genegeerd",
-              "vluchtweg: ongemerkt bedreigd"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "De CO-meting als meetafwijking beschouwen omdat er geen zichtbare rook aanwezig is.",
+          "consequence": "Een mogelijke verticale verspreidingsroute wordt niet onderzocht en de omstandigheden op hogere verdiepingen kunnen ongemerkt verslechteren.",
+          "rationale": "Het ontbreken van zichtbare rook betekent niet dat er geen verbrandingsproducten aanwezig zijn. Een onverwachte CO-meting vraagt daarom om verklaring en vervolgmetingen.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Het ontbreken van zichtbare rook betekent niet dat er geen verbrandingsproducten aanwezig zijn. Een onverwachte CO-meting vraagt daarom om verklaring en vervolgmetingen."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Waarneming binnen en beheersing van openingen; delen/toetsen met bevelvoerder.",
-      "sourceFrame": "VRR legt stack-effect uit met de vergelijking van een hete luchtballon. In de winter is de binnenlucht doorgaans warmer dan buiten en ontstaat een opwaartse luchtstroom; in de zomer kan een gekoeld gebouw juist een neerwaartse stroming hebben. De neutrale lijn ligt niet per definitie halverwege het gebouw en is afhankelijk van meerdere bouwfysische factoren.\n\nHet handboek koppelt dit direct aan handelingsgedrag: toegangsdeuren op de begane grond zoveel mogelijk dicht houden, bij voorkeur de tourniquet gebruiken en deuren voor materiaaltransport zo kort mogelijk openhouden. Als beneden een deur openstaat en boven bijvoorbeeld een raam of balkondeur, kan een flowpath door meerdere verdiepingen ontstaan.\n\nVRR noemt expliciet dat rook en CO daardoor op onverwachte plekken kunnen verschijnen. Juist CO zonder zichtbare rook boven of onder de brand wordt in scenario-uitwerkingen gebruikt als aanwijzing voor mogelijk stack-effect. Dat maakt een CO-meting op verdieping 18 operationeel relevant en niet gemakkelijk weg te zetten als meetfout.\n\nOok hier waarschuwt de bron voor eigen ventilatie zonder volledig systeeminzicht. Alleen ventileren wanneer rechtstreeks naar buiten wordt afgevoerd en de toevoer via de buitenlucht eenvoudig en beheersbaar is.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 9 en p. 12-13; scenario-uitwerkingen p. 19-23.",
-      "situationDetail": {
-        "time": "15:00 uur — onverwachte CO op verdieping 18",
-        "intro": [
-          "Op verdieping 18 wordt CO gemeten terwijl daar geen zichtbare rook hangt. Buiten is het duidelijk koeler dan binnen. Beneden staat een reguliere toegangsdeur langdurig open voor materiaaltransport."
-        ],
-        "observations": [
-          "CO op meerdere verdiepingen mogelijk zonder zichtbare rook;",
-          "binnen warmer dan buiten;",
-          "open buitendeur op begane grond;",
-          "verticale schacht- en trappenhuiswerking kan luchtstromen versterken;",
-          "de tweede vluchtweg moet bewaakt blijven."
-        ],
-        "after": [
-          "De meting vraagt om een verklaring. Een open deur op een ander niveau kan in een hoog gebouw onderdeel worden van dezelfde verticale luchtstroom."
-        ],
-        "prompt": "Wat doet de ploeg met deze aanwijzing?"
+      "discussionQuestion": "Welke waarnemingen en metingen heb je nodig om stack-effect als verklaring voor onverwachte rook- of CO-verspreiding aannemelijker of juist minder waarschijnlijk te maken?",
+      "media": {
+        "src": "assets/vggm/stack_reverse.png",
+        "caption": "Stack-effect en reverse stack-effect",
+        "source": "VGGM lesmateriaal – slide 40"
       },
-      "systems": [],
-      "discussionQuestion": "Wanneer moet nieuwe informatie leiden tot een expliciete tactische heroverweging?"
+      "systems": [
+        "RSTV"
+      ],
+      "deepDive": "Stack-effect ontstaat door temperatuur- en dichtheidsverschillen tussen de lucht binnen en buiten een hoog gebouw. Daardoor kan een verticale luchtstroming ontstaan. Een open buitendeur beneden kan onderdeel worden van zo'n stroming. CO op een verdieping waar geen zichtbare rook aanwezig is, is geen bewijs voor stack-effect, maar wel aanleiding om deze hypothese mee te nemen, openingen te beoordelen en de ontwikkeling met metingen te volgen."
     },
     {
       "id": 13,
       "title": "Communicatie verslechtert",
-      "situation": "C2000-contact tussen verdieping 14 en buiten valt geregeld weg. Intercom tussen verdiepingen en commandoruimte functioneert.",
+      "role": "Bevelvoerder",
+      "roleNote": "Kies een betrouwbare communicatieroute en stem deze direct af met de bevelvoerder.",
+      "situation": "Het C2000-contact tussen de 14e verdieping en buiten valt geregeld weg. Berichten komen vertraagd of onvolledig door. De intercom tussen de verdiepingen en de commandoruimte functioneert wel.",
       "choices": [
         {
           "id": "A",
-          "text": "Intercomfunctie actief inzetten en vaste terugmeldroute via commandoruimte/bruggenhoofd organiseren.",
-          "consequence": "Communicatie wordt redundanter en beter gestructureerd.",
-          "rationale": "Sterke keuze; sluit aan op VRR.",
-          "label": "Sterk",
+          "text": "De intercom actief gebruiken en een vaste terugmeldroute via bruggenhoofd en commandoruimte organiseren.",
+          "consequence": "Er ontstaat een tweede communicatieroute en terugmeldingen krijgen een vaste structuur.",
+          "rationale": "Door tijdig een werkend alternatief te gebruiken, blijft kritieke informatie niet afhankelijk van één onbetrouwbare verbinding.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Door de intercom actief te benutten voordat C2000 volledig wegvalt, ontstaat redundantie. Een vaste terugmeldroute via bruggenhoofd en commandoruimte verkleint de kans dat belangrijke informatie versnipperd raakt. De organisatie past zich aan voordat communicatie een acuut probleem wordt.",
-          "consequenceDetail": {
-            "time": "15:03 uur — verbinding wordt onbetrouwbaar — gevolg van keuze A",
-            "paragraphs": [
-              "De intercom wordt als redundante verbinding ingezet en er komt een vaste route van binnenploeg via bruggenhoofd/commandoruimte naar buiten."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Benut de voorziening waarvoor het gebouw en het VRR-inzetmodel expliciet zijn ingericht en creëert een vaste route voor terugmeldingen.",
-                  "Goede communicatie is volgens VRR één van de drie kritieke randvoorwaarden voor hoogbouwoptreden. Door hoogte en constructie is de werking van C2000 én mobiele telefonie niet gegarandeerd. De bron verwacht daarom dat gebouwen boven 70 meter over een intern intercomsysteem beschikken waarmee vanaf verdiepingen rechtstreeks met de commandoruimte kan worden gecommuniceerd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR beschrijft een specifieke intercomfunctie. De bemensing van het redvoertuig neemt deze rol in principe op zich: één persoon beneden en één boven. In de scenario’s worden 115 en 116 genoemd als bedienaren in commandoruimte en op het bruggenhoofd.",
-                  "Het verbindingsschema maakt zichtbaar dat de communicatie wordt gelaagd: commandoruimte, bruggenhoofd, aanvalsploegen, trappenhuisbescherming, ontruiming en logistiek hebben eigen lijnen/netten. Didactisch gaat het daarom niet om “welk kanaalnummer”, maar om redundantie, vaste terugmeldroutes en voorkomen dat kritieke informatie afhankelijk blijft van één haperende radioverbinding."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De intercom wordt als redundante verbinding ingezet en er komt een vaste route van binnenploeg via bruggenhoofd/commandoruimte naar buiten."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Laat een van de drie kritieke randvoorwaarden bewust instabiel, terwijl een werkend alternatief al beschikbaar is.",
-                  "Keuze C: Kan een noodmaatregel zijn als techniek uitvalt, maar gebruikt veel fysieke capaciteit en tijd; de bron biedt juist een intercomoplossing om dit te voorkomen."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "communicatie: redundanter",
-              "terugmeldroute: vast",
-              "informatiecontinuïteit: beter"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "Door tijdig een werkend alternatief te gebruiken, blijft kritieke informatie niet afhankelijk van één onbetrouwbare verbinding."
         },
         {
           "id": "B",
-          "text": "Doorgaan met C2000 en alleen bij volledig wegvallen overschakelen.",
-          "consequence": "Ploegen blijven met haperende verbinding werken; cruciale meldingen kunnen vertragen.",
-          "rationale": "Kwetsbaar; communicatie is één van de drie kritieke randvoorwaarden.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "Zolang C2000 nog af en toe werkt, lijkt doorgaan eenvoudig. Maar de kritieke melding kan juist in een uitvalmoment vallen. Hoogbouw vraagt daarom om tijdig organiseren van een alternatief, niet pas nadat de primaire verbinding volledig weg is.",
-          "consequenceDetail": {
-            "time": "15:03 uur — verbinding wordt onbetrouwbaar — gevolg van keuze B",
-            "paragraphs": [
-              "Ploegen blijven werken met een verbinding die af en toe wegvalt. Belangrijke veranderingen kunnen daardoor te laat of onvolledig bij de bevelvoerder komen."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Laat een van de drie kritieke randvoorwaarden bewust instabiel, terwijl een werkend alternatief al beschikbaar is.",
-                  "Goede communicatie is volgens VRR één van de drie kritieke randvoorwaarden voor hoogbouwoptreden. Door hoogte en constructie is de werking van C2000 én mobiele telefonie niet gegarandeerd. De bron verwacht daarom dat gebouwen boven 70 meter over een intern intercomsysteem beschikken waarmee vanaf verdiepingen rechtstreeks met de commandoruimte kan worden gecommuniceerd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR beschrijft een specifieke intercomfunctie. De bemensing van het redvoertuig neemt deze rol in principe op zich: één persoon beneden en één boven. In de scenario’s worden 115 en 116 genoemd als bedienaren in commandoruimte en op het bruggenhoofd.",
-                  "Het verbindingsschema maakt zichtbaar dat de communicatie wordt gelaagd: commandoruimte, bruggenhoofd, aanvalsploegen, trappenhuisbescherming, ontruiming en logistiek hebben eigen lijnen/netten. Didactisch gaat het daarom niet om “welk kanaalnummer”, maar om redundantie, vaste terugmeldroutes en voorkomen dat kritieke informatie afhankelijk blijft van één haperende radioverbinding."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Ploegen blijven werken met een verbinding die af en toe wegvalt. Belangrijke veranderingen kunnen daardoor te laat of onvolledig bij de bevelvoerder komen."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Benut de voorziening waarvoor het gebouw en het VRR-inzetmodel expliciet zijn ingericht en creëert een vaste route voor terugmeldingen.",
-                  "Keuze C: Kan een noodmaatregel zijn als techniek uitvalt, maar gebruikt veel fysieke capaciteit en tijd; de bron biedt juist een intercomoplossing om dit te voorkomen."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "communicatie: beperkt",
-              "vertraging kritieke meldingen: mogelijk",
-              "commandovoering: kwetsbaarder"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "C2000 blijven gebruiken en pas bij volledig wegvallen overschakelen op een alternatief.",
+          "consequence": "De ploeg blijft afhankelijk van een haperende verbinding; belangrijke meldingen kunnen daardoor vertraagd of onvolledig worden doorgegeven.",
+          "rationale": "Zolang C2000 af en toe werkt lijkt dit werkbaar, maar juist kritieke informatie kan tijdens een uitvalmoment verloren gaan.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Zolang C2000 af en toe werkt lijkt dit werkbaar, maar juist kritieke informatie kan tijdens een uitvalmoment verloren gaan."
         },
         {
           "id": "C",
           "text": "Een manschap als fysieke boodschapper tussen bruggenhoofd en begane grond inzetten.",
-          "consequence": "Kan informatie overbrengen, maar kost veel tijd en capaciteit en verhoogt fysieke belasting.",
-          "rationale": "Noodoplossing, niet eerste keuze zolang intercom beschikbaar is.",
-          "label": "Afweging",
-          "quality": 0,
-          "deepDive": "Een fysieke boodschapper kan in uiterste nood functioneren, maar kost tijd, menskracht en energie. Bij een werkende intercom is dat een zware oplossing voor een probleem dat technisch eenvoudiger kan worden opgevangen.",
-          "consequenceDetail": {
-            "time": "15:03 uur — verbinding wordt onbetrouwbaar — gevolg van keuze C",
-            "paragraphs": [
-              "Een manschap wordt aan de operationele inzet onttrokken om fysiek berichten over te brengen. Informatie komt wel door, maar traag en tegen hoge personele kosten."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan een noodmaatregel zijn als techniek uitvalt, maar gebruikt veel fysieke capaciteit en tijd; de bron biedt juist een intercomoplossing om dit te voorkomen.",
-                  "Goede communicatie is volgens VRR één van de drie kritieke randvoorwaarden voor hoogbouwoptreden. Door hoogte en constructie is de werking van C2000 én mobiele telefonie niet gegarandeerd. De bron verwacht daarom dat gebouwen boven 70 meter over een intern intercomsysteem beschikken waarmee vanaf verdiepingen rechtstreeks met de commandoruimte kan worden gecommuniceerd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR beschrijft een specifieke intercomfunctie. De bemensing van het redvoertuig neemt deze rol in principe op zich: één persoon beneden en één boven. In de scenario’s worden 115 en 116 genoemd als bedienaren in commandoruimte en op het bruggenhoofd.",
-                  "Het verbindingsschema maakt zichtbaar dat de communicatie wordt gelaagd: commandoruimte, bruggenhoofd, aanvalsploegen, trappenhuisbescherming, ontruiming en logistiek hebben eigen lijnen/netten. Didactisch gaat het daarom niet om “welk kanaalnummer”, maar om redundantie, vaste terugmeldroutes en voorkomen dat kritieke informatie afhankelijk blijft van één haperende radioverbinding."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Een manschap wordt aan de operationele inzet onttrokken om fysiek berichten over te brengen. Informatie komt wel door, maar traag en tegen hoge personele kosten."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Benut de voorziening waarvoor het gebouw en het VRR-inzetmodel expliciet zijn ingericht en creëert een vaste route voor terugmeldingen.",
-                  "Keuze B: Laat een van de drie kritieke randvoorwaarden bewust instabiel, terwijl een werkend alternatief al beschikbaar is."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "communicatie: mogelijk",
-              "tijdverlies: hoog",
-              "personele capaciteit: -1"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "consequence": "De informatie kan worden overgebracht, maar een manschap wordt aan de inzet onttrokken en berichten komen aanzienlijk trager door.",
+          "rationale": "Een bruikbare noodoplossing wanneer technische verbindingen uitvallen, maar niet logisch zolang een werkende intercom beschikbaar is.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Een bruikbare noodoplossing wanneer technische verbindingen uitvallen, maar niet logisch zolang een werkende intercom beschikbaar is."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Binnen passende communicatieroute kiezen en onmiddellijk delen met bevelvoerder.",
-      "sourceFrame": "Goede communicatie is volgens VRR één van de drie kritieke randvoorwaarden voor hoogbouwoptreden. Door hoogte en constructie is de werking van C2000 én mobiele telefonie niet gegarandeerd. De bron verwacht daarom dat gebouwen boven 70 meter over een intern intercomsysteem beschikken waarmee vanaf verdiepingen rechtstreeks met de commandoruimte kan worden gecommuniceerd.\n\nVRR beschrijft een specifieke intercomfunctie. De bemensing van het redvoertuig neemt deze rol in principe op zich: één persoon beneden en één boven. In de scenario’s worden 115 en 116 genoemd als bedienaren in commandoruimte en op het bruggenhoofd.\n\nHet verbindingsschema maakt zichtbaar dat de communicatie wordt gelaagd: commandoruimte, bruggenhoofd, aanvalsploegen, trappenhuisbescherming, ontruiming en logistiek hebben eigen lijnen/netten. Didactisch gaat het daarom niet om “welk kanaalnummer”, maar om redundantie, vaste terugmeldroutes en voorkomen dat kritieke informatie afhankelijk blijft van één haperende radioverbinding.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 8, p. 10, p. 19-25 en bijlage 3 p. 45-47.",
-      "situationDetail": {
-        "time": "15:03 uur — verbinding wordt onbetrouwbaar",
-        "intro": [
-          "C2000-contact tussen verdieping 14 en buiten valt geregeld weg. Berichten komen vertraagd of onvolledig door. De intercom tussen verdiepingen en commandoruimte functioneert wel."
-        ],
-        "observations": [
-          "C2000 niet betrouwbaar genoeg voor exclusief gebruik;",
-          "intercom beschikbaar;",
-          "bruggenhoofd en commandoruimte kunnen als vaste schakels dienen;",
-          "meerdere teams zijn inmiddels op verschillende hoogtes actief."
-        ],
-        "after": [
-          "Communicatie is niet alleen een technisch hulpmiddel maar een voorwaarde om wijzigingen in rook, water, liftstatus en ontruiming tijdig te delen."
-        ],
-        "prompt": "Hoe borg je de verbinding nu?"
+      "discussionQuestion": "Hoe voorkom je dat communicatieverlies leidt tot een verkeerd of verouderd incidentbeeld?",
+      "media": {
+        "src": "assets/vggm/aandachtskaart_bruggenhoofd.png",
+        "caption": "Informatie- en terugmeldstructuur op hoogte",
+        "source": "VGGM lesmateriaal – slide 23"
       },
-      "systems": [],
-      "discussionQuestion": "Hoe voorkom je dat communicatieverlies leidt tot een verkeerd of verouderd incidentbeeld?"
+      "systems": [
+        "CAN",
+        "FABCM"
+      ],
+      "deepDive": "Bij hoogbouw kan radiocommunicatie door hoogte en bouwconstructie minder betrouwbaar worden. Communicatie moet daarom niet afhankelijk blijven van één technisch middel. Belangrijker dan het exacte middel is dat duidelijk is wie met wie communiceert, via welke route terugmeldingen lopen en hoe kritieke informatie de bevelvoerder bereikt."
     },
     {
       "id": 14,
       "title": "Water in de liftschacht",
-      "situation": "Op verdieping 12 wordt water zichtbaar dat richting de brandweerliftschacht loopt. De lift functioneert nog normaal.",
+      "role": "Manschappen",
+      "roleNote": "Beoordeel wat de waterinstroom betekent voor het verdere gebruik van de brandweerlift en meld dit aan de bevelvoerder.",
+      "situation": "Op de 12e verdieping stroomt zichtbaar water richting de brandweerliftschacht. De lift functioneert nog normaal en het paneel geeft geen storing aan.",
       "choices": [
         {
           "id": "A",
-          "text": "Lift direct buiten gebruik nemen voor brandweertransport en alternatieve logistiek organiseren.",
-          "consequence": "Verticaal transport vertraagt, maar risico op onverwachte liftuitval wordt beperkt.",
-          "rationale": "Sterke keuze: zichtbare waterinstroom maakt lift onbetrouwbaar.",
-          "label": "Sterk",
+          "text": "De brandweerlift niet meer gebruiken en direct alternatieve verticale logistiek organiseren.",
+          "consequence": "Het verticale transport wordt trager en vraagt meer personele capaciteit, maar de inzet is niet langer afhankelijk van een lift die zichtbaar door water wordt bedreigd.",
+          "rationale": "De zichtbare waterinstroom is relevante informatie over de betrouwbaarheid van de lift, ook wanneer nog geen technische storing wordt gemeld.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De keuze accepteert direct het verlies van transportsnelheid, maar voorkomt dat mensen of essentiële logistiek afhankelijk blijven van een voorziening die aantoonbaar onbetrouwbaar wordt. Het nadeel is groot, maar voorspelbaar; dat is beter beheersbaar dan onverwachte liftuitval.",
-          "consequenceDetail": {
-            "time": "15:06 uur — water bij de brandweerlift — gevolg van keuze A",
-            "paragraphs": [
-              "De lift wordt direct als onbetrouwbaar beschouwd en uit het brandweertransport gehaald. De logistiek moet omschakelen naar trappen en aangepaste personele/materiële planning."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is de duidelijke bronkeuze zodra zichtbare waterinstroom optreedt: niet wachten op een storingsmelding.",
-                  "VRR is hier zeer expliciet: controleer de liftschacht op rook en water; wordt de lift bedreigd door water, rook of vuur, dan niet gebruiken. Bij geactiveerde sprinklers is het risico op water in de schacht groter. Zichtbaar instromend water betekent volgens de bron dat de lift niet langer betrouwbaar is en elk moment kan uitvallen.",
-                  "De bijlage over liftuitval is geschreven naar aanleiding van incidenten waarbij (brandweer)liften uitvielen. Bij brand in hoogbouw 70m+ met liftuitval adviseert VRR uit te gaan van minimaal scenario 3 vanwege de lange traplooptijd. Als ook sprinkler, bluswater, overdruk of ontruimingsinstallatie niet op orde zijn, wordt offensief optreden te risicovol."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "De bron vertaalt liftuitval in concrete logistieke consequenties: boven de 10e verdieping circa 30 seconden per te overbruggen verdieping als rekenwaarde, personele capaciteit verdubbelen en gewicht per persoon halveren. Bovendien moet tijdig/direct totale ontruiming worden gestart als men op basis van de repressieve tijdlijn niet tijdig kan blussen en de vluchttrappenhuiscompartimentering onder druk komt.",
-                  "Een interessante bronnuance: de brandweerlift is primair bedoeld om hulpdiensten tijdig boven te brengen; hij is niet automatisch bedoeld voor bewoners-ontruiming. Dat betekent dat “alleen materiaal” nog steeds afhankelijkheid van een technisch onbetrouwbare installatie creëert."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De lift wordt direct als onbetrouwbaar beschouwd en uit het brandweertransport gehaald. De logistiek moet omschakelen naar trappen en aangepaste personele/materiële planning."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Is expliciet in strijd met de VRR-waarschuwing; de lift kan uitvallen vóórdat het paneel een bruikbare waarschuwing geeft.",
-                  "Keuze C: Vermindert direct mensenrisico, maar houdt het incident logistiek afhankelijk van een installatie die volgens de bron niet meer betrouwbaar is."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "liftstatus: buiten gebruik",
-              "logistiek: omschakelen",
-              "onverwachte liftuitval: voorkomen"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "deepDive": "De zichtbare waterinstroom is relevante informatie over de betrouwbaarheid van de lift, ook wanneer nog geen technische storing wordt gemeld."
         },
         {
           "id": "B",
-          "text": "Lift blijven gebruiken zolang er geen storing op het paneel staat.",
-          "consequence": "Logistiek blijft snel, maar de lift kan zonder waarschuwing uitvallen.",
-          "rationale": "Ongunstig; wachten op storing is te laat.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "Een storingsvrij paneel bewijst niet dat de lift veilig blijft functioneren. Het zichtbare water is al de relevante waarschuwing. Wachten op een foutmelding betekent wachten tot het technische falen zich daadwerkelijk manifesteert.",
-          "consequenceDetail": {
-            "time": "15:06 uur — water bij de brandweerlift — gevolg van keuze B",
-            "paragraphs": [
-              "De lift blijft gebruikt worden omdat de techniek nog geen storing meldt. De zichtbare waterinstroom blijft echter bestaan en kan de lift op elk moment laten uitvallen."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is expliciet in strijd met de VRR-waarschuwing; de lift kan uitvallen vóórdat het paneel een bruikbare waarschuwing geeft.",
-                  "VRR is hier zeer expliciet: controleer de liftschacht op rook en water; wordt de lift bedreigd door water, rook of vuur, dan niet gebruiken. Bij geactiveerde sprinklers is het risico op water in de schacht groter. Zichtbaar instromend water betekent volgens de bron dat de lift niet langer betrouwbaar is en elk moment kan uitvallen.",
-                  "De bijlage over liftuitval is geschreven naar aanleiding van incidenten waarbij (brandweer)liften uitvielen. Bij brand in hoogbouw 70m+ met liftuitval adviseert VRR uit te gaan van minimaal scenario 3 vanwege de lange traplooptijd. Als ook sprinkler, bluswater, overdruk of ontruimingsinstallatie niet op orde zijn, wordt offensief optreden te risicovol."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "De bron vertaalt liftuitval in concrete logistieke consequenties: boven de 10e verdieping circa 30 seconden per te overbruggen verdieping als rekenwaarde, personele capaciteit verdubbelen en gewicht per persoon halveren. Bovendien moet tijdig/direct totale ontruiming worden gestart als men op basis van de repressieve tijdlijn niet tijdig kan blussen en de vluchttrappenhuiscompartimentering onder druk komt.",
-                  "Een interessante bronnuance: de brandweerlift is primair bedoeld om hulpdiensten tijdig boven te brengen; hij is niet automatisch bedoeld voor bewoners-ontruiming. Dat betekent dat “alleen materiaal” nog steeds afhankelijkheid van een technisch onbetrouwbare installatie creëert."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De lift blijft gebruikt worden omdat de techniek nog geen storing meldt. De zichtbare waterinstroom blijft echter bestaan en kan de lift op elk moment laten uitvallen."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Is de duidelijke bronkeuze zodra zichtbare waterinstroom optreedt: niet wachten op een storingsmelding.",
-                  "Keuze C: Vermindert direct mensenrisico, maar houdt het incident logistiek afhankelijk van een installatie die volgens de bron niet meer betrouwbaar is."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "liftstatus: bedreigd",
-              "afhankelijkheid lift: hoog",
-              "plotselinge uitval: mogelijk"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "De lift blijven gebruiken zolang er geen storing op het paneel staat.",
+          "consequence": "De verticale logistiek blijft snel, maar mensen en materiaal blijven afhankelijk van een lift waarvan de omstandigheden aantoonbaar veranderen.",
+          "rationale": "Een storingsvrij paneel zegt alleen dat op dat moment geen storing wordt gedetecteerd. Het zichtbare water is aanvullende informatie die in de beoordeling moet worden meegenomen.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Een storingsvrij paneel zegt alleen dat op dat moment geen storing wordt gedetecteerd. Het zichtbare water is aanvullende informatie die in de beoordeling moet worden meegenomen."
         },
         {
           "id": "C",
-          "text": "Lift alleen nog voor materiaal gebruiken, niet voor mensen.",
-          "consequence": "Mensenrisico wordt verminderd, maar vastlopend materiaal kan de schacht/lift alsnog blokkeren en logistiek afhankelijk houden.",
-          "rationale": "Nog steeds kwetsbaar; bronlijn adviseert niet gebruiken bij bedreiging door water.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "Geen personen vervoeren verlaagt het directe letselrisico, maar materieel kan alsnog vastlopen en de logistieke keten blijft afhankelijk van de bedreigde lift. De bronlijn is daarom strenger: bij bedreiging door water niet gebruiken.",
-          "consequenceDetail": {
-            "time": "15:06 uur — water bij de brandweerlift — gevolg van keuze C",
-            "paragraphs": [
-              "De lift blijft voor materiaal rijden. Daarmee blijft de logistieke keten afhankelijk van een schacht die zichtbaar door water wordt bedreigd."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Vermindert direct mensenrisico, maar houdt het incident logistiek afhankelijk van een installatie die volgens de bron niet meer betrouwbaar is.",
-                  "VRR is hier zeer expliciet: controleer de liftschacht op rook en water; wordt de lift bedreigd door water, rook of vuur, dan niet gebruiken. Bij geactiveerde sprinklers is het risico op water in de schacht groter. Zichtbaar instromend water betekent volgens de bron dat de lift niet langer betrouwbaar is en elk moment kan uitvallen.",
-                  "De bijlage over liftuitval is geschreven naar aanleiding van incidenten waarbij (brandweer)liften uitvielen. Bij brand in hoogbouw 70m+ met liftuitval adviseert VRR uit te gaan van minimaal scenario 3 vanwege de lange traplooptijd. Als ook sprinkler, bluswater, overdruk of ontruimingsinstallatie niet op orde zijn, wordt offensief optreden te risicovol."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "De bron vertaalt liftuitval in concrete logistieke consequenties: boven de 10e verdieping circa 30 seconden per te overbruggen verdieping als rekenwaarde, personele capaciteit verdubbelen en gewicht per persoon halveren. Bovendien moet tijdig/direct totale ontruiming worden gestart als men op basis van de repressieve tijdlijn niet tijdig kan blussen en de vluchttrappenhuiscompartimentering onder druk komt.",
-                  "Een interessante bronnuance: de brandweerlift is primair bedoeld om hulpdiensten tijdig boven te brengen; hij is niet automatisch bedoeld voor bewoners-ontruiming. Dat betekent dat “alleen materiaal” nog steeds afhankelijkheid van een technisch onbetrouwbare installatie creëert."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De lift blijft voor materiaal rijden. Daarmee blijft de logistieke keten afhankelijk van een schacht die zichtbaar door water wordt bedreigd."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Is de duidelijke bronkeuze zodra zichtbare waterinstroom optreedt: niet wachten op een storingsmelding.",
-                  "Keuze B: Is expliciet in strijd met de VRR-waarschuwing; de lift kan uitvallen vóórdat het paneel een bruikbare waarschuwing geeft."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "mensentransport: gestopt",
-              "materiaaltransport: nog afhankelijk van lift",
-              "liftuitval: nog mogelijk"
-            ],
-            "closing": "Rolafspraak: binnen ligt de beslissing bij de manschappen zolang die veilig en verantwoord is; relevante waarnemingen en afwijkingen worden gedeeld/getoetst met de bevelvoerder."
-          }
+          "text": "De lift alleen nog voor materiaal gebruiken, niet voor mensen.",
+          "consequence": "Het directe risico voor personeel wordt verminderd, maar de logistiek blijft afhankelijk van dezelfde bedreigde lift. Bij uitval kan ook essentieel materiaal vast komen te zitten.",
+          "rationale": "Het niet meer vervoeren van personen verkleint het directe risico, maar lost de afhankelijkheid van een mogelijk onbetrouwbare voorziening niet op.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Het niet meer vervoeren van personen verkleint het directe risico, maar lost de afhankelijkheid van een mogelijk onbetrouwbare voorziening niet op."
         }
       ],
-      "role": "Manschappen",
-      "roleNote": "Veilige beslissing bij veranderde liftcondities; melden en laten toetsen door bevelvoerder.",
-      "sourceFrame": "VRR is hier zeer expliciet: controleer de liftschacht op rook en water; wordt de lift bedreigd door water, rook of vuur, dan niet gebruiken. Bij geactiveerde sprinklers is het risico op water in de schacht groter. Zichtbaar instromend water betekent volgens de bron dat de lift niet langer betrouwbaar is en elk moment kan uitvallen.\n\nDe bijlage over liftuitval is geschreven naar aanleiding van incidenten waarbij (brandweer)liften uitvielen. Bij brand in hoogbouw 70m+ met liftuitval adviseert VRR uit te gaan van minimaal scenario 3 vanwege de lange traplooptijd. Als ook sprinkler, bluswater, overdruk of ontruimingsinstallatie niet op orde zijn, wordt offensief optreden te risicovol.\n\nDe bron vertaalt liftuitval in concrete logistieke consequenties: boven de 10e verdieping circa 30 seconden per te overbruggen verdieping als rekenwaarde, personele capaciteit verdubbelen en gewicht per persoon halveren. Bovendien moet tijdig/direct totale ontruiming worden gestart als men op basis van de repressieve tijdlijn niet tijdig kan blussen en de vluchttrappenhuiscompartimentering onder druk komt.\n\nEen interessante bronnuance: de brandweerlift is primair bedoeld om hulpdiensten tijdig boven te brengen; hij is niet automatisch bedoeld voor bewoners-ontruiming. Dat betekent dat “alleen materiaal” nog steeds afhankelijkheid van een technisch onbetrouwbare installatie creëert.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 13 en bijlage 4 p. 48-49.",
-      "situationDetail": {
-        "time": "15:06 uur — water bij de brandweerlift",
-        "intro": [
-          "Op verdieping 12 wordt water zichtbaar dat richting de brandweerliftschacht loopt. De lift reageert nog normaal en het paneel geeft geen storing."
-        ],
-        "observations": [
-          "zichtbare waterinstroom richting liftschacht;",
-          "lift functioneert op dit moment nog;",
-          "sprinkler en bluswater zijn actief;",
-          "verticale logistiek is sterk afhankelijk van de lift;",
-          "traptransport kost extra tijd en fysieke capaciteit."
-        ],
-        "after": [
-          "De ploeg op hoogte ziet de verandering als eerste. De vraag is of je wacht op een technische storing of de betrouwbaarheid al op basis van de omstandigheden herbeoordeelt."
-        ],
-        "prompt": "Wat doe je met de brandweerlift?"
+      "discussionQuestion": "Wanneer beschouw je een nog functionerende brandweerlift niet langer als betrouwbaar, en welke gevolgen heeft dat voor de rest van je inzet?",
+      "media": {
+        "src": "assets/vggm/hoogbouw_object.png",
+        "caption": "Verticale bereikbaarheid als kritieke voorziening",
+        "source": "VGGM lesmateriaal – slide 31"
       },
-      "systems": [
-        "Droge stijgleiding binnen",
-        "Transporttas"
-      ],
-      "discussionQuestion": "Welke risico's en voordelen weeg je af bij het gebruik van liften tijdens een ontwikkelende hoogbouwbrand?"
+      "deepDive": "Een brandweerlift is een belangrijke logistieke voorziening, maar de bruikbaarheid moet tijdens de gehele inzet opnieuw worden beoordeeld. Een werkend bedieningspaneel is niet de enige informatiebron. Wanneer water, rook of brand de lift of liftschacht bedreigt, kan de betrouwbaarheid veranderen voordat een technische storing zichtbaar wordt. Uitval heeft directe gevolgen voor tijd, fysieke belasting en logistiek."
     },
     {
       "id": 15,
       "title": "Logistieke achterstand",
-      "situation": "Na circa 25 minuten zijn meerdere ademluchtcilinders gebruikt. Ploegen melden vermoeidheid. Het bruggenhoofd vraagt reserveflessen, drinken en aflossing.",
+      "role": "Bevelvoerder",
+      "roleNote": "Bepaal hoe je de logistiek organiseert zodat de inzet langdurig kan worden voortgezet.",
+      "situation": "Na circa 25 minuten zijn meerdere ademluchtcilinders gebruikt en melden ploegen oplopende vermoeidheid. Het bruggenhoofd vraagt om reserve-ademlucht, drinken en aflossing. De inzet kan nog langere tijd duren.",
       "choices": [
         {
           "id": "A",
-          "text": "Logistieke hub opschalen, schoon/vuil scheiden en aflossing/ademlucht vooraf positioneren.",
-          "consequence": "Inzet kan gecontroleerd worden voortgezet; ploegbelasting stabiliseert.",
-          "rationale": "Sterke keuze; Logistiek is een volwaardige VRICOL-taak.",
-          "label": "Sterk",
+          "text": "De logistieke functie uitbreiden, schoon en vuil scheiden en reserve-ademlucht, drinken en aflossing vooruit organiseren.",
+          "consequence": "De continuïteit van de inzet wordt beter geborgd en ploegen kunnen tijdig worden afgelost voordat vermoeidheid of materiaaltekort de inzet bepaalt.",
+          "rationale": "Logistiek is binnen VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek) een zelfstandige taak en bepaalt mede hoe lang de operationele inzet kan worden volgehouden.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De logistiek wordt georganiseerd vóórdat tekorten acuut worden. Reserve-ademlucht, aflossing en noodzakelijke middelen worden dichter bij het bruggenhoofd gebracht en schoon/vuil wordt gescheiden. Daarmee blijft de interventie continu en wordt voorkomen dat vermoeide ploegen langer doorwerken dan verantwoord.",
-          "consequenceDetail": {
-            "time": "15:10 uur — circa 25 minuten inzet — gevolg van keuze A",
-            "paragraphs": [
-              "De logistieke functie wordt opgeschaald. Schone ademlucht, drinken en aflossing worden vooruit gepositioneerd en terugkerend materiaal/personen krijgen een eigen stroom."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Sluit aan bij VRR: logistiek vroeg als eigen proces organiseren, aflossing/ademlucht anticiperend positioneren en schoon/vuil scheiden.",
-                  "Logistiek is in VRICOL een zelfstandige taak, juist vanwege de lange aanvoerroute in hoogbouw. Het bruggenhoofd moet tijdig met middelen worden gevoed en de bron noemt als vuistregel één schone ademluchtcilinder per ingezette functionaris. Daarnaast: brancard/wervelplank, drinkwater of isotone drank, objecttekeningen, extra smokestoppers, vluchtmaskers, accuventilatoren en CO-meters.",
-                  "In de scenario-uitwerkingen wordt op de begane grond een logistieke hub ingericht. Bij scenario 2/3 noemt VRR concreet: ademluchtcilinders, ventilatoren en accu’s, smokestoppers, vluchtmaskers, evac chairs, rehab chair en drinken. Ook het scheiden van schone en vuile goederen wordt expliciet genoemd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het materiaalgedeelte van VRR maakt fysieke belasting zichtbaar door gewichten te benoemen. Voorbeelden: Rambo 18,3 kg, hoogbouwtas 12 kg, doorslijpschijf 10,5 kg, rescuezaag 10 kg, smokestopper 5 kg, O-bundel 11 kg (12,6 kg met straalpijp), en ademlucht/PBM waardoor de totale draaglast per persoon al snel zeer hoog wordt. Dat verklaart waarom “nog even door” geen neutrale keuze is: logistieke achterstand vertaalt zich in fysieke en tactische grenzen.",
-                  "Bij liftuitval gaat VRR nog verder: personele capaciteit verdubbelen en het mee te nemen gewicht per persoon halveren. Daarmee is logistiek een veiligheidsproces, niet alleen bevoorrading."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De logistieke functie wordt opgeschaald. Schone ademlucht, drinken en aflossing worden vooruit gepositioneerd en terugkerend materiaal/personen krijgen een eigen stroom."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Kan de aanval kort maximaliseren, maar negeert dat logistiek volgens de bron de continuïteit van de repressieve inzet bepaalt.",
-                  "Keuze C: Kan zinvol zijn als men echt prioriteert op noodzakelijke middelen, maar niet als hierdoor ademlucht, back-up of essentiële veiligheidsmiddelen ontbreken."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "logistiek: voldoende",
-              "ploegbelasting: stabiliseert",
-              "continuïteit: geborgd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Logistiek is binnen VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek) een zelfstandige taak en bepaalt mede hoe lang de operationele inzet kan worden volgehouden."
         },
         {
           "id": "B",
           "text": "Eerst brandmeester maken; logistiek pas daarna herstellen.",
-          "consequence": "Korte termijn meer mensen aan de aanval, maar risico op plotseling tekort of uitgeputte ploegen.",
-          "rationale": "Kwetsbaar; logistiek probleem kan de inzet abrupt stoppen.",
-          "label": "Verdedigbaar maar kwetsbaar",
+          "consequence": "Op korte termijn blijft meer capaciteit bij de brandbestrijding, maar het tekort aan ademlucht, aflossing of andere middelen kan later plotseling de inzet beperken.",
+          "rationale": "Logistiek is geen proces voor ná brandmeester. Bij een langdurige inzet bepaalt het mede of ploegen inzetbaar blijven.",
+          "label": "Operationele duiding",
           "quality": -1,
-          "deepDive": "Alle capaciteit op de brandaanval kan op korte termijn aantrekkelijk lijken, maar een plots tekort aan ademlucht of aflossing kan de inzet abrupt stoppen. Logistiek is daarom geen activiteit voor “na brandmeester”, maar een continu proces dat de aanval mogelijk maakt.",
-          "consequenceDetail": {
-            "time": "15:10 uur — circa 25 minuten inzet — gevolg van keuze B",
-            "paragraphs": [
-              "De beschikbare capaciteit blijft maximaal bij de brandaanval. Het logistieke tekort wordt daarmee vooruitgeschoven tot het moment dat een ploeg of materiaal echt niet meer beschikbaar is."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan de aanval kort maximaliseren, maar negeert dat logistiek volgens de bron de continuïteit van de repressieve inzet bepaalt.",
-                  "Logistiek is in VRICOL een zelfstandige taak, juist vanwege de lange aanvoerroute in hoogbouw. Het bruggenhoofd moet tijdig met middelen worden gevoed en de bron noemt als vuistregel één schone ademluchtcilinder per ingezette functionaris. Daarnaast: brancard/wervelplank, drinkwater of isotone drank, objecttekeningen, extra smokestoppers, vluchtmaskers, accuventilatoren en CO-meters.",
-                  "In de scenario-uitwerkingen wordt op de begane grond een logistieke hub ingericht. Bij scenario 2/3 noemt VRR concreet: ademluchtcilinders, ventilatoren en accu’s, smokestoppers, vluchtmaskers, evac chairs, rehab chair en drinken. Ook het scheiden van schone en vuile goederen wordt expliciet genoemd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het materiaalgedeelte van VRR maakt fysieke belasting zichtbaar door gewichten te benoemen. Voorbeelden: Rambo 18,3 kg, hoogbouwtas 12 kg, doorslijpschijf 10,5 kg, rescuezaag 10 kg, smokestopper 5 kg, O-bundel 11 kg (12,6 kg met straalpijp), en ademlucht/PBM waardoor de totale draaglast per persoon al snel zeer hoog wordt. Dat verklaart waarom “nog even door” geen neutrale keuze is: logistieke achterstand vertaalt zich in fysieke en tactische grenzen.",
-                  "Bij liftuitval gaat VRR nog verder: personele capaciteit verdubbelen en het mee te nemen gewicht per persoon halveren. Daarmee is logistiek een veiligheidsproces, niet alleen bevoorrading."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De beschikbare capaciteit blijft maximaal bij de brandaanval. Het logistieke tekort wordt daarmee vooruitgeschoven tot het moment dat een ploeg of materiaal echt niet meer beschikbaar is."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit aan bij VRR: logistiek vroeg als eigen proces organiseren, aflossing/ademlucht anticiperend positioneren en schoon/vuil scheiden.",
-                  "Keuze C: Kan zinvol zijn als men echt prioriteert op noodzakelijke middelen, maar niet als hierdoor ademlucht, back-up of essentiële veiligheidsmiddelen ontbreken."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "logistiek: achterstand",
-              "ploegbelasting: stijgt",
-              "risico abrupt inzetverlies: verhoogd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Logistiek is geen proces voor ná brandmeester. Bij een langdurige inzet bepaalt het mede of ploegen inzetbaar blijven."
         },
         {
           "id": "C",
-          "text": "Minder materiaal naar boven sturen om belasting van het trappenhuis te verminderen.",
-          "consequence": "Transportdruk daalt, maar essentiële ademlucht/back-up kan ontbreken.",
-          "rationale": "Alleen passend als strikt op noodzakelijke middelen wordt gestuurd; niet als bezuiniging op essentiële ondersteuning.",
-          "label": "Afweging",
+          "text": "Het materiaaltransport beperken en alleen aantoonbaar noodzakelijke middelen naar boven sturen.",
+          "consequence": "De transportbelasting neemt af, maar een te krappe selectie kan leiden tot tekort aan ademlucht, back-up of andere essentiële middelen.",
+          "rationale": "Prioriteren in materiaal is zinvol. De afweging moet gaan over wat waar en wanneer noodzakelijk is, niet simpelweg over zo weinig mogelijk meenemen.",
+          "label": "Operationele duiding",
           "quality": 0,
-          "deepDive": "Minder gewicht naar boven sturen kan verstandig zijn als scherp wordt geselecteerd op noodzakelijke middelen. Het wordt problematisch als essentiële ademlucht, back-up of materiaal wordt weggelaten. De vraag is dus niet “minder”, maar “wat moet aantoonbaar beschikbaar zijn waar en wanneer?”.",
-          "consequenceDetail": {
-            "time": "15:10 uur — circa 25 minuten inzet — gevolg van keuze C",
-            "paragraphs": [
-              "Het materiaalvolume wordt beperkt. Dat kan transportdruk verminderen, maar vereist scherpe selectie zodat ademlucht, back-up en noodzakelijke middelen niet worden geraakt."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan zinvol zijn als men echt prioriteert op noodzakelijke middelen, maar niet als hierdoor ademlucht, back-up of essentiële veiligheidsmiddelen ontbreken.",
-                  "Logistiek is in VRICOL een zelfstandige taak, juist vanwege de lange aanvoerroute in hoogbouw. Het bruggenhoofd moet tijdig met middelen worden gevoed en de bron noemt als vuistregel één schone ademluchtcilinder per ingezette functionaris. Daarnaast: brancard/wervelplank, drinkwater of isotone drank, objecttekeningen, extra smokestoppers, vluchtmaskers, accuventilatoren en CO-meters.",
-                  "In de scenario-uitwerkingen wordt op de begane grond een logistieke hub ingericht. Bij scenario 2/3 noemt VRR concreet: ademluchtcilinders, ventilatoren en accu’s, smokestoppers, vluchtmaskers, evac chairs, rehab chair en drinken. Ook het scheiden van schone en vuile goederen wordt expliciet genoemd."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Het materiaalgedeelte van VRR maakt fysieke belasting zichtbaar door gewichten te benoemen. Voorbeelden: Rambo 18,3 kg, hoogbouwtas 12 kg, doorslijpschijf 10,5 kg, rescuezaag 10 kg, smokestopper 5 kg, O-bundel 11 kg (12,6 kg met straalpijp), en ademlucht/PBM waardoor de totale draaglast per persoon al snel zeer hoog wordt. Dat verklaart waarom “nog even door” geen neutrale keuze is: logistieke achterstand vertaalt zich in fysieke en tactische grenzen.",
-                  "Bij liftuitval gaat VRR nog verder: personele capaciteit verdubbelen en het mee te nemen gewicht per persoon halveren. Daarmee is logistiek een veiligheidsproces, niet alleen bevoorrading."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Het materiaalvolume wordt beperkt. Dat kan transportdruk verminderen, maar vereist scherpe selectie zodat ademlucht, back-up en noodzakelijke middelen niet worden geraakt."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Sluit aan bij VRR: logistiek vroeg als eigen proces organiseren, aflossing/ademlucht anticiperend positioneren en schoon/vuil scheiden.",
-                  "Keuze B: Kan de aanval kort maximaliseren, maar negeert dat logistiek volgens de bron de continuïteit van de repressieve inzet bepaalt."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "logistieke druk: lager",
-              "essentiële middelen: risico op tekort",
-              "effect afhankelijk van selectie"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Prioriteren in materiaal is zinvol. De afweging moet gaan over wat waar en wanneer noodzakelijk is, niet simpelweg over zo weinig mogelijk meenemen."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Logistiek en continuïteit van de inzet.",
-      "sourceFrame": "Logistiek is in VRICOL een zelfstandige taak, juist vanwege de lange aanvoerroute in hoogbouw. Het bruggenhoofd moet tijdig met middelen worden gevoed en de bron noemt als vuistregel één schone ademluchtcilinder per ingezette functionaris. Daarnaast: brancard/wervelplank, drinkwater of isotone drank, objecttekeningen, extra smokestoppers, vluchtmaskers, accuventilatoren en CO-meters.\n\nIn de scenario-uitwerkingen wordt op de begane grond een logistieke hub ingericht. Bij scenario 2/3 noemt VRR concreet: ademluchtcilinders, ventilatoren en accu’s, smokestoppers, vluchtmaskers, evac chairs, rehab chair en drinken. Ook het scheiden van schone en vuile goederen wordt expliciet genoemd.\n\nHet materiaalgedeelte van VRR maakt fysieke belasting zichtbaar door gewichten te benoemen. Voorbeelden: Rambo 18,3 kg, hoogbouwtas 12 kg, doorslijpschijf 10,5 kg, rescuezaag 10 kg, smokestopper 5 kg, O-bundel 11 kg (12,6 kg met straalpijp), en ademlucht/PBM waardoor de totale draaglast per persoon al snel zeer hoog wordt. Dat verklaart waarom “nog even door” geen neutrale keuze is: logistieke achterstand vertaalt zich in fysieke en tactische grenzen.\n\nBij liftuitval gaat VRR nog verder: personele capaciteit verdubbelen en het mee te nemen gewicht per persoon halveren. Daarmee is logistiek een veiligheidsproces, niet alleen bevoorrading.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 13, scenario 2-4 p. 21-25, hoofdstuk 9 p. 34-41 en fotocollage p. 50-53.",
-      "situationDetail": {
-        "time": "15:10 uur — circa 25 minuten inzet",
-        "intro": [
-          "Meerdere ademluchtcilinders zijn gebruikt en ploegen melden oplopende vermoeidheid. Het bruggenhoofd vraagt om reserveflessen, drinken en aflossing."
-        ],
-        "observations": [
-          "ademluchtverbruik loopt op;",
-          "personele belasting neemt toe;",
-          "materiaal moet verticaal worden aangevoerd;",
-          "schoon/vuil en terugkerende ploegen gaan meer ruimte vragen;",
-          "de inzet kan nog langere tijd duren."
-        ],
-        "after": [
-          "Logistiek wordt nu een zelfstandig proces. Als het pas wordt georganiseerd wanneer iets op is, kan de operationele inzet abrupt stilvallen.",
-          "Het logistieke moment gaat nu ook over inzetgereed houden van het LD/O-bundelsysteem: niet met vouwen over de grond trekken, slangen onder druk strekken en O-bundels met het oprolsysteem/bundlewheel weer bruikbaar maken.",
-          "De hoogtetas en overige materialen worden nu bewust verdeeld tussen wat op het bruggenhoofd direct nodig is en wat beneden in de logistieke hub kan blijven. Daarmee wordt ook het mee te nemen gewicht onderdeel van de aflossingsplanning."
-        ],
-        "prompt": "Hoe organiseer je de continuïteit?"
+      "discussionQuestion": "Hoe bepaal je welke logistieke behoefte je vooruit moet organiseren voor een langdurige inzet?",
+      "media": {
+        "src": "assets/vggm/logistiek_materiaal.jpeg",
+        "caption": "Materiaal, fysieke belasting en aflossing",
+        "source": "VGGM lesmateriaal – slide 74"
       },
       "systems": [
         "Hoogtetas",
-        "Transporttas",
-        "Do’s & Don’ts LD/O-bundels"
+        "Transporttas"
       ],
-      "discussionQuestion": "Hoe bepaal je welke logistieke behoefte je vooruit moet organiseren voor een langdurige inzet?"
+      "deepDive": "Logistiek in hoogbouw is meer dan materiaal naar boven brengen. Lange aanvoerroutes, ademluchtverbruik, fysieke belasting en aflossing bepalen mede hoe lang ploegen effectief inzetbaar blijven. Vooruit organiseren betekent inschatten wat later nodig is en dat tijdig dichter bij de inzet beschikbaar maken. Tegelijk vraagt verticaal transport personele capaciteit; niet alles hoeft boven te liggen."
     },
     {
       "id": 16,
-      "title": "Verslechtering naar scenario 3",
-      "situation": "Rook treedt nu buiten het oorspronkelijke compartiment. Een deur naar de gang sluit niet goed. CO stijgt in het inzettrappenhuis. Brand is nog niet volledig onder controle.",
+      "title": "Incidentbeeld verslechtert",
+      "role": "Bevelvoerder",
+      "roleNote": "Beoordeel opnieuw welk scenario bij het actuele incidentbeeld past en wat dit betekent voor de prioriteiten.",
+      "situation": "Rook verspreidt zich nu buiten het oorspronkelijke compartiment. Een deur naar de gang sluit niet goed en de CO-waarde in het inzettrappenhuis loopt op. De brand is nog niet volledig onder controle. Het incidentbeeld is veranderd. De vraag is niet of de eerdere tactiek ooit logisch was, maar of die tactiek nog past bij de huidige omstandigheden.",
       "choices": [
         {
           "id": "A",
-          "text": "Scenario herclassificeren naar 3; vluchtwegbeveiliging en ontruiming voorrang geven, interventie herordenen.",
-          "consequence": "De inzet verschuift zichtbaar van brandhaard naar bescherming vluchtwegen en bewoners.",
-          "rationale": "Sterke keuze; past bij VRR commanders intent scenario 3.",
-          "label": "Sterk",
+          "text": "Herclassificeren naar scenario 3 en de inzet herordenen: rook- en vluchtwegbeheersing en ontruiming nadrukkelijk meenemen naast de interventie.",
+          "consequence": "Capaciteit en aandacht verschuiven nadrukkelijk naar bescherming van vluchtwegen en aanwezige personen, terwijl de brandbestrijding opnieuw binnen dat totaalbeeld wordt georganiseerd.",
+          "rationale": "De combinatie van rook buiten het compartiment en een bedreigde vluchtweg past bij scenario 3. Het actuele beeld vraagt daarom om herprioritering van de inzet.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De ploeg erkent dat het incident kwalitatief veranderd is. Door de inzet te herordenen worden vluchtwegbeveiliging en ontruiming niet langer als bijzaak behandeld. De brand wordt nog steeds bestreden, maar pas binnen een organisatie die rekening houdt met de verspreiding buiten het compartiment.",
-          "consequenceDetail": {
-            "time": "15:14 uur — duidelijke verslechtering — gevolg van keuze A",
-            "paragraphs": [
-              "De bevelvoerder benoemt expliciet dat het incidentbeeld naar scenario 3 is verschoven. Capaciteit gaat eerst naar rook-/vluchtwegbeheersing en ontruiming; de interventie wordt daarop opnieuw ingericht."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is vrijwel één-op-één de scenario-3-logica uit VRR: rook-/vluchtwegmaatregelen eerst en interventie herordenen.",
-                  "Scenario 3 in VRR is precies gedefinieerd als brand en/of rook buiten de compartimentsgrenzen waarbij vluchtwegen worden bedreigd. De commanders intent verandert dan: eerst rookverspreiding voorkomen, vervolgens vluchtwegen veiligstellen, daarna starten met ontruiming rond de brandverdieping en pas daarna de brand bestrijden/redding uitvoeren binnen de mogelijkheden.",
-                  "De verkenning bepaalt opnieuw het scenario, het bruggenhoofd blijft standaard op -2 met continue CO-meting. Interventie wordt voorbereid als defensief binnen of eventueel offensief buiten; VRR noemt fognail/Cobra als voorbeelden. Interventie vindt pas plaats nadat maatregelen tegen rookverspreiding en voor ontruiming zijn getroffen."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Compartimentering beschermt trappenhuis en voorportaal, bewaakt de overdruk en monitort CO boven/onder de brand. Accuventilatoren worden gereed gezet, maar ventileren gebeurt na brandmeester alleen direct vanuit brand-/rookruimte naar buiten. Ontruiming begint rond de brand en kan, bij verslechtering, naar totaal worden opgeschaald.",
-                  "De casuskeuze is daarmee niet “blussen of ontruimen”, maar de prioritering herschikken zodat de vluchtweg niet verloren gaat terwijl de interventie op verantwoorde wijze wordt voortgezet."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De bevelvoerder benoemt expliciet dat het incidentbeeld naar scenario 3 is verschoven. Capaciteit gaat eerst naar rook-/vluchtwegbeheersing en ontruiming; de interventie wordt daarop opnieuw ingericht."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Negeert het veranderde scenario en daarmee de bronprioriteit; eerdere vooruitgang aan de brand compenseert geen verloren vluchtweg.",
-                  "Keuze C: Kan bij onhoudbare omstandigheden noodzakelijk worden, maar VRR scenario 3 kent nog wel binnenopties zolang vluchtwegen en ploegveiligheid beheersbaar kunnen worden gemaakt."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "scenario: 3",
-              "vluchtwegbeveiliging: prioriteit",
-              "ontruiming: opgeschaald"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "De combinatie van rook buiten het compartiment en een bedreigde vluchtweg past bij scenario 3. Het actuele beeld vraagt daarom om herprioritering van de inzet."
         },
         {
           "id": "B",
-          "text": "Huidige aanval ongewijzigd voortzetten omdat er al voortgang is geboekt.",
-          "consequence": "Brandbestrijding blijft gefocust, maar vluchtweg kan verder verslechteren.",
-          "rationale": "Ongunstig: scenarioverandering wordt genegeerd.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "Voortgang bij de brandhaard kan verleiden om het bestaande plan vast te houden. Maar het actuele risico ligt nu ook buiten de woning. Als rook in gang of trappenhuis toeneemt, kan het succes van de brandaanval tegelijk gepaard gaan met verslechterende vluchtmogelijkheden.",
-          "consequenceDetail": {
-            "time": "15:14 uur — duidelijke verslechtering — gevolg van keuze B",
-            "paragraphs": [
-              "De aanval blijft ongewijzigd doorgaan. Daardoor wordt eerdere voortgang aan de brand zwaarder gewogen dan de nieuwe aanwijzingen dat de vluchtweg verslechtert."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Negeert het veranderde scenario en daarmee de bronprioriteit; eerdere vooruitgang aan de brand compenseert geen verloren vluchtweg.",
-                  "Scenario 3 in VRR is precies gedefinieerd als brand en/of rook buiten de compartimentsgrenzen waarbij vluchtwegen worden bedreigd. De commanders intent verandert dan: eerst rookverspreiding voorkomen, vervolgens vluchtwegen veiligstellen, daarna starten met ontruiming rond de brandverdieping en pas daarna de brand bestrijden/redding uitvoeren binnen de mogelijkheden.",
-                  "De verkenning bepaalt opnieuw het scenario, het bruggenhoofd blijft standaard op -2 met continue CO-meting. Interventie wordt voorbereid als defensief binnen of eventueel offensief buiten; VRR noemt fognail/Cobra als voorbeelden. Interventie vindt pas plaats nadat maatregelen tegen rookverspreiding en voor ontruiming zijn getroffen."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Compartimentering beschermt trappenhuis en voorportaal, bewaakt de overdruk en monitort CO boven/onder de brand. Accuventilatoren worden gereed gezet, maar ventileren gebeurt na brandmeester alleen direct vanuit brand-/rookruimte naar buiten. Ontruiming begint rond de brand en kan, bij verslechtering, naar totaal worden opgeschaald.",
-                  "De casuskeuze is daarmee niet “blussen of ontruimen”, maar de prioritering herschikken zodat de vluchtweg niet verloren gaat terwijl de interventie op verantwoorde wijze wordt voortgezet."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De aanval blijft ongewijzigd doorgaan. Daardoor wordt eerdere voortgang aan de brand zwaarder gewogen dan de nieuwe aanwijzingen dat de vluchtweg verslechtert."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Is vrijwel één-op-één de scenario-3-logica uit VRR: rook-/vluchtwegmaatregelen eerst en interventie herordenen.",
-                  "Keuze C: Kan bij onhoudbare omstandigheden noodzakelijk worden, maar VRR scenario 3 kent nog wel binnenopties zolang vluchtwegen en ploegveiligheid beheersbaar kunnen worden gemaakt."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "scenarioverandering: genegeerd",
-              "vluchtweg: verslechtert verder",
-              "interventie: ongewijzigd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "De huidige aanval ongewijzigd voortzetten omdat er al voortgang is geboekt.",
+          "consequence": "De brandbestrijding blijft maximaal gefocust, maar ondertussen kan de bruikbaarheid van de vluchtweg verder afnemen.",
+          "rationale": "Eerdere voortgang is geen reden om nieuwe informatie te negeren. Het incidentbeeld is veranderd en moet opnieuw bepalend worden voor de tactiek.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Eerdere voortgang is geen reden om nieuwe informatie te negeren. Het incidentbeeld is veranderd en moet opnieuw bepalend worden voor de tactiek."
         },
         {
           "id": "C",
           "text": "Alle binnenploegen terugtrekken en volledig defensief buiten gaan.",
-          "consequence": "Eigen veiligheid neemt toe, maar redding/ontruiming en beschermbare vluchtwegen worden mogelijk te vroeg opgegeven.",
-          "rationale": "Kan nodig zijn bij onhoudbare omstandigheden, maar op basis van dit beeld nog te absoluut.",
-          "label": "Te absoluut",
-          "quality": -2,
-          "deepDive": "Volledig defensief buiten kan noodzakelijk worden als de binnencondities onhoudbaar zijn. Het bronbeeld in deze casus geeft daar nog niet automatisch aanleiding toe. Een te vroege volledige terugtrekking kan beschermbare vluchtwegen en reddingsmogelijkheden opgeven terwijl een heringerichte binnenorganisatie nog mogelijk is.",
-          "consequenceDetail": {
-            "time": "15:14 uur — duidelijke verslechtering — gevolg van keuze C",
-            "paragraphs": [
-              "Alle binnenploegen trekken terug. Daarmee wordt de eigen blootstelling sterk beperkt, maar worden ook nog beschermbare vluchtwegen en binnenopties direct opgegeven."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan bij onhoudbare omstandigheden noodzakelijk worden, maar VRR scenario 3 kent nog wel binnenopties zolang vluchtwegen en ploegveiligheid beheersbaar kunnen worden gemaakt.",
-                  "Scenario 3 in VRR is precies gedefinieerd als brand en/of rook buiten de compartimentsgrenzen waarbij vluchtwegen worden bedreigd. De commanders intent verandert dan: eerst rookverspreiding voorkomen, vervolgens vluchtwegen veiligstellen, daarna starten met ontruiming rond de brandverdieping en pas daarna de brand bestrijden/redding uitvoeren binnen de mogelijkheden.",
-                  "De verkenning bepaalt opnieuw het scenario, het bruggenhoofd blijft standaard op -2 met continue CO-meting. Interventie wordt voorbereid als defensief binnen of eventueel offensief buiten; VRR noemt fognail/Cobra als voorbeelden. Interventie vindt pas plaats nadat maatregelen tegen rookverspreiding en voor ontruiming zijn getroffen."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "Compartimentering beschermt trappenhuis en voorportaal, bewaakt de overdruk en monitort CO boven/onder de brand. Accuventilatoren worden gereed gezet, maar ventileren gebeurt na brandmeester alleen direct vanuit brand-/rookruimte naar buiten. Ontruiming begint rond de brand en kan, bij verslechtering, naar totaal worden opgeschaald.",
-                  "De casuskeuze is daarmee niet “blussen of ontruimen”, maar de prioritering herschikken zodat de vluchtweg niet verloren gaat terwijl de interventie op verantwoorde wijze wordt voortgezet."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Alle binnenploegen trekken terug. Daarmee wordt de eigen blootstelling sterk beperkt, maar worden ook nog beschermbare vluchtwegen en binnenopties direct opgegeven."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Is vrijwel één-op-één de scenario-3-logica uit VRR: rook-/vluchtwegmaatregelen eerst en interventie herordenen.",
-                  "Keuze B: Negeert het veranderde scenario en daarmee de bronprioriteit; eerdere vooruitgang aan de brand compenseert geen verloren vluchtweg."
-                ]
-              }
-            ],
-            "assessment": "Te absolute keuze voor het beschikbare beeld.",
-            "stateEffects": [
-              "binneninzet: beëindigd",
-              "eigen blootstelling: lager",
-              "redding/ontruiming binnen: sterk beperkt"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "consequence": "De directe blootstelling van de ploegen neemt sterk af, maar binnen nog beschikbare mogelijkheden voor redding, ontruiming en bescherming van vluchtwegen worden eveneens opgegeven.",
+          "rationale": "Volledig defensief buiten kan noodzakelijk worden wanneer de binnenomstandigheden niet meer beheersbaar zijn. Uit de beschikbare informatie volgt nog niet automatisch dat dit punt is bereikt.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Volledig defensief buiten kan noodzakelijk worden wanneer de binnenomstandigheden niet meer beheersbaar zijn. Uit de beschikbare informatie volgt nog niet automatisch dat dit punt is bereikt."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Tactische herclassificatie op basis van actuele binnen- en buiteninformatie.",
-      "sourceFrame": "Scenario 3 in VRR is precies gedefinieerd als brand en/of rook buiten de compartimentsgrenzen waarbij vluchtwegen worden bedreigd. De commanders intent verandert dan: eerst rookverspreiding voorkomen, vervolgens vluchtwegen veiligstellen, daarna starten met ontruiming rond de brandverdieping en pas daarna de brand bestrijden/redding uitvoeren binnen de mogelijkheden.\n\nDe verkenning bepaalt opnieuw het scenario, het bruggenhoofd blijft standaard op -2 met continue CO-meting. Interventie wordt voorbereid als defensief binnen of eventueel offensief buiten; VRR noemt fognail/Cobra als voorbeelden. Interventie vindt pas plaats nadat maatregelen tegen rookverspreiding en voor ontruiming zijn getroffen.\n\nCompartimentering beschermt trappenhuis en voorportaal, bewaakt de overdruk en monitort CO boven/onder de brand. Accuventilatoren worden gereed gezet, maar ventileren gebeurt na brandmeester alleen direct vanuit brand-/rookruimte naar buiten. Ontruiming begint rond de brand en kan, bij verslechtering, naar totaal worden opgeschaald.\n\nDe casuskeuze is daarmee niet “blussen of ontruimen”, maar de prioritering herschikken zodat de vluchtweg niet verloren gaat terwijl de interventie op verantwoorde wijze wordt voortgezet.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), scenario 3 p. 22-24 en prioritering p. 26-27.",
-      "situationDetail": {
-        "time": "15:14 uur — duidelijke verslechtering",
-        "intro": [
-          "Rook treedt nu buiten het oorspronkelijke compartiment. Een deur naar de gang sluit niet goed en de CO-waarde in het inzettrappenhuis loopt op. De brand is nog niet volledig onder controle."
-        ],
-        "observations": [
-          "rook buiten oorspronkelijke compartimentsgrens;",
-          "vluchtweg wordt bedreigd;",
-          "CO stijgt in inzettrappenhuis;",
-          "deur/compartimentering functioneert niet volledig;",
-          "interventie heeft nog niet geleid tot volledige controle."
-        ],
-        "after": [
-          "Het incidentbeeld is veranderd. De vraag is niet of de eerdere tactiek ooit logisch was, maar of die tactiek nog past bij de huidige omstandigheden."
-        ],
-        "prompt": "Hoe herclassificeer je de inzet?"
+      "discussionQuestion": "Hoe bewaak je de samenhang tussen brandbestrijding, vluchtwegen en ontruiming?",
+      "media": {
+        "src": "assets/vggm/rook_deurzone.png",
+        "caption": "Rook buiten het oorspronkelijke compartiment als omslagpunt",
+        "source": "VGGM lesmateriaal – slide 60"
       },
-      "systems": [],
-      "discussionQuestion": "Hoe bewaak je de samenhang tussen brandbestrijding, vluchtwegen en ontruiming?"
+      "systems": [
+        "Kwadrantenmodel",
+        "CAN",
+        "FABCM"
+      ],
+      "deepDive": "Een tactische keuze blijft alleen geldig zolang het incidentbeeld waarop die keuze is gebaseerd nog klopt. Wanneer rook buiten het oorspronkelijke compartiment komt en een vluchtweg wordt bedreigd, verandert het incident kwalitatief. Binnen VRICOL (Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek) krijgen daardoor andere processen meer gewicht. Herclassificeren moet zichtbaar leiden tot andere prioriteiten, opdrachten of capaciteitsverdeling."
     },
     {
       "id": 17,
-      "title": "Geveluitbreiding / scenario 4-kans",
-      "situation": "Buiten ziet men vlammen langs de gevel omhoog trekken. Rook bereikt ramen van hogere verdiepingen. De brand is vanaf straatniveau niet effectief bereikbaar.",
+      "title": "Branduitbreiding langs de gevel",
+      "role": "Bevelvoerder",
+      "roleNote": "Beoordeel wat de geveluitbreiding betekent voor de verdiepingen boven de brand en voor de gekozen tactiek.",
+      "situation": "Buiten wordt gemeld dat vlammen langs de gevel omhoog trekken. Rook en hitte bereiken inmiddels ramen van hoger gelegen verdiepingen. Vanaf straatniveau kan de brand niet effectief worden bereikt. De brandontwikkeling beperkt zich daarmee niet langer tot alleen de oorspronkelijke brandverdieping.",
       "choices": [
         {
           "id": "A",
-          "text": "Scenario 4 aannemen: totale ontruiming starten, verdiepingen boven brand eerst, trappenhuizen beschermen.",
-          "consequence": "Capaciteit verschuift naar het veilig wegbrengen van bewoners; brandbestrijding wordt secundair.",
-          "rationale": "Sterke keuze als gevelbrand uitbreidt.",
-          "label": "Sterk",
+          "text": "Het incident herclassificeren naar scenario 4, de ontruiming gebouwbreed organiseren en de bescherming van de trappenhuizen nadrukkelijk prioriteren.",
+          "consequence": "Meer capaciteit verschuift naar ontruiming en bescherming van de vluchtwegen. De brandbestrijding wordt opnieuw georganiseerd vanuit het doel om uitbreiding te beperken en tijd te winnen voor aanwezige personen.",
+          "rationale": "Geveluitbreiding kan meerdere verdiepingen vrijwel gelijktijdig bedreigen. Daarmee past het beeld bij scenario 4 en is een lokale benadering rond alleen de brandverdieping niet meer voldoende.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "De keuze volgt de prioriteitsverschuiving van scenario 4: bewoners en vluchtwegen eerst. De brandbestrijding wordt niet volledig vergeten, maar is niet langer de activiteit die de ontruiming mag vertragen. Vooral hogere verdiepingen kunnen door verticale geveluitbreiding snel bedreigd raken.",
-          "consequenceDetail": {
-            "time": "15:18 uur — geveluitbreiding zichtbaar — gevolg van keuze A",
-            "paragraphs": [
-              "De inzet schakelt over naar totale ontruiming. De verdiepingen op en boven de brand krijgen als eerste aandacht en beide trappenhuizen worden zo goed mogelijk beschermd voor bewonersstromen."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Volgt de VRR-commanders intent: totale ontruiming direct, start boven de brand, vluchtwegen beschermen.",
-                  "VRR scenario 4 gaat uit van een gevelbrand die op meerdere plaatsen naar binnen kan doorslaan en vanwege de hoogte niet vanaf straatniveau adequaat bereikbaar is. De commanders intent is duidelijk: zo snel mogelijk het gebouw volledig ontruimen, beginnen met de verdiepingen boven de brand en vluchtwegen zo goed mogelijk beschermen. Pas daarna wordt beoordeeld of een verantwoorde bluspoging mogelijk is.",
-                  "In de taakverdeling start de eerste eenheid met buitenverkenning, bepaling van onveilig gebied en veilige toegang. Bij uitbreidende gevelbrand wordt het ontruimingsalarm zo snel mogelijk geactiveerd. Verkenning en ontruiming op de brandverdieping gaan zelfs vóór redding uit de brandruimte. Andere ploegen ondersteunen de ontruiming boven de brand; trappenhuisbescherming bewaakt beide trappenhuizen en verwijst vluchtenden."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "De prioriteringstabel zet bij scenario 4 Ontruiming en Verkenning/Compartimentering vóór interventie; interventie is in eerste instantie niet als primaire taak opgenomen. In de toelichting staat dat geen tijd verloren mag gaan met een gevelbrand die door snelheid en hevigheid meerdere verdiepingen kan bedreigen.",
-                  "Dit scenario illustreert ook de koppeling met Coandă: vlammen/rook die langs de gevel omhoog bewegen betekenen dat niet alleen de direct bovenliggende etages relevant zijn. De gehele bovenliggende zone kan door overslag, rookinlaat of meerdere doorslagen worden bedreigd."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De inzet schakelt over naar totale ontruiming. De verdiepingen op en boven de brand krijgen als eerste aandacht en beide trappenhuizen worden zo goed mogelijk beschermd voor bewonersstromen."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Geeft interventie voorrang op de bronprioriteit en kan de beperkte tijd voor bewoners op hogere verdiepingen verbruiken.",
-                  "Keuze C: Kan trappenhuisdruk beperken, maar is bij echte geveluitbreiding te klein van scope omdat meerdere hogere verdiepingen tegelijk kunnen worden bedreigd."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "scenario: 4",
-              "totale ontruiming: gestart",
-              "interventie: secundair"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Geveluitbreiding kan meerdere verdiepingen vrijwel gelijktijdig bedreigen. Daarmee past het beeld bij scenario 4 en is een lokale benadering rond alleen de brandverdieping niet meer voldoende."
         },
         {
           "id": "B",
-          "text": "Eerst proberen de gevelbrand te stoppen vanuit de brandverdieping; ontruiming gefaseerd houden.",
-          "consequence": "Mogelijk brandremmend effect, maar kost tijd terwijl meerdere verdiepingen tegelijk bedreigd kunnen worden.",
-          "rationale": "Risicovol; in VRR scenario 4 gaat totale ontruiming vóór interventie.",
-          "label": "Verdedigbaar maar kwetsbaar",
-          "quality": -1,
-          "deepDive": "Als de gevelbrand vanuit de brandverdieping werkelijk effectief kan worden beïnvloed, lijkt eerst blussen aantrekkelijk. Het risico is echter dat kostbare minuten verstrijken terwijl meerdere verdiepingen tegelijk bedreigd worden. Daarom legt VRR bij scenario 4 de eerste prioriteit bij totale ontruiming.",
-          "consequenceDetail": {
-            "time": "15:18 uur — geveluitbreiding zichtbaar — gevolg van keuze B",
-            "paragraphs": [
-              "Capaciteit blijft eerst gericht op het beïnvloeden van de gevelbrand vanuit de brandverdieping. Hierdoor start de totale ontruiming later terwijl meerdere hogere verdiepingen tegelijk bedreigd kunnen raken."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Geeft interventie voorrang op de bronprioriteit en kan de beperkte tijd voor bewoners op hogere verdiepingen verbruiken.",
-                  "VRR scenario 4 gaat uit van een gevelbrand die op meerdere plaatsen naar binnen kan doorslaan en vanwege de hoogte niet vanaf straatniveau adequaat bereikbaar is. De commanders intent is duidelijk: zo snel mogelijk het gebouw volledig ontruimen, beginnen met de verdiepingen boven de brand en vluchtwegen zo goed mogelijk beschermen. Pas daarna wordt beoordeeld of een verantwoorde bluspoging mogelijk is.",
-                  "In de taakverdeling start de eerste eenheid met buitenverkenning, bepaling van onveilig gebied en veilige toegang. Bij uitbreidende gevelbrand wordt het ontruimingsalarm zo snel mogelijk geactiveerd. Verkenning en ontruiming op de brandverdieping gaan zelfs vóór redding uit de brandruimte. Andere ploegen ondersteunen de ontruiming boven de brand; trappenhuisbescherming bewaakt beide trappenhuizen en verwijst vluchtenden."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "De prioriteringstabel zet bij scenario 4 Ontruiming en Verkenning/Compartimentering vóór interventie; interventie is in eerste instantie niet als primaire taak opgenomen. In de toelichting staat dat geen tijd verloren mag gaan met een gevelbrand die door snelheid en hevigheid meerdere verdiepingen kan bedreigen.",
-                  "Dit scenario illustreert ook de koppeling met Coandă: vlammen/rook die langs de gevel omhoog bewegen betekenen dat niet alleen de direct bovenliggende etages relevant zijn. De gehele bovenliggende zone kan door overslag, rookinlaat of meerdere doorslagen worden bedreigd."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Capaciteit blijft eerst gericht op het beïnvloeden van de gevelbrand vanuit de brandverdieping. Hierdoor start de totale ontruiming later terwijl meerdere hogere verdiepingen tegelijk bedreigd kunnen raken."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Volgt de VRR-commanders intent: totale ontruiming direct, start boven de brand, vluchtwegen beschermen.",
-                  "Keuze C: Kan trappenhuisdruk beperken, maar is bij echte geveluitbreiding te klein van scope omdat meerdere hogere verdiepingen tegelijk kunnen worden bedreigd."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "interventie: voorrang",
-              "totale ontruiming: vertraagd",
-              "hogere verdiepingen: toenemend risico"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "De geveluitbreiding eerst vanuit de brandverdieping proberen te stoppen en de ontruiming voorlopig gefaseerd voortzetten.",
+          "consequence": "Succesvolle brandbestrijding kan verdere uitbreiding beperken, maar gedurende die poging kunnen meerdere hoger gelegen verdiepingen tegelijkertijd worden bedreigd.",
+          "rationale": "Deze keuze kan verdedigbaar zijn wanneer de uitbreiding snel en aantoonbaar beïnvloedbaar is. De kwetsbaarheid zit in de tijd: zolang het effect onzeker is, kan de bedreiging voor hogere verdiepingen verder toenemen.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Deze keuze kan verdedigbaar zijn wanneer de uitbreiding snel en aantoonbaar beïnvloedbaar is. De kwetsbaarheid zit in de tijd: zolang het effect onzeker is, kan de bedreiging voor hogere verdiepingen verder toenemen."
         },
         {
           "id": "C",
-          "text": "Ontruiming beperken tot brandverdieping en twee erboven om paniek te voorkomen.",
-          "consequence": "Minder belasting in trappenhuizen, maar bewoners hogerop kunnen door verdere geveluitbreiding verrast worden.",
-          "rationale": "Ongunstig bij daadwerkelijk uitbreidende gevelbrand.",
-          "label": "Ongunstig in dit scenario",
-          "quality": -2,
-          "deepDive": "Beperkte ontruiming vermindert drukte in de trappenhuizen, maar past niet bij een gevelbrand die verder omhoog uitbreidt. Bewoners boven de gekozen zone kunnen dan te laat worden bereikt. De beperking is alleen verdedigbaar als de uitbreiding aantoonbaar is gestopt; dat is hier niet het geval.",
-          "consequenceDetail": {
-            "time": "15:18 uur — geveluitbreiding zichtbaar — gevolg van keuze C",
-            "paragraphs": [
-              "Alleen de brandverdieping en twee erboven worden ontruimd. De trappenhuisdruk blijft lager, maar bewoners hoger in het gebouw blijven aanwezig terwijl de gevelbrand verder kan klimmen."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Kan trappenhuisdruk beperken, maar is bij echte geveluitbreiding te klein van scope omdat meerdere hogere verdiepingen tegelijk kunnen worden bedreigd.",
-                  "VRR scenario 4 gaat uit van een gevelbrand die op meerdere plaatsen naar binnen kan doorslaan en vanwege de hoogte niet vanaf straatniveau adequaat bereikbaar is. De commanders intent is duidelijk: zo snel mogelijk het gebouw volledig ontruimen, beginnen met de verdiepingen boven de brand en vluchtwegen zo goed mogelijk beschermen. Pas daarna wordt beoordeeld of een verantwoorde bluspoging mogelijk is.",
-                  "In de taakverdeling start de eerste eenheid met buitenverkenning, bepaling van onveilig gebied en veilige toegang. Bij uitbreidende gevelbrand wordt het ontruimingsalarm zo snel mogelijk geactiveerd. Verkenning en ontruiming op de brandverdieping gaan zelfs vóór redding uit de brandruimte. Andere ploegen ondersteunen de ontruiming boven de brand; trappenhuisbescherming bewaakt beide trappenhuizen en verwijst vluchtenden."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "De prioriteringstabel zet bij scenario 4 Ontruiming en Verkenning/Compartimentering vóór interventie; interventie is in eerste instantie niet als primaire taak opgenomen. In de toelichting staat dat geen tijd verloren mag gaan met een gevelbrand die door snelheid en hevigheid meerdere verdiepingen kan bedreigen.",
-                  "Dit scenario illustreert ook de koppeling met Coandă: vlammen/rook die langs de gevel omhoog bewegen betekenen dat niet alleen de direct bovenliggende etages relevant zijn. De gehele bovenliggende zone kan door overslag, rookinlaat of meerdere doorslagen worden bedreigd."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Alleen de brandverdieping en twee erboven worden ontruimd. De trappenhuisdruk blijft lager, maar bewoners hoger in het gebouw blijven aanwezig terwijl de gevelbrand verder kan klimmen."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Volgt de VRR-commanders intent: totale ontruiming direct, start boven de brand, vluchtwegen beschermen.",
-                  "Keuze B: Geeft interventie voorrang op de bronprioriteit en kan de beperkte tijd voor bewoners op hogere verdiepingen verbruiken."
-                ]
-              }
-            ],
-            "assessment": "Ongunstige keuze in dit actuele scenario.",
-            "stateEffects": [
-              "ontruiming: te beperkt",
-              "hogere bewoners: blijven",
-              "geveluitbreiding: risico op inhalen ontruiming"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "text": "De ontruiming beperken tot de brandverdieping en enkele direct bovenliggende verdiepingen om de trappenhuizen niet direct maximaal te belasten.",
+          "consequence": "De belasting van de trappenhuizen blijft aanvankelijk beperkt, maar aanwezige personen op hoger gelegen verdiepingen kunnen buiten het georganiseerde ontruimingsgebied komen te liggen terwijl de gevelbrand verder uitbreidt.",
+          "rationale": "Bij een uitbreidende gevelbrand is niet alleen de afstand tot de oorspronkelijke brandverdieping bepalend. De uitbreiding kan meerdere verdiepingen via de gevel bedreigen en vraagt daarom om een gebouwbrede beoordeling.",
+          "label": "Operationele duiding",
+          "quality": -1,
+          "deepDive": "Bij een uitbreidende gevelbrand is niet alleen de afstand tot de oorspronkelijke brandverdieping bepalend. De uitbreiding kan meerdere verdiepingen via de gevel bedreigen en vraagt daarom om een gebouwbrede beoordeling."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Keuze bij mogelijke geveluitbreiding en ontruimingsstrategie.",
-      "sourceFrame": "VRR scenario 4 gaat uit van een gevelbrand die op meerdere plaatsen naar binnen kan doorslaan en vanwege de hoogte niet vanaf straatniveau adequaat bereikbaar is. De commanders intent is duidelijk: zo snel mogelijk het gebouw volledig ontruimen, beginnen met de verdiepingen boven de brand en vluchtwegen zo goed mogelijk beschermen. Pas daarna wordt beoordeeld of een verantwoorde bluspoging mogelijk is.\n\nIn de taakverdeling start de eerste eenheid met buitenverkenning, bepaling van onveilig gebied en veilige toegang. Bij uitbreidende gevelbrand wordt het ontruimingsalarm zo snel mogelijk geactiveerd. Verkenning en ontruiming op de brandverdieping gaan zelfs vóór redding uit de brandruimte. Andere ploegen ondersteunen de ontruiming boven de brand; trappenhuisbescherming bewaakt beide trappenhuizen en verwijst vluchtenden.\n\nDe prioriteringstabel zet bij scenario 4 Ontruiming en Verkenning/Compartimentering vóór interventie; interventie is in eerste instantie niet als primaire taak opgenomen. In de toelichting staat dat geen tijd verloren mag gaan met een gevelbrand die door snelheid en hevigheid meerdere verdiepingen kan bedreigen.\n\nDit scenario illustreert ook de koppeling met Coandă: vlammen/rook die langs de gevel omhoog bewegen betekenen dat niet alleen de direct bovenliggende etages relevant zijn. De gehele bovenliggende zone kan door overslag, rookinlaat of meerdere doorslagen worden bedreigd.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), scenario 4 p. 24-27 en Coandă p. 9.",
-      "situationDetail": {
-        "time": "15:18 uur — geveluitbreiding zichtbaar",
-        "intro": [
-          "Buiten worden vlammen gezien die langs de gevel omhoog trekken. Rook bereikt ramen van hogere verdiepingen en de brand is vanaf straatniveau niet effectief bereikbaar."
-        ],
-        "observations": [
-          "gevelbrand breidt verticaal uit;",
-          "meerdere hogere verdiepingen kunnen tegelijk worden bedreigd;",
-          "rook kan via gevelopeningen of luchtinlaten naar binnen komen;",
-          "straatniveau biedt onvoldoende bereik voor effectieve bestrijding;",
-          "ontruiming kost tijd en capaciteit."
-        ],
-        "after": [
-          "De inzet staat nu voor een fundamentele prioriteitskeuze: eerst proberen de gevelbrand te beïnvloeden of de beschikbare tijd gebruiken om bewoners uit de bedreigde zone te krijgen."
-        ],
-        "prompt": "Welke koers kies je?"
+      "discussionQuestion": "Welke informatie bepaalt voor jou of geveluitbreiding reden is om over te gaan naar scenario 4, en wat verandert er dan concreet in je inzet?",
+      "media": {
+        "src": "assets/vggm/gevelbrand.jpeg",
+        "caption": "Geveluitbreiding kan meerdere bouwlagen tegelijk bedreigen",
+        "source": "VGGM lesmateriaal – slide 38"
       },
-      "systems": [],
-      "discussionQuestion": "Welke signalen maken dat je een gekozen inzetstrategie moet aanpassen of beëindigen?"
+      "systems": [
+        "CAN",
+        "FABCM"
+      ],
+      "deepDive": "Bij scenario 4 breidt de brand zich via of langs de gevel uit en kunnen meerdere verdiepingen tegelijkertijd worden bedreigd. Het incident krijgt daarmee een gebouwbrede dimensie. Het primaire doel wordt het behouden van bruikbare vluchtwegen en het creëren van tijd voor ontruiming. Brandbestrijding blijft relevant wanneer daarmee uitbreiding aantoonbaar kan worden afgeremd."
     },
     {
       "id": 18,
-      "title": "Laatste heroverweging",
-      "situation": "De inzet duurt 35+ minuten. Afhankelijk van eerdere keuzes zijn vluchtwegen, logistiek en liftstatus verschillend. De brand kan inmiddels onder controle zijn óf de situatie kan verder zijn geëscaleerd.",
+      "title": "Integrale heroverweging",
+      "role": "Bevelvoerder",
+      "roleNote": "Beoordeel opnieuw of het actuele incidentbeeld, de gekozen tactiek en de beschikbare capaciteit nog bij elkaar passen.",
+      "situation": "De inzet duurt inmiddels ruim 35 minuten. Meerdere ploegen zijn ingezet en de situatie is gedurende de inzet veranderd. De status van de brand, vluchtwegen, lift, logistiek, ontruiming en personele belasting vraagt opnieuw om een gezamenlijk beeld. Sommige problemen kunnen inmiddels zijn opgelost, terwijl andere zijn ontstaan of verslechterd.",
       "choices": [
         {
           "id": "A",
-          "text": "Expliciet heroverwegingsmoment: scenario, constructieve/WBDBO-informatie, vluchtwegen, personeelsbelasting en ontruiming opnieuw beoordelen.",
-          "consequence": "De commandovoering maakt de resterende risico’s zichtbaar en past inzet waar nodig aan.",
-          "rationale": "Sterke afsluitende beslisstap; tijdsbewustzijn als besluitondersteuning.",
-          "label": "Sterk",
+          "text": "Een expliciet heroverwegingsmoment organiseren en het totale incidentbeeld opnieuw beoordelen: brandontwikkeling en scenario, vluchtwegen, gebouwinformatie, ontruiming, logistiek en belasting van de ingezette ploegen.",
+          "consequence": "Openstaande risico’s en taken worden opnieuw zichtbaar. Op basis daarvan kunnen prioriteiten, opdrachten, capaciteit en tactiek worden aangepast.",
+          "rationale": "Bij een langdurige hoogbouwinzet kan een eerder juist besluit door veranderende omstandigheden niet meer passend zijn. Periodiek opnieuw beoordelen voorkomt dat de inzet ongemerkt blijft voortbouwen op een verouderd incidentbeeld.",
+          "label": "Operationele duiding",
           "quality": 1,
-          "deepDive": "Een expliciet heroverwegingsmoment maakt zichtbaar wat nog klopt en wat niet. WBDBO, vluchtwegstatus, scenario, personeelsbelasting, liftstatus en ontruiming worden opnieuw samengebracht. Daarmee wordt voorkomen dat de organisatie op automatische piloot doorgaat terwijl het incident is veranderd.",
-          "consequenceDetail": {
-            "time": "15:23 uur — 35+ minuten na start inzet — gevolg van keuze A",
-            "paragraphs": [
-              "De commandovoering organiseert een expliciet heroverwegingsmoment. Scenario, WBDBO/constructieve informatie, vluchtwegen, personele belasting, lift/logistiek en ontruiming worden opnieuw naast elkaar gelegd."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Is precies de bedoeling van de VRR-tijdlijnen: expliciet heroverwegen en de actuele situatie valideren.",
-                  "VRR heeft een apart hoofdstuk over tijdlijnen omdat tijdsbewustzijn bij complexe hoogbouwincidenten onder druk staat. De tijdlijnen zijn geen automatische “stopklok”, maar beslisondersteuning. De operationeel leidinggevende/TOA valideert telkens of de theoretische risico’s daadwerkelijk aanwezig zijn en welke actie nodig is.",
-                  "De bron koppelt drie onderwerpen aan de tijd: constructieve sterkte/WBDBO, de inzet van de brandweer en de tijd die bewoners nodig hebben om te ontvluchten. Voor gebouwen <70 m, 70-200 m en >200 m worden verschillende WBDBO-/ontruimingstijdlijnen weergegeven. Voor 70-200 m wordt in de figuur 105 minuten WBDBO van het trappenhuis gebruikt; voor >200 m 150 minuten. De bron rekent algemeen met ongeveer 30 minuten na melding voordat daadwerkelijke blussing aanvangt.",
-                  "Belangrijk is de nuance rond WBDBO. De waarde komt uit een gestandaardiseerde brandproef; de echte brand volgt niet exact dezelfde curve. Een scheiding kan langer standhouden, maar faalt in de praktijk vaak bij aansluitingen en doorvoeren. Wachten tot een scheiding bijna faalt kan betekenen dat er onvoldoende tijd resteert om bewoners te ontruimen, bijvoorbeeld wanneer brand/rook het trappenhuis al bereikt."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR benoemt daarnaast biobased constructiematerialen als voorbeeld waarbij constructiedelen in de dooffase kunnen blijven branden of gloeien. Water op het vuur kan dan nodig blijven om sterkte-afname te stoppen of vertragen. Dit onderstreept dat “35 minuten voorbij” op zichzelf geen tactisch antwoord geeft: actuele brand-, constructie-, vluchtweg- en personeelsinformatie moet opnieuw worden gewogen.",
-                  "Voorbeeld VRR: een wand/vloer met 60 minuten testwaarde kan in de praktijk langer standhouden, maar aansluitingen en doorvoeren kunnen eerder falen.",
-                  "Voorbeeld VRR: bij biobased constructies kan de constructie in de dooffase blijven branden/gloeien, waardoor sterkte verder afneemt.",
-                  "De tijdlijn helpt bepalen wanneer een besluit tot gedeeltelijke of totale ontruiming nog op tijd moet worden genomen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De commandovoering organiseert een expliciet heroverwegingsmoment. Scenario, WBDBO/constructieve informatie, vluchtwegen, personele belasting, lift/logistiek en ontruiming worden opnieuw naast elkaar gelegd."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze B: Laat besluitvorming te veel afhangen van een nieuwe noodmelding en kan sluipende verslechtering van WBDBO, vluchtweg of logistiek missen.",
-                  "Keuze C: Maakt van tijd een harde stopregel, terwijl VRR tijd juist als toets-/heroverwegingsmoment gebruikt."
-                ]
-              }
-            ],
-            "assessment": "Sterke en goed uitlegbare keuze.",
-            "stateEffects": [
-              "heroverweging: uitgevoerd",
-              "actueel risicobeeld: vernieuwd",
-              "inzetplan: zo nodig aangepast"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Bij een langdurige hoogbouwinzet kan een eerder juist besluit door veranderende omstandigheden niet meer passend zijn. Periodiek opnieuw beoordelen voorkomt dat de inzet ongemerkt blijft voortbouwen op een verouderd incidentbeeld."
         },
         {
           "id": "B",
           "text": "Doorgaan volgens het bestaande plan zolang er geen nieuwe noodmelding komt.",
-          "consequence": "Rust in de operatie, maar sluipende risico’s kunnen onopgemerkt blijven.",
-          "rationale": "Kwetsbaar bij langlopende hoogbouwinzet.",
-          "label": "Verdedigbaar maar kwetsbaar",
+          "consequence": "De bestaande inzet blijft ongestoord doorlopen, maar geleidelijke veranderingen in rookverspreiding, personele belasting, logistiek of vluchtwegen kunnen buiten beeld blijven.",
+          "rationale": "Het ontbreken van een noodmelding betekent niet dat het incidentbeeld onveranderd is. Bij een langdurige inzet moet ook zonder directe aanleiding bewust worden heroverwogen.",
+          "label": "Operationele duiding",
           "quality": -1,
-          "deepDive": "Een stabiel plan geeft rust, maar hoogbouw kent sluipende veranderingen: water in schachten, CO op andere verdiepingen, vermoeidheid, rook in vluchtwegen en veranderende gevelbrand. Zonder gepland heroverwegen worden die signalen sneller los van elkaar beoordeeld.",
-          "consequenceDetail": {
-            "time": "15:23 uur — 35+ minuten na start inzet — gevolg van keuze B",
-            "paragraphs": [
-              "De inzet loopt door volgens het bestaande plan. Zolang niemand een nieuwe noodmelding doet, worden sluipende veranderingen niet systematisch opnieuw beoordeeld."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Laat besluitvorming te veel afhangen van een nieuwe noodmelding en kan sluipende verslechtering van WBDBO, vluchtweg of logistiek missen.",
-                  "VRR heeft een apart hoofdstuk over tijdlijnen omdat tijdsbewustzijn bij complexe hoogbouwincidenten onder druk staat. De tijdlijnen zijn geen automatische “stopklok”, maar beslisondersteuning. De operationeel leidinggevende/TOA valideert telkens of de theoretische risico’s daadwerkelijk aanwezig zijn en welke actie nodig is.",
-                  "De bron koppelt drie onderwerpen aan de tijd: constructieve sterkte/WBDBO, de inzet van de brandweer en de tijd die bewoners nodig hebben om te ontvluchten. Voor gebouwen <70 m, 70-200 m en >200 m worden verschillende WBDBO-/ontruimingstijdlijnen weergegeven. Voor 70-200 m wordt in de figuur 105 minuten WBDBO van het trappenhuis gebruikt; voor >200 m 150 minuten. De bron rekent algemeen met ongeveer 30 minuten na melding voordat daadwerkelijke blussing aanvangt.",
-                  "Belangrijk is de nuance rond WBDBO. De waarde komt uit een gestandaardiseerde brandproef; de echte brand volgt niet exact dezelfde curve. Een scheiding kan langer standhouden, maar faalt in de praktijk vaak bij aansluitingen en doorvoeren. Wachten tot een scheiding bijna faalt kan betekenen dat er onvoldoende tijd resteert om bewoners te ontruimen, bijvoorbeeld wanneer brand/rook het trappenhuis al bereikt."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR benoemt daarnaast biobased constructiematerialen als voorbeeld waarbij constructiedelen in de dooffase kunnen blijven branden of gloeien. Water op het vuur kan dan nodig blijven om sterkte-afname te stoppen of vertragen. Dit onderstreept dat “35 minuten voorbij” op zichzelf geen tactisch antwoord geeft: actuele brand-, constructie-, vluchtweg- en personeelsinformatie moet opnieuw worden gewogen.",
-                  "Voorbeeld VRR: een wand/vloer met 60 minuten testwaarde kan in de praktijk langer standhouden, maar aansluitingen en doorvoeren kunnen eerder falen.",
-                  "Voorbeeld VRR: bij biobased constructies kan de constructie in de dooffase blijven branden/gloeien, waardoor sterkte verder afneemt.",
-                  "De tijdlijn helpt bepalen wanneer een besluit tot gedeeltelijke of totale ontruiming nog op tijd moet worden genomen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "De inzet loopt door volgens het bestaande plan. Zolang niemand een nieuwe noodmelding doet, worden sluipende veranderingen niet systematisch opnieuw beoordeeld."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Is precies de bedoeling van de VRR-tijdlijnen: expliciet heroverwegen en de actuele situatie valideren.",
-                  "Keuze C: Maakt van tijd een harde stopregel, terwijl VRR tijd juist als toets-/heroverwegingsmoment gebruikt."
-                ]
-              }
-            ],
-            "assessment": "Verdedigbare afweging met duidelijke aandachtspunten.",
-            "stateEffects": [
-              "heroverweging: uitgesteld",
-              "sluipende risico’s: mogelijk gemist",
-              "plan: ongewijzigd"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "deepDive": "Het ontbreken van een noodmelding betekent niet dat het incidentbeeld onveranderd is. Bij een langdurige inzet moet ook zonder directe aanleiding bewust worden heroverwogen."
         },
         {
           "id": "C",
           "text": "Automatisch alle binneninzet beëindigen omdat de inzet lang duurt.",
-          "consequence": "Veiligheid wordt zeer conservatief benaderd, maar tijd alleen is geen voldoende reden zonder actuele risicobeoordeling.",
-          "rationale": "Te absoluut; tijdlijn ondersteunt heroverweging, niet automatisch terugtrekken.",
-          "label": "Te absoluut",
-          "quality": -2,
-          "deepDive": "Langdurigheid alleen maakt een binneninzet niet automatisch onverantwoord. Tijd is wel een belangrijke waarschuwing omdat brandwerendheid, ademlucht, constructie en logistiek niet onbeperkt zijn. De passende reactie is daarom opnieuw beoordelen en zo nodig aanpassen, niet automatisch stoppen.",
-          "consequenceDetail": {
-            "time": "15:23 uur — 35+ minuten na start inzet — gevolg van keuze C",
-            "paragraphs": [
-              "Alle binneninzet wordt op basis van verstreken tijd beëindigd. Daarmee wordt tijd als harde grens gebruikt zonder eerst te toetsen of de actuele omstandigheden dit verlangen."
-            ]
-          },
-          "debrief": {
-            "sections": [
-              {
-                "title": "Waarom past dit bij de VRR-bron?",
-                "paragraphs": [
-                  "Maakt van tijd een harde stopregel, terwijl VRR tijd juist als toets-/heroverwegingsmoment gebruikt.",
-                  "VRR heeft een apart hoofdstuk over tijdlijnen omdat tijdsbewustzijn bij complexe hoogbouwincidenten onder druk staat. De tijdlijnen zijn geen automatische “stopklok”, maar beslisondersteuning. De operationeel leidinggevende/TOA valideert telkens of de theoretische risico’s daadwerkelijk aanwezig zijn en welke actie nodig is.",
-                  "De bron koppelt drie onderwerpen aan de tijd: constructieve sterkte/WBDBO, de inzet van de brandweer en de tijd die bewoners nodig hebben om te ontvluchten. Voor gebouwen <70 m, 70-200 m en >200 m worden verschillende WBDBO-/ontruimingstijdlijnen weergegeven. Voor 70-200 m wordt in de figuur 105 minuten WBDBO van het trappenhuis gebruikt; voor >200 m 150 minuten. De bron rekent algemeen met ongeveer 30 minuten na melding voordat daadwerkelijke blussing aanvangt.",
-                  "Belangrijk is de nuance rond WBDBO. De waarde komt uit een gestandaardiseerde brandproef; de echte brand volgt niet exact dezelfde curve. Een scheiding kan langer standhouden, maar faalt in de praktijk vaak bij aansluitingen en doorvoeren. Wachten tot een scheiding bijna faalt kan betekenen dat er onvoldoende tijd resteert om bewoners te ontruimen, bijvoorbeeld wanneer brand/rook het trappenhuis al bereikt."
-                ]
-              },
-              {
-                "title": "Welke technische of tactische nuance geeft VRR mee?",
-                "paragraphs": [
-                  "VRR benoemt daarnaast biobased constructiematerialen als voorbeeld waarbij constructiedelen in de dooffase kunnen blijven branden of gloeien. Water op het vuur kan dan nodig blijven om sterkte-afname te stoppen of vertragen. Dit onderstreept dat “35 minuten voorbij” op zichzelf geen tactisch antwoord geeft: actuele brand-, constructie-, vluchtweg- en personeelsinformatie moet opnieuw worden gewogen.",
-                  "Voorbeeld VRR: een wand/vloer met 60 minuten testwaarde kan in de praktijk langer standhouden, maar aansluitingen en doorvoeren kunnen eerder falen.",
-                  "Voorbeeld VRR: bij biobased constructies kan de constructie in de dooffase blijven branden/gloeien, waardoor sterkte verder afneemt.",
-                  "De tijdlijn helpt bepalen wanneer een besluit tot gedeeltelijke of totale ontruiming nog op tijd moet worden genomen."
-                ]
-              },
-              {
-                "title": "Wat betekent dit operationeel in deze casus?",
-                "paragraphs": [
-                  "Alle binneninzet wordt op basis van verstreken tijd beëindigd. Daarmee wordt tijd als harde grens gebruikt zonder eerst te toetsen of de actuele omstandigheden dit verlangen."
-                ]
-              },
-              {
-                "title": "Hoe verhoudt dit zich tot de andere opties?",
-                "paragraphs": [
-                  "Keuze A: Is precies de bedoeling van de VRR-tijdlijnen: expliciet heroverwegen en de actuele situatie valideren.",
-                  "Keuze B: Laat besluitvorming te veel afhangen van een nieuwe noodmelding en kan sluipende verslechtering van WBDBO, vluchtweg of logistiek missen."
-                ]
-              }
-            ],
-            "assessment": "Te absolute keuze voor het beschikbare beeld.",
-            "stateEffects": [
-              "binneninzet: automatisch beëindigd",
-              "tijd als stopregel: te absoluut",
-              "mogelijk veilige inzetkans: opgegeven"
-            ],
-            "closing": "Rolafspraak: de bevelvoerder gebruikt de actuele terugmeldingen om de tactische en organisatorische inzet te sturen."
-          }
+          "consequence": "De blootstelling van de binnenploegen stopt, maar mogelijk nog effectieve en verantwoorde brandbestrijdings-, reddings- en ontruimingsactiviteiten worden eveneens beëindigd.",
+          "rationale": "Tijdsduur is aanleiding voor heroverweging, maar geen zelfstandige reden om een binneninzet automatisch te beëindigen. Het actuele risico en het verwachte effect van de inzet moeten bepalend blijven.",
+          "label": "Operationele duiding",
+          "quality": 0,
+          "deepDive": "Tijdsduur is aanleiding voor heroverweging, maar geen zelfstandige reden om een binneninzet automatisch te beëindigen. Het actuele risico en het verwachte effect van de inzet moeten bepalend blijven."
         }
       ],
-      "role": "Bevelvoerder",
-      "roleNote": "Expliciete heroverweging van de totale inzet.",
-      "sourceFrame": "VRR heeft een apart hoofdstuk over tijdlijnen omdat tijdsbewustzijn bij complexe hoogbouwincidenten onder druk staat. De tijdlijnen zijn geen automatische “stopklok”, maar beslisondersteuning. De operationeel leidinggevende/TOA valideert telkens of de theoretische risico’s daadwerkelijk aanwezig zijn en welke actie nodig is.\n\nDe bron koppelt drie onderwerpen aan de tijd: constructieve sterkte/WBDBO, de inzet van de brandweer en de tijd die bewoners nodig hebben om te ontvluchten. Voor gebouwen <70 m, 70-200 m en >200 m worden verschillende WBDBO-/ontruimingstijdlijnen weergegeven. Voor 70-200 m wordt in de figuur 105 minuten WBDBO van het trappenhuis gebruikt; voor >200 m 150 minuten. De bron rekent algemeen met ongeveer 30 minuten na melding voordat daadwerkelijke blussing aanvangt.\n\nBelangrijk is de nuance rond WBDBO. De waarde komt uit een gestandaardiseerde brandproef; de echte brand volgt niet exact dezelfde curve. Een scheiding kan langer standhouden, maar faalt in de praktijk vaak bij aansluitingen en doorvoeren. Wachten tot een scheiding bijna faalt kan betekenen dat er onvoldoende tijd resteert om bewoners te ontruimen, bijvoorbeeld wanneer brand/rook het trappenhuis al bereikt.\n\nVRR benoemt daarnaast biobased constructiematerialen als voorbeeld waarbij constructiedelen in de dooffase kunnen blijven branden of gloeien. Water op het vuur kan dan nodig blijven om sterkte-afname te stoppen of vertragen. Dit onderstreept dat “35 minuten voorbij” op zichzelf geen tactisch antwoord geeft: actuele brand-, constructie-, vluchtweg- en personeelsinformatie moet opnieuw worden gewogen.\n\nVoorbeeld VRR: een wand/vloer met 60 minuten testwaarde kan in de praktijk langer standhouden, maar aansluitingen en doorvoeren kunnen eerder falen.\n\nVoorbeeld VRR: bij biobased constructies kan de constructie in de dooffase blijven branden/gloeien, waardoor sterkte verder afneemt.\n\nDe tijdlijn helpt bepalen wanneer een besluit tot gedeeltelijke of totale ontruiming nog op tijd moet worden genomen.\n\nBronbasis: Brandweer Rotterdam-Rijnmond, Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, V1.0 (2024), p. 28-31.",
-      "situationDetail": {
-        "time": "15:23 uur — 35+ minuten na start inzet",
-        "intro": [
-          "De inzet loopt inmiddels ruim een half uur. Afhankelijk van eerdere beslissingen zijn vluchtwegen, logistiek, liftstatus en personele belasting verschillend ontwikkeld."
-        ],
-        "observations": [
-          "brand kan onder controle zijn of opnieuw uitbreiden;",
-          "WBDBO en constructieve informatie moeten in actuele context worden beoordeeld;",
-          "vluchtwegen kunnen nog bruikbaar of juist bedreigd zijn;",
-          "personele en logistieke belasting is toegenomen;",
-          "ontruiming kan lokaal, uitgebreid of totaal zijn geworden."
-        ],
-        "after": [
-          "Tijd is hier geen automatische stopregel. Het is een aanleiding om expliciet opnieuw te bepalen welke risico’s nu werkelijk aanwezig zijn en of de gekozen inzet nog klopt.",
-          "Dit moment wordt tevens gebruikt als FABCM-heroverweging: welke afwijkende feiten zijn erbij gekomen, wat betekenen die, welk besluit volgt, wie moet dat weten en welk effect moet daarna worden gemonitord?"
-        ],
-        "prompt": "Wat is je laatste expliciete beslisstap?"
+      "discussionQuestion": "Welke informatie heb je nodig om tijdens een langdurige hoogbouwinzet te bepalen of je de bestaande tactiek voortzet, aanpast of beëindigt?",
+      "media": {
+        "src": "assets/vggm/orientatie_object.jpg",
+        "caption": "Heroriëntatie op object, omstandigheden en inzetstrategie",
+        "source": "VGGM lesmateriaal – slide 76"
       },
       "systems": [
-        "Do’s & Don’ts LD/O-bundels"
+        "FABCM",
+        "CAN"
       ],
-      "discussionQuestion": "Welke informatie wil je bij de eindbeoordeling bevestigd hebben voordat je de situatie als beheerst beschouwt?"
+      "deepDive": "Tijd is bij een langdurige hoogbouwinzet een belangrijke besluitvormingsfactor, maar geen automatische stopklok. Bouwkundige informatie, brandontwikkeling, rookverspreiding, vermoeidheid, ademlucht, logistiek en vluchtwegen veranderen tijdens de inzet. Een heroverweging brengt steeds drie vragen samen: wat is het actuele incidentbeeld, wat proberen we nu te bereiken en zijn onze mensen, middelen en tactiek daar nog passend voor?"
     }
   ],
   "glossary": {
-    "Stack-effect": {
-      "definition": "Door temperatuurverschil tussen binnen- en buitenlucht ontstaat in een hoog gebouw een verticale luchtstroming. Is het binnen warmer dan buiten, dan is doorgaans een opwaartse stroming aanwezig.",
-      "operational": "Let op rook en CO boven én onder de brand, openstaande deuren en ramen, seizoen/buitentemperatuur en veranderingen in drukverhoudingen. Openingen kunnen rook en CO over meerdere verdiepingen transporteren.",
-      "video": "https://youtu.be/CoTqobi4J40?si=yPRLE63CCivy4dAg"
-    },
-    "Reverse stack": {
-      "definition": "Omgekeerde stack-richting. Wanneer het gebouw binnen koeler is dan buiten, kan de verticale luchtstroming juist neerwaarts gericht zijn.",
-      "operational": "Rook en CO kunnen hierdoor ook onder de brandverdieping terechtkomen. Neem dit mee bij verkenning, CO-metingen en het kiezen van veilige vlucht- en inzetwegen.",
-      "video": "https://youtu.be/CoTqobi4J40?si=yPRLE63CCivy4dAg"
-    },
-    "Coandă-effect": {
-      "definition": "Rook en hete gassen die uit een opening treden, kunnen door de luchtstroming langs de gevel omhoog worden geleid en als het ware de gevel blijven volgen.",
-      "operational": "Controleer niet alleen de brandverdieping, maar ook bovenliggende verdiepingen, ramen, gevelopeningen en luchtinlaten. Rookverspreiding langs de gevel kan hoger gelegen bouwlagen bedreigen.",
-      "video": "https://youtu.be/wF3YgP4Ag04?si=14DGjZZjriKNb1zj"
-    },
-    "Wind Driven Fire": {
-      "definition": "Winddruk op een opening in het brandcompartiment kan de brand sterk aanwakkeren en hete rookgassen krachtig door het compartiment richting gang, voorportaal of trappenhuis sturen.",
-      "operational": "Beoordeel windrichting vroeg, beheers openingen, voorkom een ongecontroleerde flowpath en zorg voor voldoende koelend vermogen en back-up voordat wordt toegetreden.",
-      "video": "https://youtu.be/5gOrR9IoB8Y?si=wDkTGTgQttDiKKJn"
-    },
-    "Flowpath": {
-      "definition": "De route waarlangs lucht, rook en hete gassen zich bewegen tussen een toevoeropening en een afvoeropening, gestuurd door druk- en temperatuurverschillen.",
-      "operational": "Iedere geopende deur, raam of andere opening kan de flowpath veranderen. Daardoor kan een veilige positie plotseling onderdeel worden van de uitstroomroute van hete rookgassen.",
-      "video": "https://youtu.be/IbMCRldLu5M?si=liYGTdUR6RRFgZ2J"
-    },
-    "Wokkeltrappenhuis": {
-      "definition": "Twee onafhankelijke trappen die in één schachtconstructie zijn vervlochten en brandwerend van elkaar zijn gescheiden.",
-      "operational": "Bepaal expliciet welk trappenhuis voor inzet en welk voor ontvluchting/ontruiming wordt gebruikt."
-    },
-    "Bruggenhoofd": {
-      "definition": "Een veilige operationele uitvalsbasis nabij de brand, van waaruit leiding, logistiek, communicatie, back-up en materiaal worden georganiseerd.",
-      "operational": "Richt het bruggenhoofd in een rookvrije en beschermde ruimte in en organiseer van daaruit onder meer coördinatie, ademlucht, materiaal, registratie en logistiek. De aangeleverde VGGM-aandachtskaart is als uitklapbare bron toegevoegd.",
-      "pdf": "assets/custom/bruggenhoofd_aandachtskaart.pdf"
-    },
     "VRICOL": {
       "definition": "Verkenning, Redding, Interventie, Compartimentering, Ontruiming en Logistiek.",
-      "operational": "In deze webcasus uitsluitend een didactisch vergelijkingsmodel om te toetsen of de inzet voldoende breed blijft. VRICOL wordt hier niet als VGGM-procedure gepresenteerd."
+      "operational": "In deze webcasus uitsluitend een didactisch vergelijkingsmodel om te toetsen of de inzet voldoende breed blijft; geen vastgestelde VGGM-inzetprocedure."
+    },
+    "Stack-effect": {
+      "definition": "Door temperatuur- en dichtheidsverschillen kan in een hoog gebouw een verticale luchtstroming ontstaan.",
+      "operational": "Gebruik onverwachte rook- of CO-metingen, openingen en temperatuurverschillen als aanwijzingen; toets de hypothese met vervolgwaarnemingen."
+    },
+    "Reverse stack": {
+      "definition": "Omgekeerde verticale luchtstroming, bijvoorbeeld wanneer de binnenlucht koeler is dan buiten.",
+      "operational": "Rook en CO kunnen ook onder de brandverdieping terechtkomen."
+    },
+    "Wind Driven Fire": {
+      "definition": "Winddruk op een opening kan brand en hete rookgassen krachtig door een compartiment sturen.",
+      "operational": "Beoordeel windrichting, openingen, stroming en beschikbare koelende slagkracht voordat wordt toegetreden."
+    },
+    "Flowpath": {
+      "definition": "De route waarlangs lucht, rook en hete gassen zich bewegen tussen toevoer- en afvoeropeningen.",
+      "operational": "Iedere geopende deur of raam kan het stromingspad veranderen."
+    },
+    "Bruggenhoofd": {
+      "definition": "Een operationele uitvalsbasis nabij de brand voor leiding, logistiek, communicatie, back-up en materiaal.",
+      "operational": "Kies een locatie die rookvrij en bereikbaar blijft en bewaak de omstandigheden tijdens de inzet."
     },
     "Compartimentering": {
-      "definition": "Het opdelen van een gebouw in brand- en/of rookwerend gescheiden delen om verspreiding van brand en rook te beperken.",
-      "operational": "Gebruik gebouwinformatie om te herkennen welke scheidingen rookwerend of brandwerend zijn. Houd deuren in deze scheidingen gesloten en bewaak vooral de scheidingen rond vluchtwegen en trappenhuizen."
+      "definition": "Brand- en rookwerende scheidingen die verspreiding van brand en rook moeten vertragen.",
+      "operational": "Gebruik objectinformatie als hypothese en toets de feitelijke werking aan waarnemingen."
     },
     "WBDBO": {
-      "definition": "Weerstand tegen BrandDoorslag en BrandOverslag. Een maat voor de tijd waarin brand zich niet van het ene naar het andere brandcompartiment mag uitbreiden.",
-      "operational": "Gebruik de opgegeven WBDBO als beslisinformatie voor tijd, compartimentering en ontruiming, maar behandel de waarde niet als absolute garantie tijdens een incident."
+      "definition": "Weerstand tegen BrandDoorslag en BrandOverslag.",
+      "operational": "Gebruik de waarde als beslisinformatie, niet als absolute garantie over het gedrag tijdens het incident."
     },
     "Brandweerlift": {
-      "definition": "Lift met aangepaste bediening en voorzieningen voor gebruik door de brandweer tijdens brand.",
-      "operational": "Controleer vóór gebruik op rook en water, houd de lift onder brandweerbeheer en gebruik hem alleen zolang de omstandigheden veilig blijven."
-    },
-    "Ontruimingslift": {
-      "definition": "Een lift die specifiek is ontworpen om personen te ondersteunen bij ontvluchting of ontruiming.",
-      "operational": "Een brandweerlift is niet automatisch een ontruimingslift. Controleer welk type lift aanwezig is en waarvoor die volgens het gebouwontwerp bedoeld is."
-    },
-    "Overdrukinstallatie": {
-      "definition": "Een installatie die door middel van drukverschil probeert te voorkomen dat rook een trappenhuis of voorportaal binnendringt.",
-      "operational": "Openstaande deuren, ventilatie en andere openingen kunnen het drukconcept verstoren. Controleer waar de overdruk daadwerkelijk aanwezig is en of de vluchtweg rookvrij blijft."
+      "definition": "Lift met voorzieningen voor gebruik door de brandweer tijdens brand.",
+      "operational": "Blijf de bruikbaarheid tijdens de gehele inzet beoordelen op basis van techniek én waarnemingen."
     },
     "Smokestopper": {
-      "definition": "Middel om rookuitstroom via een deuropening te beperken terwijl gecontroleerde inzet mogelijk blijft.",
-      "operational": "Ondersteunt deurmanagement en anti-ventilatie en helpt gang, voorportaal en vluchtweg rookarmer te houden."
-    },
-    "Commandoruimte": {
-      "definition": "De centrale ruimte in het gebouw waar informatie en bediening van brandveiligheidsinstallaties samenkomen.",
-      "operational": "Gebruik de commandoruimte voor informatie over BMI/BMC en meldlocaties, sprinklerstatus, brandweer- en ontruimingsliften, overdrukinstallatie, interne bluswatervoorziening/stijgleiding, noodstroom en interne communicatie/intercom. Koppel die informatie altijd aan actuele waarnemingen buiten en op hoogte."
+      "definition": "Middel om rookuitstroom via een deuropening te beperken.",
+      "operational": "Ondersteunt deurmanagement; controleer altijd of het beoogde effect daadwerkelijk wordt bereikt."
     },
     "Offensief binnen": {
-      "definition": "Inzet waarbij de brandweer het brandcompartiment binnengaat om de brand actief te bestrijden.",
-      "operational": "Alleen passend wanneer risico, slagkracht en vlucht-/terugtrekmogelijkheden dit toelaten."
+      "definition": "Binneninzet gericht op actieve brandbestrijding in het brandcompartiment.",
+      "operational": "Alleen passend wanneer slagkracht, route en terugtrekmogelijkheid voldoende zijn."
     },
     "Defensief binnen": {
-      "definition": "Inzet vanuit een veiliger deel van het gebouw met focus op begrenzen, beschermen en voorbereiden.",
-      "operational": "Bij scenario 2/3 kan dit nodig zijn voordat een offensieve binneninzet verantwoord is."
-    },
-    "Transitional attack": {
-      "definition": "Een tactiek waarbij de brand eerst van buitenaf wordt beïnvloed of gekoeld, waarna wordt overgegaan naar een binneninzet.",
-      "operational": "Alleen zinvol als bereik, effect en coördinatie duidelijk zijn. Externe koeling mag de daaropvolgende binneninzet niet onnodig vertragen of onduidelijk maken.",
-      "video": "https://youtu.be/Qmw2DT4betA?si=vTfjhR5Ga34ASpRZ"
-    },
-    "Floor-below nozzle": {
-      "definition": "Een tactiek waarbij vanaf de onderliggende verdieping water in de brandruimte of brandgevel wordt gebracht, bijvoorbeeld wanneer directe benadering van de brandverdieping lastig of onveilig is.",
-      "operational": "Alleen bruikbaar als bouwkundige situatie, bereikbaarheid en coördinatie dit toelaten. Het is een middel om invloed op de brand te krijgen, niet automatisch een vervanging van verdere inzetvoorbereiding.",
-      "video": "https://youtu.be/4B5mdCBNdj8?si=KwjRh7W9na3BsK3K"
-    },
-    "Basisprincipes": {
-      "definition": "Basisprincipes brandbestrijding verbinden rondomverkenning, brandgedrag, koelend vermogen, openingen/toegangen en bereikbaarheid tot één operationeel beeld.",
-      "operational": "Gebruik de basisprincipes als samenhangend denkraam: verken rondom, bepaal locatie en omvang, lees RSTV-signalen, beoordeel openingen en bereikbaarheid en stem koelend vermogen daarop af."
-    },
-    "Branddriehoek": {
-      "definition": "Brand kan alleen blijven bestaan als brandstof, zuurstof en voldoende temperatuur gelijktijdig aanwezig zijn.",
-      "operational": "Brandbestrijding beïnvloedt één of meer zijden van de driehoek: koelen, zuurstoftoevoer beperken of brandstof wegnemen/scheiden."
-    },
-    "RSTV": {
-      "definition": "Gebruik RSTV-signalen om het brandbeeld dynamisch te lezen: rook, stroming, temperatuur en vlammen. In deze casus worden die waarnemingen steeds gekoppeld aan wind, openingen, verdieping en vluchtwegen.",
-      "operational": "Gebruik veranderingen in rook, stroming, temperatuur en vlammen tijdens de hele inzet als signalen voor brandontwikkeling en veranderende ventilatiecondities."
-    },
-    "Kenmerkenschema": {
-      "definition": "Gebruik kenmerken van brand, gebouw, mens, omgeving en interventie om het inzetdoel en de randvoorwaarden te bepalen. Bij hoogbouw wegen gebouwvoorzieningen, verticale verplaatsing, bewonersgedrag en rookverspreiding zwaar mee.",
-      "operational": "Combineer mens-, gebouw-, brand-, omgevings- en interventiekenmerken om inzetdoel en randvoorwaarden te bepalen."
-    },
-    "Kwadrantenmodel": {
-      "definition": "Gebruik het kwadrantenmodel om bewust te kiezen tussen offensief of defensief en binnen of buiten. De gekozen positie moet blijven passen bij het actuele brandbeeld en kan tijdens de inzet wijzigen.",
-      "operational": "Maak bewust onderscheid tussen offensief binnen, defensief binnen, offensief buiten en defensief buiten en heroverweeg de positie wanneer het brandbeeld verandert."
-    },
-    "CAN": {
-      "definition": "Gebruik CAN voor een korte, bruikbare terugmelding vanuit de ploeg: condities/waarnemingen, acties die worden uitgevoerd en wat nodig is. In deze casus voedt CAN de besluitvorming van de bevelvoerder zonder dat manschappen voor iedere veilige handeling toestemming hoeven af te wachten.",
-      "operational": "Gebruik CAN voor een korte, bruikbare terugmelding vanuit de ploeg zodat de bevelvoerder het actuele beeld kan bijstellen."
-    },
-    "FABCM": {
-      "definition": "FABCM ondersteunt commandovoering: Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring. In deze casus wordt het vooral zichtbaar bij heroverwegingen: actief afwijkende feiten zoeken, betekenis geven, besluiten, opdrachten helder communiceren en controleren of het effect wordt bereikt.",
-      "operational": "Gebruik Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring om besluiten te onderbouwen en het effect ervan actief te volgen."
-    },
-    "Deurcontrole": {
-      "definition": "Beoordeel vóór openen wat de deur, druk, warmte en rookstroming vertellen. Open zo beperkt en gecontroleerd mogelijk en koppel de uitkomst aan het inzetplan.",
-      "operational": "Beheers de opening doelgericht en zo kort mogelijk. Koppel de waargenomen rook-, warmte- en drukstroming aan het inzetplan."
-    },
-    "Anti-ventilatie": {
-      "definition": "Beperk ongewenste luchttoevoer en rookafvoer door openingen beheerst te houden. Bij winddruk en stack-effect is het voorkomen van een ongecontroleerde flowpath extra belangrijk.",
-      "operational": "Beperk ongewenste luchttoevoer door openingen beheerst te houden; dit hangt direct samen met deurcontrole, flowpath en Wind Driven Fire."
+      "definition": "Binneninzet vanuit een relatief veiliger deel met nadruk op begrenzen, beschermen of redding onder dekking.",
+      "operational": "Kan passend zijn wanneer directe offensieve brandbestrijding nog niet verantwoord of uitvoerbaar is."
     },
     "Rookgaskoeling": {
-      "definition": "Stem de straalpijptechniek af op het brand- en rookbeeld. In het BPBB-train-de-trainerdocument wordt bij snelle lijn en snelle toevoer benoemd: tot aan de klepel circa 200 l/min en voorbij de klepel circa 450 l/min. Rookgaskoeling met 200 l/min wordt daarbij als voldoende benoemd. Gebruik 450 l/min dus niet automatisch voor rookgaskoeling als dat overkill is.",
-      "operational": "Stem techniek en waterdebiet af op het rook- en brandbeeld; koelen is een doelgerichte handeling en geen automatisme."
+      "definition": "Gerichte waterapplicatie om hete rookgassen en thermische belasting te beïnvloeden.",
+      "operational": "Techniek, hoeveelheid en frequentie moeten passen bij het rookbeeld; beoordeel steeds het effect."
     },
-    "3D-puls": {
-      "definition": "Straalpijptechniek waarbij korte, gerichte pulsen in de hete rooklaag worden gegeven om rookgassen te koelen met zo min mogelijk onnodige waterbelasting.",
-      "operational": "Pas alleen toe wanneer de omstandigheden en het doel van rookgaskoeling hierom vragen; observeer voortdurend het effect."
+    "RSTV": {
+      "definition": "Rook, Stroming, Temperatuur en Vlammen als signalen voor brandontwikkeling.",
+      "operational": "Lees veranderingen gedurende de hele inzet en koppel ze aan openingen, wind, verdieping en vluchtwegen."
     },
-    "Boogmethode": {
-      "definition": "Straalpijptechniek waarbij water in een gecontroleerde boog wordt ingebracht om een groter oppervlak of volume te koelen.",
-      "operational": "Kies de methode passend bij afstand, brandbeeld, warmtebelasting en beschikbaar koelend vermogen."
+    "CAN": {
+      "definition": "Korte terugmelding van Condities, Acties en Nodig.",
+      "operational": "Gebruik CAN om het beeld van de bevelvoerder actueel te houden."
     },
-    "Massieve Aanval": {
-      "definition": "Straalpijptechniek waarbij met een compacte/massieve straal veel koelend vermogen direct op de brand wordt gebracht.",
-      "operational": "Gebruik wanneer snelle knockdown en direct koelend vermogen nodig zijn en de positie van de ploeg dit veilig toelaat."
+    "FABCM": {
+      "definition": "Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring.",
+      "operational": "Gebruik dit als denkstructuur voor heroverweging en effectcontrole."
     },
-    "Laag voortbewegen": {
-      "definition": "Bij hitte en slecht zicht beweegt de ploeg laag om onder de heetste rooklaag te blijven, het thermisch beeld beter te benutten en de terugweg beheersbaar te houden.",
-      "operational": "Blijf onder de heetste rooklaag, behoud oriëntatie en bewaak de terugweg."
-    },
-    "Snelle lijn": {
-      "definition": "Systeem uit het train-de-trainerdocument: snelle lijn bij TS binnen circa 20 meter van het brandadres, bijvoorbeeld bij TA, portiekflat of auto’s. Eerst volledig uitlopen, daarna rustig druk opbouwen op de straal. Bij invouwen moet alle lucht eruit, anders past de lijn niet goed terug in de TS.",
-      "operational": "Gebruik het systeem volgens de bestaande BPBB-werkwijze; deze entry blijft inhoudelijk ongewijzigd."
-    },
-    "Snelle toevoer": {
-      "definition": "Systeem uit het train-de-trainerdocument: snelle toevoer wanneer de afstand langer is dan circa 40 meter of wanneer mogelijk meerdere O-bundels nodig zijn, bijvoorbeeld bij woningen en portiekflats. Eerst volledig uitlopen, daarna rustig druk opbouwen op het verdeelstuk. Praktische werklijn: eerst vullen met circa 2,5 bar; als water op het verdeelstuk staat ophogen naar 8 bar.",
-      "operational": "Gebruik het systeem volgens de bestaande BPBB-werkwijze; deze entry blijft inhoudelijk ongewijzigd."
-    },
-    "Snelle aanval": {
-      "definition": "In deze fictieve casus is de snelle aanval beschikbaar voor een snelle opbouw van de LD-aanvalslijn vanaf het gekozen afnamepunt. Snelheid is alleen winst als voldoende koelend vermogen, back-up en een veilige route zijn geborgd.",
-      "operational": "Snelheid is alleen winst als koelend vermogen, back-up en een veilige route zijn geborgd."
-    },
-    "O-bundel": {
-      "definition": "Het BPBB-document benoemt: bundel uitvouwen tot O, rustig laten ontvouwen tot uiteindelijke druk van 8 bar. Binnenzijde is de straalpijpzijde; buitenzijde is de watertoevoer. Bij twee O-bundels: binnenzijde verlengbundel naar buitenzijde aanvalsbundel, zodat een ‘bril’ ontstaat. In deze casus helpt dit om compact op hoogte te werken zonder vluchtwegen onnodig te blokkeren.",
-      "operational": "Compact slangmanagement op hoogte, met aandacht voor koppelen, ontvouwen, drukopbouw en behoud van vluchtwegen."
-    },
-    "Opruimen": {
-      "definition": "Het document waarschuwt voor verkeerd opruimen: niet met vouwen over de grond trekken, want dat geeft lekkage. Slangen eerst onder druk strekken, daarna pas oprollen; voor O-bundels met plank/oprolsysteem of bundlewheel. Dit is vooral relevant bij logistiek en langdurige inzet: inzetgereed maken is onderdeel van het systeem, niet alleen opruimen achteraf.",
-      "operational": "Zorg dat slangen na inzet opnieuw inzetgereed worden gemaakt zonder beschadiging; afbeelding, video en systeemkaart worden bij dit begrip niet getoond."
-    },
-    "Hoogtetas": {
-      "definition": "Het train-de-trainerdocument benoemt als inhoud voor werken op hoogte: Y-verdeelstuk, koppelslang van circa 1 meter, slangophouders, blinddekselsleutels en touw. In deze casus wordt de hoogtetas onderdeel van de logistieke planning: wat moet direct mee, wat hoort op het bruggenhoofd en wat kan beneden blijven?",
-      "operational": "Deze entry blijft inhoudelijk en visueel ongewijzigd."
-    },
-    "Transporttas": {
-      "definition": "Systeem uit het document voor grote inzetdiepten, zoals appartementencomplex, verzorgingstehuis, panden met inpandige galerij en ziekenhuizen. Werkprincipe: bepaal waar de O-bundels komen, bouw vanaf de O-bundels op naar de TS, transporttas koppelen en uitlopen. Neem bij grote inzetdiepte voldoende transporttassen mee; het document noemt als aandachtspunt: schat de inzetdiepte in en neem voldoende transporttassen mee (#4).",
-      "operational": "Deze entry blijft inhoudelijk en visueel ongewijzigd."
+    "Kwadrantenmodel": {
+      "definition": "Denkmodel voor offensief/defensief en binnen/buiten.",
+      "operational": "Herbeoordeel de gekozen positie wanneer het incidentbeeld verandert."
     },
     "Droge stijgleiding": {
-      "definition": "Systeem uit het document voor hoogbouw tot 70 meter met een betrouwbare stijgleiding. Aandachtspunten: opstelplaats voertuig, taakverdeling nummers 1 t/m 4, werken met inhoud hoogtetas, O-bundels op galerij en beperkte ruimte. Houd vluchtwegen intact. Ontluchten van de stijgleiding kan via de pomp of via aangekoppeld verdeelstuk; via verdeelstuk is snel.",
-      "operational": "Deze entry blijft inhoudelijk en visueel ongewijzigd."
+      "definition": "Vaste leiding in het gebouw die door de brandweer wordt gevoed voor watertransport op hoogte.",
+      "operational": "Beschouw de voorziening pas als operationeel beschikbaar wanneer voldoende druk en debiet daadwerkelijk zijn vastgesteld."
     },
-    "Verdeelstuk buitenom": {
-      "definition": "Systeem uit het document voor hoogbouw tot ongeveer de 8e etage zonder droge stijgleiding, bijvoorbeeld appartementencomplex met galerij of woonflat met galerij. Hierbij wordt met de hoogtetas en O-bundels gewerkt; bij gebruik van een verlengbundel geldt: buitenzijde naar buitenzijde koppelen. Probeer vluchtwegen intact te houden.",
-      "operational": "Deze entry blijft inhoudelijk en visueel ongewijzigd."
+    "Wokkeltrappenhuis": {
+      "definition": "Twee onafhankelijke trappen die in één schachtconstructie zijn vervlochten en brandwerend gescheiden zijn.",
+      "operational": "Maak expliciet welke trap inzetroute is en welke zo veel mogelijk voor ontvluchting/ontruiming beschikbaar blijft."
     },
-    "LD op hoogte": {
-      "definition": "Overkoepelende BPBB-laag uit het document: werken met O-bundels, snelle lijn, snelle toevoer en LD op hoogte. In deze hoogbouwcasus betekent dit dat het blussysteem niet los staat van routekeuze, stijgleiding, beperkte ruimte, vluchtwegbehoud, logistiek en ploegbelasting.",
-      "operational": "Deze entry blijft inhoudelijk en visueel ongewijzigd."
-    },
-    "Do’s & Don’ts": {
-      "definition": "Het document noemt praktische fouten en juiste werkwijzen: geen water op snelle lijn/sneller toevoer zolang die nog niet uit het voertuig is; niet met 8 bar direct vullen; niet drukloos met water slepen waardoor vouwen over de grond lek raken; snelle lijn/sneller toevoer eerst met circa 2,5 bar vullen en daarna naar 8 bar; rookgaskoeling tot aan de klepel met circa 200 l/min.",
-      "operational": "Deze entry blijft inhoudelijk en visueel ongewijzigd."
+    "Overdrukinstallatie": {
+      "definition": "Installatie die met drukverschil rookinstroom naar een trappenhuis of voorportaal probeert te beperken.",
+      "operational": "Beoordeel toevoer, afvoer en werkelijke drukverhoudingen; controleer het effect."
     }
   },
-  "combinationRules": [
-    {
-      "if": [
-        "5C",
-        "6B"
-      ],
-      "text": "De combinatie van ongunstig deurmanagement en windgedreven brand versterkt rook en temperatuur in gang en voorportaal. Een ploeg moet terug achter de scheiding; de vluchtweg wordt duidelijk slechter."
-    },
-    {
-      "ifAny": [
-        "3B",
-        "3C"
-      ],
-      "and": "15B",
-      "text": "De eerdere trappenhuiskeuze en late logistiek stapelen zich op. Materiaalaanvoer loopt achter en de inzet komt tijdelijk zonder volledige back-up te zitten."
-    },
-    {
-      "if": [
-        "4C",
-        "8B"
-      ],
-      "text": "De tactische keuze is op zichzelf verdedigbaar, maar zonder ingericht bruggenhoofd ontstaat onduidelijkheid in leiding en back-up op hoogte."
-    },
-    {
-      "if": [
-        "4C",
-        "16A"
-      ],
-      "text": "Nu het incident naar een zwaarder scenario verschuift, wordt het ontbreken van een bruggenhoofd een duidelijke organisatorische zwakte."
-    },
-    {
-      "if": [
-        "5C",
-        "12B"
-      ],
-      "text": "De combinatie van slecht deurmanagement en open entree versterkt de verticale rook/CO-verspreiding. Ook hogere verdiepingen en het tweede trappenhuis raken bedreigd."
-    },
-    {
-      "if": [
-        "5C",
-        "12C"
-      ],
-      "text": "De combinatie van slecht deurmanagement en onvoldoende reactie op onverwachte CO maakt de rookverspreiding ernstiger. Het tweede trappenhuis komt onder druk."
-    },
-    {
-      "if": [
-        "14B"
-      ],
-      "text": "De lift blijft in gebruik terwijl water de schacht bedreigt. Later valt de lift uit tijdens een transportbeweging. Verticale logistiek moet acuut worden omgeschakeld."
-    },
-    {
-      "ifAny": [
-        "17B",
-        "17C"
-      ],
-      "requiresDelay": true,
-      "text": "De ontruiming is bij de geveluitbreiding te laat of te beperkt gestart. Bewoners op hogere verdiepingen raken door rook afgesneden; de inzet verslechtert ernstig."
-    }
-  ],
-  "robustChain": [
-    "3A",
-    "4A",
-    "5A",
-    "6A",
-    "10A",
-    "13A",
-    "15A"
-  ],
   "systemDefinitions": {
-    "RSTV": {
-      "title": "RSTV",
-      "text": "Gebruik RSTV-signalen om het brandbeeld dynamisch te lezen: rook, stroming, temperatuur en vlammen. In deze casus worden die waarnemingen steeds gekoppeld aan wind, openingen, verdieping en vluchtwegen."
+    "Kenmerkenschema": "Combineer mens-, gebouw-, brand-, omgevings- en interventiekenmerken om inzetdoel en randvoorwaarden te bepalen.",
+    "RSTV": "Lees rook, stroming, temperatuur en vlammen als dynamische signalen.",
+    "Kwadrantenmodel": "Gebruik het model om de tactische positie bewust te kiezen en zo nodig te heroverwegen.",
+    "CAN": "Gebruik Condities, Acties en Nodig voor compacte operationele terugmeldingen.",
+    "FABCM": "Gebruik Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring om de inzet bestuurbaar te houden.",
+    "Deurcontrole": "Beoordeel warmte, rook en druk vóór openen; open gecontroleerd en zo beperkt mogelijk.",
+    "Anti-ventilatie": "Beperk ongewenste luchttoevoer door openingen en deuren bewust te beheersen.",
+    "Rookgaskoeling": "Pas water gericht toe op basis van rook- en warmtecondities en controleer het effect.",
+    "Smokestopper": "Beperk rookuitstroom door een deuropening en controleer of de rookverspreiding daadwerkelijk afneemt.",
+    "LD op hoogte": "Organiseer betrouwbare lage-drukwatervoorziening tot aan de inzetlocatie.",
+    "Droge stijgleiding binnen": "Voed en controleer de droge stijgleiding; voldoende druk en debiet moeten feitelijk beschikbaar zijn.",
+    "Hoogtetas": "Materiaalset voor het aansluiten en gebruiken van voorzieningen op hoogte.",
+    "Transporttas": "Systeem 3 voor watertransport op hoogte via transportslang/transporttas.",
+    "Verdeelstuk buitenom": "Systeem 4 buitenom voor alternatieve verticale watervoorziening.",
+    "O-bundel": "Compact slangsysteem voor LD-inzet op hoogte.",
+    "Klepel / straalpijp": "Stem straalpijpinstelling en koelend vermogen af op het brandbeeld.",
+    "Laag voortbewegen": "Beperk thermische belasting en blijf tijdens het oprukken het rook- en warmtebeeld lezen."
+  },
+  "debriefSections": [
+    {
+      "title": "Beeldvorming",
+      "question": "Wat veranderde tijdens de inzet en heb je dat tijdig herkend?",
+      "points": [
+        "Op welke momenten veranderde volgens jou het scenario?",
+        "Welke concrete waarneming was bepalend?",
+        "Gebruik de scenario-uitleg als referentie, niet als automatische beslisregel."
+      ]
     },
-    "Kenmerkenschema": {
-      "title": "Kenmerkenschema",
-      "text": "Gebruik kenmerken van brand, gebouw, mens, omgeving en interventie om het inzetdoel en de randvoorwaarden te bepalen. Bij hoogbouw wegen gebouwvoorzieningen, verticale verplaatsing, bewonersgedrag en rookverspreiding zwaar mee."
+    {
+      "title": "Tactiek",
+      "question": "Bleef je tactiek passen bij het actuele incidentbeeld?",
+      "points": [
+        "Welke tactiek koos je aanvankelijk?",
+        "Welke nieuwe informatie kreeg je?",
+        "Wat veranderde je vervolgens?",
+        "Herclassificeren heeft pas betekenis wanneer prioriteiten, opdrachten of capaciteit mee veranderen."
+      ]
     },
-    "Kwadrantenmodel": {
-      "title": "Kwadrantenmodel",
-      "text": "Gebruik het kwadrantenmodel om bewust te kiezen tussen offensief of defensief en binnen of buiten. De gekozen positie moet blijven passen bij het actuele brandbeeld en kan tijdens de inzet wijzigen."
+    {
+      "title": "Redding & ontruiming",
+      "question": "Hoe veranderde de verhouding tussen redding, brandbestrijding en ontruiming?",
+      "points": [
+        "Reddingsdruk afwegen tegen interventievoorwaarden",
+        "Spontane ontruiming organiseren zonder inzet- en vluchtstromen onnodig te mengen",
+        "Bij geveluitbreiding gebouwbreed kijken naar bedreigde bewoners en beschikbare tijd"
+      ]
     },
-    "CAN": {
-      "title": "CAN-terugmelding",
-      "text": "Gebruik CAN voor een korte, bruikbare terugmelding vanuit de ploeg: condities/waarnemingen, acties die worden uitgevoerd en wat nodig is. In deze casus voedt CAN de besluitvorming van de bevelvoerder zonder dat manschappen voor iedere veilige handeling toestemming hoeven af te wachten."
+    {
+      "title": "Bluswater & voorzieningen",
+      "question": "Waren slagkracht, back-up en gebouwvoorzieningen passend bij het actuele brandbeeld?",
+      "points": [
+        "Benodigd blusvermogen bepalen op brandontwikkeling, wind en stroming",
+        "Liftbruikbaarheid tijdens de inzet blijven toetsen",
+        "Niet afhankelijk blijven van één voorziening zonder alternatief"
+      ]
     },
-    "FABCM": {
-      "title": "FABCM",
-      "text": "FABCM ondersteunt commandovoering: Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring. In deze casus wordt het vooral zichtbaar bij heroverwegingen: actief afwijkende feiten zoeken, betekenis geven, besluiten, opdrachten helder communiceren en controleren of het effect wordt bereikt."
+    {
+      "title": "Rook & vluchtwegen",
+      "question": "Welke signalen wezen erop dat rook- en luchtstroming niet meer alleen door de brandruimte werden bepaald?",
+      "points": [
+        "Wind, openingen en flowpath",
+        "CO zonder zichtbare rook verklaren en blijven meten",
+        "Trappenhuisbescherming en deurmanagement als zelfstandige taken"
+      ]
     },
-    "Deurcontrole": {
-      "title": "Deurcontrole",
-      "text": "Beoordeel vóór openen wat de deur, druk, warmte en rookstroming vertellen. Open zo beperkt en gecontroleerd mogelijk en koppel de uitkomst aan het inzetplan."
-    },
-    "Anti-ventilatie": {
-      "title": "Anti-ventilatie",
-      "text": "Beperk ongewenste luchttoevoer en rookafvoer door openingen beheerst te houden. Bij winddruk en stack-effect is het voorkomen van een ongecontroleerde flowpath extra belangrijk."
-    },
-    "Rookgaskoeling": {
-      "title": "Rookgaskoeling / straalpijptechniek",
-      "text": "Stem de straalpijptechniek af op het brand- en rookbeeld. In het BPBB-train-de-trainerdocument wordt bij snelle lijn en snelle toevoer benoemd: tot aan de klepel circa 200 l/min en voorbij de klepel circa 450 l/min. Rookgaskoeling met 200 l/min wordt daarbij als voldoende benoemd. Gebruik 450 l/min dus niet automatisch voor rookgaskoeling als dat overkill is."
-    },
-    "Klepel / straalpijp": {
-      "title": "Klepel / straalpijp",
-      "text": "Bij de snelle lijn en snelle toevoer wordt het klepelgebruik expliciet uitgelegd: tot aan de klepel circa 200 l/min; voorbij de klepel circa 450 l/min. In deze casus is dat relevant bij rookgaskoeling, koelend vermogen en voorkomen dat een kleine inzet ongemerkt een zware water-/logistieke belasting wordt."
-    },
-    "Laag voortbewegen": {
-      "title": "Laag voortbewegen",
-      "text": "Bij hitte en slecht zicht beweegt de ploeg laag om onder de heetste rooklaag te blijven, het thermisch beeld beter te benutten en de terugweg beheersbaar te houden."
-    },
-    "Snelle lijn": {
-      "title": "Snelle lijn – systeem 1",
-      "text": "Systeem uit het train-de-trainerdocument: snelle lijn bij TS binnen circa 20 meter van het brandadres, bijvoorbeeld bij TA, portiekflat of auto’s. Eerst volledig uitlopen, daarna rustig druk opbouwen op de straal. Bij invouwen moet alle lucht eruit, anders past de lijn niet goed terug in de TS."
-    },
-    "Snelle toevoer": {
-      "title": "Snelle toevoer – systeem 2",
-      "text": "Systeem uit het train-de-trainerdocument: snelle toevoer wanneer de afstand langer is dan circa 40 meter of wanneer mogelijk meerdere O-bundels nodig zijn, bijvoorbeeld bij woningen en portiekflats. Eerst volledig uitlopen, daarna rustig druk opbouwen op het verdeelstuk. Praktische werklijn: eerst vullen met circa 2,5 bar; als water op het verdeelstuk staat ophogen naar 8 bar."
-    },
-    "Snelle aanval": {
-      "title": "Snelle aanval",
-      "text": "In deze fictieve casus is de snelle aanval beschikbaar voor een snelle opbouw van de LD-aanvalslijn vanaf het gekozen afnamepunt. Snelheid is alleen winst als voldoende koelend vermogen, back-up en een veilige route zijn geborgd."
-    },
-    "O-bundel": {
-      "title": "O-bundel",
-      "text": "Het BPBB-document benoemt: bundel uitvouwen tot O, rustig laten ontvouwen tot uiteindelijke druk van 8 bar. Binnenzijde is de straalpijpzijde; buitenzijde is de watertoevoer. Bij twee O-bundels: binnenzijde verlengbundel naar buitenzijde aanvalsbundel, zodat een ‘bril’ ontstaat. In deze casus helpt dit om compact op hoogte te werken zonder vluchtwegen onnodig te blokkeren."
-    },
-    "O-bundel oprollen": {
-      "title": "O-bundel oprollen / inzetgereed maken",
-      "text": "Het document waarschuwt voor verkeerd opruimen: niet met vouwen over de grond trekken, want dat geeft lekkage. Slangen eerst onder druk strekken, daarna pas oprollen; voor O-bundels met plank/oprolsysteem of bundlewheel. Dit is vooral relevant bij logistiek en langdurige inzet: inzetgereed maken is onderdeel van het systeem, niet alleen opruimen achteraf."
-    },
-    "Transporttas": {
-      "title": "Transporttas – systeem 3",
-      "text": "Systeem uit het document voor grote inzetdiepten, zoals appartementencomplex, verzorgingstehuis, panden met inpandige galerij en ziekenhuizen. Werkprincipe: bepaal waar de O-bundels komen, bouw vanaf de O-bundels op naar de TS, transporttas koppelen en uitlopen. Neem bij grote inzetdiepte voldoende transporttassen mee; het document noemt als aandachtspunt: schat de inzetdiepte in en neem voldoende transporttassen mee (#4)."
-    },
-    "Droge stijgleiding binnen": {
-      "title": "Droge stijgleiding – systeem 4 binnen",
-      "text": "Systeem uit het document voor hoogbouw tot 70 meter met een betrouwbare stijgleiding. Aandachtspunten: opstelplaats voertuig, taakverdeling nummers 1 t/m 4, werken met inhoud hoogtetas, O-bundels op galerij en beperkte ruimte. Houd vluchtwegen intact. Ontluchten van de stijgleiding kan via de pomp of via aangekoppeld verdeelstuk; via verdeelstuk is snel."
-    },
-    "Verdeelstuk buitenom": {
-      "title": "Verdeelstuk buitenom – systeem 4 buiten",
-      "text": "Systeem uit het document voor hoogbouw tot ongeveer de 8e etage zonder droge stijgleiding, bijvoorbeeld appartementencomplex met galerij of woonflat met galerij. Hierbij wordt met de hoogtetas en O-bundels gewerkt; bij gebruik van een verlengbundel geldt: buitenzijde naar buitenzijde koppelen. Probeer vluchtwegen intact te houden."
-    },
-    "LD op hoogte": {
-      "title": "LD op hoogte",
-      "text": "Overkoepelende BPBB-laag uit het document: werken met O-bundels, snelle lijn, snelle toevoer en LD op hoogte. In deze hoogbouwcasus betekent dit dat het blussysteem niet los staat van routekeuze, stijgleiding, beperkte ruimte, vluchtwegbehoud, logistiek en ploegbelasting."
-    },
-    "Do’s & Don’ts LD/O-bundels": {
-      "title": "Do’s & Don’ts LD/O-bundels",
-      "text": "Het document noemt praktische fouten en juiste werkwijzen: geen water op snelle lijn/sneller toevoer zolang die nog niet uit het voertuig is; niet met 8 bar direct vullen; niet drukloos met water slepen waardoor vouwen over de grond lek raken; snelle lijn/sneller toevoer eerst met circa 2,5 bar vullen en daarna naar 8 bar; rookgaskoeling tot aan de klepel met circa 200 l/min."
-    },
-    "Smokestopper": {
-      "title": "Smokestopper",
-      "text": "De smokestopper is in deze casus beschikbaar. Hij ondersteunt deurmanagement en anti-ventilatie door rookuitstroom via de deuropening te beperken terwijl gecontroleerde inzet mogelijk blijft."
-    },
-    "Hoogtetas": {
-      "title": "Hoogtetas",
-      "text": "Het train-de-trainerdocument benoemt als inhoud voor werken op hoogte: Y-verdeelstuk, koppelslang van circa 1 meter, slangophouders, blinddekselsleutels en touw. In deze casus wordt de hoogtetas onderdeel van de logistieke planning: wat moet direct mee, wat hoort op het bruggenhoofd en wat kan beneden blijven?"
+    {
+      "title": "Organisatie & continuïteit",
+      "question": "Welke voorziening of organisatievorm werd kwetsbaar en had je al een alternatief georganiseerd?",
+      "points": [
+        "Bruggenhoofd",
+        "Communicatie",
+        "Lift en verticale logistiek",
+        "Ademlucht, aflossing en materiaal",
+        "Bewust heroverwegen bij langdurige inzet"
+      ]
     }
-  }
+  ],
+  "closingQuestions": [
+    "Welke beslissing zou je hetzelfde nemen, welke zou je anders nemen en welke informatie had je eerder willen hebben?",
+    "Wat ga je na deze casus bij een echte hoogbouwbrand eerder herkennen, eerder vragen of eerder organiseren?"
+  ]
 };
