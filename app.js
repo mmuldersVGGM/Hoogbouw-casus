@@ -8,7 +8,20 @@ $('#principles').innerHTML=S.meta.principles.map(x=>`<div class="principle">${es
 
 function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 function paras(t){return String(t||'').split(/\n\s*\n/).filter(Boolean).map(x=>`<p>${linkTerms(x)}</p>`).join('')}
-const terms=Object.keys(S.glossary||{}).sort((a,b)=>b.length-a.length);
+const KB=window.KNOWLEDGE_BANK||{cards:[]};
+const kbCards=KB.cards||[];
+const kbByTitle=new Map();
+const kbAliases=new Map();
+for(const c of kbCards){
+  kbByTitle.set(c.title,c);
+  kbAliases.set(c.title,c.title);
+  for(const a of (c.aliases||[])) kbAliases.set(a,c.title);
+}
+const legacyGloss=S.glossary||{};
+const terms=[...new Set([...kbAliases.keys(),...Object.keys(legacyGloss)])].sort((a,b)=>b.length-a.length);
+const termLookup=new Map(terms.map(t=>[t.toLowerCase(),t]));
+const termPattern=terms.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
+const termRegex=termPattern?new RegExp(`(^|[^\\p{L}\\p{N}])(${termPattern})(?=$|[^\\p{L}\\p{N}])`,'giu'):null;
 const MEDIA={
   terms:{
     'Stack-effect':{src:'assets/custom/stack_reverse_user.png',caption:'Stack-effect en reverse stack-effect – winter/zomer',source:'Aangeleverde afbeelding'},
@@ -70,15 +83,47 @@ function mediaFigure(m, cls='termMedia'){
 function termExtras(g){let h='';if(g?.video)h+=`<a class="videoLink" href="${esc(g.video)}" target="_blank" rel="noopener noreferrer">▶ Bekijk uitlegvideo op YouTube</a>`;if(g?.pdf)h+=`<button type="button" class="pdfExpand" data-pdf="${esc(g.pdf)}">Bekijk volledige aandachtskaart</button>`;return h;}
 function bindMedia(root=document){root.querySelectorAll('.mediaZoom').forEach(b=>b.addEventListener('click',()=>openModal(`<div class="imageModal"><img src="${b.dataset.img}" alt="${esc(b.dataset.caption)}"><p>${esc(b.dataset.caption)}</p></div>`)));}
 function bindExtras(root=document){root.querySelectorAll('.pdfExpand').forEach(b=>b.addEventListener('click',()=>{const pdf=b.dataset.pdf;openModal(`<div class="pdfViewer"><h2>Bruggenhoofd – volledige aandachtskaart</h2><div class="pdfPages"><img src="assets/custom/bruggenhoofd_preview.png" alt="Bruggenhoofd aandachtskaart pagina 1"><img src="assets/custom/bruggenhoofd_page2.png" alt="Bruggenhoofd aandachtskaart pagina 2"></div><a class="videoLink" href="${esc(pdf)}" target="_blank" rel="noopener noreferrer">Open PDF in nieuw tabblad</a></div>`)}));}
-function linkTerms(text){let s=esc(text); for(const term of terms){const re=new RegExp(`\b${term.replace(/[.*+?^${}()|[\]\\]/g,'\$&')}\b`,'gi');s=s.replace(re,m=>`<span class="term" data-term="${esc(term)}">${m}</span>`);}return s;}
+function linkTerms(text){
+  const raw=esc(text);
+  if(!termRegex)return raw;
+  termRegex.lastIndex=0;
+  return raw.replace(termRegex,(m,pre,hit)=>{const key=termLookup.get(hit.toLowerCase())||hit;return `${pre}<span class="term" data-term="${esc(key)}">${hit}</span>`;});
+}
 function openModal(html){$('#modalContent').innerHTML=html;$('#modal').classList.remove('hidden');bindTerms($('#modalContent'));bindSystems($('#modalContent'));bindMedia($('#modalContent'));bindExtras($('#modalContent'));}
-function showTerm(term){const g=S.glossary?.[term];if(!g)return;openModal(`<div class="termHeader"><div class="small">BEGRIP</div><h2>${esc(term)}</h2></div>${mediaFigure(MEDIA.terms[term],'termMedia')}<p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>${termExtras(g)}`)}
-function showGlossary(){let h='<h2>Begrippen</h2><p class="small">Klik tijdens de casus op onderstreepte begrippen om deze uitleg direct te openen.</p>';for(const [k,v] of Object.entries(S.glossary||{}))h+=`<div class="glossItem"><h3>${esc(k)}</h3>${mediaFigure(MEDIA.terms[k],'glossMedia')}<div>${esc(v.definition)}</div><div class="operational"><strong>Operationeel:</strong> ${esc(v.operational)}</div>${termExtras(v)}</div>`;openModal(h)}
-function showSources(){openModal(`<h2>Bronnen en status</h2><p>Deze webcasus is een didactische oefentoepassing en geen vastgesteld inzetprotocol.</p><ul><li>VGGM – Brandbestrijding hoogbouw (lesmateriaal)</li><li>Concept Handboek Brandbestrijding Hoogbouw VGGM 2026</li><li>Scenario / Stroomschema Hoogbouw VGGM 2026</li><li>Handboek Incidentbestrijding Hoogbouw, Brandweer Rotterdam-Rijnmond (2024)</li><li>BPBB Train-de-trainer 2026 – LD en watertransport op hoogte</li></ul><div class="sourceNote">${esc(S.meta.sourceNote)}</div>`)}
+function resolveCard(term){const title=kbAliases.get(term)||term;return kbByTitle.get(title)||null;}
+function sourceBadges(card){return (card.sources||[]).map(x=>`<span class="sourceBadge">${esc(x)}</span>`).join('');}
+function relatedHtml(card){if(!card.related?.length)return '';return `<section class="knowledgeSection"><h3>Gerelateerde begrippen</h3><div class="relatedChips">${card.related.map(x=>`<button type="button" class="relatedChip term" data-term="${esc(x)}">${esc(x)}</button>`).join('')}</div></section>`;}
+function cardMedia(card, cls='termMedia'){const key=card.media||card.title;return mediaFigure(MEDIA.terms[key],cls);}
+function knowledgeCardHtml(card){
+  const core=(card.core||[]).map(x=>`<li>${linkTerms(x)}</li>`).join('');
+  const sections=(card.sections||[]).map(sec=>`<section class="knowledgeSection"><h3>${esc(sec.title)}</h3><div>${paras(sec.text)}</div></section>`).join('');
+  const extras=termExtras(card);
+  return `<article class="knowledgeCardDetail"><div class="termHeader"><div class="small">KENNISBANK • ${esc(card.category||'Begrip')}</div><h2>${esc(card.title)}</h2></div>${cardMedia(card)}<p class="knowledgeDefinition">${linkTerms(card.definition)}</p>${core?`<section class="knowledgeCore"><h3>Kernboodschappen</h3><ul>${core}</ul></section>`:''}${sections}${relatedHtml(card)}${extras}${card.sources?.length?`<section class="knowledgeSources"><h3>Bronnen</h3><div class="sourceBadges">${sourceBadges(card)}</div><p class="sourceDisclaimer">Bron-specifieke procedures en voorbeelden worden als onderlegger weergegeven en zijn niet automatisch een vastgestelde VGGM-inzetprocedure.</p></section>`:''}</article>`;
+}
+function showTerm(term){
+  const card=resolveCard(term);
+  if(card){openModal(knowledgeCardHtml(card));return;}
+  const g=legacyGloss?.[term];if(!g)return;
+  openModal(`<div class="termHeader"><div class="small">BEGRIP</div><h2>${esc(term)}</h2></div>${mediaFigure(MEDIA.terms[term],'termMedia')}<p>${esc(g.definition)}</p><div class="operational"><strong>Operationeel in deze casus</strong><br>${esc(g.operational)}</div>${termExtras(g)}`)
+}
+function showGlossary(){
+  const cats=[...new Set(kbCards.map(c=>c.category))];
+  let h=`<div class="knowledgeBankHead"><div><div class="small">KENNISBANK • ${kbCards.length} KAARTEN</div><h2>Kennisbank hoogbouw</h2><p>${esc(KB.intro||'')}</p></div><div class="knowledgeSearch"><input id="knowledgeSearch" type="search" placeholder="Zoek begrip, onderwerp of bron…" autocomplete="off"></div></div>`;
+  h+=`<div class="knowledgeFilters"><button class="knowledgeFilter active" data-cat="">Alles</button>${cats.map(c=>`<button class="knowledgeFilter" data-cat="${esc(c)}">${esc(c)}</button>`).join('')}</div>`;
+  h+=`<div id="knowledgeGrid" class="knowledgeGrid">${kbCards.map((c,i)=>`<button class="knowledgeTile" type="button" data-title="${esc(c.title)}" data-cat="${esc(c.category)}" data-search="${esc([c.title,c.category,c.definition,...(c.aliases||[]),...(c.sources||[])].join(' ').toLowerCase())}"><span class="knowledgeNumber">${String(i+1).padStart(2,'0')}</span><span class="knowledgeTileTitle">${esc(c.title)}</span><span class="knowledgeTileCat">${esc(c.category)}</span></button>`).join('')}</div>`;
+  openModal(h);
+  const root=$('#modalContent'), input=$('#knowledgeSearch'), tiles=[...root.querySelectorAll('.knowledgeTile')], filters=[...root.querySelectorAll('.knowledgeFilter')];
+  let cat='';
+  function apply(){const q=(input.value||'').trim().toLowerCase();tiles.forEach(t=>{const okCat=!cat||t.dataset.cat===cat;const okQ=!q||t.dataset.search.includes(q);t.hidden=!(okCat&&okQ)});}
+  tiles.forEach(t=>t.addEventListener('click',()=>showTerm(t.dataset.title)));
+  filters.forEach(f=>f.addEventListener('click',()=>{cat=f.dataset.cat;filters.forEach(x=>x.classList.toggle('active',x===f));apply()}));
+  input.addEventListener('input',apply);input.focus({preventScroll:true});
+}
+function showSources(){openModal(`<h2>Bronnen en status</h2><p>Deze webcasus en kennisbank zijn didactische oefentoepassingen en geen vastgesteld inzetprotocol. Algemene kennis en bron-specifieke regionale uitwerkingen worden in de kenniskaarten bewust van elkaar onderscheiden.</p><ul><li>Bron: Hoogbouwpresentatie 2020</li><li>ARO 22103 Hoogbouw, versie 4.0</li><li>ARO 12001 Sprinklerinstallatie, versie 2026_1</li><li>ARO 12003 Bruggenhoofd, versie 4.0</li><li>VRR Handboek Brandbestrijding Hoogbouw hoger dan 70 meter, versie 1.0, 2024</li><li>Basisprincipes van brandbestrijding, Brandweeracademie / IFV, 2020</li><li>BPBB Train-de-trainer 2026 – LD en watertransport op hoogte</li></ul><div class="sourceNote">${esc(S.meta.sourceNote)}</div>`) }
 function showScenarios(){const g=S.meta.scenarioGuide;if(!g)return;let h=`<div class="small">DENKKADER</div><h2>${esc(g.title)}</h2><p>${esc(g.intro)}</p>`;for(const i of g.items)h+=`<section class="guideItem"><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></section>`;h+=`<div class="roleBox"><strong>Belangrijk:</strong> het scenario is geen vast label. Nieuwe informatie kan betekenen dat het incident opnieuw moet worden geclassificeerd en dat prioriteiten, opdrachten en capaciteit moeten veranderen.</div>`;openModal(h)}
 function bindTerms(root=document){root.querySelectorAll('.term').forEach(el=>el.addEventListener('click',()=>showTerm(el.dataset.term)))}
-function systemPanel(n){if(!n.systems?.length)return '';return `<section class="systemsPanel"><div class="systemsHead"><strong>VGGM / BPBB-systemen die hier meespelen</strong><span class="systemsHint">klik voor uitleg</span></div><div class="systemChips">${n.systems.map(k=>`<button class="systemChip" data-system="${esc(k)}">${esc(k)}</button>`).join('')}</div></section>`}
-function bindSystems(root=document){root.querySelectorAll('.systemChip').forEach(b=>b.addEventListener('click',()=>{const t=S.systemDefinitions?.[b.dataset.system];const text=typeof t==='string'?t:(t?.text||'Geen aanvullende uitleg beschikbaar.');openModal(`<div class="small">VGGM / BPBB</div><h2>${esc(b.dataset.system)}</h2>${mediaFigure(MEDIA.systems[b.dataset.system]||MEDIA.terms[b.dataset.system],'termMedia')}<p>${linkTerms(text)}</p>`)}))}
+function systemPanel(n){if(!n.systems?.length)return '';return `<section class="systemsPanel"><div class="systemsHead"><strong>Kennis & systemen die hier meespelen</strong><span class="systemsHint">klik voor uitleg</span></div><div class="systemChips">${n.systems.map(k=>`<button class="systemChip" data-system="${esc(k)}">${esc(k)}</button>`).join('')}</div></section>`}
+function bindSystems(root=document){root.querySelectorAll('.systemChip').forEach(b=>b.addEventListener('click',()=>{const t=S.systemDefinitions?.[b.dataset.system];const text=typeof t==='string'?t:(t?.text||'Geen aanvullende uitleg beschikbaar.');openModal(`<div class="small">KENNIS / SYSTEEM</div><h2>${esc(b.dataset.system)}</h2>${mediaFigure(MEDIA.systems[b.dataset.system]||MEDIA.terms[b.dataset.system],'termMedia')}<p>${linkTerms(text)}</p>`)}))}
 function mediaHtml(n){if(!n.media)return '';return `${mediaFigure(n.media,'scenarioMedia')}${(n.mediaGallery||[]).map(m=>mediaFigure(m,'scenarioMedia')).join('')}`}
 function renderNode(){const n=S.nodes[state.index];$('#progressText').textContent=`Keuzemoment ${n.id} van ${S.nodes.length}`;$('#progressBar').style.width=`${((n.id-1)/S.nodes.length)*100}%`;$('#roleBadge').textContent=n.role;$('#roleNote').textContent=n.roleNote;$('#incidentTime').textContent=`INCIDENT • beslismoment ${n.id}`;$('#nodeTitle').textContent=n.title;let extra=(S.meta.scenarioGuide&&[8,16,17].includes(n.id))?'<button class="scenarioGuideInline" id="scenarioInline">Bekijk scenario-uitleg</button>':'';$('#situation').innerHTML=paras(n.situation)+extra+mediaHtml(n)+systemPanel(n);bindTerms($('#situation'));bindSystems($('#situation'));if($('#scenarioInline'))$('#scenarioInline').addEventListener('click',showScenarios);choicePanel.innerHTML='';resultPanel.classList.add('hidden');n.choices.forEach(c=>{const b=document.createElement('button');b.className='choiceBtn';b.innerHTML=`<span class="choiceKey">${c.id}</span><span>${linkTerms(c.text)}</span>`;b.addEventListener('click',()=>choose(n,c));choicePanel.appendChild(b);bindTerms(b)});choicePanel.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
 function deepDive(n,c){const alt=n.choices.filter(x=>x.id!==c.id).map(x=>`<div class="compareItem"><strong>Keuze ${x.id}</strong><p>${linkTerms(x.text)}</p><div class="small">${linkTerms(x.rationale)}</div></div>`).join('');return `<div class="deepDive"><div class="small">VERDIEPENDE NABESPREKING • KEUZEMOMENT ${n.id}</div><h2>${esc(n.title)}</h2>${n.deepDive?`<div class="deepText">${paras(n.deepDive)}</div>`:''}<h3>Jouw keuze ${c.id}</h3><p><strong>${linkTerms(c.text)}</strong></p><p>${linkTerms(c.deepDive||c.rationale)}</p>${n.discussionQuestion?`<div class="discussionQuestion"><strong>Bespreekvraag</strong><p>${linkTerms(n.discussionQuestion)}</p></div>`:''}<h3>Andere opties</h3><div class="compareGrid">${alt}</div><div class="sourceNote">${esc(S.meta.sourceNote)}</div></div>`}

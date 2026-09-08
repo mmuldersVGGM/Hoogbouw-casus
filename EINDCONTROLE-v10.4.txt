@@ -1,0 +1,12 @@
+Hoogbouwcasus VGGM 2026 – v10.4 Kennisbank
+
+- 37 kenniskaarten geïntegreerd in beide casussen.
+- Zoekfunctie en categorie-filters toegevoegd.
+- Begrippen in casusteksten blijven doorklikbaar naar de nieuwe kenniskaarten.
+- Bestaande afbeeldingen, YouTube-links en Bruggenhoofd-PDF behouden.
+- CAN: Condities – Acties – Nodig.
+- FABCM: Feiten verzamelen – Analyseren – Beslissen – Communiceren – Monitoren.
+- BPBB generiek gehouden; LD-systemen als afzonderlijke kenniskaart.
+- Bron-specifieke VRR/ARO-uitwerkingen herkenbaar als onderlegger en niet als vastgesteld VGGM-protocol.
+- Service-worker cache verhoogd naar hoogbouw-v10-4-kennisbank.
+- JavaScript syntaxcontrole uitgevoerd; assetverwijzingen gecontroleerd.

@@ -837,7 +837,7 @@ window.SCENARIO = {
       "operational": "Gebruik CAN om het beeld van de bevelvoerder actueel te houden."
     },
     "FABCM": {
-      "definition": "Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring.",
+      "definition": "Feiten verzamelen, Analyseren, Beslissen, Communiceren en Monitoren.",
       "operational": "Gebruik dit als denkstructuur voor heroverweging en effectcontrole."
     },
     "Kwadrantenmodel": {
@@ -862,7 +862,7 @@ window.SCENARIO = {
     "RSTV": "Lees rook, stroming, temperatuur en vlammen als dynamische signalen.",
     "Kwadrantenmodel": "Gebruik het model om de tactische positie bewust te kiezen en zo nodig te heroverwegen.",
     "CAN": "Gebruik Condities, Acties en Nodig voor compacte operationele terugmeldingen.",
-    "FABCM": "Gebruik Factfinding, Analyse, Besluitvorming, Communicatie en Monitoring om de inzet bestuurbaar te houden.",
+    "FABCM": "Gebruik Feiten verzamelen, Analyseren, Beslissen, Communiceren en Monitoren als besliscyclus om de inzet bestuurbaar te houden.",
     "Deurcontrole": "Beoordeel warmte, rook en druk vóór openen; open gecontroleerd en zo beperkt mogelijk.",
     "Anti-ventilatie": "Beperk ongewenste luchttoevoer door openingen en deuren bewust te beheersen.",
     "Rookgaskoeling": "Pas water gericht toe op basis van rook- en warmtecondities en controleer het effect.",
